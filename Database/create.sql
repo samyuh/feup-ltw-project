@@ -12,18 +12,6 @@ CREATE TABLE User (
   password      VARCHAR(255)    NOT NULL
 );
 
-DROP TABLE IF EXISTS UserLookingPet;
-CREATE TABLE UserLookingPet (
-  idUser                   INTEGER                 PRIMARY KEY REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE
-  -- Lista de pets que quer
-);
-
-DROP TABLE IF EXISTS UserFoundPet;
-CREATE TABLE UserFoundPet (
-  idUser                   INTEGER                 PRIMARY KEY REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE
-  -- Lista de pets encontrados
-);
-
 DROP TABLE IF EXISTS Pet;
 CREATE TABLE Pet (
     idPet       INTEGER         PRIMARY KEY,
@@ -32,6 +20,19 @@ CREATE TABLE Pet (
     size        VARCHAR(255),
     color       VARCHAR(255)
 );
+
+DROP TABLE IF EXISTS UserLookingPet;
+CREATE TABLE UserLookingPet (
+  idUser                   INTEGER                 PRIMARY KEY REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
+  idPet                    INTEGER                 REFERENCES Pet(idPet)
+);
+
+DROP TABLE IF EXISTS UserFoundPet;
+CREATE TABLE UserFoundPet (
+  idUser                   INTEGER                 PRIMARY KEY REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
+  idPet                    INTEGER                 REFERENCES Pet(idPet)
+);
+
 
 DROP TABLE IF EXISTS Adoption;
 CREATE TABLE Adoption (
