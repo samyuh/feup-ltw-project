@@ -8,11 +8,11 @@
   </head>
   <body>
     <header>
-      <h1><a href="list_news.php">Pet Shelter</a></h1>
-      <h2><a href="list_news.php">Get your little animal right here, right now!</a></h2>
+      <h1><a href="index.php">Pet Shelter</a></h1>
+      <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
       <div id="signup">
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
+        <a href="../../register.php">Register</a>
+        <a href="../../login.php">Login</a>
         <a href="">Search</a>
       </div>
     </header>
