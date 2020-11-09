@@ -1,18 +1,55 @@
 /* header */
 body > header {
-  background-color: #046dd5;
+  background-color: #ACB0C0;
   color: white;
-
   padding: 1em;
+  padding-left: 2em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 body > header h1, body > header h2{
+  font-style: italic;
   margin: 0;
+}
+
+body > header h2{
+  font-size: 0.8em;
 }
 
 body > header a {
   color: white;
   text-decoration: none;
+}
+
+body > header #search{
+  padding-right: 9em;
+  padding-top: 0.5em;
+}
+
+body > header #search input[type=text] {
+  padding: 7px;
+  border: none;
+  font-size: 17px;
+}
+
+body > header #search button {
+  float: right;
+  padding: 7px;
+  background: white;
+  color: #ACB0C0;
+  font-size: 17px;
+  border: none;/* Prevent double borders */
+  cursor: pointer;
+}
+
+body > header #name_slogan  {
+  border-right: 2px solid white;
+  padding-bottom: 0;
+  margin-right: 6em;
+}
+
+body > header #signup{
+  padding-top: 1em;
 }
 
 body > header #signup a:first-child {
@@ -72,7 +109,11 @@ body > header h2 {
   grid-row: 2;
 }
 
-body > header #signup {
+body > header #search {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
+} 
+body > header #signup {
+  grid-column: 3;
+  grid-row: 1;
 }
