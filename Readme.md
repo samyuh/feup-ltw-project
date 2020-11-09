@@ -8,3 +8,9 @@
 - Beatriz Mendes - up201806551
 - Inês Quarteu - up201806279
 
+
+
+### Database UML
+
+![UML](imgs/uml.png)
+
