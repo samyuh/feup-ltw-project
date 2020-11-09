@@ -8,7 +8,8 @@ PRAGMA foreign_keys = off;
 DROP TABLE IF EXISTS User;
 CREATE TABLE User (
   idUser        INTEGER         PRIMARY KEY,
-  username      VARCHAR(255)    NOT NULL
+  username      VARCHAR(255)    NOT NULL,
+  password      VARCHAR(255)    NOT NULL
 );
 
 DROP TABLE IF EXISTS UserLookingPet;
