@@ -7,16 +7,17 @@ PRAGMA foreign_keys = off;
 
 DROP TABLE IF EXISTS User;
 CREATE TABLE User (
-  idUser        INTEGER         PRIMARY KEY,
-  username      VARCHAR(255)    NOT NULL,
-  password      VARCHAR(255)    NOT NULL
+  idUser        INTEGER                            PRIMARY KEY,
+  username      VARCHAR(255)                       NOT NULL,
+  password      VARCHAR(255)                       NOT NULL
 );
 
 DROP TABLE IF EXISTS Pet;
 CREATE TABLE Pet (
-    idPet       INTEGER         PRIMARY KEY,
+    idPet       INTEGER                            PRIMARY KEY,
     petName     VARCHAR(255),
     specie      VARCHAR(255),
+    gender      VARCHAR(255),
     size        VARCHAR(255),
     color       VARCHAR(255)
 );
@@ -30,28 +31,14 @@ CREATE TABLE UserLookingPet (
 DROP TABLE IF EXISTS UserFoundPet;
 CREATE TABLE UserFoundPet (
   idUser                   INTEGER                 PRIMARY KEY REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
-  idPet                    INTEGER                 REFERENCES Pet(idPet)
-);
-
-
-DROP TABLE IF EXISTS Adoption;
-CREATE TABLE Adoption (
-  idUserLookingPet         INTEGER    REFERENCES User(idUserLookingPet) ON DELETE SET NULL ON UPDATE CASCADE,
-  idPet                    INTEGER    REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
-  info                     VARCHAR(255),
-  PRIMARY KEY(idUserLookingPet, idPet)
+  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  info                     VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS FavoritePet;
 CREATE TABLE FavoritePet (
-    idUserLookingPet         INTEGER    REFERENCES User(idUserLookingPet) ON DELETE SET NULL ON UPDATE CASCADE,
-    idPet                    INTEGER    REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
-    PRIMARY KEY(idUserLookingPet, idPet)
+    idUser         INTEGER                         REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
+    idPet          INTEGER                         REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
+    PRIMARY KEY(idUser, idPet)
 );
 
-DROP TABLE IF EXISTS HasPet;
-CREATE TABLE HasPet (
-    idUserFoundPet         INTEGER    REFERENCES User(idUserLookingPet) ON DELETE SET NULL ON UPDATE CASCADE,
-    idPet                    INTEGER    REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
-    PRIMARY KEY(idUserFoundPet, idPet)
-);
