@@ -42,6 +42,8 @@ INSERT INTO UserFoundPet VALUES(4,10,'fast and energetic');
 
 INSERT INTO FavoritePet VALUES(1,1);
 INSERT INTO FavoritePet VALUES(2,2);
+INSERT INTO FavoritePet VALUES(2,3);
+INSERT INTO FavoritePet VALUES(2,4);
 INSERT INTO FavoritePet VALUES(3,3);
-INSERT INTO FavoritePet VALUES(4,4);
-INSERT INTO FavoritePet VALUES(5,5);
+INSERT INTO FavoritePet VALUES(3,4);
+INSERT INTO FavoritePet VALUES(4,5);
