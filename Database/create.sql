@@ -32,7 +32,7 @@ CREATE TABLE UserLookingPet (
 DROP TABLE IF EXISTS UserFoundPet;
 CREATE TABLE UserFoundPet (
   idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
-  idPet                    INTEGER                 REFERENCES Pet(idPet), ON DELETE SET NULL ON UPDATE CASCADE,
+  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
   info                     VARCHAR(255),
   PRIMARY KEY(idUser,idPet)
 );
