@@ -21,5 +21,10 @@
 
 |Login | Register |
 | --- | --- |
-| ![Login](./mockups/login.png) | ![Register](./mockups/register.png) |
+| ![Login](./mockups/login.png) | ![Register](./mockups/Register.png) |
+
+
+### Database UML
+
+![UML](./imgs/UML.png)
 
