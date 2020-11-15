@@ -7,6 +7,7 @@
     <link href="../../css/layout.css" rel="stylesheet">
     <link href="../../css/profile.css" rel="stylesheet">
     <link href="../../css/header.css" rel="stylesheet">
+    <link href="../../css/footer.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>

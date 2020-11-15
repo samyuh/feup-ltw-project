@@ -16,6 +16,7 @@
       <p>Género: </p>
       <p>Idade: </p>
       <p>Localização: </p>
+      <p>Animal Favorito: </p>
     </section>
     <section id="favPets">
       <h2>Animais Favoritos</h2>
@@ -26,10 +27,9 @@
     </section>
     <section id="question">
       <h2>Faz Uma Pergunta!</h2>
-      <p>TODO</p>
       <form>
         <label>
-          <textarea name="question" cols="40" rows="5"></textarea>
+          <textarea name="question" cols="60" rows="17"></textarea>
         </label>
       </form>
     </section>
