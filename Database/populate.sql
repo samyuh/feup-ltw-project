@@ -1,11 +1,11 @@
-INSERT INTO User VALUES(1,'Ric Fazeres','uiiiii');
-INSERT INTO User VALUES(2,'Hugo Guimaraes','hello world');
-INSERT INTO User VALUES(3,'Digo Samuel Fernandes','samuel gambit');
-INSERT INTO User VALUES(4,'Beatriz Mendes','ziniwhini');
-INSERT INTO User VALUES(5,'Paulo Ribeiro','sporting campeao');
-INSERT INTO User VALUES(6,'Jorge Jesus','oitchentcha e otcho');
-INSERT INTO User VALUES(7,'Marcelo Rebelo de Sousa','pastel de nata');
-INSERT INTO User VALUES(8,'Eduardo Brito','tenhaides calma');
+INSERT INTO User VALUES(1,'RicFazeres','af6ec24d846f72b20a6be15a366b4b07a9ac102a'); --uiiiii
+INSERT INTO User VALUES(2,'ProGengi','6adfb183a4a2c94a2f92dab5ade762a47889a5a1'); --helloworld
+INSERT INTO User VALUES(3,'Samuh','873043d57c880afac43754226654d5cf6879ecd6'); --samuelgambit
+INSERT INTO User VALUES(4,'BeatrizMendes','18eaa94ea977b3becef6ce4d67ca81ebf5c439a2'); -- ziniwhini
+INSERT INTO User VALUES(5,'PauloRibeiro','d84f57b8f68c539d2b237d5a4cd0bd7f8aa1618b'); -- sportingcampeao
+INSERT INTO User VALUES(6,'JorgeJesus','f2aec321e4b511db7c261b1c8f7bcddb64169760'); -- oitchentchaeotcho
+INSERT INTO User VALUES(7,'MarceloRebelo de Sousa','31ea1e43e44bcbc55da98a52fe10eeb52e92b047'); -- nataabc
+INSERT INTO User VALUES(8,'EduardoBrito','b7e875a6815b70b24921219cccc45358ecdcf920'); -- tenhaides calma
 
 
 INSERT INTO Pet VALUES(1,'Carlitos','dog','male','medium','brown');
