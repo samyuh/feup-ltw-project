@@ -1,11 +1,8 @@
   <section id="register">
     <h1>Register</h1>
-    <form>
+    <form action="action_register.php" method="post">
       <label>
         Username <input type="text" name="username">
-      </label>
-      <label>
-        E-mail <input type="email" name="email">
       </label>
       <label>
         Password <input type="password" name="password">
