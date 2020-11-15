@@ -19,10 +19,13 @@
         </div>
         <?php } else { ?>
         <div id="Profile">
-          <h1><?= $_SESSION['username']?></h1>
+          <a href=""><?= $_SESSION['username']?></a>
         </div>
-        <div id="search">
-          <a href="../../action_logout.php">Logout</a>
+        <div id="Update">
+          <a href="">Update Profile</a>
+        </div>
+        <div id="Logout">
+          <a href="action_logout.php">Logout</a>
         </div>
         <?php } ?>
       
