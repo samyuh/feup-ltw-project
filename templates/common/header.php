@@ -21,8 +21,22 @@
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
-      <div id="signup">
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>   
-      </div>
+      <?php 
+      if (!array_key_exists('username', $_SESSION) || empty($_SESSION['username'])) {
+        ?>
+        <div id="signup">
+          <a href="../../register.php">Register</a>
+          <a href="../../login.php">Login</a>
+        </div>
+        <?php } else { ?>
+        <div id="Profile">
+          <a href=""><?= $_SESSION['username']?></a>
+        </div>
+        <div id="Update">
+          <a href="">Update Profile</a>
+        </div>
+        <div id="Logout">
+          <a href="action_logout.php">Logout</a>
+        </div>
+        <?php } ?>  
     </header>
