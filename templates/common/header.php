@@ -16,8 +16,8 @@
   <body>
     <header>
       <div id="name_slogan">
-        <h1><a href="list_news.php">Pet Shelter</a></h1>
-        <h2><a href="list_news.php">Get your little animal right here, right now!</a></h2>
+        <h1><a href="index.php">Pet Shelter</a></h1>
+        <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
       </div>
       <div id="search">
         <form action="/index.php">
@@ -34,10 +34,10 @@
         </div>
         <?php } else { ?>
         <div id="Profile">
-          <a href=""><?= $_SESSION['username']?></a>
+          <a href="profile.php"><?= $_SESSION['username']?></a>
         </div>
         <div id="Update">
-          <a href="">Update Profile</a>
+          <a href="profile.php">Update Profile</a>
         </div>
         <div id="Logout">
           <a href="action_logout.php">Logout</a>
