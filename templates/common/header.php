@@ -4,10 +4,8 @@
     <title>Pet Shelter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../css/layout.css" rel="stylesheet">
-    <link href="../../css/profile.css" rel="stylesheet">
-    <link href="../../css/header.css" rel="stylesheet">
-    <link href="../../css/footer.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/dogInformation.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
@@ -23,8 +21,22 @@
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
-      <div id="signup">
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>   
-      </div>
+      <?php 
+      if (!array_key_exists('username', $_SESSION) || empty($_SESSION['username'])) {
+        ?>
+        <div id="signup">
+          <a href="../../register.php">Register</a>
+          <a href="../../login.php">Login</a>
+        </div>
+        <?php } else { ?>
+        <div id="Profile">
+          <a href=""><?= $_SESSION['username']?></a>
+        </div>
+        <div id="Update">
+          <a href="">Update Profile</a>
+        </div>
+        <div id="Logout">
+          <a href="action_logout.php">Logout</a>
+        </div>
+        <?php } ?>  
     </header>
