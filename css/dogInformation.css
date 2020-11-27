@@ -1,0 +1,82 @@
+body > div{
+    display: flex;
+    background-color: white;
+    width: 102.3%
+}
+body > div > section{
+    margin: 2em;
+    width: 20%;
+    color: #5d5d5d;
+
+}
+
+body > div > section > img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1%;
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+
+    
+}
+
+body > div > section > h1{
+    text-align: center;
+    margin: 0%;
+    
+}
+
+body > div > section > h2{
+    text-align: center;
+    font-size: 80%;
+    
+}
+
+body > div > article{
+    width: 40em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: 
+        "header none"
+        "list text";
+    margin: 2em;
+    padding: 0.2em;
+    border: 2px solid grey;
+    background-color: white;
+    color: #5d5d5d;
+}
+
+body > div > article > h1{
+    margin: 0;
+    color: #5d5d5d;
+    grid-area: header;
+    font-size: 170%;
+    font-weight: bold;
+    margin-left: 32px;
+}
+
+body > div > article > h1:before{
+    content: '- ';
+    font-size: 170%;
+}
+
+body > div > article > ul {
+    grid-area: list;
+    padding: 0 2em 1em 2em;
+    margin: 0;
+}
+
+body > div > article > ul > li{
+    list-style-type: none;
+    border-bottom: 1.5px solid grey;
+}
+
+body > div > article > aside {
+    text-align: justify;
+    grid-area: text;
+    padding-right: 0.5em;
+
+}
