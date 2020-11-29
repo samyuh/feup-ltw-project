@@ -2,7 +2,7 @@
     function getAllDogs() {
         global $db;
 
-        $stmt = $db->prepare('SELECT petName FROM Pet ');
+        $stmt = $db->prepare('SELECT * FROM Pet ');
         $stmt->execute();
 
         return $stmt->fetchAll();

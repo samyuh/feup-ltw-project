@@ -1,11 +1,47 @@
-<section id="Pet">
-  <?php foreach($articles as $article) { ?>
+<section id="homepage">
   <article>
-    <h1><?=$article['petName']?></h1>
-    <p class="intro">Sed convallis libero sed euismod iaculis. Mauris ac dui eget ante pharetra semper. In posuere, orci nec hendrerit interdum, nulla felis ornare elit, in fringilla nulla orci ut turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec eget massa sed purus dictum aliquam vel a nulla. Curabitur sed enim ex. Aliquam id semper erat. Nulla facilisi. </p>
-    <img src="http://lorempixel.com/400/200/animals" alt="">
+  <section id="homepage">
+  <div class="profileGrid">
+  <?php
+    $column = 1;
+    foreach($articles as $article) {
+      if ($column == 1){
+        $column = 2;
+         ?>
+  
+    <section id="profile">
+      <div class="image">
+        <img src="./images/dog.JPG" width="200" height="200" alt="">
+      </div>
+      <div class="info">
+        <p><b><?=$article['petName']?></b></p>
+        <p>Raça: <?=$article['specie']?></p>
+        <p>Idade: </p>
+        <p>Tamanho:  <?=$article['size']?></p>
+        <p>Cor:  <?=$article['color']?></p>
+        <p>Localização:  </p>
+      </div>
+    </section>
+      <?php } else { 
+        $column = 1;?>
+    <section id="profile">
+      <div class="image">
+        <img src="./images/dog.JPG" width="200" height="200" alt="">
+      </div>
+      <div class="info">
+        <p><b><?=$article['petName']?></b></p>
+        <p>Raça: <?=$article['specie']?></p>
+        <p>Idade: </p>
+        <p>Tamanho:  <?=$article['size']?></p>
+        <p>Cor:  <?=$article['color']?></p>
+        <p>Localização:  </p>
+      </div>
+    </section>
+  <?php }} ?>
+  </div>
+  </section>
   </article>
-  <?php } ?>
+  
 </section>
 
 
