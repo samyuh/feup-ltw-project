@@ -21,7 +21,7 @@
         <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
       </div>
       <div id="search">
-        <form action="/index.php">
+        <form action="/index.php" method="post">
           <input type="text" placeholder="Procurar" name="search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>

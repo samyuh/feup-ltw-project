@@ -3,7 +3,9 @@
   include_once('database/connection.php');
   include_once('database/dogs.php');
 
-  $articles = getAllDogs();
+
+  //$articles = getAllDogs();
+  $articles = getDogsByName($_POST["search"]);
 
   include_once('templates/common/header.php');
   include_once('templates/home/homepage.php');
