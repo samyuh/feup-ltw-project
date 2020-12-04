@@ -9,6 +9,9 @@ DROP TABLE IF EXISTS User;
 CREATE TABLE User (
   idUser        INTEGER                            PRIMARY KEY,
   username      VARCHAR(255)                       NOT NULL,
+  gender        VARCHAR(255) NOT NULL,
+  age           VARCHAR(255) NOT NULL,
+  location      VARCHAR(255) NOT NULL,
   password      VARCHAR(255)                       NOT NULL
 );
 

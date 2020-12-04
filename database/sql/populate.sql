@@ -1,11 +1,6 @@
-INSERT INTO User VALUES(1,'RicFazeres','af6ec24d846f72b20a6be15a366b4b07a9ac102a'); --uiiiii
-INSERT INTO User VALUES(2,'ProGengi','6adfb183a4a2c94a2f92dab5ade762a47889a5a1'); --helloworld
-INSERT INTO User VALUES(3,'Samuh','873043d57c880afac43754226654d5cf6879ecd6'); --samuelgambit
-INSERT INTO User VALUES(4,'BeatrizMendes','18eaa94ea977b3becef6ce4d67ca81ebf5c439a2'); -- ziniwhini
-INSERT INTO User VALUES(5,'PauloRibeiro','d84f57b8f68c539d2b237d5a4cd0bd7f8aa1618b'); -- sportingcampeao
-INSERT INTO User VALUES(6,'JorgeJesus','f2aec321e4b511db7c261b1c8f7bcddb64169760'); -- oitchentchaeotcho
-INSERT INTO User VALUES(7,'MarceloRebelo de Sousa','31ea1e43e44bcbc55da98a52fe10eeb52e92b047'); -- nataabc
-INSERT INTO User VALUES(8,'EduardoBrito','b7e875a6815b70b24921219cccc45358ecdcf920'); -- tenhaides calma
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(1, 'zini', 'f', '10', 'porto', '410114109270c8ffe4af1706adcad6e29c421f4d'); --queen
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(2, 'progengi', 'm', '10', 'porto', 'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d'); --hello
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(3, 'Samuh', 'm', '10', 'porto', 'cdb3fff2b74393b87188f6844b47c500fe5c9a12'); --gambit
 
 
 INSERT INTO Pet VALUES(1,'Carlitos','dog','male','medium','brown');

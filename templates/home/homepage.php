@@ -1,7 +1,23 @@
-<section id="Pet">
-  <article>
-    <h1>Pet Name</h1>
-    <p class="intro">Sed convallis libero sed euismod iaculis. Mauris ac dui eget ante pharetra semper. In posuere, orci nec hendrerit interdum, nulla felis ornare elit, in fringilla nulla orci ut turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec eget massa sed purus dictum aliquam vel a nulla. Curabitur sed enim ex. Aliquam id semper erat. Nulla facilisi. </p>
-    <img src="http://lorempixel.com/400/200/animals" alt="">
-  </article>
+<section id="homepage">
+  
+  <?php
+    foreach($articles as $article) {?>
+    <article>
+    <section id="profile">
+      <div class="image">
+        <img src="./images/dog.JPG" width="200" height="200" alt="">
+      </div>
+      <div class="info">
+        <p><a href=dog_profile.php?idPet=<?=$article['idPet']?>><?=$article['petName']?></a></p>
+        <p>Raça: <?=$article['specie']?></p>
+        <p>Idade: </p>
+        <p>Tamanho:  <?=$article['size']?></p>
+        <p>Cor:  <?=$article['color']?></p>
+        <p>Localização:  </p>
+      </div>
+    </section>
+    </article>
+  <?php } ?>
 </section>
+
+
