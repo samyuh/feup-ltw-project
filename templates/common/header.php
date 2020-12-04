@@ -27,7 +27,7 @@
         </form>
       </div>
       <?php 
-      if (!array_key_exists('username', $_SESSION) || empty($_SESSION['username'])) {
+      if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
         ?>
         <div id="signup">
           <a href="../../register.php">Register</a>
@@ -35,7 +35,7 @@
         </div>
         <?php } else { ?>
         <div id="Profile">
-          <a href="profile.php"><?= $_SESSION['username']?></a>
+          <a href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
         </div>
         <div id="Update">
           <a href="update.php">Update Profile</a>

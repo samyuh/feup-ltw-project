@@ -1,7 +1,7 @@
 <?php
   session_start();
   include_once('database/connection.php');
-  include_once('database/dogs.php');
+  include_once('database/pets.php');
 
   $articles = getAllDogs();
 

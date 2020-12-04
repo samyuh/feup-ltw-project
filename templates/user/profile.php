@@ -7,15 +7,15 @@
       <img src="../images/random_image.JPG" width="200" height="200" alt="">
     </div>
     <div class="name">
-      <h1>Owner</h1>
+      <h1><?=$user['username']?></h1>
     </div>
   </div>
   <div class="infoGrid">
     <section id="information">
       <h2>Informação</h2>
-      <p>Género: </p>
-      <p>Idade: </p>
-      <p>Localização: </p>
+      <p>Género: <?=$user['gender']?></p>
+      <p>Idade: <?=$user['age']?></p>
+      <p>Localização: <?=$user['location']?></p>
       <p>Animal Favorito: </p>
     </section>
     <section id="favPets">

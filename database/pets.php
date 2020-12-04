@@ -15,7 +15,8 @@
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         
         $stmt->execute();
-        $pet = $stmt->fetch();
-        return $pet;
+        $user = $stmt->fetch();
+
+        return $user;
       }
 ?>

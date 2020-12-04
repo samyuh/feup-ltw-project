@@ -1,11 +1,8 @@
 <section id="homepage">
-  <article>
-  <section id="homepage">
-  <div class="profileGrid">
-  <?php
-    $column = 1;
-    foreach($articles as $article) {?>
   
+  <?php
+    foreach($articles as $article) {?>
+    <article>
     <section id="profile">
       <div class="image">
         <img src="./images/dog.JPG" width="200" height="200" alt="">
@@ -19,10 +16,8 @@
         <p>Localização:  </p>
       </div>
     </section>
+    </article>
   <?php } ?>
-  </div>
-  </section>
-  </article>
 </section>
 
 
