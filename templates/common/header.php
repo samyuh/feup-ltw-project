@@ -38,7 +38,7 @@
           <a href="profile.php"><?= $_SESSION['username']?></a>
         </div>
         <div id="Update">
-          <a href="profile.php">Update Profile</a>
+          <a href="update.php">Update Profile</a>
         </div>
         <div id="Logout">
           <a href="action_logout.php">Logout</a>

@@ -7,4 +7,15 @@
 
         return $stmt->fetchAll();
     }
+
+    function getPet($id){
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM Pet WHERE idPet = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        
+        $stmt->execute();
+        $pet = $stmt->fetch();
+        return $pet;
+      }
 ?>

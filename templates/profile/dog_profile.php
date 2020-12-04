@@ -10,16 +10,16 @@
       <img src="../images/dog.JPG" width="200" height="200" alt="">
     </div>
     <div class="name">
-      <h1>Dog</h1>
+      <h1><?=$pet['petName']?></h1>
     </div>
   </div>
   <div class="infoGrid">
     <section id="information">
-      <h2>Informação</h2>
-      <p>Raça: </p>
-      <p>Idade: </p>
-      <p>Tamanho: </p>
-      <p>Cor: </p>
+      <h2>Informação </h2>
+      <p>Raça: <?=$pet['specie']?></p>
+      <p>Genero: <?=$pet['gender']?></p>
+      <p>Tamanho: <?=$pet['size']?></p>
+      <p>Cor: <?=$pet['color']?></p>
       <p>Localização: </p>
     </section>
     <section id="photos">
