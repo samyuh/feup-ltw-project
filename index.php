@@ -7,6 +7,9 @@
   //$articles = getAllDogs();
   $articles = getDogsByName($_POST["search"]);
 
+  
+  //$articles = getDogsBySize($_POST["search"]);
+
   include_once('templates/common/header.php');
   include_once('templates/home/homepage.php');
   include_once('templates/common/footer.php');
