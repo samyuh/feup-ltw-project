@@ -5,10 +5,10 @@
 
 
   //$articles = getAllDogs();
-  $articles = getDogsByName($_POST["search"]);
 
-  
-  //$articles = getDogsBySize($_POST["search"]);
+  $petName = isset($_POST["search"]) ? $_POST["search"] : '';
+
+  $articles = getDogsByName($petName);
 
   include_once('templates/common/header.php');
   include_once('templates/home/homepage.php');
