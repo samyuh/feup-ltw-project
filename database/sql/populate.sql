@@ -14,14 +14,7 @@ INSERT INTO Pet VALUES(8,'Minie','dog','female','small','light brown');
 INSERT INTO Pet VALUES(9,'Mickey','dog','male','small','dark bown');
 INSERT INTO Pet VALUES(10,'Blitz','dog','male','small','black');
 
-
-INSERT INTO UserLookingPet VALUES(5,1);
-INSERT INTO UserLookingPet VALUES(5,2);
-INSERT INTO UserLookingPet VALUES(6,3);
-INSERT INTO UserLookingPet VALUES(6,4);
-INSERT INTO UserLookingPet VALUES(7,5);
-INSERT INTO UserLookingPet VALUES(8,6);
-INSERT INTO UserLookingPet VALUES(8,7);
+INSERT INTO UserAdoptedPet VALUES(1, 5);
 
 INSERT INTO UserFoundPet VALUES(1,1,'cool dog');
 INSERT INTO UserFoundPet VALUES(1,2,'likes to play football');
