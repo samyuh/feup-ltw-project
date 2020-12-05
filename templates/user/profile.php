@@ -27,14 +27,6 @@
     <section id="petsForAdoption">
       <h2>Animais para Adoção</h2>
     </section>
-    <section id="question">
-      <h2>Faz Uma Pergunta!</h2>
-      <form>
-        <label>
-          <textarea name="question" cols="60" rows="17"></textarea>
-        </label>
-      </form>
-    </section>
     <section id="adopted">
       <h2>Adopted Pets!</h2>
       <?php foreach($adoptPets as $fav2) {?>

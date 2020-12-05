@@ -20,38 +20,10 @@
         return $user;
       }
 
-      function isAdopted($id) {
-        global $db;
-        
-        $stmt = $db->prepare('SELECT * FROM UserAdoptedPet WHERE idPet = ?');
-        $stmt->execute(array($id));
-        $stmt->execute();
-        $pet = $stmt->fetch();
-
-        if(empty($pet)) {
-            return FALSE;
-        }
-        else {
-            return TRUE;
-        }
-      }
-
       function getFavoritePets($user) {
         global $db;
         
         $stmt = $db->prepare('SELECT * FROM Pet, FavoritePet WHERE idUser = ? and Pet.idPet = FavoritePet.idPet');
-        
-        $stmt->execute(array($user['idUser']));
-        $petsID = $stmt->fetchAll();
-
-
-        return $petsID;
-    }
-
-    function getAdoptPets($user) {
-        global $db;
-        
-        $stmt = $db->prepare('SELECT * FROM Pet, UserAdoptedPet WHERE idUser = ? and Pet.idPet = UserAdoptedPet.idPet');
         
         $stmt->execute(array($user['idUser']));
         $petsID = $stmt->fetchAll();
@@ -75,7 +47,7 @@
         }
     }
 
-    function updateAdopt($user, $idPet) {
+    function updateFavoriteList($user, $idPet) {
         global $db;
         
         $stmt = $db->prepare('SELECT * FROM FavoritePet WHERE idUser = ? and idPet = ?');
