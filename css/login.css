@@ -1,12 +1,12 @@
+body{
+    margin: 0 auto;
+}
+
 .hero-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-}
-
-body{
-    margin: 0 auto;
 }
 
 
@@ -54,7 +54,7 @@ body{
     position: absolute;
     top: 25%;
     left: 10%;
-    padding: 5em;
+    padding: 3em;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -78,12 +78,19 @@ input[type=submit]{
     border: 1px solid #008080;
     background-color: #008080;
     color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
 }
 
 .submit{
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 .submit_register{
-    padding-top: 2em;
+    padding-top: 0.5em;
 }
