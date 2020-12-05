@@ -29,7 +29,16 @@
         <input type="submit" value="Remove from Favorite">
       </form>
     </section>
-    <?php } } ?>
+    <?php }?>
+    <section id="question">
+      <h2>Ask a Question</h2>
+    </section>
+    <section id="adoption-propose">
+      <form action="action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="submit" value="Adopt this pet">
+      </form>
+    </section>
+    <?php } ?>
     <section id="information">
       <h2>Informação </h2>
       <p>Raça: <?=$pet['specie']?></p>

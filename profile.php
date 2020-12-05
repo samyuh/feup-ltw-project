@@ -6,6 +6,7 @@
   
   $user = getUser($_GET['user']);
   $userPets = getFavoritePets($user);
+  $adoptPets = getAdoptPets($user);
   
   include_once('templates/common/header.php');
   include_once('templates/user/profile.php');

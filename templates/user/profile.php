@@ -35,5 +35,11 @@
         </label>
       </form>
     </section>
+    <section id="adopted">
+      <h2>Adopted Pets!</h2>
+      <?php foreach($adoptPets as $fav2) {?>
+        <p><a href=dog_profile.php?idPet=<?=$fav2['idPet']?>><?=$fav2['petName']?></a></p>
+      <?php } ?>
+    </section>
   </div>  
 </section>

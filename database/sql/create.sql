@@ -25,8 +25,8 @@ CREATE TABLE Pet (
     color       VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS UserLookingPet;
-CREATE TABLE UserLookingPet (
+DROP TABLE IF EXISTS UserAdoptedPet;
+CREATE TABLE UserAdoptedPet (
   idUser                   INTEGER                 REFERENCES User(idUser),
   idPet                    INTEGER                 REFERENCES Pet(idPet),
   PRIMARY KEY(idUser,idPet)
