@@ -8,7 +8,7 @@
   }
   else {
     $user = $_SESSION['user'];
-    updateFavoriteList($user, $_GET['idPet']);
+    updateAdoptList($user, $_GET['idPet']);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
