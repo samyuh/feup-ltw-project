@@ -7,6 +7,7 @@
     top: 20%;
     left: 17%;
     margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+    padding-bottom: 3em;
 }
 
 #homepage_profile {
