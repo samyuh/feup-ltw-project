@@ -29,16 +29,27 @@
         <input type="submit" value="Remove from Favorite">
       </form>
     </section>
-    <?php }?>
-    <section id="question">
-      <h2>Ask a Question</h2>
-    </section>
+    <?php } ?>
+  <?php if(!isAdopted($pet['idPet'])) {?>
     <section id="adoption-propose">
       <form action="action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
         <input type="submit" value="Adopt this pet">
       </form>
     </section>
-    <?php } ?>
+    <?php } } ?>
+
+    <section id="question">
+    <h2>Ask a Question</h2>
+      <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
+      <form action="action_add_question.php?idPet=<?=$pet['idPet']?>" method="post">
+        Question: <input type="text" name="question">
+        <input type="submit" value="Ask!">
+      </form>
+      <?php } ?>
+      <?php foreach($questions as $qst) {?>
+        <p><?=$qst['info']?></p>
+      <?php } ?>
+    </section>
     <section id="information">
       <h2>Informação </h2>
       <p>Raça: <?=$pet['specie']?></p>

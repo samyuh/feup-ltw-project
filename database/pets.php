@@ -20,6 +20,22 @@
         return $user;
       }
 
+      function isAdopted($id) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM UserAdoptedPet WHERE idPet = ?');
+        $stmt->execute(array($id));
+        $stmt->execute();
+        $pet = $stmt->fetch();
+
+        if(empty($pet)) {
+            return FALSE;
+        }
+        else {
+            return TRUE;
+        }
+      }
+
       function getFavoritePets($user) {
         global $db;
         
