@@ -31,4 +31,19 @@
 
         return $petsID;
     }
+
+    function isFavorited($user, $idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM FavoritePet WHERE idUser = ? and idPet = ?');
+        
+        $stmt->execute(array($user['idUser'], $idPet));
+        $petsID = $stmt->fetchAll();
+        if(empty($petsID)) {
+            return TRUE;
+        } 
+        else {
+            return FALSE;
+        }
+    }
 ?>

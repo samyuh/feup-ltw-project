@@ -14,6 +14,22 @@
     </div>
   </div>
   <div class="infoGrid">
+  <?php
+  if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+    if(isFavorited($_SESSION['user'], $pet['idPet'])) {
+    ?>
+    <section id="favorite">
+      <form action="action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="submit" value="Favorite">
+      </form>
+    </section>
+    <?php } else {?>
+    <section id="remove">
+      <form action="action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="submit" value="Remove from favorite list">
+      </form>
+    </section>
+    <?php } } ?>
     <section id="information">
       <h2>Informação </h2>
       <p>Raça: <?=$pet['specie']?></p>
