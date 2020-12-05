@@ -20,28 +20,36 @@
         <h1><a href="index.php">Pet Shelter</a></h1>
         <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
       </div>
-      <div id="search">
-        <form action="/index.php">
-          <input type="text" placeholder="Procurar" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+      <div id="rightside">
+        <div id="search">
+          <form action="/index.php">
+            <input type="text" placeholder="Procurar" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <div id="settings">
+          <?php 
+          if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
+            ?>
+            <div id="signup">
+              <a href="../../register.php">Register</a>
+              <a href="../../login.php">Login</a>
+            </div>
+            <?php } else { ?>
+            <div id="signedin">
+              <div id="Profile">
+                <a href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
+              </div>
+              <div id="dropdown">
+                <div id="Update">
+                  <a href="update.php">Update Profile</a>
+                </div>
+                <div id="Logout">
+                  <a href="action_logout.php">Logout</a>
+                </div>
+              </div>
+            </div>
+            <?php } ?> 
+        </div> 
       </div>
-      <?php 
-      if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
-        ?>
-        <div id="signup">
-          <a href="../../register.php">Register</a>
-          <a href="../../login.php">Login</a>
-        </div>
-        <?php } else { ?>
-        <div id="Profile">
-          <a href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
-        </div>
-        <div id="Update">
-          <a href="update.php">Update Profile</a>
-        </div>
-        <div id="Logout">
-          <a href="action_logout.php">Logout</a>
-        </div>
-        <?php } ?>  
     </header>
