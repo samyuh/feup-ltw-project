@@ -27,23 +27,23 @@ CREATE TABLE Pet (
 
 DROP TABLE IF EXISTS UserLookingPet;
 CREATE TABLE UserLookingPet (
-  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
+  idUser                   INTEGER                 REFERENCES User(idUser),
   idPet                    INTEGER                 REFERENCES Pet(idPet),
   PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS UserFoundPet;
 CREATE TABLE UserFoundPet (
-  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
-  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
+  idUser                   INTEGER                 REFERENCES User(idUser),
+  idPet                    INTEGER                 REFERENCES Pet(idPet),
   info                     VARCHAR(255),
   PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS FavoritePet;
 CREATE TABLE FavoritePet (
-    idUser         INTEGER                         REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
-    idPet          INTEGER                         REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
+    idUser         INTEGER                         REFERENCES User(idUser),
+    idPet          INTEGER                         REFERENCES Pet(idPet),
     PRIMARY KEY(idUser, idPet)
 );
 

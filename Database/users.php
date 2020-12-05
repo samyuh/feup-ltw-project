@@ -14,20 +14,26 @@
         else return FALSE;
     }
 
-    function insert($id, $username, $password) {
+    function insert($username, $gender, $age, $location, $password) {
         global $db;
 
+        $stmt = $db->prepare('INSERT INTO User(username, gender, age, location, password) VALUES (?, ?, ?, ?, ?)');
+        
         $hashed_password = sha1($password);
+        $stmt->execute(array($username, $gender, $age, $location, $hashed_password));
 
-        $stmt = $db->prepare('INSERT INTO User(username, password) VALUES (?, ?)');
-        $stmt->execute(array($username, $hashed_password));
+        if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
     }
 
     function getUser($user) {
         global $db;
         
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');
-        //$stmt->bindParam(':user', $user, PDO::PARAM_INT);
+        $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');;
         
         $stmt->execute(array($user));
         $user_profile = $stmt->fetch();
@@ -71,5 +77,24 @@
             return TRUE;
         }
         else return FALSE;
+      }
+
+      function updateFavoriteList($user, $idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM FavoritePet WHERE idUser = ? and idPet = ?');
+        
+        $stmt->execute(array($user['idUser'], $idPet));
+        $petsID = $stmt->fetchAll();
+        if(empty($petsID)) {
+            $stmt = $db->prepare('INSERT INTO FavoritePet VALUES (?, ?)');
+            $stmt->execute(array($user['idUser'], $idPet));
+            print('add');
+        }
+        else {
+            $stmt = $db->prepare('DELETE FROM FavoritePet WHERE idUser = ? and idPet = ?');
+            $stmt->execute(array($user['idUser'], $idPet));
+            print('del');
+        }
       }
 ?>
