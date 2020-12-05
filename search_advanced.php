@@ -1,22 +1,24 @@
+<fieldset id="advanced_search">
+    <legend>Avanced search</legend>
 
-
-
-<section id="advanced search">
-
-    <div id="name search">
-        <p>Avanced search</p>
+    <div id="name_search">
+        
         <form action="/search.php" method="post">
-          <p>Insert Name 
+          <p>Insert Name: 
             <input type="text" name="nameSearch">
           </p>
-          <p>Insert Species 
-            <input type="text" name="speciesSearch">
+          <p>Insert Species:
+            <input type="radio" name="speciesSearch" value="dog"> Dog
+            <input type="radio" name="speciesSearch" value="cat"> Cat
           </p>
-          <p>Insert Gender 
-            <input type="text" name="genderSearch">
+          <p>Insert Gender:
+            <input type="radio" name="genderSearch" value="male"> Male
+            <input type="radio" name="genderSearch" value="female"> Female
           </p>
-          <p>Insert Size 
-            <input type="text" name="sizeSearch">
+          <p>Insert Size:
+            <input type="radio" name="sizeSearch" value="small"> Small
+            <input type="radio" name="sizeSearch" value="medium"> Medium
+            <input type="radio" name="sizeSearch" value="large"> Large
           </p>
           <p>Insert Color 
             <input type="text" name="colorSearch">
@@ -25,10 +27,6 @@
         </form>
     </div>
 
-
-   
-        
-    
-</section>
+</fieldset>
 
 

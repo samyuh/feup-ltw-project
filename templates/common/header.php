@@ -11,6 +11,7 @@
     <link href="../../css/dog-profile.css" rel="stylesheet">
     <link href="../../css/dogInformation.css" rel="stylesheet">
     <link href="../../css/home-page.css" rel="stylesheet">
+    <link href="../../css/search_advanced.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>

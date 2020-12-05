@@ -1,6 +1,5 @@
 <section id="displayPets">
   <article>
-  <section id="displayPets">
   <div class="profileGrid">
   <?php
     $column = 1;
@@ -21,6 +20,6 @@
     </section>
   <?php } ?>
   </div>
-  </section>
+
   </article>
 </section>

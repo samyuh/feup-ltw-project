@@ -3,7 +3,7 @@
   include_once('database/connection.php');
   include_once('database/dogs.php');
 
-  //$articles = getAllPets();
+ 
   
 
   $nameSearch = isset($_POST["nameSearch"]) ? $_POST["nameSearch"] : '';
@@ -16,10 +16,9 @@
 
   $colorSearch = isset($_POST["colorSearch"]) ? $_POST["colorSearch"] : '';
 
-
-
   $articles = getPetsByAll($nameSearch,$speciesSearch,$genderSearch,$sizeSearch,$colorSearch);
   
+  //$articles = getAllPets();
 
 
   include_once('templates/common/header.php');
