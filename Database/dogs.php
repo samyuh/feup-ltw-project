@@ -1,11 +1,19 @@
 <?php
-    function getAllDogs() {
+    function getAllPets() {
         global $db;
 
         $stmt = $db->prepare('SELECT * FROM Pet ');
         $stmt->execute();
 
         return $stmt->fetchAll();
+    }
+
+    function getAllDogs() {
+        return getDogsBySpecie('dog');
+    }
+
+    function getAllCats() {
+        return getDogsBySpecie('cat');
     }
 
     function getPet($id){
@@ -19,7 +27,7 @@
         return $pet;
       }
 
-    function getDogsByName($name) {
+    function getPetsByName($name) {
         global $db;
         $name2 = "%$name%";
         $stmt = $db->prepare('SELECT * FROM Pet WHERE petName LIKE :petN');
@@ -30,7 +38,7 @@
     }
 
 
-    function getDogsBySpecie($specie) {
+    function getPetsBySpecie($specie) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM Pet WHERE specie = :specie');
         $stmt->bindParam(':petN', $specie, PDO::PARAM_STR);
@@ -40,7 +48,7 @@
     }
 
 
-    function getDogsByGender($gender) {
+    function getPetsByGender($gender) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM Pet WHERE gender = :gender');
         $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
@@ -49,7 +57,7 @@
         return $stmt->fetchAll();
     }
 
-    function getDogsBySize($size) {
+    function gePetsBySize($size) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM Pet WHERE size = :size');
         $stmt->bindParam(':size', $size, PDO::PARAM_STR);
@@ -59,7 +67,7 @@
     }
 
 
-    function getDogsByColor($color) {
+    function getPetsByColor($color) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM Pet WHERE color = :petN');
         $stmt->bindParam(':petN', $color, PDO::PARAM_STR);
@@ -68,7 +76,7 @@
         return $stmt->fetchAll();
     }
 
-    function getDogsByParameter($parameter,$val) {
+    function getPetsByParameter($parameter,$val) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM Pet WHERE :parameter = :val');
         $stmt->bindParam(':parameter', $parameter, PDO::PARAM_STR);
@@ -78,7 +86,7 @@
         return $stmt->fetchAll();
     }
 
-    function getDogsByAll($name,$specie,$gender,$size,$color){
+    function getPetsByAll($name,$specie,$gender,$size,$color){
         global $db;
 
         $name2 = "%$name%";

@@ -8,7 +8,7 @@
 
   $petName = isset($_POST["search"]) ? $_POST["search"] : '';
 
-  $articles = getDogsByName($petName);
+  $articles = getPetsByName($petName);
 
   include_once('templates/common/header.php');
   include_once('templates/home/homepage.php');
