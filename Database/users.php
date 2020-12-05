@@ -14,13 +14,20 @@
         else return FALSE;
     }
 
-    function insert($id, $username, $password) {
+    function insert($username, $gender, $age, $location, $password) {
         global $db;
 
+        $stmt = $db->prepare('INSERT INTO User(username, gender, age, location, password) VALUES (?, ?, ?, ?, ?)');
+        
         $hashed_password = sha1($password);
+        $stmt->execute(array($username, $gender, $age, $location, $hashed_password));
 
-        $stmt = $db->prepare('INSERT INTO User(username, password) VALUES (?, ?)');
-        $stmt->execute(array($username, $hashed_password));
+        if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
     }
 
     function getUser($user) {

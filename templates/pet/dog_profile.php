@@ -26,7 +26,7 @@
     <?php } else {?>
     <section id="remove">
       <form action="action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-        <input type="submit" value="Remove from favorite list">
+        <input type="submit" value="Remove from Favorite">
       </form>
     </section>
     <?php } } ?>
