@@ -20,7 +20,9 @@
     </section>
     <section id="favPets">
       <h2>Animais Favoritos</h2>
-      <p>TODO</p>
+      <?php foreach($userPets as $fav) {?>
+        <p><a href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
+      <?php } ?>
     </section>
     <section id="petsForAdoption">
       <h2>Animais para Adoção</h2>

@@ -19,4 +19,16 @@
 
         return $user;
       }
+
+      function getFavoritePets($user) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM Pet, FavoritePet WHERE idUser = ? and Pet.idPet = FavoritePet.idPet');
+        
+        $stmt->execute(array($user['idUser']));
+        $petsID = $stmt->fetchAll();
+
+
+        return $petsID;
+    }
 ?>

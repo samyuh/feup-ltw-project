@@ -26,8 +26,7 @@
     function getUser($user) {
         global $db;
         
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');
-        //$stmt->bindParam(':user', $user, PDO::PARAM_INT);
+        $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');;
         
         $stmt->execute(array($user));
         $user_profile = $stmt->fetch();
