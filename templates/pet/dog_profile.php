@@ -30,13 +30,23 @@
       </form>
     </section>
     <?php } ?>
-  <?php if(!isAdopted($pet['idPet'])) {?>
+  <?php if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet'])) {?>
     <section id="adoption-propose">
       <form action="action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
         <input type="submit" value="Adopt this pet">
       </form>
     </section>
-    <?php } } ?>
+    <?php } ?>
+
+    <?php 
+      if(isOwner($_SESSION['user'], $pet['idPet'])) {
+    ?>
+    <section id="update">
+        <p><a href=dog_update.php?idPet=<?=$pet['idPet']?>>Update Pet Info</a></p>
+    </section> 
+    <?php } ?>
+  
+    <?php } ?>
 
     <section id="question">
     <h2>Ask a Question</h2>
@@ -50,17 +60,15 @@
         <p><?=$qst['info']?></p>
       <?php } ?>
     </section>
-    <section id="update">
-        <p><a href=dog_update.php?idPet=<?=$pet['idPet']?>>Update Pet Info</a></p>
-      </section>
+    
     <section id="information">
       <h2>Informação </h2>
         <p><a href=dog_info.php?idPet=<?=$pet['idPet']?>>More Info</a></p>
-      <p>Raça: <?=$pet['specie']?></p>
-      <p>Genero: <?=$pet['gender']?></p>
-      <p>Tamanho: <?=$pet['size']?></p>
-      <p>Cor: <?=$pet['color']?></p>
-      <p>Localização: </p>
+        <p>Raça: <?=$pet['specie']?></p>
+        <p>Genero: <?=$pet['gender']?></p>
+        <p>Tamanho: <?=$pet['size']?></p>
+        <p>Cor: <?=$pet['color']?></p>
+        <p>Localização: </p>
     </section>
     <section id="photos">
       <h2>Fotos</h2>
@@ -68,6 +76,18 @@
     <section id="description">
       <h2>Descrição</h2>
       <p> Descrição </p>
+    </section>
+    <section id="posts">
+      <h2>Posts</h2>
+      <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+      <form action="action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
+        Question: <input type="text" name="post">
+        <input type="submit" value="Post!">
+      </form>
+      <?php } ?>
+      <?php foreach($posts as $post) {?>
+        <p><?=$post['POST']?></p>
+      <?php } ?>
     </section>
   </div>  
 </section>

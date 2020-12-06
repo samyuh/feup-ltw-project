@@ -23,7 +23,6 @@ CREATE TABLE Pet (
     gender      VARCHAR(255),
     size        VARCHAR(255),
     color       VARCHAR(255)
-    info        VARCHAR(255),
 );
 
 DROP TABLE IF EXISTS PetQuestion;
@@ -52,5 +51,12 @@ CREATE TABLE FavoritePet (
     idUser         INTEGER                         REFERENCES User(idUser),
     idPet          INTEGER                         REFERENCES Pet(idPet),
     PRIMARY KEY(idUser, idPet)
+);
+
+DROP TABLE IF EXISTS PostsPet;
+CREATE TABLE PostsPet (
+    id         INTEGER                  PRIMARY KEY,
+    idPet          INTEGER              REFERENCES Pet(idPet),
+    POST VARCHAR(255)
 );
 

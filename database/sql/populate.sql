@@ -16,16 +16,16 @@ INSERT INTO Pet VALUES(10,'Blitz','dog','male','small','black');
 
 INSERT INTO UserAdoptedPet VALUES(1, 5);
 
-INSERT INTO UserFoundPet VALUES(1,1,'cool dog');
-INSERT INTO UserFoundPet VALUES(1,2,'likes to play football');
-INSERT INTO UserFoundPet VALUES(1,3,'likes warm places');
-INSERT INTO UserFoundPet VALUES(2,4,'likes to cuddle');
-INSERT INTO UserFoundPet VALUES(2,5,'big but friendly');
-INSERT INTO UserFoundPet VALUES(2,6,'very fluffy');
-INSERT INTO UserFoundPet VALUES(3,7,'very calm');
-INSERT INTO UserFoundPet VALUES(3,8,'big but friendly');
-INSERT INTO UserFoundPet VALUES(4,9,'very fluffy');
-INSERT INTO UserFoundPet VALUES(4,10,'fast and energetic');
+INSERT INTO UserFoundPet VALUES(1,1);
+INSERT INTO UserFoundPet VALUES(1,2);
+INSERT INTO UserFoundPet VALUES(1,3);
+INSERT INTO UserFoundPet VALUES(2,4);
+INSERT INTO UserFoundPet VALUES(2,5);
+INSERT INTO UserFoundPet VALUES(2,6);
+INSERT INTO UserFoundPet VALUES(3,7);
+INSERT INTO UserFoundPet VALUES(3,8);
+INSERT INTO UserFoundPet VALUES(4,9);
+INSERT INTO UserFoundPet VALUES(4,10);
 
 
 INSERT INTO FavoritePet VALUES(1,1);

@@ -39,12 +39,71 @@
         
         $stmt->execute(array($user['idUser'], $idPet));
         $petsID = $stmt->fetchAll();
+
         if(empty($petsID)) {
             return TRUE;
         } 
         else {
             return FALSE;
         }
+    }
+
+    function getPosts($idPet) {
+        global $db;
+
+        $stmt = $db->prepare('SELECT * FROM PostsPet WHERE idPet = ?');
+        
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetchAll();
+
+        return $petsID;
+    }
+
+    function isOwner($user, $idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM UserFoundPet WHERE idUser = ? and idPet = ?');
+        
+        $stmt->execute(array($user['idUser'], $idPet));
+        $petsID = $stmt->fetchAll();
+        if(empty($petsID)) {
+            return FALSE;
+        } 
+        else {
+            return TRUE;
+        }
+    }
+
+    function addPost($idPet, $question) {
+        global $db;
+        
+        $stmt = $db->prepare('INSERT INTO PostsPet(idPet, POST) VALUES (?, ?)');
+        $stmt->execute(array($idPet, $question));
+    }
+
+    function deletePost($idPost) {
+        global $db;
+        
+        $stmt = $db->prepare('DELETE FROM PostsPet WHERE id = ?');
+        $stmt->execute(array($idPost));
+    }
+
+    function updatePost($idPost, $info) {
+        global $db;
+        
+        $stmt = $db->prepare('UPDATE PostsPet SET POST = ? WHERE id = ?');
+        $stmt->execute(array($info, $idPost));  
+    }
+
+    function getAllOwner($user) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM Pet, UserFoundPet WHERE idUser = ? and Pet.idPet = UserFoundPet.idPet');
+        
+        $stmt->execute(array($user['idUser']));
+        $petsID = $stmt->fetchAll();
+        
+        return $petsID;
     }
 
     function updateFavoriteList($user, $idPet) {
