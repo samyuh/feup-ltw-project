@@ -1,6 +1,6 @@
 <section id="login">
   <div class="hero-image">
-    <img src="../images/family-dog.jpeg" width="1920" height="950">
+    <img src="../images/family-dog.jpeg" alt="">
   </div>
   <div class="name_slogan">
     <h1><a href="index.php">Pet Shelter</a></h1>

@@ -3,11 +3,10 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     column-gap: 2em;
-    position: absolute;
-    top: 20%;
-    left: 17%;
-    margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+    position: relative;
     padding-bottom: 3em;
+    padding-left: 3em;
+    padding-top: 3em;
 }
 
 #homepage_profile {
@@ -18,6 +17,8 @@
 #homepage_profile .image {
     display: block;
     padding-top: 0;
+    height: 19em;
+    width: 19em;
 }
 
 .overlay {
@@ -26,8 +27,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 300px;
-    width: 300px;
+    height: 19em;
+    width: 19em;
     opacity: 0;
     transition: .5s ease-out;
     background-color: black;
@@ -47,13 +48,13 @@
     transform: translate(-50%, -50%);
 }
 
-#homepage_profile a{
+#homepage_profile a {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 1em;
     color: black;
 }
 
-#homepage_profile a:hover{
+#homepage_profile a:hover {
     animation: pink_and_blue 3s infinite;
 }
 

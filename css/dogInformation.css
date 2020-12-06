@@ -7,7 +7,6 @@ body > div > section{
     margin: 2em;
     width: 20%;
     color: #5d5d5d;
-
 }
 
 body > div > section > img{
@@ -28,8 +27,7 @@ body > div > section > h1{
 
 body > div > section > h2{
     text-align: center;
-    font-size: 80%;
-    
+    font-size: 80%;  
 }
 
 body > div > article{

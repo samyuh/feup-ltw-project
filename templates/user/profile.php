@@ -1,10 +1,10 @@
 <section id="owner">
   <div class="profileHeader">
     <div class="header">
-      <img src="../images/header.png" width="1920" height="200" alt="">
+      <img src="../images/header.png" alt="">
     </div>
     <div class="image">
-      <img src="../images/random_image.JPG" width="200" height="200" alt="">
+      <img src="../images/random_image.JPG" alt="">
     </div>
     <div class="name">
       <h1><?=$user['username']?></h1>

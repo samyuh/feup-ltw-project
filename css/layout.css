@@ -4,14 +4,12 @@ body {
   min-height: 100%;
   display: grid;
   grid-template-columns: [start] 4fr [middle] 1fr [end];
-  grid-template-rows: [start] auto [nav] auto [news] 1fr [footer] auto [end];
+  grid-template-rows: [start] auto [nav] auto [news] auto [footer] auto [end];
 }
 
 body > header {
   grid-column: start / end;
 }
-
-
 
 /* Profile Layout */
 #owner{
@@ -23,7 +21,6 @@ body > header {
 }
 
 .image{
-
   padding-top:6em;
 }
 
