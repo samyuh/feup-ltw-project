@@ -50,8 +50,12 @@
         <p><?=$qst['info']?></p>
       <?php } ?>
     </section>
+    <section id="update">
+        <p><a href=dog_update.php?idPet=<?=$pet['idPet']?>>Update Pet Info</a></p>
+      </section>
     <section id="information">
       <h2>Informação </h2>
+        <p><a href=dog_info.php?idPet=<?=$pet['idPet']?>>More Info</a></p>
       <p>Raça: <?=$pet['specie']?></p>
       <p>Genero: <?=$pet['gender']?></p>
       <p>Tamanho: <?=$pet['size']?></p>

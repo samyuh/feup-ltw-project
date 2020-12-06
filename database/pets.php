@@ -65,4 +65,13 @@
             print('del');
         }
       }
+      
+    function updatePet($idPet, $npetName, $nspecie, $ngender, $nsize, $ncolor) {
+        global $db;
+        
+        $stmt = $db->prepare('UPDATE Pet SET petName = ?, specie = ?, gender = ?, size = ?, color = ? WHERE idPet = ?');
+
+        $hashed_new_password = sha1($new_password);
+        $stmt->execute(array( $npetName, $nspecie, $ngender, $nsize, $ncolor, $idPet));  
+    }
 ?>
