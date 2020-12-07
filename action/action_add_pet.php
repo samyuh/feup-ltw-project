@@ -8,5 +8,5 @@
   $user = $_SESSION['user'];
   addPet($user, $_POST['npetName'], $_POST['nspecie'], $_POST['ngender'], $_POST['nsize'], $_POST['ncolor']);
 
-  //header('Location : ../index.php');
+  header('Location : ../index.php');
 ?>
