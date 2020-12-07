@@ -7,7 +7,36 @@
 #intro{
     padding-bottom: 2em;   
     padding-top: 2em; 
-    width: 100%
+    width: start/end;
+    text-align: center;
+}
+
+#intro h1{
+    font-size: xx-large;
+    margin-bottom: 0.5em;
+}
+
+#intro h2{
+    font-size: medium;
+    font-style: normal;
+}
+#intro #found-pet{
+   padding-top: 1em;
+}
+
+#intro #found-pet a{
+    text-decoration: none;
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 1em;
+}
+
+#intro #found-pet a:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
 }
 
 #dogs_information{
