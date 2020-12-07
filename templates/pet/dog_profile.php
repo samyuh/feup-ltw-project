@@ -2,7 +2,6 @@
   <div class="profileHeader">
     <div class="header">
         <svg width="1920" height="210">
-            
             <rect width="1920" height="210" style="fill:rgb(255,223,211)" />
         </svg> 
     </div>
@@ -10,25 +9,24 @@
       <img src="../images/dog.JPG" width="200" height="200" alt="">
     </div>
 
-    <?php
-    if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
-      if(isFavorited($_SESSION['user'], $pet['idPet'])) {
-    ?>
-    <section id="favorite">
-      <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-        <input type="submit" value="Favorite">
-      </form>
-    </section>
-    <?php } else {?>
-    <section id="remove">
-      <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-        <input type="submit" value="Remove from Favorite">
-      </form>
-    </section>
-    <?php } } ?>
-
-    <div class="name">
+    <div class="name_and_favorite">
       <h1><?=$pet['petName']?></h1>
+      <?php
+      if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+        if(isFavorited($_SESSION['user'], $pet['idPet'])) {
+      ?>
+      <section id="favorite">
+        <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+          <button type="submit"><i class="fa fa-star"></i></button>
+        </form>
+      </section>
+      <?php } else {?>
+      <section id="remove">
+        <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+        <button type="submit"><i class="fa fa-star-o"></i></button>
+        </form>
+      </section>
+      <?php } } ?>
     </div>
   </div>
   <div class="infoGrid">
@@ -51,15 +49,6 @@
         <?php } } ?>
     </section>
 
-    <?php 
-    if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
-      if(isOwner($_SESSION['user'], $pet['idPet'])) {
-    ?>
-    <section id="update">
-        <p><a href=dog_update.php?idPet=<?=$pet['idPet']?>>Update Pet Info</a></p>
-    </section> 
-    <?php } } ?>
-
     <section id="question">
     <h2>Ask a Question</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
@@ -73,13 +62,28 @@
       <?php } ?>
     </section>
     
-    <section id="information">
-      <h2>Informação </h2>
-        <p><a href=dog_info.php?idPet=<?=$pet['idPet']?>>More Info</a></p>
-        <p>Raça: <?=$pet['specie']?></p>
-        <p>Genero: <?=$pet['gender']?></p>
-        <p>Tamanho: <?=$pet['size']?></p>
-        <p>Cor: <?=$pet['color']?></p>
+    <section id="information_pet">
+      
+      <section id="information_and_update">
+        <h2>Information</h2>
+        <?php 
+        if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+          if(isOwner($_SESSION['user'], $pet['idPet'])) {
+        ?>
+        <form action="dog_update.php?idPet=<?=$pet['idPet']?>" method="post">
+          <button type="submit"><i class="fa fa-pencil"></i></button>
+        </form>
+        <?php } } ?>
+        <section id="moreinfo">
+          <form action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
+            <button type="submit"><i class="fa fa-plus"></i></button>
+          </form>
+        </section>
+      </section>
+        <p>Species: <?=$pet['specie']?></p>
+        <p>Gender: <?=$pet['gender']?></p>
+        <p>Size: <?=$pet['size']?></p>
+        <p>Color: <?=$pet['color']?></p>
         <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=$owner['username']?></a></p>
       <?php if(!empty($adopted)) { ?>
         <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?=$adopted['username']?></a></p>
@@ -89,12 +93,13 @@
     </section>
 
     <section id="photos">
-      <h2>Fotos</h2>
+      
+      <h2>Photos</h2>
     </section>
 
     <section id="description">
-      <h2>Descrição</h2>
-      <p> Descrição </p>
+      <h2>Description</h2>
+      <p> Description </p>
     </section>
 
     <section id="posts">

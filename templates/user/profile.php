@@ -13,21 +13,21 @@
     </div>
   </div>
   <div class="infoGrid">
-    <section id="information">
-      <h2>Informação</h2>
-      <p>Género: <?=$user['gender']?></p>
-      <p>Idade: <?=$user['age']?></p>
-      <p>Localização: <?=$user['location']?></p>
-      <p>Animal Favorito: </p>
+    <section id="information_person">
+      <h2>Information</h2>
+      <p>Gender: <?=$user['gender']?></p>
+      <p>Age: <?=$user['age']?></p>
+      <p>Location: <?=$user['location']?></p>
+      <p>Favorite Animal: </p>
     </section>
     <section id="favPets">
-      <h2>Animais Favoritos</h2>
+      <h2>Animais Pets</h2>
       <?php foreach($userPets as $fav) {?>
         <p><a href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
       <?php } ?>
     </section>
     <section id="petsForAdoption">
-      <h2>Animais para Adoção</h2>
+      <h2>Pets for Adoption</h2>
       <?php foreach($toAdoptPets as $fav3) {?>
         <p><a href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
       <?php } ?>

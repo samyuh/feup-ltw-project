@@ -46,7 +46,14 @@ body > header {
   grid-gap: 2em;
 }
 
-.infoGrid #information{
+.infoGrid #information_person{
+  text-align: left;
+  grid-row: 1;
+  grid-column: 1;
+  padding: 1em;
+}
+
+.infoGrid #information_pet{
   text-align: left;
   grid-row: 1;
   grid-column: 1;
@@ -82,6 +89,10 @@ body > header {
   grid-row-start: 1;
   grid-row-end: 3;
   padding: 1em;
+}
+
+#dog{
+  grid-column: start/end;
 }
 
 footer{

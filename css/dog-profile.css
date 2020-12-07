@@ -1,6 +1,26 @@
 #dog{
-    width: 120em;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.infoGrid #information_pet{
+    border-style: solid;
+    border-width: 2px;
+}
+  
+.infoGrid #information_pet #information_and_update{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.infoGrid #information_pet #information_and_update #moreinfo{
+  margin-left: auto;
+}
+  
+.infoGrid #information_pet p{
+border-bottom: solid;
+padding-bottom: 5px;
+border-width: 1px;
 }
 
 .infoGrid #photos{
@@ -11,4 +31,24 @@
 .infoGrid #description{
     border-style: solid;
     border-width: 2px;
+}
+
+.name_and_favorite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button[type=submit]{
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: large;
+}
+.name_and_favorite button[type=submit]{
+    color: orange;
+}
+button[type=submit]:hover{
+    cursor: pointer;
 }
