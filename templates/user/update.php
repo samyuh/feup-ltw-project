@@ -1,25 +1,27 @@
 <section id="update">
-    <h1>Update Username</h1>
-    <form action="action_update_username.php" method="post">
-      <label>
-        New Username <input type="text" name="new_username">
-      </label>
-      <label>
-        Actual Password <input type="password" name="password">
-      </label>
-      <input type="submit" value="update">
+    <form class="changeUsername" action="../../action/action_update_username.php" method="post">
+      <h1>Update Username</h1>  
+      <div id="usernameinputs">
+        <label>
+          <input type="text" name="new_username" placeholder="New Username">
+        </label>
+        <label>
+          <input type="password" name="password" placeholder="Current Password">
+        </label>
+      </div>
+      <input type="submit" value="Update Username">
     </form>
-    <h1>Update Password</h1>
-    <form action="action_update_password.php" method="post">
+    <form class="changePassword" action="../../action/action_update_password.php" method="post">  
+      <h1>Update Password</h1>
       <label>
-        New Password <input type="text" name="new_password">
+        <input type="text" name="new_password" placeholder="New Password">
       </label>
       <label>
-        Confirm New Password <input type="password" name="confirm_password">
+        <input type="password" name="confirm_password" placeholder="Confirm New Password">
       </label>
       <label>
-        Actual Password <input type="password" name="password">
+        <input type="password" name="password"  placeholder="Current Password">
       </label>
-      <input type="submit" value="update">
+      <input type="submit" value="Update Password">
     </form>
   </section>

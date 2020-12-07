@@ -26,6 +26,9 @@
     </section>
     <section id="petsForAdoption">
       <h2>Animais para Adoção</h2>
+      <?php foreach($toAdoptPets as $fav3) {?>
+        <p><a href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
+      <?php } ?>
     </section>
     <section id="adopted">
       <h2>Adopted Pets!</h2>
