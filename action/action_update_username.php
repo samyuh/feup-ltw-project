@@ -8,9 +8,9 @@
 
   if(updateUsername($user, $new_name, $_POST['password'])) {
     $_SESSION['user']['username'] = $new_name; 
-    header('Location: index.php');
+    header('Location: ../index.php');
   }
   else {
-    header('Location: update.php');
+    header('Location: ../update.php');
   }
 ?>

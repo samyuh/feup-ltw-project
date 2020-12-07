@@ -7,9 +7,9 @@
     $user = userExists($_POST['username'], $_POST['password']);
     $_SESSION['user'] = $user;
 
-    header('Location: index.php');
+    header('Location: ../index.php');
   }
   else {
-    header('Location: login.php');
+    header('Location: ../login.php');
   }
 ?>

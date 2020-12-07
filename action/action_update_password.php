@@ -9,9 +9,9 @@
   if(updatePassword($user, $new_password, $_POST['password'])) {
     $hashed_new_password = sha1($new_password);
     $_SESSION['user']['password'] = $hashed_new_password; 
-    header('Location: index.php');
+    header('Location: ../index.php');
   }
   else {
-    header('Location: update.php');
+    header('Location: ../update.php');
   }
 ?>

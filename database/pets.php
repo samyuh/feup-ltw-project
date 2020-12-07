@@ -20,6 +20,20 @@
         return $user;
       }
 
+      function addPet($user, $name, $race, $gender, $size, $color) {
+        global $db;
+        
+        $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute(array($name, $race, $gender, $size, $color));
+
+        $idPet = $db->lastInsertId();
+        print($idPet);
+        $stmt2 = $db->prepare('INSERT INTO UserFoundPet VALUES (?, ?)');
+        $stmt2->execute(array($user['idUser'], $idPet));
+
+        return TRUE;
+      }
+
       function getFavoritePets($user) {
         global $db;
         
