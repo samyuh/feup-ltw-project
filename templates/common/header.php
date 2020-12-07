@@ -46,7 +46,7 @@
                   <a href="update.php">Update Profile</a>
                 </div>
                 <div id="Logout">
-                  <a href="action_logout.php">Logout</a>
+                  <a href="../../action/action_logout.php">Logout</a>
                 </div>
               </div>
             </div>

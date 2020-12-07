@@ -27,9 +27,16 @@ CREATE TABLE Pet (
 
 DROP TABLE IF EXISTS PetQuestion;
 CREATE TABLE PetQuestion (
-  idQuestion               INTEGER PRIMARY KEY,
+  idQuestion               INTEGER                 PRIMARY KEY,
   idPet                    INTEGER                 REFERENCES Pet(idPet),
   info VARCHAR(255) 
+);
+
+DROP TABLE IF EXISTS AdoptionProposal;
+CREATE TABLE AdoptionProposal (
+  idUser                   INTEGER                 REFERENCES User(idUser),
+  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS UserAdoptedPet;

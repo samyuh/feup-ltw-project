@@ -1,6 +1,6 @@
 <section id="update">
 <h1>Update Pet Info</h1>
-<form action="action_update_dog.php?idPet=<?=$pet['idPet']?>" method="post">
+<form action="../../action/action_update_dog.php?idPet=<?=$pet['idPet']?>" method="post">
     <label>Update Name <input type="text" name="npetName" value="<?=$pet['petName']?>"></label>
     <label>Update Specie <input type="text" name="nspecie" value="<?=$pet['specie']?>"></label>
     <label>Update Gender <input type="text" name="ngender" value="<?=$pet['gender']?>"></label>
@@ -14,7 +14,7 @@
             <label>Update Name <input type="text" name="post" value="<?=$post['POST']?>"></label>
             <input type="submit" value="Update Post">
         </form>
-        <p><a href=action_dog_delete_post.php?id=<?=$post['id']?>>Delete Post</a></p>
+        <p><a href=../../action/action_dog_delete_post.php?id=<?=$post['id']?>>Delete Post</a></p>
       <?php } ?>
 </section>
 

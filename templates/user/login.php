@@ -8,7 +8,7 @@
   </div>
   <div class="container_forms">
     <div class="login_forms">
-      <form action="/action_login.php" method="post">
+      <form action="../../action/action_login.php" method="post">
         <div class="username">
           <label>
             <input type="text" name="username" placeholder="Username">
@@ -25,7 +25,7 @@
       </form>
     </div>
     <div class="register_form">
-      <form action="../register.php" method="post">
+      <form action="../../action/register.php" method="post">
         <div class="submit_register">
           <input type="submit" value="Create New Account">
         </div>

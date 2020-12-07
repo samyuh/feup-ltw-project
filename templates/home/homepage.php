@@ -18,6 +18,16 @@
     </section>
     </article>
   <?php } ?>
+  
+  <?php
+    if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+    ?>
+  <section id="found-pet">
+    <p><a href=add_pet.php>Add a Pet!</a></p>
+  </section>
+  <?php
+    }
+  ?>
 </section>
 
 

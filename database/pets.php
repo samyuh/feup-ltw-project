@@ -20,6 +20,20 @@
         return $user;
       }
 
+      function addPet($user, $name, $race, $gender, $size, $color) {
+        global $db;
+        
+        $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute(array($name, $race, $gender, $size, $color));
+
+        $idPet = $db->lastInsertId();
+        print($idPet);
+        $stmt2 = $db->prepare('INSERT INTO UserFoundPet VALUES (?, ?)');
+        $stmt2->execute(array($user['idUser'], $idPet));
+
+        return TRUE;
+      }
+
       function getFavoritePets($user) {
         global $db;
         
@@ -103,6 +117,28 @@
         $stmt->execute(array($user['idUser']));
         $petsID = $stmt->fetchAll();
         
+        return $petsID;
+    }
+
+    function getPetOwner($idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserFoundPet WHERE UserFoundPet.idPet = ? and User.idUser = UserFoundPet.idUser');
+        
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetch();
+
+        return $petsID;
+    }
+
+    function getPetAdopted($idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserAdoptedPet WHERE UserAdoptedPet.idPet = ? and User.idUser = UserAdoptedPet.idUser');
+        
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetch();
+
         return $petsID;
     }
 
