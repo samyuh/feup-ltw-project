@@ -13,9 +13,8 @@ body > header {
 
 /* Profile Layout */
 #owner{
-  width: 100%;
+  grid-column: start/end;
 }
-
 .header{
   position: absolute;
 }
@@ -70,6 +69,14 @@ body > header {
 }
 
 .infoGrid #question{
+  text-align: left;
+  grid-column: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 1em;
+}
+
+.infoGrid #adopted{
   text-align: left;
   grid-column: 3;
   grid-row-start: 1;

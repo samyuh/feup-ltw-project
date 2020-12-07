@@ -1,5 +1,4 @@
 #owner{
-    width: 120em;
     font-family: Arial, Helvetica, sans-serif;
 }
   
@@ -24,7 +23,7 @@
   border-width: 2px;
 }
 
-.infoGrid #question{
+.infoGrid #adopted{
   border-style: solid;
   border-width: 2px;
 }
