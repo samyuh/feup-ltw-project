@@ -1,14 +1,12 @@
 
 if(document.getElementById('register') != undefined){
-    document.getElementById('registerButton').addEventListener("click",validation);
+    document.getElementById('registerButton').addEventListener("click",validateRegistration);
 }
 
-
-
 //This function validates the username, if it doesnt work a message is raised
-function validation(e){
+function validateRegistration(e){
     //e.preventDefault();
-    let form = document.getElementById("register");
+    let form = document.getElementById("registerForm");
 
     username = form.querySelector('input[name="username"]').value;
     gender = form.querySelector('input[name="gender"]').value;
@@ -33,8 +31,6 @@ function validation(e){
     }else if(!regexPassword.test(password)){
         alert("Invalid password!!");
     }else{
-        form.submit;
-    }
-
-    
+        form.submit();
+    } 
 }

@@ -1,12 +1,12 @@
 <section id="login">
     <h1>Login</h1>
-    <form action="action_login.php" method="post">
+    <form id="loginForm" action="action_login.php" method="post">
       <label>
         Username <input type="text" name="username">
       </label>
       <label>
         Password <input type="password" name="password">
       </label>
-      <input type="submit" value="Login">
+      <input id="loginButton" type="submit" value="Login">
     </form>
 </section>
