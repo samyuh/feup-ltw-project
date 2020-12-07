@@ -4,7 +4,6 @@
   include_once('database/dogs.php');
 
  
-  
 
   $nameSearch = isset($_POST["nameSearch"]) ? $_POST["nameSearch"] : '';
 
