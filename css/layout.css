@@ -3,8 +3,8 @@ body {
   width: 100%;
   min-height: 100%;
   display: grid;
-  grid-template-columns: [start] 4fr [middle] 1fr [end];
-  grid-template-rows: [start] auto [nav] auto [news] auto [footer] auto [end];
+  grid-template-columns: [start] auto [middle] auto[end];
+  
 }
 
 body > header {
@@ -13,7 +13,7 @@ body > header {
 
 /* Profile Layout */
 #owner{
-  width: 120em;
+  width: 100%;
 }
 
 .header{

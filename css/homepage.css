@@ -1,14 +1,20 @@
 #homepage{
     font-family: Arial, Helvetica, sans-serif;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 2em;
-    position: relative;
     padding-bottom: 3em;
-    padding-left: 3em;
-    padding-top: 3em;
+    grid-column: start/end;
 }
 
+#intro{
+    padding-bottom: 2em;   
+    padding-top: 2em; 
+    width: 100%
+}
+
+#dogs_information{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+}
 #homepage_profile {
     position: relative;
     text-align: center;
@@ -19,14 +25,24 @@
     padding-top: 0;
     height: 19em;
     width: 19em;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+}
+
+#homepage_profile p {
+    text-align: center;
 }
 
 .overlay {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
     right: 0;
+    left: 0;
+    top: 0;
+    bottom: 10;
+    margin: auto auto;
     height: 19em;
     width: 19em;
     opacity: 0;
