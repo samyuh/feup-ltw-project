@@ -30,10 +30,11 @@
       </form>
     </section>
     <?php } ?>
-  <?php if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet'])) {?>
+
+    <?php if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
     <section id="adoption-propose">
-      <form action="action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
-        <input type="submit" value="Adopt this pet">
+      <form action="action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="submit" value="Propose to adopt this pet!">
       </form>
     </section>
     <?php } ?>
@@ -87,6 +88,22 @@
       <?php } ?>
       <?php foreach($posts as $post) {?>
         <p><?=$post['POST']?></p>
+      <?php } ?>
+    </section>
+    <section id="proposals">
+        <h1>Proposals</h1>
+        <?php foreach($proposals as $prop) {?>
+          <p><?=$prop['idUser']?></p>
+          <?php if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+          <p><a href="action_adopt.php?idPet=<?=$pet['idPet']?>">Accept this proprosal</a></p>
+        <?php } } ?>
+    </section>
+    <section id="found-adopted">
+      <h1>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=$owner['username']?></a></h1>
+      <?php if(!empty($adopted)) { ?>
+        <h1>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?=$adopted['username']?></a></h1>
+      <?php } else { ?>
+        <h1>Not adopted yet!</h1>
       <?php } ?>
     </section>
   </div>  

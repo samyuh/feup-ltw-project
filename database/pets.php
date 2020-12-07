@@ -106,6 +106,28 @@
         return $petsID;
     }
 
+    function getPetOwner($idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserFoundPet WHERE UserFoundPet.idPet = ? and User.idUser = UserFoundPet.idUser');
+        
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetch();
+
+        return $petsID;
+    }
+
+    function getPetAdopted($idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserAdoptedPet WHERE UserAdoptedPet.idPet = ? and User.idUser = UserAdoptedPet.idUser');
+        
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetch();
+
+        return $petsID;
+    }
+
     function updateFavoriteList($user, $idPet) {
         global $db;
         

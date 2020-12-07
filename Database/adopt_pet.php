@@ -64,6 +64,48 @@
         }
       }
 
+      function isProposed($idUser, $idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idUser = ? and idPet = ?');
+        $stmt->execute(array($idUser, $idPet));
+        $pet = $stmt->fetch();
+
+        if(empty($pet)) {
+            return FALSE;
+        }
+        else {
+            return TRUE;
+        }
+      }
+
+      function updateAdoptionProposal($user, $idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
+        $stmt->execute(array($user['idUser'], $idPet));
+        $petsID = $stmt->fetchAll();
+        if(empty($petsID)) {
+            $stmt = $db->prepare('INSERT INTO AdoptionProposal VALUES (?, ?)');
+            $stmt->execute(array($user['idUser'], $idPet));
+            print('add');
+        }
+        else {
+            
+        }
+      }
+
+      function getAdoptionProposalList($idPet) {
+        global $db;
+
+        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idPet = ?');
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetchAll();
+
+        return $petsID;
+
+      }
+
       function updateAdoptList($user, $idPet) {
         global $db;
         
