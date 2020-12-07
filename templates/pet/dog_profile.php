@@ -30,40 +30,8 @@
     </div>
   </div>
   <div class="infoGrid">
-    <?php  
-    if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
-      if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
-    <section id="adoption-propose">
-      <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
-        <input type="submit" value="Propose to adopt this pet!">
-      </form>
-    </section>
-    <?php } } ?>
 
-    <section id="proposals">
-        <h1>Proposals</h1>
-        <?php foreach($proposals as $prop) {?>
-          <p><?=$prop['idUser']?></p>
-          <?php if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-          <p><a href="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>">Accept this proprosal</a></p>
-        <?php } } ?>
-    </section>
-
-    <section id="question">
-    <h2>Ask a Question</h2>
-      <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
-      <form action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>" method="post">
-        Question: <input type="text" name="question">
-        <input type="submit" value="Ask!">
-      </form>
-      <?php } ?>
-      <?php foreach($questions as $qst) {?>
-        <p><?=$qst['info']?></p>
-      <?php } ?>
-    </section>
-    
     <section id="information_pet">
-      
       <section id="information_and_update">
         <h2>Information</h2>
         <?php 
@@ -92,26 +60,55 @@
       <?php } ?>
     </section>
 
-    <section id="photos">
-      
-      <h2>Photos</h2>
-    </section>
-
-    <section id="description">
-      <h2>Description</h2>
-      <p> Description </p>
+    <section id="proposals">
+        <h2>Adoption Proposals</h2>
+        <?php foreach($proposals as $prop) {?>
+          <section id="uniqueproposal">
+            <p><?=$prop['idUser']?></p>
+            <?php if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+            <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
+              <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
+            </form>
+          </section>
+        <?php } } ?>
+        <?php  
+        if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+          if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
+        <section id="adoption-propose">
+          <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
+            <input type="submit" value="Propose to adopt this pet!">
+          </form>
+        </section>
+        <?php } } ?>
     </section>
 
     <section id="posts">
       <h2>Posts</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-      <form action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
-        Question: <input type="text" name="post">
-        <input type="submit" value="Post!">
+      <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="text" name="post">
+        <input type="submit" value="Post">
       </form>
       <?php } ?>
       <?php foreach($posts as $post) {?>
-        <p><?=$post['POST']?></p>
+        <section id="uniquepost"/>
+          <p><?=$post['POST']?></p>
+        </section>
+      <?php } ?>
+    </section>
+
+    <section id="question">
+      <h2>Ask a Question</h2>
+      <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
+      <form class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="text" name="question">
+        <input type="submit" value="Ask">
+      </form>
+      <?php } ?>
+      <?php foreach($questions as $qst) {?>
+        <section id="uniquequestion">
+          <p><?=$qst['info']?></p>
+        </section>
       <?php } ?>
     </section>
 

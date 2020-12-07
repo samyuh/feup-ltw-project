@@ -3,7 +3,7 @@ body {
   width: 100%;
   min-height: 100%;
   display: grid;
-  grid-template-columns: [start] auto [middle] auto[end];
+  grid-template-columns: [start] auto [middle]auto[end];
   
 }
 
@@ -46,28 +46,21 @@ body > header {
   grid-gap: 2em;
 }
 
-.infoGrid #information_person{
+.infoGrid #information_person, #information_pet{
   text-align: left;
   grid-row: 1;
   grid-column: 1;
   padding: 1em;
 }
 
-.infoGrid #information_pet{
-  text-align: left;
-  grid-row: 1;
-  grid-column: 1;
-  padding: 1em;
-}
-
-.infoGrid #favPets{
+.infoGrid #favPets, #proposals{
   text-align: left;
   grid-column: 1;
   grid-row: 2;
   padding: 1em;
 }
 
-.infoGrid #petsForAdoption{
+.infoGrid #petsForAdoption, #posts{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;

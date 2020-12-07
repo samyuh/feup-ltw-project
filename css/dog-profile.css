@@ -1,54 +1,154 @@
 #dog{
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 3em;
 }
 
-.infoGrid #information_pet{
+#dog .infoGrid #information_pet{
     border-style: solid;
     border-width: 2px;
 }
   
-.infoGrid #information_pet #information_and_update{
+#dog .infoGrid #information_pet #information_and_update, .infoGrid #proposals #uniqueproposal{
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.infoGrid #information_pet #information_and_update #moreinfo{
+#dog .infoGrid #proposals, #posts, #question{
+    border-style: solid;
+    border-width: 2px;
+}
+
+#dog .infoGrid #information_pet #information_and_update #moreinfo{
   margin-left: auto;
 }
   
-.infoGrid #information_pet p{
-border-bottom: solid;
-padding-bottom: 5px;
-border-width: 1px;
+#dog .infoGrid #information_pet p{
+    border-bottom: solid;
+    padding-bottom: 5px;
+    border-width: 1px;
 }
 
-.infoGrid #photos{
-    border-style: solid;
-    border-width: 2px;
-}
-
-.infoGrid #description{
-    border-style: solid;
-    border-width: 2px;
-}
-
-.name_and_favorite{
+#dog .name_and_favorite{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-button[type=submit]{
+#dog button[type=submit]{
     cursor: pointer;
     background-color: white;
     border: none;
     outline: none;
     font-size: large;
 }
-.name_and_favorite button[type=submit]{
+#dog .name_and_favorite button[type=submit]{
     color: orange;
 }
-button[type=submit]:hover{
+#dog button[type=submit]:hover{
     cursor: pointer;
+}
+
+#dog .infoGrid #proposals #uniqueproposal button[type=submit]{
+    color: green;
+}
+
+#dog .infoGrid #proposals #adoption-propose{
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+#dog .infoGrid #proposals #adoption-propose input[type=submit]{
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 1em;
+}
+
+#dog .infoGrid #proposals #adoption-propose input[type=submit]:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+#dog .infoGrid #question, #dog .infoGrid #posts{
+    display: flex;
+    flex-direction: column;
+    max-width: 31em;
+}
+
+#dog .infoGrid #question .questionform, #dog .infoGrid #posts .postsform{
+    padding-top: 1em;  
+    display: flex;
+    flex-direction: column;
+}
+
+#dog .infoGrid #question input[type=submit], 
+#dog .infoGrid #posts input[type=submit]{
+    margin-top: 1em;
+    margin-left: auto;
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 1em;
+}
+
+#dog .infoGrid #question input[type=submit]:hover,
+#dog .infoGrid #posts input[type=submit]:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+#dog .infoGrid #question input[type=text], 
+#dog .infoGrid #question #uniquequestion p{
+    position: relative;
+    border: none;
+	background-color: rgb(197, 235, 223);
+	padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+ 
+#dog .infoGrid #question input[type=text]::before,
+#dog .infoGrid #question #uniquequestion p::before{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: -0.6em;
+	left: 22em;
+	border: .75rem solid transparent;
+	border-bottom: none;
+    border-top-color: rgb(197, 235, 223);
+    box-shadow:	rgba(0, 0, 0, .3);
+}
+
+#dog .infoGrid #posts input[type=text],
+#dog .infoGrid #posts #uniquepost p {
+    position: relative;
+    border: none;
+	background-color: rgb(182, 236, 240);
+	padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+#dog .infoGrid #posts input[type=text]::before,
+#dog .infoGrid #posts #uniquepost p::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 100%;
+	left: 1.5em;
+	border: .75rem solid transparent;
+	border-top: none;
+	border-bottom-color: rgb(182, 236, 240);
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }

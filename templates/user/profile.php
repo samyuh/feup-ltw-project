@@ -21,7 +21,7 @@
       <p>Favorite Animal: </p>
     </section>
     <section id="favPets">
-      <h2>Animais Pets</h2>
+      <h2>Favorite Pets</h2>
       <?php foreach($userPets as $fav) {?>
         <p><a href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
       <?php } ?>
