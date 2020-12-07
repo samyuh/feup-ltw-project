@@ -1,5 +1,5 @@
 <section id="update">
-    <form class="changeUsername" action="action_update_username.php" method="post">
+    <form class="changeUsername" action="../../action/action_update_username.php" method="post">
       <h1>Update Username</h1>  
       <div id="usernameinputs">
         <label>
@@ -11,7 +11,7 @@
       </div>
       <input type="submit" value="Update Username">
     </form>
-    <form class="changePassword" action="action_update_password.php" method="post">  
+    <form class="changePassword" action="../../action/action_update_password.php" method="post">  
       <h1>Update Password</h1>
       <label>
         <input type="text" name="new_password" placeholder="New Password">

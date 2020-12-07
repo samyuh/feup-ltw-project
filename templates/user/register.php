@@ -7,7 +7,7 @@
       <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
     </div>
     <div class="container_forms">
-      <form action="action_register.php" method="post">
+      <form action="../../action/action_register.php" method="post">
         <div class="username">
           <label>
             <input type="text" name="username" placeholder="Username">

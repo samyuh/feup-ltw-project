@@ -19,13 +19,13 @@
     if(isFavorited($_SESSION['user'], $pet['idPet'])) {
     ?>
     <section id="favorite">
-      <form action="action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+      <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
         <input type="submit" value="Favorite">
       </form>
     </section>
     <?php } else {?>
     <section id="remove">
-      <form action="action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+      <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
         <input type="submit" value="Remove from Favorite">
       </form>
     </section>
@@ -33,7 +33,7 @@
 
     <?php if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
     <section id="adoption-propose">
-      <form action="action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
+      <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
         <input type="submit" value="Propose to adopt this pet!">
       </form>
     </section>
@@ -52,7 +52,7 @@
     <section id="question">
     <h2>Ask a Question</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
-      <form action="action_add_question.php?idPet=<?=$pet['idPet']?>" method="post">
+      <form action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>" method="post">
         Question: <input type="text" name="question">
         <input type="submit" value="Ask!">
       </form>
@@ -81,7 +81,7 @@
     <section id="posts">
       <h2>Posts</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-      <form action="action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
+      <form action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
         Question: <input type="text" name="post">
         <input type="submit" value="Post!">
       </form>
@@ -95,7 +95,7 @@
         <?php foreach($proposals as $prop) {?>
           <p><?=$prop['idUser']?></p>
           <?php if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-          <p><a href="action_adopt.php?idPet=<?=$pet['idPet']?>">Accept this proprosal</a></p>
+          <p><a href="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>">Accept this proprosal</a></p>
         <?php } } ?>
     </section>
     <section id="found-adopted">

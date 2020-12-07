@@ -1,5 +1,4 @@
 <div>
-
     <section>
         <img src="templates/common/dog.jpg" alt="Failed displaying dog image">
         <h1>DogName</h1>
