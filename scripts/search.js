@@ -1,15 +1,16 @@
 'use strict';
 
-window.setInterval(refresh, 250);
-
-refresh();
-
 let form = document.getElementById('name_search');
-//let place = document.getElementById('advanced_search').parentElement;
+
 let place = document.getElementById('displayPets');
 
-//form.addEventListener('submit',sendMessage);
-document.getElementById('name_search').addEventListener('change',sendMessage);
+// Remove after including javascript in the correct place
+if(document.getElementById('name_search') != undefined){
+    console.log('here');
+    refresh();
+    window.setInterval(refresh, 250);
+    document.getElementById('name_search').addEventListener('change',sendMessage);
+}
 
 
 // Ask for new messages
