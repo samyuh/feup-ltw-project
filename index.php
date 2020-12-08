@@ -4,11 +4,11 @@
   include_once('database/pets.php');
 
 
-  //$articles = getAllDogs();
+  $articles = getAllDogs();
 
   $petName = isset($_POST["search"]) ? $_POST["search"] : '';
 
-  $articles = getPetsByName($petName);
+  //$articles = getPetsByName($petName);
 
   include_once('templates/common/header.php');
   include_once('templates/home/homepage.php');

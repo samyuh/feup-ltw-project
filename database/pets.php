@@ -20,6 +20,30 @@
         return $user;
       }
 
+      function getPetsByAll($name,$specie,$gender,$size,$color){
+        global $db;
+
+        $name2 = "%$name%";
+        $specie2 = "%$specie%";
+        $gender2 = "%$gender%";
+        $size2 = "%$size%";
+        $color2 = "%$color%";
+        $stmt = $db->prepare('SELECT * FROM Pet WHERE
+                              petName LIKE :petN
+                              AND specie LIKE :specie
+                              AND gender LIKE :gender
+                              AND size LIKE :size
+                              AND color LIKE :color');
+        $stmt->bindParam(':petN', $name2, PDO::PARAM_STR);
+        $stmt->bindParam(':specie', $specie2, PDO::PARAM_STR);
+        $stmt->bindParam(':gender', $gender2, PDO::PARAM_STR);
+        $stmt->bindParam(':size', $size2, PDO::PARAM_STR);
+        $stmt->bindParam(':color', $color2, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
       function addPet($user, $name, $race, $gender, $size, $color) {
         global $db;
         
