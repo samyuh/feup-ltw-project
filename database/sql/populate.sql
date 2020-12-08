@@ -1,7 +1,6 @@
-INSERT INTO User(idUser, username, gender, age, location, password) VALUES(1, 'zini', 'f', '10', 'porto', '410114109270c8ffe4af1706adcad6e29c421f4d'); --queen
-INSERT INTO User(idUser, username, gender, age, location, password) VALUES(2, 'progengi', 'm', '10', 'porto', 'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d'); --hello
-INSERT INTO User(idUser, username, gender, age, location, password) VALUES(3, 'Samuh', 'm', '10', 'porto', 'cdb3fff2b74393b87188f6844b47c500fe5c9a12'); --gambit
-
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(1, 'zini', 'f', '10', 'porto', 'aa2c72ff6b65436fa4e649aa049f6e476edaaa53'); --queen1
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(2, 'progengi', 'm', '10', 'porto', '88fdd585121a4ccb3d1540527aee53a77c77abb8'); --hello1
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(3, 'Samuh', 'm', '10', 'porto', 'e092c6e5aba563fc78e667360f5685764bc5642b'); --gambit1
 
 INSERT INTO Pet VALUES(1,'Carlitos','dog','male','medium','brown');
 INSERT INTO Pet VALUES(2,'Puskas','dog','male','small','yellow');
@@ -27,11 +26,9 @@ INSERT INTO UserFoundPet VALUES(3,8);
 INSERT INTO UserFoundPet VALUES(4,9);
 INSERT INTO UserFoundPet VALUES(4,10);
 
-
 INSERT INTO FavoritePet VALUES(1,1);
 INSERT INTO FavoritePet VALUES(2,2);
 INSERT INTO FavoritePet VALUES(2,3);
 INSERT INTO FavoritePet VALUES(2,4);
 INSERT INTO FavoritePet VALUES(3,3);
 INSERT INTO FavoritePet VALUES(3,4);
-INSERT INTO FavoritePet VALUES(4,5);

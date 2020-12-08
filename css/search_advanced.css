@@ -1,0 +1,25 @@
+#advanced_search{
+    display: block;
+    float: top;
+    width: 123%;
+    margin-bottom: 2em;
+    border-radius: 2em;
+    border: 5px solid grey;
+
+}
+
+#advanced_search legend{
+   font-size: larger;
+   color: rgb(41, 39, 39);
+   font-weight: 600;
+   font-style: italic;
+
+}
+
+
+
+#displayPets{
+    grid-column: start / end;
+    float: left;
+    margin: 0;
+}

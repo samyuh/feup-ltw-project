@@ -12,19 +12,19 @@
 
 | Home Page | Profile |
 | --- | --- |
-| ![Home Page](./mockups/home-page.png) | ![Profile](./mockups/profile.png) |
+| ![Home Page](./docs/mockups/home-page.png) | ![Profile](./docs/mockups/profile.png) |
 
 | Dog Profile | Dog Information |
 | --- | --- |
-| ![Dog Profile](./mockups/dog-profile.png) | ![Information](./mockups/information.png) |
+| ![Dog Profile](./docs/mockups/dog-profile.png) | ![Information](./docs/mockups/information.png) |
 
 
 |Login | Register |
 | --- | --- |
-| ![Login](./mockups/login.png) | ![Register](./mockups/Register.png) |
+| ![Login](./docs/mockups/login.png) | ![Register](./docs/mockups/Register.png) |
 
 
 ### Database UML
 
-![UML](./imgs/UML.png)
+![UML](./docs/uml/UML.png)
 

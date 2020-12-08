@@ -1,36 +1,43 @@
+'use strict';
 
-if(document.getElementById('register') != undefined){
-    document.getElementById('registerButton').addEventListener("click",validateRegistration);
+if(document.getElementById('register')) {
+    document.getElementById('registerButton').addEventListener("click", validateRegistration)
 }
 
 //This function validates the username, if it doesnt work a message is raised
-function validateRegistration(e){
-    e.preventDefault();
-    let form = document.getElementById("registerForm");
+function validateRegistration(event) {
+    event.preventDefault()
 
-    username = form.querySelector('input[name="username"]').value;
-    gender = form.querySelector('input[name="gender"]').value;
-    age = form.querySelector('input[name="age"]').value;
-    location = form.querySelector('input[name="location"]').value;
-    password = form.querySelector('input[name="password"]').value;
+    let form = document.getElementById("registerForm")
 
-    regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
-    regexGender = RegExp(/^(fe)?male$/);
-    regexAge = RegExp(/^\d$/);
-    regexLocation = RegExp(/^[a-zA-Z0-9""]+$/);
-    regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/);
+    let username = form.querySelector('input[name="username"]').value
+    let gender = form.querySelector('input[name="gender"]').value
+    let age = form.querySelector('input[name="age"]').value
+    let location = form.querySelector('input[name="location"]').value
+    let password = form.querySelector('input[name="password"]').value
 
-    if(!regex.test(username)){
-        alert("Invalid Username!!");
-    }else if(!regexGender.test(gender)){
-        alert("Invalid Gender!!");
-    }else if(!regexAge.test(age)){
-        alert("Invalid Age!!");
-    }else if(!regexLocation.test(location)){
-        alert("Invalid location!!");
-    }else if(!regexPassword.test(password)){
-        alert("Invalid password!!");
-    }else{
-        form.submit();
+    let regex = RegExp(/^[a-zA-Z0-9]+$/)  // All letters and numbers without blanck space
+    let regexGender = RegExp(/^(fe)?male$/)
+    let regexAge = RegExp(/^\d$/)
+    let regexLocation = RegExp(/^[a-zA-Z0-9""]+$/)
+    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
+
+    if(!regex.test(username)) {
+        alert("Invalid username. Use letters and numbers only.")
+    }
+    else if(!regexGender.test(gender)) {
+        alert("Invalid gender. Must be Male or Female")
+    }
+    else if(!regexAge.test(age)) {
+        alert("Invalid Age. Must be a number.")
+    }
+    else if(!regexLocation.test(location)) {
+        alert("Invalid location. Use letters, numbers and blank space only.")
+    }
+    else if(!regexPassword.test(password)) {
+        alert("Invalid password. Must contain at least a letter and a number.")
+    }
+    else {
+        form.submit()
     } 
 }
