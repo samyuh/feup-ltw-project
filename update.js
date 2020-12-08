@@ -1,5 +1,5 @@
 
-if(document.getElementById('update') != undefined){
+if(document.getElementById('updateUsername') != undefined && document.getElementById('updatePassword')){
     document.getElementById('updateUsernameButton').addEventListener("click",validateUpdateUsername);
     document.getElementById('updatePasswordButton').addEventListener("click",validateUpdatePassword);
 }

@@ -1,4 +1,4 @@
-<section id="update">
+<section id="updateUsername">
     <form id="updateUsernameForm" class="changeUsername" action="../../action/action_update_username.php" method="post">
       <h1>Update Username</h1>  
       <div id="usernameinputs">

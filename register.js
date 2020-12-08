@@ -5,7 +5,7 @@ if(document.getElementById('register') != undefined){
 
 //This function validates the username, if it doesnt work a message is raised
 function validateRegistration(e){
-    //e.preventDefault();
+    e.preventDefault();
     let form = document.getElementById("registerForm");
 
     username = form.querySelector('input[name="username"]').value;
