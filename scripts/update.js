@@ -1,6 +1,6 @@
 'use strict';
 
-if(document.getElementById('updateUsername') != undefined && document.getElementById('updatePassword')) {
+if(document.getElementById('updateUsername') && document.getElementById('updatePassword')) {
     document.getElementById('updateUsernameButton').addEventListener("click",validateUpdateUsername)
     document.getElementById('updatePasswordButton').addEventListener("click",validateUpdatePassword)
 }

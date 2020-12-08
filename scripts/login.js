@@ -1,6 +1,6 @@
 'use strict';
 
-if(document.getElementById('login') != undefined) {
+if(document.getElementById('login')) {
     document.getElementById('loginButton').addEventListener("click", validateLogin)
 }
 
@@ -9,7 +9,6 @@ function validateLogin(event) {
     event.preventDefault()
 
     let form = document.getElementById('loginForm')
-
     let username = form.querySelector('input[name="username"]').value
     let password = form.querySelector('input[name="password"]').value
 

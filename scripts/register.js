@@ -1,6 +1,6 @@
 'use strict';
 
-if(document.getElementById('register') != undefined) {
+if(document.getElementById('register')) {
     document.getElementById('registerButton').addEventListener("click", validateRegistration)
 }
 

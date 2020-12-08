@@ -5,7 +5,6 @@ let place = document.getElementById('displayPets')
 
 // Remove after including javascript in the correct place
 if(document.getElementById('name_search') != undefined) {
-    console.log('here')
     refresh()
     window.setInterval(refresh, 250)
     document.getElementById('name_search').addEventListener('change',sendMessage)
