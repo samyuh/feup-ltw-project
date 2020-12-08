@@ -23,19 +23,19 @@ function validateRegistration(event) {
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
     if(!regex.test(username)) {
-        alert("Invalid Username!!")
+        alert("Invalid username. Use letters and numbers only.")
     }
     else if(!regexGender.test(gender)) {
-        alert("Invalid Gender!!")
+        alert("Invalid gender. Must be Male or Female")
     }
     else if(!regexAge.test(age)) {
-        alert("Invalid Age!!")
+        alert("Invalid Age. Must be a number.")
     }
     else if(!regexLocation.test(location)) {
-        alert("Invalid location!!")
+        alert("Invalid location. Use letters, numbers and blank space only.")
     }
     else if(!regexPassword.test(password)) {
-        alert("Invalid password!!")
+        alert("Invalid password. Must contain at least a letter and a number.")
     }
     else {
         form.submit()

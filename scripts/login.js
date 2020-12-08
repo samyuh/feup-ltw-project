@@ -16,10 +16,10 @@ function validateLogin(event) {
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
     if(!regex.test(username)) {
-        alert("Invalid username. Use only letters and numbers.")
+        alert("Invalid username. Use letters and numbers only.")
     }
     else if(!regexPassword.test(password)) {
-        alert("Invalid password. Use only letters and numbers.")
+        alert("Invalid password. Must contain at least a letter and a number.")
     }
     else {
         form.submit()

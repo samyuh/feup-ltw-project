@@ -17,10 +17,10 @@ function validateUpdateUsername(e){
     regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
     if(!regex.test(username)) {
-        alert("Invalid Username!!")
+        alert("Invalid username. Use letters and numbers only.")
     }
     else if(!regexPassword.test(password)) {
-        alert("Invalid password!!")
+        alert("Invalid password. Must contain at least a letter and a number.")
     }
     else{
         form.submit()
@@ -41,11 +41,11 @@ function validateUpdatePassword(e){
     regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
     if(!regexPassword.test(new_password)){
-        alert("Invalid new password!!")
+        alert("Invalid new password. Must contain at least a letter and a number.")
     }else if(!regexPassword.test(confirm_password)){
-        alert("Invalid password confirmation!!")
+        alert("Invalid password confirmation. Must contain at least a letter and a number.")
     }else if(!regexPassword.test(password)){
-        alert("Invalid password!!")
+        alert("Invalid password. Must contain at least a letter and a number.")
     }else{
         form.submit()
     } 
