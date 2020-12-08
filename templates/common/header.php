@@ -12,6 +12,7 @@
     <link href="../../css/dogInformation.css" rel="stylesheet">
     <link href="../../css/homepage.css" rel="stylesheet">
     <link href="../../css/updateUser.css" rel="stylesheet">
+    <link href="../../css/updatePet.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
@@ -42,6 +43,9 @@
                 <a href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
               </div>
               <div id="dropdown">
+                <div id="Notifications">
+                <a href="">Notifications</a>
+                </div>
                 <div id="Update">
                   <a href="update.php">Update Profile</a>
                 </div>

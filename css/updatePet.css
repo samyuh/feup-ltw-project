@@ -1,0 +1,86 @@
+#pet-update{
+    grid-column: start/end;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 3em;
+}
+
+#pet-update .goback{
+    text-align: center;
+    padding: 1em;
+}
+
+#pet-update .goback button{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#pet-update #updatecontainers{
+    display: flex;    
+    column-gap: 2em;
+    top: 20%;
+    left: 21.5%;    
+    position: absolute;
+}
+
+#pet-update input, 
+#pet-update #updatecontainers .updateposts #buttonsposts button{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#pet-update input[type=text], 
+#pet-update input[type=password]{
+    border: 1px solid #ccc;
+}
+
+#pet-update input[type=submit],
+#pet-update .goback button{
+    font-size: 16px;
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#pet-update input[type=submit]:hover,
+#pet-update .goback button:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+#pet-update #updatecontainers .updatepetinfo,
+#pet-update #updatecontainers .updateposts{
+    border: 0.5px solid black;
+    padding: 1em;
+    width: 500px;
+}
+#pet-update #updatecontainers .updateposts #buttonsposts{
+    display: flex;
+}
+
+#pet-update #updatecontainers .updateposts #buttonsposts input[type=submit]{
+    width: 50%;
+}
+
+#pet-update #updatecontainers .updateposts #buttonsposts button[type=submit]{
+    width: 50%;
+    font-size: 16px;
+    border: 1px solid #bb1313;
+    background-color: #bb1313;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#pet-update #updatecontainers .updateposts #buttonsposts button[type=submit]:hover{
+    border: 1px solid #7c0e0e;
+    background-color: #7c0e0e;
+}
