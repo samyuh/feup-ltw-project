@@ -1,8 +1,6 @@
 <section id="displayPets">
   <article>
-  <div class="profileGrid">
-  
-  </div>
-
+    <div class="profileGrid">
+    </div>
   </article>
 </section>

@@ -1,6 +1,5 @@
 <fieldset id="advanced_search">
     <legend>Avanced search</legend>
-      
       <form id="name_search" action="/search.php" method="post">
         <p>Insert Name: 
           <input type="text" name="nameSearch" id="searchName">
@@ -25,8 +24,6 @@
           <input type="text" name="colorSearch" id="searchSize">
         </p>
       </form>
-  
-
 </fieldset>
 
 

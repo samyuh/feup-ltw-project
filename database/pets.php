@@ -20,6 +20,18 @@
         return $user;
       }
 
+      function getPetsByName($name) {
+        global $db;
+
+        $name2 = "%$name%";
+        $stmt = $db->prepare('SELECT * FROM Pet WHERE
+                              petName LIKE :petN');
+        $stmt->bindParam(':petN', $name2, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
       function getPetsByAll($name,$specie,$gender,$size,$color){
         global $db;
 

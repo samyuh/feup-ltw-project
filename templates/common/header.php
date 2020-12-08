@@ -26,10 +26,13 @@
       </div>
       <div id="rightside">
         <div id="search">
-          <form action="/index.php">
-            <input type="text" placeholder="Procurar" name="search">
+          <form action="index.php" method="post">
+            <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
+        </div>
+        <div id="advanced-search">
+              <a href="../../search.php">Advanced Search</a>
         </div>
         <div id="settings">
           <?php 

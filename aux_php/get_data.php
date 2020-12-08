@@ -1,8 +1,7 @@
 <?php
-
   session_start();
-  include_once('Database/connection.php');
-  include_once('Database/pets.php');
+  include_once('../database/connection.php');
+  include_once('../database/pets.php');
 
   $nameSearch = isset($_POST["nameSearch"]) ? $_POST["nameSearch"] : '';
   $genderSearch = isset($_POST["genderSearch"]) ? $_POST["genderSearch"] : '';
