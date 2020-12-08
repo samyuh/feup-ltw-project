@@ -8,20 +8,22 @@
         <p>Insert Species:
           <input type="radio" name="speciesSearch" id="searchSpecies" value="dog" checked="checked"> Dog
           <input type="radio" name="speciesSearch" id="searchSpecies"value="cat"> Cat
+          <input type="radio" name="speciesSearch" id="searchSpecies"value=""> Any
         </p>
         <p>Insert Gender:
           <input type="radio" name="genderSearch" id="searchGender" value="male" checked="checked"> Male
           <input type="radio" name="genderSearch" id="searchGender" value="female"> Female
+          <input type="radio" name="genderSearch" id="searchGender"value=""> Any
         </p>
         <p>Insert Size:
           <input type="radio" name="sizeSearch" id="searchSize" value="small"> Small
           <input type="radio" name="sizeSearch" id="searchSize" value="medium" checked="checked"> Medium
           <input type="radio" name="sizeSearch" id="searchSize" value="large"> Large
+          <input type="radio" name="sizeSearch" id="searchSize" value=""> Any
         </p>
         <p>Insert Color 
           <input type="text" name="colorSearch" id="searchSize">
         </p>
-        <button id="btn" type="submit"><i class="fa fa-search"></i></button>
       </form>
   
 

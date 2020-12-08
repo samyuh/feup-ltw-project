@@ -90,17 +90,21 @@
         global $db;
 
         $name2 = "%$name%";
+        $specie2 = "%$specie%";
+        $gender2 = "%$gender%";
+        $size2 = "%$size%";
+        $color2 = "%$color%";
         $stmt = $db->prepare('SELECT * FROM Pet WHERE
                               petName LIKE :petN
-                              AND specie = :specie
-                              AND gender = :gender
-                              AND size = :size
-                              AND color = :color');
+                              AND specie LIKE :specie
+                              AND gender LIKE :gender
+                              AND size LIKE :size
+                              AND color LIKE :color');
         $stmt->bindParam(':petN', $name2, PDO::PARAM_STR);
-        $stmt->bindParam(':specie', $specie, PDO::PARAM_STR);
-        $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
-        $stmt->bindParam(':size', $size, PDO::PARAM_STR);
-        $stmt->bindParam(':color', $color, PDO::PARAM_STR);
+        $stmt->bindParam(':specie', $specie2, PDO::PARAM_STR);
+        $stmt->bindParam(':gender', $gender2, PDO::PARAM_STR);
+        $stmt->bindParam(':size', $size2, PDO::PARAM_STR);
+        $stmt->bindParam(':color', $color2, PDO::PARAM_STR);
         $stmt->execute();
 
         return $stmt->fetchAll();
