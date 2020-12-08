@@ -26,14 +26,15 @@
     </section>
     <section id="petsForAdoption">
       <h2>Animais para Adoção</h2>
+      <?php foreach($toAdoptPets as $fav3) {?>
+        <p><a href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
+      <?php } ?>
     </section>
-    <section id="question">
-      <h2>Faz Uma Pergunta!</h2>
-      <form>
-        <label>
-          <textarea name="question" cols="60" rows="17"></textarea>
-        </label>
-      </form>
+    <section id="adopted">
+      <h2>Adopted Pets!</h2>
+      <?php foreach($adoptPets as $fav2) {?>
+        <p><a href=dog_profile.php?idPet=<?=$fav2['idPet']?>><?=$fav2['petName']?></a></p>
+      <?php } ?>
     </section>
   </div>  
 </section>

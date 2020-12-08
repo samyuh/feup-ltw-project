@@ -1,0 +1,50 @@
+#update{
+    font-family: Arial, Helvetica, sans-serif;
+    column-gap: 2em;
+    position: absolute;
+    top: 20%;
+    left: 22%;
+    padding-bottom: 3em;
+    display: flex;
+}
+
+#update input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#update input[type=text], #update input[type=password]{
+    border: 1px solid #ccc;
+}
+
+#update input[type=submit]{
+    font-size: 16px;
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#update input[type=submit]:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+#update .changeUsername{
+    text-align: center;
+    border: 0.5px solid black;
+    padding: 1em;
+    width: 500px;
+}
+
+#update .changePassword{
+    text-align: center;
+    border: 0.5px solid black;
+    padding: 1em;
+    width: 500px;
+}

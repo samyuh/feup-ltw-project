@@ -1,3 +1,3 @@
 <?php 
-    $db = new PDO('sqlite:database/petshop.db');
+    $db = new PDO('sqlite:'.__DIR__.'/petshop.db');
 ?>
