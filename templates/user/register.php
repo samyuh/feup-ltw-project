@@ -28,7 +28,7 @@
           </label>
         </div>
         <div class="submit">
-          <input type="submit" value="Register">
+          <button id="registerButton" type="submit" value="Register">
         </div>
       </form>
     </div>

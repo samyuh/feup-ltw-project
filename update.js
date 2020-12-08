@@ -37,7 +37,7 @@ function validateUpdatePassword(e){
     //regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
     regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/);
 
-    if(!regexPassword.test(usenew_passwordrname)){
+    if(!regexPassword.test(new_password)){
         alert("Invalid new password!!");
     }else if(!regexPassword.test(confirm_password)){
         alert("Invalid password confirmation!!");

@@ -20,12 +20,13 @@
           </label>
         </div>
         <div class="submit">
-          <input type="submit" value="Log In">
+          <button id="loginButton" type="submit" value="Log In">
         </div>
+
       </form>
     </div>
     <div class="register_form">
-      <form action="../../action/register.php" method="post">
+      <form action="../../register.php" method="post">
         <div class="submit_register">
           <input type="submit" value="Create New Account">
         </div>
