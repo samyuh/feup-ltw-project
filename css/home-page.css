@@ -1,34 +1,64 @@
 #homepage{
     font-family: Arial, Helvetica, sans-serif;
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-bottom: 1%;
-    padding-top: 1%;
-}
-
-.profileGrid{
- 
     display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-    grid-gap: 2em;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 2em;
+    position: absolute;
+    top: 20%;
+    left: 17%;
+    margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+    padding-bottom: 3em;
 }
 
-#profile{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 1em;
-    
-	border:#000 2px solid;
-	
+#homepage_profile {
+    position: relative;
+    text-align: center;
 }
 
-#profile .image{
-    padding-top: 0em !important;
-    align-self: center;
+#homepage_profile .image {
+    display: block;
+    padding-top: 0;
 }
 
-#profile .image img{
-    border-radius: 0%;
-    /*border: #000 1px solid;*/
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    width: 300px;
+    opacity: 0;
+    transition: .5s ease-out;
+    background-color: black;
+}
+
+.overlay:hover {
+    opacity: 0.7;
+}
+
+.text {
+    width: 300px;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#homepage_profile a{
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
+
+#homepage_profile a:hover{
+    animation: pink_and_blue 3s infinite;
+}
+
+@keyframes pink_and_blue {
+  0%   {color: rgb(230, 103, 124);}
+  50%  {color: rgb(19, 77, 165);}
+  100%  {color: rgb(230, 103, 124);}
 }

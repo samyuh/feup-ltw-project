@@ -25,25 +25,45 @@ CREATE TABLE Pet (
     color       VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS UserLookingPet;
-CREATE TABLE UserLookingPet (
-  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
+DROP TABLE IF EXISTS PetQuestion;
+CREATE TABLE PetQuestion (
+  idQuestion               INTEGER                 PRIMARY KEY,
+  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  info VARCHAR(255) 
+);
+
+DROP TABLE IF EXISTS AdoptionProposal;
+CREATE TABLE AdoptionProposal (
+  idUser                   INTEGER                 REFERENCES User(idUser),
+  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  PRIMARY KEY(idUser,idPet)
+);
+
+DROP TABLE IF EXISTS UserAdoptedPet;
+CREATE TABLE UserAdoptedPet (
+  idUser                   INTEGER                 REFERENCES User(idUser),
   idPet                    INTEGER                 REFERENCES Pet(idPet),
   PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS UserFoundPet;
 CREATE TABLE UserFoundPet (
-  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
-  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
-  info                     VARCHAR(255),
+  idUser                   INTEGER                 REFERENCES User(idUser),
+  idPet                    INTEGER                 REFERENCES Pet(idPet),
   PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS FavoritePet;
 CREATE TABLE FavoritePet (
-    idUser         INTEGER                         REFERENCES User(idUser) ON DELETE SET NULL ON UPDATE CASCADE,
-    idPet          INTEGER                         REFERENCES Pet(idPet) ON DELETE SET NULL ON UPDATE CASCADE,
+    idUser         INTEGER                         REFERENCES User(idUser),
+    idPet          INTEGER                         REFERENCES Pet(idPet),
     PRIMARY KEY(idUser, idPet)
+);
+
+DROP TABLE IF EXISTS PostsPet;
+CREATE TABLE PostsPet (
+    id         INTEGER                  PRIMARY KEY,
+    idPet          INTEGER              REFERENCES Pet(idPet),
+    POST VARCHAR(255)
 );
 

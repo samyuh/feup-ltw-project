@@ -1,0 +1,98 @@
+body{
+    margin: 0 auto;
+}
+
+.hero-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.name_slogan{
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 65%;
+}
+
+.name_slogan a{
+    color: white;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.name_slogan h1{
+    font-size: 5em;
+    margin: 0;
+    animation: bounceIn 10s infinite;
+}
+
+.name_slogan h2{
+    font-style: italic;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.container_forms{
+    -moz-transform: scale(1.5);
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    padding: 3em;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    background-color:rgba(256, 256, 256, 0.6);
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=text], input[type=password]{
+    border: 1px solid #ccc;
+}
+
+input[type=submit]{
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+.submit{
+    padding-top: 1em;
+}
+
+.submit_register{
+    padding-top: 0.5em;
+}
