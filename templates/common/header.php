@@ -13,8 +13,12 @@
     <link href="../../css/homepage.css" rel="stylesheet">
     <link href="../../css/updateUser.css" rel="stylesheet">
     <link href="../../css/updatePet.css" rel="stylesheet">
+    <link href="../../css/search_advanced.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../scripts/search.js" defer> </script>
+    <script src="../../scripts/update.js" defer> </script>
+   
   </head>
   <body>
     <header>
@@ -24,10 +28,13 @@
       </div>
       <div id="rightside">
         <div id="search">
-          <form action="/index.php">
-            <input type="text" placeholder="Procurar" name="search">
+          <form action="index.php" method="post">
+            <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
+        </div>
+        <div id="advanced-search">
+              <a href="../../search.php">Advanced Search</a>
         </div>
         <div id="settings">
           <?php 
