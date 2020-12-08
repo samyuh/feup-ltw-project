@@ -60,27 +60,7 @@
       <?php } ?>
     </section>
 
-    <section id="proposals">
-        <h2>Adoption Proposals</h2>
-        <?php foreach($proposals as $prop) {?>
-          <section id="uniqueproposal">
-            <p><?=$prop['idUser']?></p>
-            <?php if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-            <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
-              <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
-            </form>
-          </section>
-        <?php } } ?>
-        <?php  
-        if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
-          if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
-        <section id="adoption-propose">
-          <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
-            <input type="submit" value="Propose to adopt this pet!">
-          </form>
-        </section>
-        <?php } } ?>
-    </section>
+    
 
     <section id="posts">
       <h2>Posts</h2>
@@ -112,5 +92,27 @@
       <?php } ?>
     </section>
 
+    <section id="proposals">
+    <h2>Adoption Proposals</h2>
+        <?php foreach($proposals as $prop) {?>
+          <section id="uniqueproposal">
+            <p><?=$prop['idUser']?></p>
+            <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { 
+            if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+            <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
+              <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
+            </form>
+          </section>
+        <?php } } } ?>
+        <?php  
+        if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+          if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
+        <section id="adoption-propose">
+          <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
+            <input type="submit" value="Propose to adopt this pet!">
+          </form>
+        </section>
+        <?php } } ?>
+    </section>
   </div>  
 </section>

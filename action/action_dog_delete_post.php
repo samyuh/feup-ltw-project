@@ -10,6 +10,7 @@
   }
   else {
     deletePost($_GET['id']);
+    print('delete');
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

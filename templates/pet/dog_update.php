@@ -15,15 +15,15 @@
         <div class="updateposts">
         <h1>Update Pet Posts</h1>
         <?php foreach($posts as $post) {?>
-                <form action="action_dog_update_post.php?id=<?=$post['id']?>" method="post">
+            <section id="buttonsposts">
+                <form action="../../action/action_dog_update_post.php?id=<?=$post['id']?>" method="post">
                     <label>Update Post <input type="text" name="post" value="<?=$post['POST']?>"></label>
-                    <section id="buttonsposts">
-                        <input class="column" type="submit" value="Update Post">
-                        <form action="../../action/action_dog_delete_post.php?id=<?=$post['id']?>" method="post">
-                            <button type="submit"> Delete Post</button>
-                        </form>
-                    </section>
-                </form>                
+                    <input class="column" type="submit" value="Update Post">
+                </form> 
+                <form action="../../action/action_dog_delete_post.php?id=<?=$post['id']?>" method="post">
+                    <button type="submit"> Delete Post</button>
+                </form>
+            </section>            
             <?php } ?>
         </div>
     </section>
