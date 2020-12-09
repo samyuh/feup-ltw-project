@@ -6,7 +6,7 @@
         </svg> 
     </div>
     <div class="image">
-      <img src="../images/dog.JPG" width="200" height="200" alt="">
+    <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
     </div>
 
     <div class="name_and_favorite">
@@ -59,8 +59,6 @@
         <p>Not adopted yet!</p>
       <?php } ?>
     </section>
-
-    
 
     <section id="posts">
       <h2>Posts</h2>

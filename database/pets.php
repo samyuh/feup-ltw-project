@@ -63,9 +63,18 @@
         $stmt->execute(array($name, $race, $gender, $size, $color));
 
         $idPet = $db->lastInsertId();
-        print($idPet);
+        
         $stmt2 = $db->prepare('INSERT INTO UserFoundPet VALUES (?, ?)');
         $stmt2->execute(array($user['idUser'], $idPet));
+
+        if (!file_exists("../images/pet-profile/pet-$idPet")) {
+            mkdir("../images/pet-profile/pet-$idPet", 0777, true);
+        }
+
+        $originalFileName = "../images/pet-profile/pet-$idPet/profile.jpg";
+
+        // Move the uploaded file to its final destination
+        move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
 
         return TRUE;
       }
@@ -81,6 +90,38 @@
 
         return $petsID;
     }
+
+    function getAllPhotos($id) {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM PetPhoto WHERE idPet = ?');
+        
+        $stmt->execute(array($id));
+        $petsID = $stmt->fetchAll();
+
+
+        return $petsID;
+    }
+
+    function addPetPhoto($idPet) {
+        global $db;
+        
+        $stmt = $db->prepare('INSERT INTO PetPhoto(idPet) VALUES (?)');
+        $stmt->execute(array($idPet));
+
+        $idPhoto = $db->lastInsertId();
+
+        if (!file_exists("../images/pet-profile/pet-$idPet")) {
+            mkdir("../images/pet-profile/pet-$idPet", 0777, true);
+        }
+
+        $originalFileName = "../images/pet-profile/pet-$idPet/photo-$idPhoto.jpg";
+
+        // Move the uploaded file to its final destination
+        move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+
+        return TRUE;
+      }
 
     function isFavorited($user, $idPet) {
         global $db;

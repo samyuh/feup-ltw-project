@@ -12,7 +12,8 @@
             <label>Update color <input type="text" name="ncolor" value="<?=$pet['color']?>"></label>
             <input type="submit" value="Update">
         </form>
-        <div class="updateposts">
+        
+    <div class="updateposts">
         <h1>Update Pet Posts</h1>
         <?php foreach($posts as $post) {?>
             <section id="buttonsposts">
@@ -27,4 +28,12 @@
             <?php } ?>
         </div>
     </section>
+
+    <div class="add-photo">
+        <h1>Insert Pet Photo</h1>
+        <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>" method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit" value="update">
+        </form>
+    </div>
 </section>

@@ -6,7 +6,7 @@
         </svg> 
     </div>
     <div class="image">
-      <img src="../images/random_image.JPG" width="200" height="200" alt="">
+      <img src="../images/user/user-<?=$user['idUser']?>.jpg" width="200" height="200" alt="">
     </div>
     <div class="name">
       <h1><?=$user['username']?></h1>

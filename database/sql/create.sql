@@ -32,6 +32,12 @@ CREATE TABLE PetQuestion (
   info VARCHAR(255) 
 );
 
+DROP TABLE IF EXISTS PetPhoto;
+CREATE TABLE PetPhoto (
+  idPhoto                  INTEGER                 PRIMARY KEY,
+  idPet                    INTEGER                 REFERENCES Pet(idPet)
+);
+
 DROP TABLE IF EXISTS AdoptionProposal;
 CREATE TABLE AdoptionProposal (
   idUser                   INTEGER                 REFERENCES User(idUser),

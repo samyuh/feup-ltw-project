@@ -27,6 +27,12 @@
         
             $hashed_password = sha1($password);
             $stmt->execute(array($username, $gender, $age, $location, $hashed_password));
+
+            $idUser = $db->lastInsertId();
+
+            $originalFileName = "../images/user/user-$idUser.jpg";
+            // Move the uploaded file to its final destination
+            move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
     
             if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
                 return TRUE;

@@ -19,7 +19,7 @@
     foreach($articles as $article) {?>
     <article>
     <section id="homepage_profile">
-      <img src="./images/dog.JPG" width="300" height="300" alt="" class="image">
+      <img src="./images/pet-profile/pet-<?=$article['idPet']?>/profile.jpg" width="300" height="300">
       <p><a href=dog_profile.php?idPet=<?=$article['idPet']?>><?=$article['petName']?></a></p>
       <div class="overlay">
         <div class="text">
