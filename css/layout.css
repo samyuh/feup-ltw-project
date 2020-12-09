@@ -46,14 +46,14 @@ body > header {
   text-align: left;
   grid-row: 1;
   grid-column: 1;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #favPets, #proposals{
   text-align: left;
   grid-column: 1;
   grid-row: 2;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #petsForAdoption, #posts{
@@ -61,7 +61,7 @@ body > header {
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #question{
@@ -69,7 +69,7 @@ body > header {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #adopted{
@@ -77,5 +77,5 @@ body > header {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  padding: 1em;
+  padding: 2em;
 }
