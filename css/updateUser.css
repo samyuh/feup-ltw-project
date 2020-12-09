@@ -1,5 +1,4 @@
 #update{
-    grid-column: start/end;
     font-family: Arial, Helvetica, sans-serif;
     column-gap: 2em;
     position: absolute;
@@ -7,6 +6,8 @@
     left: 22%;
     padding-bottom: 3em;
     display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 #update input{

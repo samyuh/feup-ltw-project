@@ -1,7 +1,8 @@
 #pet-update{
-    grid-column: start/end;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 3em;
+    height: 100%;
+    width: 100%;
 }
 
 #pet-update .goback{

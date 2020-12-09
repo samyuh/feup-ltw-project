@@ -1,9 +1,6 @@
 <section id="dog">
   <div class="profileHeader">
     <div class="header">
-        <svg width="1920" height="210">
-            <rect width="1920" height="210" style="fill:rgb(255,223,211)" />
-        </svg> 
     </div>
     <div class="image">
       <img src="../images/dog.JPG" width="200" height="200" alt="">

@@ -1,7 +1,7 @@
 body > div{
     display: flex;
     background-color: white;
-    width: 125%
+    width: 100;
 }
 body > div > section{
     margin: 2em;

@@ -1,9 +1,6 @@
 <section id="owner">
   <div class="profileHeader">
     <div class="header">
-    <svg width="1920" height="210">
-            <rect width="1920" height="210" style="fill:rgb(0,0,0)" />
-        </svg> 
     </div>
     <div class="image">
       <img src="../images/random_image.JPG" width="200" height="200" alt="">

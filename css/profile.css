@@ -1,5 +1,11 @@
 #owner{
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+#owner .image{
+  padding-top: 6em;
 }
   
 .infoGrid #information_person{
