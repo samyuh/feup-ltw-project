@@ -9,18 +9,14 @@
     <div class="container_forms">
       <form id="registerForm" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
         <div class="username">
-          <label>
+          
             <input type="text" name="username" placeholder="Username">
-          </label>
-          <label>
-            Gender <input type="text" name="gender">
-          </label>
-          <label>
-            Age <input type="text" name="age">
-          </label>
-          <label>
-            Location <input type="text" name="location">
-          </label>
+            Male <input type="radio" id="registerGender" name="gender" value="male" checked="checked">
+            Female <input type="radio" id="registerGender" name="gender" value="female">
+            Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
+            <output>20</output>
+            
+            <input type="text" name="location" placeholder="Location">
         </div>
         <div class="password">
           <label>

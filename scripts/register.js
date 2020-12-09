@@ -11,22 +11,17 @@ function validateRegistration(event) {
     let form = document.getElementById("registerForm")
 
     let username = form.querySelector('input[name="username"]').value
-    let gender = form.querySelector('input[name="gender"]').value
     let age = form.querySelector('input[name="age"]').value
     let location = form.querySelector('input[name="location"]').value
     let password = form.querySelector('input[name="password"]').value
 
-    let regex = RegExp(/^[a-zA-Z0-9]+$/)  // All letters and numbers without blanck space
-    let regexGender = RegExp(/^(fe)?male$/)
+    let regex = RegExp(/^[a-zA-Z0-9]+$/)
     let regexAge = RegExp(/^\d$/)
     let regexLocation = RegExp(/^[a-zA-Z0-9""]+$/)
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
     if(!regex.test(username)) {
         alert("Invalid username. Use letters and numbers only.")
-    }
-    else if(!regexGender.test(gender)) {
-        alert("Invalid gender. Must be Male or Female")
     }
     else if(!regexAge.test(age)) {
         alert("Invalid Age. Must be a number.")
@@ -40,4 +35,8 @@ function validateRegistration(event) {
     else {
         form.submit()
     } 
+
+    function updateTextInput(val) {
+        document.getElementById("textInput").value=val; 
+    }
 }
