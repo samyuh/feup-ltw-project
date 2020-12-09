@@ -1,9 +1,6 @@
 <section id="dog">
   <div class="profileHeader">
     <div class="header">
-        <svg width="1920" height="210">
-            <rect width="1920" height="210" style="fill:rgb(255,223,211)" />
-        </svg> 
     </div>
     <div class="image">
     <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
@@ -17,13 +14,13 @@
       ?>
       <section id="favorite">
         <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-          <button type="submit"><i class="fa fa-star"></i></button>
+          <button title="Favorite Pet" type="submit"><i class="fa fa-star-o"></i></button>
         </form>
       </section>
       <?php } else {?>
       <section id="remove">
         <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-        <button type="submit"><i class="fa fa-star-o"></i></button>
+        <button title="Unfavorite Pet"type="submit"><i class="fa fa-star"></i></button>
         </form>
       </section>
       <?php } } ?>

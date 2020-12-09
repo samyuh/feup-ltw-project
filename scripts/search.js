@@ -82,12 +82,14 @@ function showArticle(data) {
     let color = data.color
 
     let p0 = document.createElement('p')
-    p0.innerHTML = "Name:" + name
+    p0.innerHTML = "Name:"
 
     var a = document.createElement('a')
     var linkText = document.createTextNode(name)
     a.appendChild(linkText)
     a.href = "/dog_profile.php?idPet=" + id
+
+    p0.appendChild(a)
 
     let p2 = document.createElement('p')
     p2.innerHTML = "Race: " + species
@@ -105,7 +107,6 @@ function showArticle(data) {
     p6.innerHTML = "Localization:"
 
     info.appendChild(p0)
-    info.appendChild(a)
     info.appendChild(p2)
     info.appendChild(p3)
     info.appendChild(p4)

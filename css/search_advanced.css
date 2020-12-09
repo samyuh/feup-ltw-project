@@ -1,25 +1,55 @@
-#advanced_search{
-    display: block;
-    float: top;
-    width: 123%;
-    margin-bottom: 2em;
-    border-radius: 2em;
-    border: 5px solid grey;
-
+#advanced_search_page{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10em;
+    margin-right: 10em;
 }
-
-#advanced_search legend{
-   font-size: larger;
-   color: rgb(41, 39, 39);
-   font-weight: 600;
-   font-style: italic;
-
-}
-
-
 
 #displayPets{
-    grid-column: start / end;
-    float: left;
-    margin: 0;
+    
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
+
+#advanced_search{
+    padding: 1em;
+    border: none;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(219, 219, 219));
+    margin-left: 30em;
+    margin-right: 30em;
+    margin-top: 1em;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+#advanced_search h2{
+    font-style: normal;
+}
+
+#displayPets #profile{
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    padding: 1em;  
+}
+
+#displayPets #profile img{
+    border-radius: 0;
+}
+
+#displayPets #profile .info{
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 1em;
+    width: 100%;
+    
+}
+

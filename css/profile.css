@@ -1,29 +1,24 @@
 #owner{
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+#owner .image{
+  padding-top: 6em;
 }
   
-.infoGrid #information_person{
-  border-style: solid;
-  border-width: 2px;
+.infoGrid #information_person,
+.infoGrid #petsForAdoption,
+.infoGrid #adopted,
+.infoGrid #favPets{
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
 .infoGrid #information_person p{
   border-bottom: solid;
   padding-bottom: 5px;
   border-width: 1px;
-}
-
-.infoGrid #favPets{
-  border-style: solid;
-  border-width: 2px;
-}
-
-.infoGrid #petsForAdoption{
-  border-style: solid;
-  border-width: 2px;
-}
-
-.infoGrid #adopted{
-  border-style: solid;
-  border-width: 2px;
 }

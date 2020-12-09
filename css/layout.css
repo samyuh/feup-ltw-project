@@ -1,26 +1,22 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: [start] auto [middle]auto[end];
-  
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
 }
 
 body > header {
-  grid-column: start / end;
+  height: 3.5em;
 }
 
-/* Profile Layout */
-#owner{
-  grid-column: start/end;
-}
 .header{
   position: absolute;
-}
-
-.image{
-  padding-top:6em;
 }
 
 .image img{
@@ -50,14 +46,14 @@ body > header {
   text-align: left;
   grid-row: 1;
   grid-column: 1;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #favPets, #proposals{
   text-align: left;
   grid-column: 1;
   grid-row: 2;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #petsForAdoption, #posts{
@@ -65,7 +61,7 @@ body > header {
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #question{
@@ -73,7 +69,7 @@ body > header {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  padding: 1em;
+  padding: 2em;
 }
 
 .infoGrid #adopted{
@@ -81,13 +77,5 @@ body > header {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  padding: 1em;
-}
-
-#dog{
-  grid-column: start/end;
-}
-
-footer{
-  grid-column: start/end;
+  padding: 2em;
 }

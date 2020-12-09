@@ -1,6 +1,6 @@
 <section id="add">
     <h1>Insert Pet Info</h1>
-    <form action="../../action/action_add_pet.php" method="post" enctype="multipart/form-data">
+    <form class="inputsNewPet" action="../../action/action_add_pet.php" method="post" enctype="multipart/form-data">
         <label>Update Name <input type="text" name="npetName"></label>
         <label>Update Specie <input type="text" name="nspecie"></label>
         <label>Update Gender <input type="text" name="ngender"></label>

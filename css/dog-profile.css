@@ -1,7 +1,13 @@
 #dog{
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 3em;
+    min-height: 100%;
+    width: 100%;
 }
+
+#dog .image{
+    padding-top: 6em;
+  }
 
 #dog .infoGrid #information_pet{
     border-style: solid;
