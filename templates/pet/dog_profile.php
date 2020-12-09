@@ -5,25 +5,19 @@
     <div class="image">
     <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
     </div>
+    
 
     <div class="name_and_favorite">
       <h1><?=$pet['petName']?></h1>
       <?php
       if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
-        if(isFavorited($_SESSION['user'], $pet['idPet'])) {
       ?>
       <section id="favorite">
-        <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-          <button title="Favorite Pet" type="submit"><i class="fa fa-star-o"></i></button>
+        <form id="favoriteForm" action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+          <button id="favoriteFormButton" title="Favorite Pet" type="submit"class="fa fa-star-o" value="<?=$pet['idPet']?>"></button>
         </form>
       </section>
-      <?php } else {?>
-      <section id="remove">
-        <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-        <button title="Unfavorite Pet"type="submit"><i class="fa fa-star"></i></button>
-        </form>
-      </section>
-      <?php } } ?>
+      <?php } ?>
     </div>
   </div>
   <div class="infoGrid">

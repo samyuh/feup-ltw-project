@@ -20,6 +20,7 @@
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/addPet.js" defer> </script>
+    <script src="../../scripts/favorite.js" defer> </script>
    
   </head>
   <body>
