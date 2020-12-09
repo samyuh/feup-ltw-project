@@ -1,28 +1,33 @@
 #dog{
-    font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 3em;
-    min-height: 100%;
     width: 100%;
+}
+
+#dog a{
+    color: black;
+    text-decoration: none;
+}
+
+#dog a:visited{
+    color: black;
 }
 
 #dog .image{
     padding-top: 6em;
   }
 
-#dog .infoGrid #information_pet{
-    border-style: solid;
-    border-width: 2px;
+#dog .infoGrid #information_pet,
+#dog .infoGrid #proposals, 
+#dog .infoGrid  #posts, 
+#dog .infoGrid  #question{
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
   
 #dog .infoGrid #information_pet #information_and_update, .infoGrid #proposals #uniqueproposal{
     display: flex;
     align-items: center;
     justify-content: left;
-}
-
-#dog .infoGrid #proposals, #posts, #question{
-    border-style: solid;
-    border-width: 2px;
 }
 
 #dog .infoGrid #information_pet #information_and_update #moreinfo{

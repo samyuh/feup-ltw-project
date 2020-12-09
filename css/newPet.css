@@ -9,6 +9,16 @@
     align-items: center; /*centers items on the cross-axis (y by default)*/ 
 }
 
+
+#add a{
+    color: black;
+    text-decoration: none;
+}
+
+#add a:visited{
+    color: black;
+}
+
 #add #petinfocontainer{
     width: 30em;
     padding: 2em;

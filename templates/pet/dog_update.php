@@ -32,7 +32,7 @@
             <h1>Insert Pet Photo</h1>
             <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>" method="post" enctype="multipart/form-data">
                 <input type="file" name="image">
-                <input type="submit" value="update">
+                <input type="submit" value="Update">
             </form>
         </div>
     </section>

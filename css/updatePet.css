@@ -4,6 +4,16 @@
     width: 100%;      
 }
 
+
+#pet-update a{
+    color: black;
+    text-decoration: none;
+}
+
+#pet-update a:visited{
+    color: black;
+}
+
 #pet-update .goback{
     text-align: center;
     padding: 1em;

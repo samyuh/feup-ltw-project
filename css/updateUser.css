@@ -10,6 +10,16 @@
     column-gap: 2em;
 }
 
+
+#update a{
+    color: black;
+    text-decoration: none;
+}
+
+#update a:visited{
+    color: black;
+}
+
 #update input{
     width: 100%;
     padding: 12px 20px;

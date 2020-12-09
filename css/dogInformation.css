@@ -1,78 +1,76 @@
-body > div{
+#petInformation{
+    height: 100%;
     display: flex;
-    background-color: white;
-    width: 100;
-}
-body > div > section{
-    margin: 2em;
-    width: 20%;
-    color: #5d5d5d;
+    flex-direction: row;
+    margin: 1em;
+    gap: 1em;
 }
 
-body > div > section > img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 1%;
-    height: 10em;
-    width: 10em;
-    border-radius: 50%;
+#petInformation a{
+    color: black;
+    text-decoration: none;
 }
 
-body > div > section > h1{
+#petInformation a:visited{
+    color: black;
+}
+
+#petInformation #informationSidebar{
+    flex: 1;
     text-align: center;
-    margin: 0%;
-    
 }
 
-body > div > section > h2{
-    text-align: center;
-    font-size: 80%;  
+#petInformation #content{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
 }
 
-body > div > article{
-    width: 40em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr;
-    grid-template-areas: 
-        "header none"
-        "list text";
-    margin: 2em;
-    padding: 0.2em;
-    border: 2px solid grey;
-    background-color: white;
-    color: #5d5d5d;
+#petInformation #content #photos,
+#petInformation #content #biography,
+#petInformation #content #posts{  
+    margin:1em;  
+    padding: 2em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
-body > div > article > h1{
-    margin: 0;
-    color: #5d5d5d;
-    grid-area: header;
-    font-size: 170%;
+#petInformation #content h2{
+    padding-bottom: 1em;
+}
+
+#petInformation #content #top-content{
+    display: flex;
+}
+
+#petInformation #content #top-content #photos,
+#petInformation #content #top-content #biography{
+    flex: 1;
+}
+/* Slideshow container */
+#petInformation #content #top-content #photos .slideshow-container {
+    width: 400px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+#petInformation #content #top-content #photos .prev, #petInformation #content #top-content #photos .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
     font-weight: bold;
-    margin-left: 32px;
+    font-size: 18px;
+    user-select: none;
 }
 
-body > div > article > h1:before{
-    content: '- ';
-    font-size: 170%;
-}
-
-body > div > article > ul {
-    grid-area: list;
-    padding: 0 2em 1em 2em;
-    margin: 0;
-}
-
-body > div > article > ul > li{
-    list-style-type: none;
-    border-bottom: 1.5px solid grey;
-}
-
-body > div > article > aside {
-    text-align: justify;
-    grid-area: text;
-    padding-right: 0.5em;
-
+/* Position the "next button" to the right */
+#petInformation #content #top-content #photos .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }

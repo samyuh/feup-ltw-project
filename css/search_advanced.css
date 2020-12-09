@@ -6,6 +6,16 @@
     margin-right: 10em;
 }
 
+
+#advanced_search_page a{
+    color: black;
+    text-decoration: none;
+}
+
+#advanced_search_page a:visited{
+    color: black;
+}
+
 #displayPets{
     
     padding-top: 2em;
