@@ -11,10 +11,11 @@
       <h1><?=$pet['petName']?></h1>
       <?php
       if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+      $star = isFavorited($_SESSION['user'], $pet['idPet']) ? "fa fa-star-o" : "fa fa-star";  
       ?>
       <section id="favorite">
         <form id="favoriteForm" action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-          <button id="favoriteFormButton" title="Favorite Pet" type="submit"class="fa fa-star-o" value="<?=$pet['idPet']?>"></button>
+          <button id="favoriteFormButton" title="Favorite Pet" type="submit"class="<?=$star?>" value="<?=$pet['idPet']?>"></button>
         </form>
       </section>
       <?php } ?>

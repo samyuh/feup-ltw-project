@@ -11,7 +11,6 @@ function validateFavorite(event) {
 
     let button = document.getElementById('favoriteFormButton')
     let star = button.className
-
     let id = document.getElementById('favoriteFormButton').value
 
     console.log(button)
