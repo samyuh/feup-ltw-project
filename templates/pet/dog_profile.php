@@ -60,21 +60,6 @@
       <?php } ?>
     </section>
 
-    <section id="posts">
-      <h2>Posts</h2>
-      <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-      <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
-        <input type="text" name="post">
-        <input type="submit" value="Post">
-      </form>
-      <?php } ?>
-      <?php foreach($posts as $post) {?>
-        <section id="uniquepost"/>
-          <p><?=$post['POST']?></p>
-        </section>
-      <?php } ?>
-    </section>
-
     <section id="question">
       <h2>Ask a Question</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>

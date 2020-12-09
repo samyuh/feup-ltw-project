@@ -1,29 +1,49 @@
 <div>
     <section>
-        <img src="templates/common/dog.jpg" alt="Failed displaying dog image">
-        <h1>DogName</h1>
+        <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
+        <h1><a href=dog_profile.php?idPet=<?=$pet['idPet']?>><?=$pet['petName']?></a></h1>
         <h2>Contacts</h2>
     </section>
 
     <article>
         <h1>Information</h1>
-
         <ul>
-            <li> <p>Race</p> </li>
-            <li> <p>Age</p></li>
-            <li> <p>Size</p></li>
-            <li> <p>Color</p></li>
-            <li> <p>Localization</p></li>
+            <p>Species: <?=$pet['specie']?></p>
+            <p>Gender: <?=$pet['gender']?></p>
+            <p>Size: <?=$pet['size']?></p>
+            <p>Color: <?=$pet['color']?></p>
+            <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=$owner['username']?></a></p>
+            <?php if(!empty($adopted)) { ?>
+                <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?=$adopted['username']?></a></p>
+            <?php } else { ?>
+                <p>Not adopted yet!</p>
+            <?php } ?>
         </ul>
+
+
         <?php foreach($photos as $photo) {?>
-            <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying dog image">
+            <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying dog image" width="100" height="100">
         <?php } ?>
         <aside>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>   
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>   
+            <p><?=$pet['bio']?></p>   
         </aside>
 
     </article>
+
+    <section id="posts">
+      <h2>Posts</h2>
+      <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+      <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
+        <input type="text" name="post">
+        <input type="submit" value="Post">
+      </form>
+      <?php } ?>
+      <?php foreach($posts as $post) {?>
+        <section id="uniquepost"/>
+          <p><?=$post['POST']?></p>
+        </section>
+      <?php } ?>
+    </section>
 
 </div>
     

@@ -22,7 +22,8 @@ CREATE TABLE Pet (
     specie      VARCHAR(255),
     gender      VARCHAR(255),
     size        VARCHAR(255),
-    color       VARCHAR(255)
+    color       VARCHAR(255),
+    bio         VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS PetQuestion;
