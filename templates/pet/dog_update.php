@@ -13,27 +13,28 @@
             <input type="submit" value="Update">
         </form>
         
-    <div class="updateposts">
-        <h1>Update Pet Posts</h1>
-        <?php foreach($posts as $post) {?>
-            <section id="buttonsposts">
-                <form action="../../action/action_dog_update_post.php?id=<?=$post['id']?>" method="post">
-                    <label>Update Post <input type="text" name="post" value="<?=$post['POST']?>"></label>
-                    <input class="column" type="submit" value="Update Post">
-                </form> 
-                <form action="../../action/action_dog_delete_post.php?id=<?=$post['id']?>" method="post">
-                    <button type="submit"> Delete Post</button>
-                </form>
-            </section>            
-            <?php } ?>
+        <div class="updateposts">
+            <h1>Update Pet Posts</h1>
+            <?php foreach($posts as $post) {?>
+                <section id="buttonsposts">
+                    <form action="../../action/action_dog_update_post.php?id=<?=$post['id']?>" method="post">
+                        <label>Update Post <input type="text" name="post" value="<?=$post['POST']?>"></label>
+                        <input class="column" type="submit" value="Update Post">
+                    </form> 
+                    <form action="../../action/action_dog_delete_post.php?id=<?=$post['id']?>" method="post">
+                        <button type="submit"> Delete Post</button>
+                    </form>
+                </section>            
+                <?php } ?>
+        </div>
+        
+        <div class="add-photo">
+            <h1>Insert Pet Photo</h1>
+            <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="submit" value="update">
+            </form>
         </div>
     </section>
 
-    <div class="add-photo">
-        <h1>Insert Pet Photo</h1>
-        <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>" method="post" enctype="multipart/form-data">
-            <input type="file" name="image">
-            <input type="submit" value="update">
-        </form>
-    </div>
 </section>

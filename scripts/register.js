@@ -18,7 +18,7 @@ function validateRegistration(event) {
 
     let regex = RegExp(/^[a-zA-Z0-9]+$/)  // All letters and numbers without blanck space
     let regexGender = RegExp(/^(fe)?male$/)
-    let regexAge = RegExp(/^\d$/)
+    let regexAge = RegExp(/^\d+$/)
     let regexLocation = RegExp(/^[a-zA-Z0-9""]+$/)
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
