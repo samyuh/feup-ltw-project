@@ -15,6 +15,7 @@
     <link href="../../css/updatePet.css" rel="stylesheet">
     <link href="../../css/search_advanced.css" rel="stylesheet">
     <link href="../../css/newPet.css" rel="stylesheet">
+    <link href="../../css/error404.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../../scripts/search.js" defer> </script>
