@@ -17,13 +17,13 @@
       ?>
       <section id="favorite">
         <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-          <button type="submit"><i class="fa fa-star"></i></button>
+          <button title="Favorite Pet" type="submit"><i class="fa fa-star-o"></i></button>
         </form>
       </section>
       <?php } else {?>
       <section id="remove">
         <form action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-        <button type="submit"><i class="fa fa-star-o"></i></button>
+        <button title="Unfavorite Pet"type="submit"><i class="fa fa-star"></i></button>
         </form>
       </section>
       <?php } } ?>

@@ -26,16 +26,17 @@
         <h1><a href="index.php">Pet Shelter</a></h1>
         <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
       </div>
-      <div id="rightside">
-        <div id="search">
-          <form action="index.php" method="post">
-            <input type="text" placeholder="Search" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
+      <div id="search">
+        <form action="index.php" method="post">
+          <input type="text" placeholder="Search" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
         <div id="advanced-search">
-              <a href="../../search.php">Advanced Search</a>
+            <a href="../../search.php">Advanced Search</a>
         </div>
+      </div>
+      
+      <div id="rightside">
         <div id="settings">
           <?php 
           if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
