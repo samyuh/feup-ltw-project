@@ -1,13 +1,12 @@
 #update{
     font-family: Arial, Helvetica, sans-serif;
-    column-gap: 2em;
-    position: absolute;
-    top: 20%;
-    left: 22%;
-    padding-bottom: 3em;
-    display: flex;
     height: 100%;
-    width: 100%;
+    width: 100%;      overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /*centers items on the line (the x-axis by default)*/
+    align-items: center; /*centers items on the cross-axis (y by default)*/ 
+    column-gap: 2em;
 }
 
 #update input{
@@ -23,30 +22,32 @@
     border: 1px solid #ccc;
 }
 
-#update input[type=submit]{
+#update button{
+    margin-top: auto;
     font-size: 16px;
     border: 1px solid #008080;
     background-color: #008080;
     color: white;
     transition: 0.3s;
     cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5em;
 }
 
-#update input[type=submit]:hover{
+#update button:hover{
     border: 1px solid #004646;
     background-color: #004646;
 }
 
-#update .changeUsername{
-    text-align: center;
-    border: 0.5px solid black;
-    padding: 1em;
-    width: 500px;
-}
-
+#update .changeUsername,
 #update .changePassword{
+    height: 25em;
+    width: 30em;
+    padding: 2em;
     text-align: center;
-    border: 0.5px solid black;
-    padding: 1em;
-    width: 500px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
 }
