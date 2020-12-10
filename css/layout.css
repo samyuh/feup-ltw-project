@@ -43,21 +43,27 @@ body > header {
   grid-gap: 2em;
 }
 
-.infoGrid #information_person, #information_pet{
+.infoGrid #information_person{
   text-align: left;
   grid-row: 1;
   grid-column: 1;
   padding: 2em;
 }
 
-.infoGrid #favPets, #proposals{
+#information_pet{
+  grid-row-start: 1;
+  grid-row-end: 3;  
+  text-align: left;
+  padding: 2em;
+}
+.infoGrid #favPets{
   text-align: left;
   grid-column: 1;
   grid-row: 2;
   padding: 2em;
 }
 
-.infoGrid #petsForAdoption, .infoGrid #posts{
+.infoGrid #petsForAdoption, .infoGrid #posts, .infoGrid #proposals{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;
