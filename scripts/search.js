@@ -32,7 +32,8 @@ function sendMessage(event) {
     request.open("post", "aux_php/get_data.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'nameSearch': name, 'speciesSearch': species, 'genderSearch': gender,'sizeSearch': size, 'colorSearch': color}))
-    request.addEventListener('load', messagesReceived)  
+    
+    
   }
 
 // Called when messages are received

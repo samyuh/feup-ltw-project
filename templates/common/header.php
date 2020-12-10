@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
+    <script src="../../scripts/addPet.js" defer> </script>
+    <script src="../../scripts/favorite.js" defer> </script>
    
   </head>
   <body>

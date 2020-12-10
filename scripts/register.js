@@ -11,7 +11,6 @@ function validateRegistration(event) {
     let form = document.getElementById("registerForm")
 
     let username = form.querySelector('input[name="username"]').value
-    let gender = form.querySelector('input[name="gender"]').value
     let age = form.querySelector('input[name="age"]').value
     let location = form.querySelector('input[name="location"]').value
     let password = form.querySelector('input[name="password"]').value
@@ -21,15 +20,11 @@ function validateRegistration(event) {
     let regexAge = RegExp(/^\d+$/)
     let regexLocation = RegExp(/^[a-zA-Z0-9""]+$/)
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
+    let path = form.querySelector('input[name="image"]').value
+    var file = path.replace(/^.*\\/, "")
 
     if(!regex.test(username)) {
         alert("Invalid username. Use letters and numbers only.")
-    }
-    else if(!regexGender.test(gender)) {
-        alert("Invalid gender. Must be Male or Female")
-    }
-    else if(!regexAge.test(age)) {
-        alert("Invalid Age. Must be a number.")
     }
     else if(!regexLocation.test(location)) {
         alert("Invalid location. Use letters, numbers and blank space only.")
@@ -37,7 +32,17 @@ function validateRegistration(event) {
     else if(!regexPassword.test(password)) {
         alert("Invalid password. Must contain at least a letter and a number.")
     }
+    else if(!isFileImage(file)){
+        alert("Invalid file. Must be an image.")
+    }
     else {
         form.submit()
     } 
+
+    
+}
+
+function isFileImage(file) {
+    let f = file && file.split('.')[1]
+    return (f === 'jpeg')  || (f ==='jpg')  || (f === 'png') 
 }
