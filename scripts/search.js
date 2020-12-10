@@ -13,7 +13,7 @@ if(document.getElementById('name_search') != undefined) {
 // Ask for new messages
 function refresh() {
     let request = new XMLHttpRequest()
-    request.open('post', 'aux_php/get_data.php', true)
+    request.open('post', 'api/get_data.php', true)
     request.addEventListener('load', sendMessage)
     request.send()
   }

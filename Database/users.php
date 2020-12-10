@@ -1,4 +1,16 @@
 <?php
+     function isLogged() {
+        global $db;
+
+        if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
+            return FALSE;
+        }
+        else {
+            return TRUE;
+        }
+
+     }
+
      function userExists($username, $password) {
         global $db;
 

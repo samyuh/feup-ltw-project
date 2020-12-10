@@ -1,11 +1,14 @@
 <?php
-  session_start();                         // starts the session
+  include_once('../includes/session.php'); 
+  
   include_once('../database/connection.php'); // connects to the database
   include_once('../database/users.php');      // loads the functions responsible for the users table
 
-  if (userExists($_POST['username'], $_POST['password'])) { // test if user exists
-    $user = userExists($_POST['username'], $_POST['password']);
-    $_SESSION['user'] = $user;
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  if (userExists($username, $password)) { // test if user exists
+    $_SESSION['user'] = userExists($username, $password);
 
     header('Location: ../index.php');
   }
