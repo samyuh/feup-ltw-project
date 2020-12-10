@@ -4,7 +4,7 @@
   include_once('templates/common/header.php');
   include_once('database/users.php');
 
-  if(isLogged()) {
+  if(!isLogged()) {
     header('Location: ../error404.php');
   }
 

@@ -7,6 +7,10 @@
   $user = $_SESSION['user'];
   $new_password = $_POST['new_password'];
 
+  if(!isLogged()) {
+    header('Location: ../error404.php');
+  }
+  
   if(updatePassword($user, $new_password, $_POST['password'])) {
     $hashed_new_password = sha1($new_password);
     $_SESSION['user']['password'] = $hashed_new_password; 

@@ -7,6 +7,10 @@
   $user = $_SESSION['user'];
   $new_name = $_POST['new_username'];
 
+  if(!isLogged()) {
+    header('Location: ../error404.php');
+  }
+  
   if(updateUsername($user, $new_name, $_POST['password'])) {
     $_SESSION['user']['username'] = $new_name; 
     header('Location: ../index.php');

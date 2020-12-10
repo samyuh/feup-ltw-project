@@ -6,7 +6,7 @@
   include_once('database/adopt_pet.php');
   include_once('database/users.php');
   
-  if(isLogged()) {
+  if(!isLogged()) {
     header('Location: ../error404.php');
   }
 

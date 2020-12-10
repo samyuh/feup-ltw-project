@@ -29,7 +29,7 @@ function sendMessage(event) {
     let color = document.querySelector('input[name=colorSearch]').value
 
     let request = new XMLHttpRequest()
-    request.open("post", "aux_php/get_data.php", true)
+    request.open("post", "api/get_data.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'nameSearch': name, 'speciesSearch': species, 'genderSearch': gender,'sizeSearch': size, 'colorSearch': color}))
     

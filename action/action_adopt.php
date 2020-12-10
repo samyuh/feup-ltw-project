@@ -5,8 +5,8 @@
   include_once('../database/users.php');      
   include_once('../database/adopt_pet.php');
 
-  if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
-
+  if(!isLogged()) {
+    header('Location: ../error404.php');
   }
   else {
     $user = $_SESSION['user'];

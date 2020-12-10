@@ -6,6 +6,10 @@
   include_once('../database/pets.php');    
   include_once('../database/adopt_pet.php');
 
+  if(!isLogged()) {
+    header('Location: ../error404.php');
+  }
+  
   $user = $_SESSION['user'];
   addPet($user, $_POST['npetName'], $_POST['nspecie'], $_POST['ngender'], $_POST['nsize'], $_POST['ncolor']);
 
