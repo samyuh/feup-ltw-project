@@ -44,8 +44,8 @@
 
       <section id="posts">
         <h2>Posts</h2>
-        <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-        <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
+        <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+        <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
           <input type="text" name="post">
           <input type="submit" value="Post">
         </form>
