@@ -15,13 +15,37 @@ function validateLogin(event) {
     let regex = RegExp(/^[a-zA-Z0-9]+$/)
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
+    let errorUsername = false
+    let errorPassword = false
+
+    clearHTML()
+
     if(!regex.test(username)) {
-        alert("Invalid username. Use letters and numbers only.")
+        errorUsername = loginError('loginUsernameError',"Invalid username. Use letters and numbers only.")
     }
-    else if(!regexPassword.test(password)) {
-        alert("Invalid password. Must contain at least a letter and a number.")
+    if(!regexPassword.test(password)) {
+        errorPassword = loginError('loginPasswordError',"Invalid password. Must contain at least a letter and a number.")
     }
-    else {
+    if(!errorUsername && !errorPassword){
         form.submit()
     }
+            
+}
+
+function loginError(id,message){
+    let section = document.getElementById(id)
+
+    let p0 = document.createElement('p')
+    p0.innerText = message
+
+    section.appendChild(p0)
+
+    return true
+}
+
+
+
+function clearHTML(){
+    document.getElementById('loginUsernameError').innerHTML = ''
+    document.getElementById('loginPasswordError').innerHTML = ''
 }

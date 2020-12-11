@@ -11,7 +11,6 @@ function validateRegistration(event) {
     let form = document.getElementById("registerForm")
 
     let username = form.querySelector('input[name="username"]').value
-    let age = form.querySelector('input[name="age"]').value
     let location = form.querySelector('input[name="location"]').value
     let password = form.querySelector('input[name="password"]').value
 
@@ -23,19 +22,28 @@ function validateRegistration(event) {
     let regexLocation = RegExp(/^[a-zA-Z0-9""]+$/)
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
+    let errorUsername = false
+    let errorLocation = false
+    let errorPassword = false
+    let errorImage = false
+
+    clearRegisterHTML()
+
+
+
     if(!regex.test(username)) {
-        alert("Invalid username. Use letters and numbers only.")
+        errorUsername = registerError('registerUsernameError',"Invalid username. Use letters and numbers only.")
     }
-    else if(!regexLocation.test(location)) {
-        alert("Invalid location. Use letters, numbers and blank space only.")
+    if(!regexLocation.test(location)) {
+        errorLocation = registerError('registerLocationError',"Invalid location. Use letters, numbers and blank space only.")
     }
-    else if(!regexPassword.test(password)) {
-        alert("Invalid password. Must contain at least a letter and a number.")
+    if(!regexPassword.test(password)) {
+        errorPassword = registerError('registerPasswordError',"Invalid password. Must contain at least a letter and a number.")
     }
-    else if(!isFileImage(file)){
-        alert("Invalid file. Must be an image.")
+    if(!isFileImage(file)){
+        errorImage = registerError('registerImageError',"Invalid file. Must be an image.")
     }
-    else {
+    if(!errorUsername && !errorLocation && !errorPassword && !errorImage){
         form.submit()
     } 
 
@@ -45,4 +53,24 @@ function validateRegistration(event) {
 function isFileImage(file) {
     let f = file && file.split('.')[1]
     return (f === 'jpeg')  || (f ==='jpg')  || (f === 'png') 
+}
+
+function registerError(id,message){
+    let section = document.getElementById(id)
+
+    let p0 = document.createElement('p')
+    p0.innerText = message
+
+    section.appendChild(p0)
+
+    return true
+}
+
+
+
+function clearRegisterHTML(){
+    document.getElementById('registerUsernameError').innerHTML = ''
+    document.getElementById('registerLocationError').innerHTML = ''
+    document.getElementById('registerPasswordError').innerHTML = ''
+    
 }
