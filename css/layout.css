@@ -14,6 +14,7 @@ body {
 }
 
 /* ---------- PAGES LAYOUT ----------  */
+
 #pet,
 #owner,
 #petInformation,
@@ -42,38 +43,39 @@ body {
   flex-direction: column;
 }
 
+/* ---------- PROFILES LAYOUT ---------- */
+
 .infoGrid{
-  text-align: left;
-  padding-left: 8em;
-  padding-right: 8em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
   grid-gap: 2em;
 }
 
-.infoGrid #information_person{
+#owner .infoGrid #information_person{
   text-align: left;
   grid-row: 1;
   grid-column: 1;
   padding: 2em;
 }
 
-.infoGrid #information_pet{
+#pet .infoGrid #information_pet{
   grid-row-start: 1;
   grid-row-end: 3;  
   text-align: left;
   padding: 2em;
 }
 
-.infoGrid #favPets{
+#owner .infoGrid #favPets{
   text-align: left;
   grid-column: 1;
   grid-row: 2;
   padding: 2em;
 }
 
-.infoGrid #petsForAdoption, .infoGrid #posts, .infoGrid #proposals{
+#owner .infoGrid #petsForAdoption, 
+#pet .infoGrid #posts, 
+#pet .infoGrid #proposals{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;
@@ -81,7 +83,8 @@ body {
   padding: 2em;
 }
 
-.infoGrid #question, .infoGrid #adopted{
+#pet .infoGrid #question, 
+#owner .infoGrid #adopted{
   text-align: left;
   grid-column: 3;
   grid-row-start: 1;

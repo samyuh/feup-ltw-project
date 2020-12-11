@@ -1,0 +1,40 @@
+/* ------------- BUTTONS AND INPUTS ------------- */
+
+input[type=submit]{
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 1em;
+}
+  
+input[type=submit]:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+#pet button[type=submit]{
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: large;
+}
+
+#pet .infoGrid #proposals #uniqueproposal button[type=submit]{
+    color: green;
+}
+
+#pet .name_and_favorite button[type=submit]{
+    color: orange;
+}
+
+/* ------------- COMMON COMPONENTS -------------  */
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {color: black;}

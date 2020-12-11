@@ -8,7 +8,7 @@
     <link href="../../css/profile.css" rel="stylesheet">
     <link href="../../css/header.css" rel="stylesheet">
     <link href="../../css/footer.css" rel="stylesheet">
-    <link href="../../css/petProfile.css" rel="stylesheet">
+    <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/petInformation.css" rel="stylesheet">
     <link href="../../css/homepage.css" rel="stylesheet">
     <link href="../../css/updateUser.css" rel="stylesheet">

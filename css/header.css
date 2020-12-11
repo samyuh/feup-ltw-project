@@ -11,6 +11,11 @@ header a{
   color: white;
 }
 
+header a:visited{
+  text-decoration: none;
+  color: white;
+}
+
 header h1, h2{
   font-style: italic;
   margin: 0;
