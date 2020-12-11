@@ -7,6 +7,10 @@
   $user = $_SESSION['user'];
   $new_password = $_POST['new_password'];
 
+  if ($_SESSION['csrf'] != $_GET['token']) {
+    header('Location: ../error404.php');
+  }
+  
   if(!isLogged()) {
     header('Location: ../error404.php');
   }

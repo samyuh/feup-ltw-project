@@ -5,6 +5,10 @@
   include_once('../database/users.php');      
   include_once('../database/adopt_pet.php');
 
+  if ($_SESSION['csrf'] != $_GET['token']) {
+    header('Location: ../error404.php');
+  }
+  
   if(!isLogged()) {
     header('Location: ../error404.php');
   }
