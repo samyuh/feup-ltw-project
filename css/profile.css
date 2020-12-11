@@ -1,9 +1,14 @@
-#owner{
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    width: 100%;
+#owner .image img{
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+#owner .name{
+  text-align: center;
+}
 
 #owner a{
   color: black;

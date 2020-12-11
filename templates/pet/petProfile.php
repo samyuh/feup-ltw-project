@@ -1,4 +1,4 @@
-<section id="dog">
+<section id="pet">
   <div class="profileHeader">
     <div class="header">
     </div>

@@ -12,6 +12,6 @@
   $proposals = getAdoptionProposalList($_GET['idPet']);
   
   include_once('templates/common/header.php');
-  include_once('templates/pet/dog_profile.php');
+  include_once('templates/pet/petProfile.php');
   include_once('templates/common/footer.php');
 ?>

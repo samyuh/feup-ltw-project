@@ -1,3 +1,4 @@
+/* ---------- HTML AND BODY ----------  */
 html{
   height: 100%;
   width: 100%;
@@ -12,25 +13,33 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body > header {
-  height: 3.5em;
+/* ---------- PAGES LAYOUT ----------  */
+#pet,
+#owner,
+#petInformation,
+#error404, 
+#homepage,
+#add,
+#advanced_search_page,
+#pet-update,
+#update{
+  height: 100%;
+  width: 100%;
+  flex: 1;
 }
 
-.header{
-  position: absolute;
+#petInformation,
+#update{
+  display: flex;
+  flex-direction: row;
 }
 
-.image img{
-  position: relative;
-  border-radius: 50%;
-  /* center */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.name{
-  text-align: center;
+#error404,
+#homepage,
+#add,
+#advanced_search_page{
+  display: flex;
+  flex-direction: column;
 }
 
 .infoGrid{
@@ -50,12 +59,13 @@ body > header {
   padding: 2em;
 }
 
-#information_pet{
+.infoGrid #information_pet{
   grid-row-start: 1;
   grid-row-end: 3;  
   text-align: left;
   padding: 2em;
 }
+
 .infoGrid #favPets{
   text-align: left;
   grid-column: 1;
@@ -71,15 +81,7 @@ body > header {
   padding: 2em;
 }
 
-.infoGrid #question{
-  text-align: left;
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  padding: 2em;
-}
-
-.infoGrid #adopted{
+.infoGrid #question, .infoGrid #adopted{
   text-align: left;
   grid-column: 3;
   grid-row-start: 1;
