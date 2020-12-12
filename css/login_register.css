@@ -49,11 +49,6 @@ body, html{
     left: 10em;
     padding: 3em;
     width: 20em;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    background-color:rgba(256, 256, 256, 0.6);
 }
 
 input, button{
@@ -70,14 +65,4 @@ input, button{
 
 .submit_register{
     padding-top: 0.5em;
-}
-
-.gender{
-    display: flex;
-    flex-direction: column;
-}
-
-.genderoptions{
-    display: flex;
-    flex-direction: row;
 }
