@@ -1,7 +1,4 @@
-<section id="login">
-  <div class="hero-image">
-    <img src="../images/family-dog.jpeg" alt="">
-  </div>
+<div class="login">
   <div class="name_slogan">
     <h1><a href="index.php">Pet Shelter</a></h1>
     <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
@@ -25,7 +22,7 @@
           </label>
         </div>
         <div class="submit">
-          <button id="loginButton" type="submit" value="Log In">
+          <button id="loginButton" type="submit" value="Log In">Log In</button>
         </div>
 
       </form>
@@ -38,4 +35,4 @@
       </form>
     </div>
   </div>
-</section>
+</div>

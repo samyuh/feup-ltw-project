@@ -1,24 +1,115 @@
-#owner{
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    width: 100%;
+/* -------------  Common Between Profile Types ------------- */
+.profileHeader .image img{
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#owner .image{
+.profileHeader .image{
   padding-top: 6em;
 }
+
+.profileHeader .name{
+  text-align: center;
+}
   
-.infoGrid #information_person,
-.infoGrid #petsForAdoption,
-.infoGrid #adopted,
-.infoGrid #favPets{
+.infoGrid{
+  padding-left: 8em;
+  padding-right: 8em;
+  text-align: left;
+}
+
+#information_person,
+#petsForAdoption,
+#adopted,
+#favPets,
+#information_pet,
+#proposals, 
+#posts, 
+#question{
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
-.infoGrid #information_person p{
+#information_person p{
   border-bottom: solid;
   padding-bottom: 5px;
   border-width: 1px;
 }
+
+#information_pet #information_and_update, 
+#proposals #uniqueproposal{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#information_pet #information_and_update #moreinfo{
+  margin-left: auto;
+}
+
+#information_pet p{
+  border-bottom: solid;
+  padding-bottom: 5px;
+  border-width: 1px;
+}
+
+.name_and_favorite{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#proposals #adoption-propose{
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+#question{
+  display: flex;
+  flex-direction: column;
+  max-width: 31em;
+}
+
+#question .questionform{
+  padding-top: 1em;  
+  display: flex;
+  flex-direction: column;
+}
+
+#pet .infoGrid #question input[type=submit]{
+  margin-top: 1em;
+  margin-left: auto;
+}
+
+/* || Speech Bubbles */
+
+#pet .infoGrid #question input[type=text], 
+#pet .infoGrid #question #uniquequestion p{
+  position: relative;
+  border: none;
+  background-color: rgb(197, 235, 223);
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+  border-radius: 1rem;
+  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+#pet .infoGrid #question input[type=text]::before,
+#pet .infoGrid #question #uniquequestion p::before{
+content: '';
+position: absolute;
+width: 0;
+height: 0;
+bottom: -0.6em;
+left: 22em;
+border: .75rem solid transparent;
+border-bottom: none;
+  border-top-color: rgb(197, 235, 223);
+  box-shadow:	rgba(0, 0, 0, .3);
+}
+

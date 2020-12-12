@@ -1,0 +1,98 @@
+/*-----------------------------------------------
+--------------- COMMON COMPONENTS ---------------
+------------------------------------------------*/
+
+/* ------------- BUTTONS AND INPUTS ------------- */
+
+#intro #found-pet a,
+input[type=submit],
+button{
+    border: 1px solid #008080;
+    background-color: #008080;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 4px;
+}
+
+#intro #found-pet a:hover,
+input[type=submit]:hover,
+button:hover{
+    border: 1px solid #004646;
+    background-color: #004646;
+}
+
+#pet button[type=submit]{
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: large;
+}
+
+#pet .infoGrid #proposals #uniqueproposal button[type=submit]{
+    color: green;
+}
+
+#pet .name_and_favorite button[type=submit]{
+    color: orange;
+}
+
+header #search button,
+#information_and_update button{
+    background-color: white;
+    border-radius: 0;
+    color: black;
+    padding: 0.3em;
+    margin: 0;
+  }
+
+input[type=text], input[type=password]{
+    border: 1px solid #ccc;
+}
+
+/* ------------- COMMON COMPONENTS ------------- */
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {color: black;}
+
+footer a:visited,
+header a:visited{
+    color: white;
+}
+
+footer a,
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+/* ------------- ANIMATIONS ------------- */
+
+@keyframes pink_and_blue {
+    0%   {color: rgb(230, 103, 124);}
+    50%  {color: rgb(19, 77, 165);}
+    100%  {color: rgb(230, 103, 124);}
+}
+
+  
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
