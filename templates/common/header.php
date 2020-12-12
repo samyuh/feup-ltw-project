@@ -12,8 +12,7 @@
     <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/petInformation.css" rel="stylesheet">
     <link href="../../css/homepage.css" rel="stylesheet">
-    <link href="../../css/updateUser.css" rel="stylesheet">
-    <link href="../../css/updatePet.css" rel="stylesheet">
+    <link href="../../css/update.css" rel="stylesheet">
     <link href="../../css/search_advanced.css" rel="stylesheet">
     <link href="../../css/newPet.css" rel="stylesheet">
     <link href="../../css/error404.css" rel="stylesheet">

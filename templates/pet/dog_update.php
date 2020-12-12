@@ -1,4 +1,4 @@
-<section id="pet-update">
+<section id="update">
     <form class="goback" action="dog_profile.php?idPet=<?=$pet['idPet']?>" method="post">
         <button type="submit">Back to Pet's page</button>
     </form>

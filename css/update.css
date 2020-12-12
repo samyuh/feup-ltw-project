@@ -1,9 +1,13 @@
-#pet-update .goback{
-    text-align: center;
-    padding: 1em;
+#update{    
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
-#pet-update #updatecontainers{
+#updatecontainers{
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -13,8 +17,8 @@
     padding: 1em;
 }
 
-#pet-update input, 
-#pet-update #updatecontainers .updateposts #buttonsposts button{
+#update input,
+.updateposts #buttonsposts button{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -23,9 +27,15 @@
     box-sizing: border-box;
 }
 
-#pet-update #updatecontainers .updatepetinfo,
-#pet-update #updatecontainers .updateposts,
-#pet-update #updatecontainers .add-photo{    
+#update button{
+    margin-top: auto;
+}
+
+.changeUsername,
+.changePassword,
+.updatepetinfo,
+.updateposts,
+.add-photo{
     height: 40em;
     width: 30em;
     text-align: center;
@@ -33,10 +43,15 @@
     flex-direction: column;
 }
 
-#pet-update #updatecontainers .updateposts #buttonsposts{
+.goback{
+    text-align: center;
+    padding: 1em;
+}
+
+.updateposts #buttonsposts{
     display: flex;
 }
 
-#pet-update #updatecontainers .updateposts #buttonsposts input[type=submit]{
+.updateposts #buttonsposts input[type=submit]{
     width: 50%;
 }

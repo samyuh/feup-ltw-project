@@ -16,9 +16,9 @@
 #question,
 #advanced_search,
 #displayPets #profile,
-#pet-update #updatecontainers .updatepetinfo,
-#pet-update #updatecontainers .updateposts,
-#pet-update #updatecontainers .add-photo,
+#update #updatecontainers .updatepetinfo,
+#update #updatecontainers .updateposts,
+#update #updatecontainers .add-photo,
 #update .changeUsername,
 #update .changePassword{
     margin:1em;
