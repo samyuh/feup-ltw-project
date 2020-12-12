@@ -21,19 +21,6 @@
   text-align: left;
 }
 
-#information_person,
-#petsForAdoption,
-#adopted,
-#favPets,
-#information_pet,
-#proposals, 
-#posts, 
-#question{
-  border-radius: 10px;
-  box-sizing: border-box;
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
-}
-
 #information_person p{
   border-bottom: solid;
   padding-bottom: 5px;
@@ -85,31 +72,3 @@
   margin-top: 1em;
   margin-left: auto;
 }
-
-/* || Speech Bubbles */
-
-#pet .infoGrid #question input[type=text], 
-#pet .infoGrid #question #uniquequestion p{
-  position: relative;
-  border: none;
-  background-color: rgb(197, 235, 223);
-  padding: 1.125em 1.5em;
-  font-size: 1.25em;
-  border-radius: 1rem;
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
-}
-
-#pet .infoGrid #question input[type=text]::before,
-#pet .infoGrid #question #uniquequestion p::before{
-content: '';
-position: absolute;
-width: 0;
-height: 0;
-bottom: -0.6em;
-left: 22em;
-border: .75rem solid transparent;
-border-bottom: none;
-  border-top-color: rgb(197, 235, 223);
-  box-shadow:	rgba(0, 0, 0, .3);
-}
-

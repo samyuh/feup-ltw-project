@@ -52,6 +52,21 @@ input[type=text], input[type=password]{
     border: 1px solid #ccc;
 }
 
+#pet-update #updatecontainers .updateposts #buttonsposts button[type=submit]{
+    width: 50%;
+    font-size: 16px;
+    border: 1px solid #bb1313;
+    background-color: #bb1313;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#pet-update #updatecontainers .updateposts #buttonsposts button[type=submit]:hover{
+    border: 1px solid #7c0e0e;
+    background-color: #7c0e0e;
+}
+
 /* ------------- COMMON COMPONENTS ------------- */
 
 a{

@@ -91,3 +91,11 @@ body {
   grid-row-end: 3;
   padding: 2em;
 }
+
+/* ---------- ADVANCED SEARCH LAYOUT ---------- */
+
+#displayPets{
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
