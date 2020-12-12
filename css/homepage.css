@@ -18,23 +18,9 @@
     font-size: medium;
     font-style: normal;
 }
+
 #intro #found-pet{
    padding-top: 1em;
-}
-
-#intro #found-pet a{
-    text-decoration: none;
-    border: 1px solid #008080;
-    background-color: #008080;
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
-    padding: 1em;
-}
-
-#intro #found-pet a:hover{
-    border: 1px solid #004646;
-    background-color: #004646;
 }
 
 #dogs_information{
@@ -42,6 +28,7 @@
     grid-template-columns: 25% 25% 25% 25%;
     text-align: center;
 }
+
 #homepage_profile {
     position: relative;
     text-align: center;
@@ -91,18 +78,6 @@
     transform: translate(-50%, -50%);
 }
 
-#homepage_profile a {
-    text-decoration: none;
-    font-size: 1em;
-    color: black;
-}
-
 #homepage_profile a:hover {
     animation: pink_and_blue 3s infinite;
-}
-
-@keyframes pink_and_blue {
-  0%   {color: rgb(230, 103, 124);}
-  50%  {color: rgb(19, 77, 165);}
-  100%  {color: rgb(230, 103, 124);}
 }

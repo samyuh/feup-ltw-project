@@ -4,22 +4,9 @@
     align-items: center;
 }
 
-#add a{
-    color: black;
-    text-decoration: none;
-}
-
-#add a:visited{
-    color: black;
-}
-
 #add #petinfocontainer{
     width: 30em;
-    padding: 2em;
     text-align: center;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
 #add #petinfocontainer .inputsNewPet{
@@ -40,16 +27,4 @@
 #add #petinfocontainer .inputsNewPet input[type=submit]{
     margin-top: 1em;
     font-size: 16px;
-    border: 1px solid #008080;
-    background-color: #008080;
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 0.5em;
-}
-
-#add #petinfocontainer .inputsNewPet input[type=submit]:hover{
-    border: 1px solid #004646;
-    background-color: #004646;
 }

@@ -29,7 +29,6 @@ body, html{
 
 .name_slogan a{
     color: white;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-decoration: none;
 }
 
@@ -41,21 +40,6 @@ body, html{
 
 .name_slogan h2{
     font-style: italic;
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
 }
 
 .container_forms{
@@ -78,24 +62,7 @@ input, button{
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border-radius: 4px;
     box-sizing: border-box;
-}
-input[type=text], input[type=password]{
-    border: 1px solid #ccc;
-}
-
-input[type=submit], button{
-    border: 1px solid #008080;
-    background-color: #008080;
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-input[type=submit]:hover, button:hover{
-    border: 1px solid #004646;
-    background-color: #004646;
 }
 
 .submit{
