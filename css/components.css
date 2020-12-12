@@ -1,8 +1,15 @@
-/*-----------------------------------------------
---------------- COMMON COMPONENTS ---------------
-------------------------------------------------*/
-
 /* ------------- BUTTONS AND INPUTS ------------- */
+
+input, 
+.login button, 
+#register button,
+.updateposts #buttonsposts button{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
 
 #intro #found-pet a,
 input[type=submit],
