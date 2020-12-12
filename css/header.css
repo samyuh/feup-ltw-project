@@ -1,7 +1,5 @@
 header{
   background-image: linear-gradient(to bottom right, #326771, #28464B);
-  display: flex;
-  flex-direction: row;
   padding: 1em;
 }
 

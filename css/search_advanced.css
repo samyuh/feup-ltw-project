@@ -15,10 +15,11 @@
 }
 
 #displayPets #profile img{
-    border-radius: 0;
+    border-radius: 20%;
 }
 
 #displayPets #profile .info{
+    margin-left: 1em;
     padding: 1em;
     display: grid;
     grid-template-columns: 50% 50%;

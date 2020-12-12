@@ -5,7 +5,6 @@
 #intro{
     padding-bottom: 2em;   
     padding-top: 2em; 
-    width: start/end;
     text-align: center;
 }
 
@@ -23,12 +22,6 @@
    padding-top: 1em;
 }
 
-#dogs_information{
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    text-align: center;
-}
-
 #homepage_profile {
     position: relative;
     text-align: center;
@@ -44,6 +37,7 @@
     top: 0;
     bottom: 0;
     margin: auto auto;
+    border-radius: 20%;
 }
 
 #homepage_profile p {
@@ -62,6 +56,7 @@
     opacity: 0;
     transition: .5s ease-out;
     background-color: black;
+    border-radius: 20%;
 }
 
 .overlay:hover {
