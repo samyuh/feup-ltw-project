@@ -12,7 +12,7 @@ function refreshProfile(){
 
     let idPet = questionForm.querySelector('input[name="idPet').value
     let request = new XMLHttpRequest();
-    request.open('post', 'aux_php/get_questions.php?',true)
+    request.open('post', 'api/get_questions.php?',true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     
     request.addEventListener('load', questionsReceived);
@@ -36,7 +36,7 @@ function addQuestion(event) {
     let idPet = questionForm.querySelector('input[name="idPet').value
 
     let request = new XMLHttpRequest()
-    request.open("post", "aux_php/add_question.php", true)
+    request.open("post", "api/add_question.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'question': question, 'idPet':idPet}))
 
