@@ -1,13 +1,13 @@
 <?php
+  /* Initialize Session and Database */
   include_once('../includes/session.php');
   include_once('../includes/database.php');
-                           
-  include_once('../database/pets.php');      // loads the functions responsible for the users table
+  
+  /* Database Managers Files */
+  include_once('../database/pets.php');
 
-  if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
-
-  }
-  else {
+  /* Verifications and set variables */
+  if(isLogged()) {
     $user = $_SESSION['user'];
     updateFavoriteList($user, $_POST['idPet']);
   }

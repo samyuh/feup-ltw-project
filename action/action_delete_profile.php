@@ -1,20 +1,23 @@
 <?php
+  /* Initialize Session and Database */
   include_once('../includes/session.php');
   include_once('../includes/database.php');
   
-  include_once('../database/users.php');      // loads the functions responsible for the users table
-  
-  $user = $_SESSION['user'];
-  $password = $_POST['password'];
+  /* Database Managers Files */
+  include_once('../database/users.php');      
 
-  if ($_SESSION['csrf'] != $_GET['token']) {
-    header('Location: ../error404.php');
-  }
-  
+  /* Verifications and set variables */
   if(!isLogged()) {
     header('Location: ../error404.php');
   }
   
+  if ($_SESSION['csrf'] != $_GET['token']) {
+    header('Location: ../error404.php');
+  }
+  
+  $user = $_SESSION['user'];
+  $password = $_POST['password'];
+
   if(deleteUser($user, $password)) {
     $_SESSION = array();
     session_destroy();

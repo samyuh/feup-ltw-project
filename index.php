@@ -1,11 +1,15 @@
 <?php
+  /* Initialize Session and Database */
   include_once('./includes/session.php');
   include_once('./includes/database.php');
 
+  /* Database Managers Files */
   include_once('database/pets.php');
 
-   $articles = isset($_POST["search"]) ? getPetsByName($_POST["search"]) : getAllDogs();
+  /* Verifications and set variables */
+  $articles = isset($_POST["search"]) ? getPetsByName($_POST["search"]) : getAllDogs();
 
+  /* HTML Code */
   include_once('templates/common/header.php');
   include_once('templates/home/homepage.php');
   include_once('templates/common/footer.php');
