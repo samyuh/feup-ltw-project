@@ -42,10 +42,6 @@
     padding: 1em;
 }
 
-.updateposts #buttonsposts{
-    display: flex;
-}
-
 .updateposts #buttonsposts input[type=submit]{
     width: 50%;
 }
