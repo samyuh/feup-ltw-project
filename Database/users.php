@@ -26,15 +26,25 @@
         }
     }
 
-    function insertUser($username, $gender, $age, $location, $password) {
+    function userUnique($username) {
         global $db;
 
-        $stmtUserCheck = $db->prepare('SELECT * FROM User WHERE username = (?)');;
+        $stmtUserCheck = $db->prepare('SELECT * FROM User WHERE username = ?');;
         
         $stmtUserCheck->execute(array($username));
         $userValid = $stmtUserCheck->fetch();
-        
+
         if(empty($userValid)) {
+            return TRUE;
+        }
+        else return FALSE;
+
+    }
+
+    function insertUser($username, $gender, $age, $location, $password) {
+        global $db;
+        
+        if(userUnique($username)) {
             $stmt = $db->prepare('INSERT INTO User(username, gender, age, location, password) VALUES (?, ?, ?, ?, ?)');
 
             $options = ['cost' => 12];
@@ -45,6 +55,7 @@
             move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
 
             $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
+
             if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
                 return TRUE;
             }
@@ -60,7 +71,7 @@
     function updateUsername($user, $new_username, $password) {
         global $db;
 
-        if (checkUserPassword($user['username'], $password) !== false) {
+        if (checkUserPassword($user['username'], $password) !== false && userUnique($new_username)) {
             $stmt = $db->prepare('UPDATE User SET username = ? WHERE idUser = ?');
             $stmt->execute(array($new_username, $user['idUser']));
 
@@ -93,4 +104,16 @@
 
         return $user_profile;
     }
+
+    function deleteUser($user, $password) {
+        global $db;
+
+        if (checkUserPassword($user['username'], $password) !== false) {
+            $stmt = $db->prepare('DELETE FROM User WHERE username = ?');
+            $stmt->execute(array($user['username']));
+
+            return TRUE;
+        }
+        else return FALSE;
+      }
 ?>

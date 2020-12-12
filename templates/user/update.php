@@ -27,4 +27,14 @@
         <button id="updatePasswordButton" type="submit" value="Update Password">Update Password</button>
       </form>
   </section>
+
+  <section id="deleteProfile">
+      <form id="deleteProfileForm" class="deleteProfile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
+        <h1>Delete Profile</h1>  
+        <label>
+          Actual Password<input type="password" name="password">
+        </label>
+        <button id="deleteProfileButton" type="submit" value="Update Password">Delete Profile Permanently</button>
+      </form>
+  </section>
 </section>
