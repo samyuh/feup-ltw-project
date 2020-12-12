@@ -72,5 +72,6 @@ function clearRegisterHTML(){
     document.getElementById('registerUsernameError').innerHTML = ''
     document.getElementById('registerLocationError').innerHTML = ''
     document.getElementById('registerPasswordError').innerHTML = ''
+    document.getElementById('registerImageError').innerHTML = ''
     
 }
