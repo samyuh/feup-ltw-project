@@ -3,28 +3,14 @@
     justify-content: center;
     align-items: center;
     column-gap: 2em;
-    display: flex;
-    flex-direction: column;
 }
 
 #updatecontainers{
     overflow: hidden;
-    display: flex;
-    flex-direction: row;
     justify-content: center; /*centers items on the line (the x-axis by default)*/
     align-items: center; /*centers items on the cross-axis (y by default)*/ 
     column-gap: 2em;
     padding: 1em;
-}
-
-#update input,
-.updateposts #buttonsposts button{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border-radius: 4px;
-    box-sizing: border-box;
 }
 
 #update button{
@@ -39,17 +25,11 @@
     height: 40em;
     width: 30em;
     text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .goback{
     text-align: center;
     padding: 1em;
-}
-
-.updateposts #buttonsposts{
-    display: flex;
 }
 
 .updateposts #buttonsposts input[type=submit]{

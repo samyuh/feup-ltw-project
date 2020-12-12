@@ -1,7 +1,4 @@
 body, html{
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +12,6 @@ body, html{
 }
 
 #register{
-    
     height: 96%;
     width: 100%;
 }
@@ -49,19 +45,6 @@ body, html{
     left: 10em;
     padding: 3em;
     width: 20em;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    background-color:rgba(256, 256, 256, 0.6);
-}
-
-input, button{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    box-sizing: border-box;
 }
 
 .submit{
@@ -70,14 +53,4 @@ input, button{
 
 .submit_register{
     padding-top: 0.5em;
-}
-
-.gender{
-    display: flex;
-    flex-direction: column;
-}
-
-.genderoptions{
-    display: flex;
-    flex-direction: row;
 }
