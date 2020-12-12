@@ -46,7 +46,7 @@ button:hover{
     color: orange;
 }
 
-header #search button,
+header .searchbar button,
 #information_and_update button{
     background-color: white;
     border-radius: 0;

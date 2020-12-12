@@ -17,6 +17,14 @@ header #name_slogan{
   border-right: 1px solid white;
 }
 
+.mobile_header button{
+  display: none;
+}
+
+.mobile_search button{
+  display: none;
+}
+
 header #rightside{
   margin-left: auto;
   margin-right: 5em;
@@ -25,6 +33,9 @@ header #rightside{
 header #search, 
 header #rightside #settings{
   margin-right: 3em;
+}
+
+header #rightside #settings{
   padding-top: 1em;
 }
 
@@ -80,4 +91,45 @@ body > header #signup a {
 
 body > header #signup a:first-child {
   padding-left: 0;
+}
+
+/* -------------- RESPONSIVE HEADER -------------- */
+
+@media screen and (max-width: 1000px){
+  header #name_slogan h2{
+    display: none;
+  }
+  header .searchbar button,
+  header #search input{
+    display: none;
+  }
+  header #rightside #settings{
+    padding-top: .5em;
+  }
+  #advanced-search{
+    padding-top: .5em;
+  }
+}
+
+
+@media screen and (max-width: 650px){
+  header #name_slogan h1{
+    display: none;
+  }
+  #advanced-search{
+    display: none;
+  }
+  .mobile_header button,
+  .mobile_search button{
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  .mobile_header button:hover,
+  .mobile_search button:hover{
+    border: none;
+  }
+  header #search{
+    margin-left: 1em;
+  }
 }
