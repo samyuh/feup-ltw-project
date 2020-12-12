@@ -16,16 +16,43 @@ function validateUpdateUsername(e){
     let regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
+    clearUpdateHTML()
+
+    let usernameError = false
+    let passwordError = false
+
     if(!regex.test(username)) {
-        alert("Invalid username. Use letters and numbers only.")
+        usernameError = updateError('updateNewUsernameError',"Invalid username. Use letters and numbers only.")
     }
-    else if(!regexPassword.test(password)) {
-        alert("Invalid password. Must contain at least a letter and a number.")
+    if(!regexPassword.test(password)) {
+        passwordError = updateError('updateActualPasswordError',"Invalid password. Must contain at least a letter and a number.")
     }
-    else{
+    if(!usernameError && !passwordError){
         form.submit()
     } 
 }
+
+function updateError(id,message){
+    let section = document.getElementById(id)
+
+    let p0 = document.createElement('p')
+    p0.innerText = message
+
+    section.appendChild(p0)
+
+    return true
+}
+
+
+function clearUpdateHTML(){
+    document.getElementById('updateNewUsernameError').innerHTML = ''
+    document.getElementById('updateActualPasswordError').innerHTML = ''
+    document.getElementById('updateNewPasswordError').innerHTML = ''
+    document.getElementById('updateConfirmPasswordError').innerHTML = ''
+    document.getElementById('updateCurrentPasswordError').innerHTML = ''
+}
+
+
 
 
 //This function validates the username, if it doesnt work a message is raised
@@ -40,13 +67,19 @@ function validateUpdatePassword(e){
     //regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
     let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
 
+    clearUpdateHTML()
+
+    let newPassError = false
+    let confPassError = false
+    let passError = false
+
     if(!regexPassword.test(new_password)){
-        alert("Invalid new password. Must contain at least a letter and a number.")
-    }else if(!regexPassword.test(confirm_password)){
-        alert("Invalid password confirmation. Must contain at least a letter and a number.")
-    }else if(!regexPassword.test(password)){
-        alert("Invalid password. Must contain at least a letter and a number.")
-    }else{
+        newPassError = updateError("updateNewPasswordError","Invalid new password. Must contain at least a letter and a number.")
+    }if(!regexPassword.test(confirm_password)){
+        confPassError = updateError("updateConfirmPasswordError","Invalid password confirmation. Must contain at least a letter and a number.")
+    }if(!regexPassword.test(password)){
+        passError = updateError("updateCurrentPasswordError","Invalid password. Must contain at least a letter and a number.")
+    }if(!newPassError && !confPassError && !passError){
         form.submit()
     } 
 }

@@ -1,15 +1,9 @@
-#update{
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    width: 100%;      
+#update{    
     overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /*centers items on the line (the x-axis by default)*/
-    align-items: center; /*centers items on the cross-axis (y by default)*/ 
+    justify-content: center;
+    align-items: center;
     column-gap: 2em;
 }
-
 
 #update a{
     color: black;

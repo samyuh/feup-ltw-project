@@ -8,20 +8,22 @@
     <link href="../../css/profile.css" rel="stylesheet">
     <link href="../../css/header.css" rel="stylesheet">
     <link href="../../css/footer.css" rel="stylesheet">
-    <link href="../../css/dog-profile.css" rel="stylesheet">
-    <link href="../../css/dogInformation.css" rel="stylesheet">
+    <link href="../../css/components.css" rel="stylesheet">
+    <link href="../../css/petInformation.css" rel="stylesheet">
     <link href="../../css/homepage.css" rel="stylesheet">
     <link href="../../css/updateUser.css" rel="stylesheet">
     <link href="../../css/updatePet.css" rel="stylesheet">
     <link href="../../css/search_advanced.css" rel="stylesheet">
     <link href="../../css/newPet.css" rel="stylesheet">
     <link href="../../css/error404.css" rel="stylesheet">
+    <link href="../../css/containers.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/addPet.js" defer> </script>
     <script src="../../scripts/favorite.js" defer> </script>
+    <script src="../../scripts/add_question.js" defer> </script>
    
   </head>
   <body>

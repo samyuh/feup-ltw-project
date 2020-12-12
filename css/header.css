@@ -2,13 +2,7 @@ header{
   background-image: linear-gradient(to bottom right, #326771, #28464B);
   display: flex;
   flex-direction: row;
-  font-family: Arial, Helvetica, sans-serif;
   padding: 1em;
-}
-
-header a{
-  text-decoration: none;
-  color: white;
 }
 
 header h1, h2{
@@ -30,7 +24,8 @@ header #rightside{
   margin-right: 5em;
 }
 
-header #search, header #rightside #settings{
+header #search, 
+header #rightside #settings{
   margin-right: 3em;
   padding-top: 1em;
 }
@@ -39,6 +34,7 @@ header #search{
   margin-left: 3em;
 }
 
+/* SEARCH BAR */
 #search #advanced-search a{
   font-size: small;
 }

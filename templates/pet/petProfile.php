@@ -1,4 +1,4 @@
-<section id="dog">
+<section id="pet">
   <div class="profileHeader">
     <div class="header">
     </div>
@@ -55,16 +55,16 @@
     <section id="question">
       <h2>Ask a Question</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
-      <form class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+      <form id='questionForm' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
         <input type="text" name="question">
-        <input type="submit" value="Ask">
+        <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
+        <input id="questionFormButton" type="submit" value="Ask">
       </form>
+      <section id="qs">
+        
+      </section>
       <?php } ?>
-      <?php foreach($questions as $qst) {?>
-        <section id="uniquequestion">
-          <p><?=$qst['info']?></p>
-        </section>
-      <?php } ?>
+
     </section>
 
     <section id="proposals">

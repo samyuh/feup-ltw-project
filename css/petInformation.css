@@ -1,11 +1,3 @@
-#petInformation{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    margin: 1em;
-    gap: 1em;
-}
-
 #petInformation a{
     color: black;
     text-decoration: none;
@@ -16,6 +8,7 @@
 }
 
 #petInformation #informationSidebar{
+    padding-top: 1em;
     flex: 1;
     text-align: center;
 }
@@ -24,16 +17,6 @@
     flex: 4;
     display: flex;
     flex-direction: column;
-}
-
-#petInformation #content #photos,
-#petInformation #content #biography,
-#petInformation #content #posts{  
-    margin:1em;  
-    padding: 2em;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
 #petInformation #content h2{
@@ -56,7 +39,8 @@
 }
 
 /* Next & previous buttons */
-#petInformation #content #top-content #photos .prev, #petInformation #content #top-content #photos .next {
+#petInformation #content #top-content #photos .prev, 
+#petInformation #content #top-content #photos .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
