@@ -8,7 +8,6 @@
         else {
             return TRUE;
         }
-
      }
 
     function checkUserPassword($username, $password) {
@@ -19,7 +18,6 @@
 
         $user = $stmt->fetch();
 
-        print($user['password']);
         if($user !== false && password_verify($password, $user['password'])) {
             return $user;
         }
@@ -59,6 +57,32 @@
         }
     }
 
+    function updateUsername($user, $new_username, $password) {
+        global $db;
+
+        if (checkUserPassword($user['username'], $password) !== false) {
+            $stmt = $db->prepare('UPDATE User SET username = ? WHERE idUser = ?');
+            $stmt->execute(array($new_username, $user['idUser']));
+
+            return TRUE;
+        }
+        else return FALSE;
+      }
+
+      function updatePassword($user, $new_password, $password) {
+        global $db;
+
+        if (checkUserPassword($user['username'], $password) !== false) {
+            $stmt = $db->prepare('UPDATE User SET password = ? WHERE idUser = ?');
+
+            $options = ['cost' => 12];
+            $stmt->execute(array(password_hash($new_password, PASSWORD_DEFAULT, $options), $user['idUser']));
+            
+            return TRUE;
+        }
+        else return FALSE;
+      }
+
     function getUser($user) {
         global $db;
         
@@ -69,42 +93,4 @@
 
         return $user_profile;
     }
-
-    function updateUsername($user, $new_username, $password) {
-        global $db;
-
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?');
-
-        $hashed_password = sha1($password);
-        $stmt->execute(array($user['username'], $hashed_password));
-        $userVerify = $stmt->fetch();
-
-        if ($userVerify) {
-            $stmt = $db->prepare('UPDATE User SET username = ? WHERE idUser = ?');
-            $stmt->execute(array($new_username, $user['idUser']));
-            
-            return TRUE;
-        }
-        else return FALSE;
-      }
-
-      function updatePassword($user, $new_password, $password) {
-        global $db;
-
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?');
-
-        $hashed_password = sha1($password);
-        $stmt->execute(array($user['username'], $hashed_password));
-        $userVerify = $stmt->fetch();
-
-        if ($userVerify) {
-            $stmt = $db->prepare('UPDATE User SET password = ? WHERE idUser = ?');
-
-            $hashed_new_password = sha1($new_password);
-            $stmt->execute(array($hashed_new_password, $user['idUser']));
-            
-            return TRUE;
-        }
-        else return FALSE;
-      }
 ?>

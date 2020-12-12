@@ -16,8 +16,11 @@
   }
   
   if(updatePassword($user, $new_password, $_POST['password'])) {
-    $hashed_new_password = sha1($new_password);
-    $_SESSION['user']['password'] = $hashed_new_password; 
+    $options = ['cost' => 12];
+    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT, $options);
+
+    $_SESSION['user']['password'] = $hashed_password; 
+
     header('Location: ../index.php');
   }
   else {
