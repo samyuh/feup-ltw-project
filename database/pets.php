@@ -91,6 +91,19 @@
         return $petsID;
     }
 
+    function getAllProposals() {
+        global $db;
+        
+        $stmt = $db->prepare('SELECT * FROM PetPhoto WHERE idPet = ?');
+        
+        $stmt->execute(array($id));
+        $petsID = $stmt->fetchAll();
+
+
+        return $petsID;
+
+    }
+
     function getAllPhotos($id) {
         global $db;
         

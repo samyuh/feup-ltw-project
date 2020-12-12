@@ -11,24 +11,26 @@
 
      }
 
-     function userExists($username, $password) {
+    function checkUserPassword($username, $password) {
         global $db;
 
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?');
+        $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
+        $stmt->execute(array($username));
 
-        $hashed_password = sha1($password);
-        $stmt->execute(array($username, $hashed_password));
         $user = $stmt->fetch();
 
-        if ($user) {
+        print($user['password']);
+        if($user !== false && password_verify($password, $user['password'])) {
             return $user;
         }
-        else return FALSE;
+        else {
+            return false;
+        }
     }
 
-    function insert($username, $gender, $age, $location, $password) {
+    function insertUser($username, $gender, $age, $location, $password) {
         global $db;
-        
+
         $stmtUserCheck = $db->prepare('SELECT * FROM User WHERE username = (?)');;
         
         $stmtUserCheck->execute(array($username));
@@ -36,16 +38,15 @@
         
         if(empty($userValid)) {
             $stmt = $db->prepare('INSERT INTO User(username, gender, age, location, password) VALUES (?, ?, ?, ?, ?)');
-        
-            $hashed_password = sha1($password);
-            $stmt->execute(array($username, $gender, $age, $location, $hashed_password));
+
+            $options = ['cost' => 12];
+            $stmt->execute(array($username, $gender, $age, $location, password_hash($password, PASSWORD_DEFAULT, $options)));
 
             $idUser = $db->lastInsertId();
-
             $originalFileName = "../images/user/user-$idUser.jpg";
-            // Move the uploaded file to its final destination
             move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
-    
+
+            $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
             if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
                 return TRUE;
             }
@@ -56,7 +57,6 @@
         else {
             return FALSE;
         }
-        
     }
 
     function getUser($user) {

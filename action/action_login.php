@@ -7,12 +7,14 @@
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  if (userExists($username, $password)) { // test if user exists
-    $_SESSION['user'] = userExists($username, $password);
+  $user = checkUserPassword($username, $password);
+  if ($user !== false) {
+    $_SESSION['user'] = $user;
 
     header('Location: ../index.php');
   }
   else {
+    print($user);
     header('Location: ../login.php');
   }
 ?>
