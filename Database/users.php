@@ -1,6 +1,6 @@
 <?php
-     function isLogged() {
-        global $db;
+    function isLogged() {
+        $db = Database::instance()->db();
 
         if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
             return FALSE;
@@ -11,7 +11,7 @@
      }
 
     function checkUserPassword($username, $password) {
-        global $db;
+        $db = Database::instance()->db();
 
         $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
         $stmt->execute(array($username));
@@ -27,7 +27,7 @@
     }
 
     function userUnique($username) {
-        global $db;
+        $db = Database::instance()->db();
 
         $stmtUserCheck = $db->prepare('SELECT * FROM User WHERE username = ?');;
         
@@ -42,7 +42,7 @@
     }
 
     function insertUser($username, $gender, $age, $location, $password) {
-        global $db;
+        $db = Database::instance()->db();
         
         if(userUnique($username)) {
             $stmt = $db->prepare('INSERT INTO User(username, gender, age, location, password) VALUES (?, ?, ?, ?, ?)');
@@ -69,7 +69,7 @@
     }
 
     function updateUsername($user, $new_username, $password) {
-        global $db;
+        $db = Database::instance()->db();
 
         if (checkUserPassword($user['username'], $password) !== false && userUnique($new_username)) {
             $stmt = $db->prepare('UPDATE User SET username = ? WHERE idUser = ?');
@@ -81,7 +81,7 @@
       }
 
       function updatePassword($user, $new_password, $password) {
-        global $db;
+        $db = Database::instance()->db();
 
         if (checkUserPassword($user['username'], $password) !== false) {
             $stmt = $db->prepare('UPDATE User SET password = ? WHERE idUser = ?');
@@ -95,7 +95,7 @@
       }
 
     function getUser($user) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');;
         
@@ -106,7 +106,7 @@
     }
 
     function deleteUser($user, $password) {
-        global $db;
+        $db = Database::instance()->db();
 
         if (checkUserPassword($user['username'], $password) !== false) {
             $stmt = $db->prepare('DELETE FROM User WHERE username = ?');

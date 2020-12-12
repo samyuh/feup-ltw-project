@@ -1,6 +1,7 @@
 <?php
-  session_start();
-  include_once('../database/connection.php');
+  include_once('../includes/session.php');
+  include_once('../includes/database.php');
+  
   include_once('../database/pets.php');
 
   $nameSearch = isset($_POST["nameSearch"]) ? $_POST["nameSearch"] : '';

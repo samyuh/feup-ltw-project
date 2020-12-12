@@ -1,7 +1,7 @@
 <?php
   include_once('./includes/session.php');
+  include_once('./includes/database.php');
 
-  include_once('database/connection.php');
   include_once('database/pets.php');
   include_once('database/adopt_pet.php');
   include_once('database/users.php');

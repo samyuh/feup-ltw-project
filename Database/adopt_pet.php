@@ -1,13 +1,13 @@
 <?php
     function addQuestion($idPet, $question) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, info) VALUES (?, ?)');
         $stmt->execute(array($idPet, $question));
     }
 
     function getQuestions($idPet) {
-        global $db;
+        $db = Database::instance()->db();
 
         $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idPet = ?');
         
@@ -18,7 +18,7 @@
     }
 
     function isAdopted($id) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM UserAdoptedPet WHERE idPet = ?');
         $stmt->execute(array($id));
@@ -34,7 +34,7 @@
       }
 
       function getAdoptPets($user) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM Pet, UserAdoptedPet WHERE idUser = ? and Pet.idPet = UserAdoptedPet.idPet');
         
@@ -46,7 +46,7 @@
     }
 
     function updateAdopt($user, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM FavoritePet WHERE idUser = ? and idPet = ?');
         
@@ -65,7 +65,7 @@
       }
 
       function isProposed($idUser, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idUser = ? and idPet = ?');
         $stmt->execute(array($idUser, $idPet));
