@@ -34,8 +34,7 @@ function sendMessage(event) {
     request.send(encodeForAjax({'nameSearch': name, 'speciesSearch': species, 'genderSearch': gender,'sizeSearch': size, 'colorSearch': color}))
 
     request.addEventListener('load', messagesReceived)  
-    
-    
+
   }
 
 // Called when messages are received
@@ -61,6 +60,13 @@ function encodeForAjax(data) {
 
 function showArticle(data) {
 
+    let id = data.idPet
+    let name = data.petName
+    let gender = data.gender    
+    let species = data.specie
+    let size = data.size
+    let color = data.color
+
     let section = document.createElement('section')
     section.setAttribute('id','profile')
 
@@ -68,7 +74,7 @@ function showArticle(data) {
     image.setAttribute('class','image')
 
     let img = document.createElement('img')
-    img.setAttribute('src','./images/dog.JPG')
+    img.setAttribute('src',"images/pet-profile/pet-" + id + "/profile.jpg")
     img.setAttribute('width','200')
     img.setAttribute('height','200')
     img.setAttribute('alt','image missing')
@@ -77,13 +83,6 @@ function showArticle(data) {
 
     let info = document.createElement('div')
     info.setAttribute('class','info')
-
-    let id = data.idPet
-    let name = data.petName
-    let gender = data.gender    
-    let species = data.specie
-    let size = data.size
-    let color = data.color
 
     let p0 = document.createElement('p')
     p0.innerHTML = "Name:"
