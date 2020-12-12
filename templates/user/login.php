@@ -6,11 +6,16 @@
   <div class="container_forms">
     <div class="login_forms">
       <form id="loginForm" action="../../action/action_login.php" method="post">
+         <section id="loginUsernameError">
+        </section>
         <div class="username">
           <label>
             <input type="text" name="username" placeholder="Username">
           </label>
         </div>
+        
+        <section id="loginPasswordError">
+        </section>
         <div class="password">
           <label>
             <input type="password" name="password" placeholder="Password">

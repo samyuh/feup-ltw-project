@@ -6,27 +6,35 @@
     <div class="container_forms">
       <form id="registerForm" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
         <div class="username">
-           <input type="text" name="username" placeholder="Username">
+        <section id="registerUsernameError"></section>
+          <input type="text" name="username" placeholder="Username">
         </div>
+
         <div class="gender">
-            <h3>Gender</h3>
-            <div class="genderoptions">
-              Male <input type="radio" id="registerGender" name="gender" value="male" checked="checked">
-              Female <input type="radio" id="registerGender" name="gender" value="female">
-            </div>
+          Male <input type="radio"  name="gender" value="male" checked="checked">
+          Female <input type="radio"  name="gender" value="female">
         </div>
+
         <div class="age">
-            <h3>Age</h3> <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
-            <output>20</output>
+          Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
+          <output>20</output>
         </div>    
+        
         <div class="location">
-          	<input type="text" name="location" placeholder="Location">
+          <section id="registerLocationError"></section>
+          <input type="text" name="location" placeholder="Location">
         </div>
         <div class="password">
+
+          <section id="registerPasswordError">
+          </section>
           <label>
             <input type="password" name="password" placeholder="Password">
           </label>
         </div>
+        
+        <section id="registerImageError">
+        </section>
         <div class="image">
           <input type="file" name="image">
         </div>
