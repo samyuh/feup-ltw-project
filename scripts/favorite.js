@@ -13,9 +13,6 @@ function validateFavorite(event) {
     let star = button.className
     let id = document.getElementById('favoriteFormButton').value
 
-    console.log(button)
-    console.log(star)
-
 
     if(star == 'fa fa-star'){
         changeFavorite(true);
@@ -24,13 +21,8 @@ function validateFavorite(event) {
         changeFavorite(false);
     }
 
-    
-
-    console.log(id)
-    
-    
     let request = new XMLHttpRequest()
-    request.open("post", "aux_php/set_favorite.php", true)
+    request.open("post", "api/set_favorite.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'idPet': id}))
     

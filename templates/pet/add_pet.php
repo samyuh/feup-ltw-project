@@ -2,7 +2,7 @@
    
     <section id="petinfocontainer">   
         <h1>Insert Pet Info</h1>
-        <form class="inputsNewPet" id="addPetForm" action="../../action/action_add_pet.php" method="post" enctype="multipart/form-data">
+        <form class="inputsNewPet" id="addPetForm" action="../../action/action_add_pet.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
             <input type="text" name="npetName" placeholder="Update Name">
             Species:
             <label>Dog <input type="radio" name="nspecie" value="dog" checked="checked"></label>

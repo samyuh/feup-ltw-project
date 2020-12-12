@@ -11,9 +11,9 @@
           <p>Gender: <?=$pet['gender']?></p>
           <p>Size: <?=$pet['size']?></p>
           <p>Color: <?=$pet['color']?></p>
-          <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=$owner['username']?></a></p>
+          <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : $owner['username']?></a></p>
           <?php if(!empty($adopted)) { ?>
-              <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?=$adopted['username']?></a></p>
+              <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= empty($adopted['username']) ? 'Deleted User' : $adopted['username'] ?></a></p>
           <?php } else { ?>
               <p>Not adopted yet!</p>
           <?php } ?>
@@ -44,8 +44,8 @@
 
       <section id="posts">
         <h2>Posts</h2>
-        <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-        <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>" method="post">
+        <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+        <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
           <input type="text" name="post">
           <input type="submit" value="Post">
         </form>

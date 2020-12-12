@@ -44,18 +44,18 @@
         <p>Gender: <?=$pet['gender']?></p>
         <p>Size: <?=$pet['size']?></p>
         <p>Color: <?=$pet['color']?></p>
-        <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=$owner['username']?></a></p>
-      <?php if(!empty($adopted)) { ?>
-        <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?=$adopted['username']?></a></p>
-      <?php } else { ?>
-        <p>Not adopted yet!</p>
-      <?php } ?>
+        <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : $owner['username']?></a></p>
+          <?php if(!empty($adopted)) { ?>
+              <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= empty($adopted['username']) ? 'Deleted User' : $adopted['username'] ?></a></p>
+          <?php } else { ?>
+              <p>Not adopted yet!</p>
+          <?php } ?>
     </section>
 
     <section id="question">
       <h2>Ask a Question</h2>
       <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { ?>
-      <form id='questionForm' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>" method="post">
+      <form id='questionForm' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
         <input type="text" name="question">
         <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
         <input id="questionFormButton" type="submit" value="Ask">
@@ -74,7 +74,7 @@
             <p><?=$prop['idUser']?></p>
             <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { 
             if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-            <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>" method="post">
+            <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
               <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
             </form>
           </section>
@@ -83,7 +83,7 @@
         if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
           if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
         <section id="adoption-propose">
-          <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>" method="post">
+          <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="submit" value="Propose to adopt this pet!">
           </form>
         </section>

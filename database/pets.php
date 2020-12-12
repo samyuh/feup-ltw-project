@@ -1,6 +1,6 @@
 <?php
     function getAllDogs() {
-        global $db;
+        $db = Database::instance()->db();
 
         $stmt = $db->prepare('SELECT * FROM Pet ');
         $stmt->execute();
@@ -9,7 +9,7 @@
     }
 
     function getPet($id){
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM Pet WHERE idPet = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -21,7 +21,7 @@
       }
 
       function getPetsByName($name) {
-        global $db;
+        $db = Database::instance()->db();
 
         $name2 = "%$name%";
         $stmt = $db->prepare('SELECT * FROM Pet WHERE
@@ -33,7 +33,7 @@
     }
 
       function getPetsByAll($name,$specie,$gender,$size,$color){
-        global $db;
+        $db = Database::instance()->db();
 
         $name2 = "%$name%";
         $specie2 = "%$specie%";
@@ -57,7 +57,7 @@
     }
 
       function addPet($user, $name, $race, $gender, $size, $color) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color) VALUES (?, ?, ?, ?, ?)');
         $stmt->execute(array($name, $race, $gender, $size, $color));
@@ -80,7 +80,7 @@
       }
 
       function getFavoritePets($user) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM Pet, FavoritePet WHERE idUser = ? and Pet.idPet = FavoritePet.idPet');
         
@@ -91,8 +91,21 @@
         return $petsID;
     }
 
+    function getAllProposals() {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT * FROM PetPhoto WHERE idPet = ?');
+        
+        $stmt->execute(array($id));
+        $petsID = $stmt->fetchAll();
+
+
+        return $petsID;
+
+    }
+
     function getAllPhotos($id) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM PetPhoto WHERE idPet = ?');
         
@@ -104,7 +117,7 @@
     }
 
     function addPetPhoto($idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('INSERT INTO PetPhoto(idPet) VALUES (?)');
         $stmt->execute(array($idPet));
@@ -124,7 +137,7 @@
       }
 
     function isFavorited($user, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM FavoritePet WHERE idUser = ? and idPet = ?');
         
@@ -140,7 +153,7 @@
     }
 
     function getPosts($idPet) {
-        global $db;
+        $db = Database::instance()->db();
 
         $stmt = $db->prepare('SELECT * FROM PostsPet WHERE idPet = ?');
         
@@ -151,7 +164,7 @@
     }
 
     function isOwner($user, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM UserFoundPet WHERE idUser = ? and idPet = ?');
         
@@ -166,28 +179,28 @@
     }
 
     function addPost($idPet, $question) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('INSERT INTO PostsPet(idPet, POST) VALUES (?, ?)');
         $stmt->execute(array($idPet, $question));
     }
 
     function deletePost($idPost) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('DELETE FROM PostsPet WHERE id = ?');
         $stmt->execute(array($idPost));
     }
 
     function updatePost($idPost, $info) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('UPDATE PostsPet SET POST = ? WHERE id = ?');
         $stmt->execute(array($info, $idPost));  
     }
 
     function getAllOwner($user) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM Pet, UserFoundPet WHERE idUser = ? and Pet.idPet = UserFoundPet.idPet');
         
@@ -198,7 +211,7 @@
     }
 
     function getPetOwner($idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM User, UserFoundPet WHERE UserFoundPet.idPet = ? and User.idUser = UserFoundPet.idUser');
         
@@ -209,7 +222,7 @@
     }
 
     function getPetAdopted($idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM User, UserAdoptedPet WHERE UserAdoptedPet.idPet = ? and User.idUser = UserAdoptedPet.idUser');
         
@@ -220,7 +233,7 @@
     }
 
     function updateFavoriteList($user, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM FavoritePet WHERE idUser = ? and idPet = ?');
         
@@ -239,7 +252,7 @@
       }
       
     function updatePet($idPet, $npetName, $nspecie, $ngender, $nsize, $ncolor) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('UPDATE Pet SET petName = ?, specie = ?, gender = ?, size = ?, color = ? WHERE idPet = ?');
 
