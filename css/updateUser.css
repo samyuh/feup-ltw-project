@@ -5,15 +5,6 @@
     column-gap: 2em;
 }
 
-#update a{
-    color: black;
-    text-decoration: none;
-}
-
-#update a:visited{
-    color: black;
-}
-
 #update input{
     width: 100%;
     padding: 12px 20px;
@@ -23,36 +14,15 @@
     box-sizing: border-box;
 }
 
-#update input[type=text], #update input[type=password]{
-    border: 1px solid #ccc;
-}
-
 #update button{
     margin-top: auto;
-    font-size: 16px;
-    border: 1px solid #008080;
-    background-color: #008080;
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 0.5em;
-}
-
-#update button:hover{
-    border: 1px solid #004646;
-    background-color: #004646;
 }
 
 #update .changeUsername,
 #update .changePassword{
     height: 40em;
     width: 30em;
-    padding: 2em;
     text-align: center;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
     display: flex;
     flex-direction: column;
 }
