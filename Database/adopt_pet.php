@@ -80,7 +80,7 @@
       }
 
       function updateAdoptionProposal($user, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
         $stmt->execute(array($user['idUser'], $idPet));
@@ -96,7 +96,7 @@
       }
 
       function getAdoptionProposalList($idPet) {
-        global $db;
+        $db = Database::instance()->db();
 
         $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idPet = ?');
         $stmt->execute(array($idPet));
@@ -107,7 +107,7 @@
       }
 
       function updateAdoptList($user, $idPet) {
-        global $db;
+        $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM UserAdoptedPet WHERE idUser = ? and idPet = ?');
         
