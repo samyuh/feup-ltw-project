@@ -6,19 +6,19 @@
             <input type="text" name="npetName" placeholder="Update Name">
             Species:
             <section id="species_options">
-                <label>Dog <input type="radio" name="nspecie" value="dog" checked="checked"></label>
-                <label>Cat <input type="radio" name="nspecie" value="cat"></label>
+                <label>Dog <input class="hide" type="radio" name="nspecie" value="dog" checked="checked"><i class="fa fa-fw fa-paw"></i>&nbsp;</label>
+                <label>Cat <input class="hide" type="radio" name="nspecie" value="cat"><i class="fa fa-fw fa-paw"></i>&nbsp;</label>
             </section>
             Gender:
             <section id="gender_options">
-                <label>Male <input type="radio" name="ngender" value="male" checked="checked"></label>
-                <label>Female <input type="radio" name="ngender" value=female></label>
+                <label>Male <input class="hide" type="radio" name="ngender" value="male" checked="checked"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+                <label>Female <input class="hide" type="radio" name="ngender" value=female><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
             </section>
             Size:
             <section id="size_options">
-                <label>Small <input type="radio" name="nsize" value="small"></label>
-                <label>Medium<input type="radio" name="nsize" value="medium" checked="checked"></label>
-                <label>Large<input type="radio" name="nsize" value="large"></label>
+                <label>Small <input class="hide" type="radio" name="nsize" value="small"><i class="fa fa-fw fa-check-circle"></i>&nbsp;</label>
+                <label>Medium<input class="hide"type="radio" name="nsize" value="medium" checked="checked"><i class="fa fa-fw fa-check-circle"></i>&nbsp;</label>
+                <label>Large<input class="hide"type="radio" name="nsize" value="large"><i class="fa fa-fw fa-check-circle"></i>&nbsp;</label>
             </section>
             <input type="text" name="ncolor" placeholder="Update color">
             <input type="file" name="image">
