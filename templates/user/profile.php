@@ -21,19 +21,19 @@
       <section id="favPets">
         <h2>Favorite Pets</h2>
         <?php foreach($userPets as $fav) {?>
-          <p><a href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
+          <p><a title="Visit <?=$fav['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
         <?php } ?>
       </section>
       <section id="petsForAdoption">
         <h2>Pets for Adoption</h2>
         <?php foreach($toAdoptPets as $fav3) {?>
-          <p><a href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
+          <p><a title="Visit <?=$fav3['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
         <?php } ?>
       </section>
       <section id="adopted">
         <h2>Adopted Pets!</h2>
         <?php foreach($adoptPets as $fav2) {?>
-          <p><a href=dog_profile.php?idPet=<?=$fav2['idPet']?>><?=$fav2['petName']?></a></p>
+          <p><a title="Visit <?=$fav2['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$fav2['idPet']?>><?=$fav2['petName']?></a></p>
         <?php } ?>
       </section>
     </div>  

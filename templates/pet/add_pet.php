@@ -22,7 +22,7 @@
             </section>
             <input type="text" name="ncolor" placeholder="Update color">
             <input type="file" name="image">
-            <input type="submit" id="addPetButton" value="Update">
+            <input title="Add New Pet" type="submit" id="addPetButton" value="Update">
         </form>
     </section>
 </section>

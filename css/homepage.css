@@ -9,8 +9,10 @@
 }
 
 #intro h1{
-    font-size: xx-large;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
+    font-family: 'Lobster', cursive;
+    color: hsl(72, 23%, 22%)
 }
 
 #intro h2{
@@ -43,6 +45,10 @@
 
 #homepage_profile p {
     text-align: center;
+}
+
+#homepage_profile .petname{
+    font-size: 1.5em;
 }
 
 .overlay {
