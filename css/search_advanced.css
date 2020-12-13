@@ -1,25 +1,49 @@
+#advanced_search_page{
+    align-items: center;
+}
+
 #advanced_search{
-    display: block;
-    float: top;
-    width: 123%;
-    margin-bottom: 2em;
-    border-radius: 2em;
-    border: 5px solid grey;
-
+    border: none;
+    text-align: center;
+    width: 40em;
 }
 
-#advanced_search legend{
-   font-size: larger;
-   color: rgb(41, 39, 39);
-   font-weight: 600;
-   font-style: italic;
-
+#advanced_search h2{
+    font-style: normal;
 }
 
-
-
-#displayPets{
-    grid-column: start / end;
-    float: left;
-    margin: 0;
+#advanced_search input[type="text"], textarea{
+    background-color : hsl(50, 100%, 93%);
 }
+
+#displayPets .profile{
+    display: flex;
+    flex-direction: row;
+    min-width: 10em;
+    background-color: hsl(49, 62%, 82%);
+}
+
+#displayPets .profile img{
+    border-radius: 20%;
+}
+
+#displayPets .profile .info{
+    margin-left: 1em;
+    padding: 1em;
+    width: 100%; 
+}
+
+#species_options,
+#gender_options,
+#size_options{
+    padding: 0.5em;
+    justify-content: center;
+}
+
+/* -------------- RESPONSIVE ADVANCED SEARCH -------------- */
+
+@media screen and (max-width: 650px){
+    #displayPets .profile .info{
+        display: none;
+    }
+  }

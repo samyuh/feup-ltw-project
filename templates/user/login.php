@@ -1,7 +1,4 @@
-<section id="login">
-  <div class="hero-image">
-    <img src="../images/family-dog.jpeg" width="1920" height="950">
-  </div>
+<div class="login">
   <div class="name_slogan">
     <h1><a href="index.php">Pet Shelter</a></h1>
     <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
@@ -9,18 +6,23 @@
   <div class="container_forms">
     <div class="login_forms">
       <form id="loginForm" action="../../action/action_login.php" method="post">
+         <section id="loginUsernameError">
+        </section>
         <div class="username">
           <label>
             <input type="text" name="username" placeholder="Username">
           </label>
         </div>
+        
+        <section id="loginPasswordError">
+        </section>
         <div class="password">
           <label>
             <input type="password" name="password" placeholder="Password">
           </label>
         </div>
         <div class="submit">
-          <button id="loginButton" type="submit" value="Log In">
+          <button id="loginButton" type="submit" value="Log In">Log In</button>
         </div>
 
       </form>
@@ -33,4 +35,4 @@
       </form>
     </div>
   </div>
-</section>
+</div>

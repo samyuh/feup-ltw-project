@@ -1,27 +1,90 @@
-<div>
-    <section>
-        <img src="templates/common/dog.jpg" alt="Failed displaying dog image">
-        <h1>DogName</h1>
-        <h2>Contacts</h2>
+<div id="petInformation">
+  <aside id="informationSidebar">
+      <section id="nameAndPhoto">
+          <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
+          <h1><a href=dog_profile.php?idPet=<?=$pet['idPet']?>><?=$pet['petName']?></a></h1>
+      </section>
+
+      <section id="information">
+        <h2>Information</h2>
+          <p>Species: <?=$pet['specie']?></p>
+          <p>Gender: <?=$pet['gender']?></p>
+          <p>Size: <?=$pet['size']?></p>
+          <p>Color: <?=$pet['color']?></p>
+          <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : $owner['username']?></a></p>
+          <?php if(!empty($adopted)) { ?>
+              <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= empty($adopted['username']) ? 'Deleted User' : $adopted['username'] ?></a></p>
+          <?php } else { ?>
+              <p>Not adopted yet!</p>
+          <?php } ?>
+      </section>
+    </aside>
+
+    <section id="content">
+      
+      <section id="top-content">
+        <section id="biography"> 
+            <h2>Biography</h2>
+            <p><?=$pet['bio']?></p>   
+        </section>
+
+        <section id="photos">
+          <h2>Photos</h2>
+          <div class="slideshow-container">
+          <?php foreach($photos as $photo) {?>
+            <div class="MyPhotos">
+              <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying dog image" width="400" height="400">
+            </div>
+          <?php } ?>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </section>
+      </section>
+
+      <section id="posts">
+        <h2>Posts</h2>
+        <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+        <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+          <input type="text" name="post">
+          <input type="submit" value="Post">
+        </form>
+        <?php } ?>
+        <?php foreach($posts as $post) {?>
+          <section id="uniquepost"/>
+            <p><?=$post['POST']?></p>
+          </section>
+        <?php } ?>
+      </section>
     </section>
-
-    <article>
-        <h1>Information</h1>
-
-        <ul>
-            <li> <p>Race</p> </li>
-            <li> <p>Age</p></li>
-            <li> <p>Size</p></li>
-            <li> <p>Color</p></li>
-            <li> <p>Localization</p></li>
-        </ul>
-
-        <aside>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>   
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>   
-        </aside>
-
-    </article>
-
 </div>
+
+<!-- clean up -->
+<script>
+  var slideIndex = 1;
+  if(document.getElementsByClassName("MyPhotos").length){
+
+    showSlides(slideIndex);
+  }
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("MyPhotos");
+
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slides[slideIndex-1].style.display = "block"; 
+  }
+</script>
+
     

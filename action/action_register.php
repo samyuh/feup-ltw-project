@@ -1,9 +1,13 @@
 <?php
-  session_start();                         // starts the session
-  include_once('../database/connection.php'); // connects to the database
-  include_once('../database/users.php');      // loads the functions responsible for the users table
+  /* Initialize Session and Database */
+  include_once('../includes/session.php');
+  include_once('../includes/database.php');
+  
+  /* Database Managers Files */
+  include_once('../database/users.php'); 
 
-  if(insert($_POST['username'], $_POST['gender'], $_POST['age'], $_POST['location'], $_POST['password'])) {
+  /* Verifications and set variables */
+  if(insertUser($_POST['username'], $_POST['gender'], $_POST['age'], $_POST['location'], $_POST['password'])) {
    header('Location: ../login.php');
   }
   else {

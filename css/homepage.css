@@ -1,0 +1,78 @@
+#homepage{
+    padding-bottom: 20em;
+}
+
+#intro{
+    padding-bottom: 2em;   
+    padding-top: 2em; 
+    text-align: center;
+}
+
+#intro h1{
+    font-size: xx-large;
+    margin-bottom: 0.5em;
+}
+
+#intro h2{
+    font-size: medium;
+    font-style: normal;
+}
+
+#intro #found-pet{
+   padding-top: 1em;
+}
+
+#homepage_profile {
+    position: relative;
+    text-align: center;
+}
+
+#homepage_profile .image {
+    display: block;
+    padding-top: 0;
+    height: 19em;
+    width: 19em;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    border-radius: 20%;
+}
+
+#homepage_profile p {
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 10;
+    margin: auto auto;
+    height: 19em;
+    width: 19em;
+    opacity: 0;
+    transition: .5s ease-out;
+    background-color: black;
+    border-radius: 20%;
+}
+
+.overlay:hover {
+    opacity: 0.7;
+}
+
+.text {
+    width: 300px;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#homepage_profile a:hover {
+    animation: pink_and_blue 3s infinite;
+}

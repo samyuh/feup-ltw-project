@@ -13,7 +13,7 @@ if(document.getElementById('name_search') != undefined) {
 // Ask for new messages
 function refresh() {
     let request = new XMLHttpRequest()
-    request.open('post', 'aux_php/get_data.php', true)
+    request.open('post', 'api/get_data.php', true)
     request.addEventListener('load', sendMessage)
     request.send()
   }
@@ -29,10 +29,12 @@ function sendMessage(event) {
     let color = document.querySelector('input[name=colorSearch]').value
 
     let request = new XMLHttpRequest()
-    request.open("post", "aux_php/get_data.php", true)
+    request.open("post", "api/get_data.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'nameSearch': name, 'speciesSearch': species, 'genderSearch': gender,'sizeSearch': size, 'colorSearch': color}))
+
     request.addEventListener('load', messagesReceived)  
+
   }
 
 // Called when messages are received
@@ -57,14 +59,22 @@ function encodeForAjax(data) {
 
 
 function showArticle(data) {
+
+    let id = data.idPet
+    let name = data.petName
+    let gender = data.gender    
+    let species = data.specie
+    let size = data.size
+    let color = data.color
+
     let section = document.createElement('section')
-    section.setAttribute('id','profile')
+    section.setAttribute('class','profile')
 
     let image = document.createElement('div')
     image.setAttribute('class','image')
 
     let img = document.createElement('img')
-    img.setAttribute('src','./images/dog.JPG')
+    img.setAttribute('src',"images/pet-profile/pet-" + id + "/profile.jpg")
     img.setAttribute('width','200')
     img.setAttribute('height','200')
     img.setAttribute('alt','image missing')
@@ -74,20 +84,8 @@ function showArticle(data) {
     let info = document.createElement('div')
     info.setAttribute('class','info')
 
-    let id = data.idPet
-    let name = data.petName
-    let gender = data.gender    
-    let species = data.specie
-    let size = data.size
-    let color = data.color
-
-    let p0 = document.createElement('p')
-    p0.innerHTML = "Name:" + name
-
-    var a = document.createElement('a')
-    var linkText = document.createTextNode(name)
-    a.appendChild(linkText)
-    a.href = "/dog_profile.php?idPet=" + id
+    let p1 = document.createElement('p')
+    p1.innerHTML = "Name: " + name
 
     let p2 = document.createElement('p')
     p2.innerHTML = "Race: " + species
@@ -104,8 +102,7 @@ function showArticle(data) {
     let p6 = document.createElement('p')
     p6.innerHTML = "Localization:"
 
-    info.appendChild(p0)
-    info.appendChild(a)
+    info.appendChild(p1)
     info.appendChild(p2)
     info.appendChild(p3)
     info.appendChild(p4)
@@ -114,6 +111,10 @@ function showArticle(data) {
 
     section.appendChild(image)
     section.appendChild(info)
+
+    section.onclick = function(){
+      location.href = "/dog_profile.php?idPet=" + id
+    }
 
     return section
   }

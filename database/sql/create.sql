@@ -9,8 +9,8 @@ DROP TABLE IF EXISTS User;
 CREATE TABLE User (
   idUser        INTEGER                            PRIMARY KEY,
   username      VARCHAR(255)                       NOT NULL,
-  gender        VARCHAR(255) NOT NULL,
-  age           VARCHAR(255) NOT NULL,
+  gender        VARCHAR(255)                        NOT NULL,
+  age           VARCHAR(255)                        NOT NULL,
   location      VARCHAR(255) NOT NULL,
   password      VARCHAR(255)                       NOT NULL
 );
@@ -22,7 +22,8 @@ CREATE TABLE Pet (
     specie      VARCHAR(255),
     gender      VARCHAR(255),
     size        VARCHAR(255),
-    color       VARCHAR(255)
+    color       VARCHAR(255),
+    bio         VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS PetQuestion;
@@ -30,6 +31,12 @@ CREATE TABLE PetQuestion (
   idQuestion               INTEGER                 PRIMARY KEY,
   idPet                    INTEGER                 REFERENCES Pet(idPet),
   info VARCHAR(255) 
+);
+
+DROP TABLE IF EXISTS PetPhoto;
+CREATE TABLE PetPhoto (
+  idPhoto                  INTEGER                 PRIMARY KEY,
+  idPet                    INTEGER                 REFERENCES Pet(idPet)
 );
 
 DROP TABLE IF EXISTS AdoptionProposal;
