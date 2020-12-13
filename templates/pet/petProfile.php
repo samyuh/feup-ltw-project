@@ -72,7 +72,8 @@
       <h2>Adoption Proposals</h2>
           <?php foreach($proposals as $prop) {?>
             <section id="uniqueproposal">
-              <p><?=$prop['idUser']?></p>
+              <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="20" height="20" alt="">
+              <p><?=$prop['username']?></p>
               <?php if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) { 
               if(isOwner($_SESSION['user'], $pet['idPet'])) { ?>
               <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">

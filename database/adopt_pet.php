@@ -111,7 +111,7 @@
       function getAdoptionProposalList($idPet) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idPet = ?');
+        $stmt = $db->prepare('SELECT * FROM User, AdoptionProposal WHERE AdoptionProposal.idPet = ? AND AdoptionProposal.idUser = User.idUser');
         $stmt->execute(array($idPet));
         $petsID = $stmt->fetchAll();
 

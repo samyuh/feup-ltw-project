@@ -21,18 +21,21 @@
       <section id="favPets">
         <h2>Favorite Pets</h2>
         <?php foreach($userPets as $fav) {?>
+          <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20">
           <p><a href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
         <?php } ?>
       </section>
       <section id="petsForAdoption">
         <h2>Pets for Adoption</h2>
         <?php foreach($toAdoptPets as $fav3) {?>
+          <img src="../images/pet-profile/pet-<?=$fav3['idPet']?>/profile.jpg" width="20" height="20">
           <p><a href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
         <?php } ?>
       </section>
       <section id="adopted">
         <h2>Adopted Pets!</h2>
         <?php foreach($adoptPets as $fav2) {?>
+          <img src="../images/pet-profile/pet-<?=$fav2['idPet']?>/profile.jpg" width="20" height="20">
           <p><a href=dog_profile.php?idPet=<?=$fav2['idPet']?>><?=$fav2['petName']?></a></p>
         <?php } ?>
       </section>
