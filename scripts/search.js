@@ -84,15 +84,8 @@ function showArticle(data) {
     let info = document.createElement('div')
     info.setAttribute('class','info')
 
-    let p0 = document.createElement('p')
-    p0.innerHTML = "Name:"
-
-    var a = document.createElement('a')
-    var linkText = document.createTextNode(name)
-    a.appendChild(linkText)
-    a.href = "/dog_profile.php?idPet=" + id
-
-    p0.appendChild(a)
+    let p1 = document.createElement('p')
+    p1.innerHTML = "Name: " + name
 
     let p2 = document.createElement('p')
     p2.innerHTML = "Race: " + species
@@ -109,7 +102,7 @@ function showArticle(data) {
     let p6 = document.createElement('p')
     p6.innerHTML = "Localization:"
 
-    info.appendChild(p0)
+    info.appendChild(p1)
     info.appendChild(p2)
     info.appendChild(p3)
     info.appendChild(p4)
@@ -118,6 +111,10 @@ function showArticle(data) {
 
     section.appendChild(image)
     section.appendChild(info)
+
+    section.onclick = function(){
+      location.href = "/dog_profile.php?idPet=" + id
+    }
 
     return section
   }
