@@ -20,7 +20,6 @@ function refreshProfile(){
 }
 
 function questionsReceived(){
-    
     questionPlace.innerHTML = ''
     let lines = JSON.parse(this.responseText);
     lines.forEach(function(data){
@@ -41,17 +40,22 @@ function addQuestion(event) {
     request.send(encodeForAjax({'question': question, 'idPet':idPet}))
 
     refreshProfile()
-
 }
 
 function displayQuestions(data){
     let section = document.createElement('section')
     section.setAttribute('id','uniquequestion')
 
-    let p = document.createElement('p')
-    p.innerText = data.info
+    let p1 = document.createElement('p')
+    p1.innerText = data.question
+    let p2 = document.createElement('p')
+    p2.innerText = data.authorQuestion
+    let p3 = document.createElement('p')
+    p3.innerText = data.dateQuestion
 
-    section.appendChild(p)
+    section.appendChild(p1)
+    section.appendChild(p2)
+    section.appendChild(p3)
 
     return section
 }   

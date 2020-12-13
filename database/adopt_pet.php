@@ -2,6 +2,13 @@
     function addQuestion($idPet, $question) {
         $db = Database::instance()->db();
         
+        $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, dateQuestion, authorQuestion, question) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($idPet, "author", "date", $question));
+    }
+
+    function addAnswer($idQuestion, $answer) {
+        $db = Database::instance()->db();
+        
         $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, info) VALUES (?, ?)');
         $stmt->execute(array($idPet, $question));
     }

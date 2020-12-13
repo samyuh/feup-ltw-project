@@ -62,7 +62,7 @@
           <input id="questionFormButton" type="submit" value="Ask">
         </form>
         <section id="qs">
-          
+          <p>Answer</p>
         </section>
         <?php } ?>
 
