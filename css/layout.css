@@ -265,7 +265,16 @@ header{
     flex-direction: column;
 }
 
-
 .updateposts #buttonsposts{
     display: flex;
+}
+
+@media screen and (max-width: 1600px){
+  #updatecontainers{
+    flex-direction: column;
+  }
+  .updateposts,
+  .add-photo{
+    height: 10em;
+  } 
 }

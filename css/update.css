@@ -1,12 +1,9 @@
 #update{    
-    overflow: hidden;
-    justify-content: center;
     align-items: center;
     column-gap: 2em;
 }
 
 #updatecontainers{
-    overflow: hidden;
     justify-content: center; /*centers items on the line (the x-axis by default)*/
     align-items: center; /*centers items on the cross-axis (y by default)*/ 
     column-gap: 2em;
