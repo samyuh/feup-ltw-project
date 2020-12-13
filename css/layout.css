@@ -16,11 +16,15 @@ body {
 
 /* ---------- LOGIN/REGISTER LAYOUT ---------- */
 
+.login, #register{
+  display: flex;
+  flex-direction: row;
+}
+
 .container_forms{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
-  background-color:rgba(256, 256, 256, 0.6);
 }
 
 .gender{
@@ -31,6 +35,19 @@ body {
 .genderoptions{
   display: flex;
   flex-direction: row;
+}
+
+@media screen and (max-width: 1150px){
+  .login, #register{
+    flex-direction: column;
+    gap: 0;
+  }
+  .container_forms{
+    order: 2
+  }
+  .name_and_slogan{
+    order: 1;
+  }
 }
 
 /* ---------- HEADER LAYOUT ---------- */

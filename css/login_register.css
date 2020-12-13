@@ -9,18 +9,21 @@ body, html{
 .login{
     height: 96%;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10em;
 }
 
 #register{
     height: 96%;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10em;
 }
 
 .name_slogan{
     text-align: center;
-    position: absolute;
-    top: 30%;
-    left: 65%;
 }
 
 .name_slogan a{
@@ -39,12 +42,18 @@ body, html{
 }
 
 .container_forms{
+    background-color:rgba(256, 256, 256, 0.6);
     text-align: center;
-    position: absolute;
-    top: 10em;
-    left: 10em;
     padding: 3em;
     width: 20em;
+}
+
+.login .container_forms{
+    height: 17;
+}
+
+#register .container_forms{
+    height: 30em;
 }
 
 .submit{
@@ -53,4 +62,17 @@ body, html{
 
 .submit_register{
     padding-top: 0.5em;
+}
+
+/* ------------------ RESPONSIVE LOGIN/REGISTER ------------------ */
+@media screen and (max-width: 1150px){
+    .login h2, #register h2{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .login h1, #register h2{
+        font-size: 3em;
+    }
 }
