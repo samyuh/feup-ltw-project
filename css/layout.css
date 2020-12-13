@@ -273,8 +273,11 @@ header{
   #updatecontainers{
     flex-direction: column;
   }
+  .changeUsername,
+  .changePassword,
+  .updatepetinfo,
   .updateposts,
   .add-photo{
-    height: 10em;
+    height: auto;
   } 
 }
