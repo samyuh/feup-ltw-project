@@ -38,6 +38,7 @@
     bottom: 0;
     margin: auto auto;
     border-radius: 20%;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
 #homepage_profile p {

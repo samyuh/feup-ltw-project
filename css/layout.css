@@ -209,6 +209,11 @@ header{
   text-align: center;
 }
 
+#petInformation #informationSidebar #information{
+  display: flex;
+  flex-direction: column;
+}
+
 #petInformation #content{
   flex: 4;
   display: flex;
@@ -224,6 +229,21 @@ header{
     flex: 1;
 }
 
+@media screen and (max-width: 1260px){
+  #petInformation #content #top-content{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #petInformation{
+    display: flex;
+    flex-direction: column;
+  }
+  #petInformation #informationSidebar #information{
+    flex-direction: row;
+  }
+}
 /* ---------- UPDATE PROFILES/INFORMATION LAYOUT ---------- */
 
 #update{    

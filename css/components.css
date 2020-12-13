@@ -32,7 +32,6 @@ button:hover{
 
 #pet button[type=submit]{
     cursor: pointer;
-    background-color: white;
     border: none;
     outline: none;
     font-size: large;
@@ -43,17 +42,26 @@ button:hover{
 }
 
 #pet .name_and_favorite button[type=submit]{
+    background-color: transparent;
     color: orange;
 }
 
 header .searchbar button,
 #information_and_update button{
-    background-color: white;
+    border: none;
     border-radius: 0;
     color: black;
     padding: 0.3em;
     margin: 0;
-  }
+}
+
+header .searchbar button{
+    background-color: white;
+}
+
+#information_and_update button{
+    background-color: transparent;
+}
 
 input[type=text], input[type=password]{
     border: 1px solid #ccc;
