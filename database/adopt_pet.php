@@ -3,14 +3,20 @@
         $db = Database::instance()->db();
         
         $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, dateQuestion, authorQuestion, question) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($idPet, "author", "date", $question));
+        $stmt->execute(array($idPet, "date", "author", $question));
     }
 
     function addAnswer($idQuestion, $answer) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, info) VALUES (?, ?)');
-        $stmt->execute(array($idPet, $question));
+        $stmt = $db->prepare('SELECT FROM PetQuestion WHERE idQuestion = ?');
+        $stmt->execute(array($idQuestion));
+        $question = $stmt->fetch();
+
+        if(!empty($question)) {
+            $update = $db->prepare('UPDATE PetQuestion SET dateAnswer = ?, authorAnswer = ?, answer = ? WHERE idQuestion = ?');
+            $update->execute(array('Answerdate', 'Answerauthor', $answer, $idQuestion));  
+        }
     }
 
     function getQuestions($idPet) {

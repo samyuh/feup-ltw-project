@@ -59,10 +59,23 @@ function displayQuestions(data){
     let spanDate = document.createElement('span')
     spanDate.innerText = "Date: " + data.dateQuestion
 
+    let spanDateAnswer = document.createElement('span')
+    spanDate.innerText = "Date: " + data.dateAnswer
+    
+    let spanAuthorAnswer = document.createElement('span')
+    spanAuthor.innerText = "Author: " + data.authorAnswer
+
+    let spanAnswer = document.createElement('span')
+    spanAuthor.innerText = "Answer: " + data.answer
+
     section.appendChild(question)
     section.appendChild(reply)
     section.appendChild(spanAuthor)
     section.appendChild(spanDate)
+
+    section.appendChild(spanDateAnswer)
+    section.appendChild(spanAuthorAnswer)
+    section.appendChild(spanAnswer)
 
     return section
 }   
