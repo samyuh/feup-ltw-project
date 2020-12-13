@@ -16,8 +16,6 @@
 }
   
 .infoGrid{
-  padding-left: 8em;
-  padding-right: 8em;
   text-align: left;
 }
 
@@ -59,7 +57,6 @@
 #question{
   display: flex;
   flex-direction: column;
-  max-width: 31em;
 }
 
 #question .questionform{
