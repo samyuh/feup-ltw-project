@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('updateUsername') && document.getElementById('updatePassword')) {
     document.getElementById('updateUsernameButton').addEventListener("click",validateUpdateUsername)

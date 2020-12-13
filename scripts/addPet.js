@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('addPetForm')) {
     document.getElementById('addPetButton').addEventListener("click", validateAddPet)
