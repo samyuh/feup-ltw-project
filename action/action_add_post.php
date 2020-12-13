@@ -17,7 +17,7 @@
     header('Location: ../error404.php');
   }
   
-  addPost($_GET['idPet'], $_POST['post']);
+  addPost($_GET['idPet'], $_SESSION['user']['username'], $_POST['post']);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

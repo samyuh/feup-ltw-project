@@ -30,7 +30,12 @@ DROP TABLE IF EXISTS PetQuestion;
 CREATE TABLE PetQuestion (
   idQuestion               INTEGER                 PRIMARY KEY,
   idPet                    INTEGER                 REFERENCES Pet(idPet),
-  info VARCHAR(255) 
+  dateQuestion VARCHAR(255),
+  authorQuestion VARCHAR(255),
+  question VARCHAR(255),
+  dateAnswer VARCHAR(255),
+  authorAnswer VARCHAR(255),
+  answer VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS PetPhoto;
@@ -70,7 +75,9 @@ CREATE TABLE FavoritePet (
 DROP TABLE IF EXISTS PostsPet;
 CREATE TABLE PostsPet (
     id         INTEGER                  PRIMARY KEY,
-    idPet          INTEGER              REFERENCES Pet(idPet),
-    POST VARCHAR(255)
+    idPet      INTEGER              REFERENCES Pet(idPet),
+    author     VARCHAR(255),
+    datePost VARCHAR(255),
+    post VARCHAR(255)
 );
 

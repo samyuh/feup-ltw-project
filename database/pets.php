@@ -178,11 +178,11 @@
         }
     }
 
-    function addPost($idPet, $question) {
+    function addPost($idPet, $username, $post) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('INSERT INTO PostsPet(idPet, POST) VALUES (?, ?)');
-        $stmt->execute(array($idPet, $question));
+        $stmt = $db->prepare('INSERT INTO PostsPet(idPet, author, datePost, post) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($idPet, $username, date("Y/m/d"), $post));
     }
 
     function deletePost($idPost) {

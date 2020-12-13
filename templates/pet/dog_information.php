@@ -52,7 +52,9 @@
         <?php } ?>
         <?php foreach($posts as $post) {?>
           <section id="uniquepost"/>
-            <p><?=$post['POST']?></p>
+            <p><?=$post['post']?></p>
+            <p><?=$post['datePost']?></p>
+            <p>By <?=$post['author']?></p>
           </section>
         <?php } ?>
       </section>
