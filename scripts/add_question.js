@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('questionForm')) {
     var questionForm =  document.getElementById('questionForm')

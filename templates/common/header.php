@@ -18,6 +18,7 @@
     <link href="../../css/newPet.css" rel="stylesheet">
     <link href="../../css/error404.css" rel="stylesheet">
     <link href="../../css/profile.css" rel="stylesheet">
+    <link href="../../css/modal.css" rel="stylesheet">
     <!-- Add icon library -->
     
     <script src="../../scripts/search.js" defer> </script>
@@ -25,6 +26,7 @@
     <script src="../../scripts/addPet.js" defer> </script>
     <script src="../../scripts/favorite.js" defer> </script>
     <script src="../../scripts/add_question.js" defer> </script>
+    <script src="../../scripts/notifications.js" defer> </script>
    
   </head>
   <body>
@@ -66,7 +68,7 @@
               </div>
               <div id="dropdown">
                 <div id="Notifications">
-                <a href="">Notifications</a>
+                  <a id="myBtn">Notifications</a>
                 </div>
                 <div id="Update">
                   <a href="update.php">Update Profile</a>
@@ -79,4 +81,15 @@
             <?php } ?> 
         </div> 
       </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Notifications Menu..</p>
+    </div>
+
+    </div>
     </header>
