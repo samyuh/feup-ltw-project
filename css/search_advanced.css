@@ -1,28 +1,44 @@
+#advanced_search_page{
+    align-items: center;
+}
+
 #advanced_search{
     border: none;
     text-align: center;
-    margin-left: 30em;
-    margin-right: 30em;
+    width: 40em;
 }
 
 #advanced_search h2{
     font-style: normal;
 }
 
-#displayPets #profile{
+#displayPets .profile{
     display: flex;
     flex-direction: row;
+    min-width: 10em;
 }
 
-#displayPets #profile img{
+#displayPets .profile img{
     border-radius: 20%;
 }
 
-#displayPets #profile .info{
+#displayPets .profile .info{
     margin-left: 1em;
     padding: 1em;
-    display: grid;
-    grid-template-columns: 50% 50%;
     width: 100%; 
 }
 
+#species_options,
+#gender_options,
+#size_options{
+    padding: 0.5em;
+    justify-content: center;
+}
+
+/* -------------- RESPONSIVE ADVANCED SEARCH -------------- */
+
+@media screen and (max-width: 650px){
+    #displayPets .profile .info{
+        display: none;
+    }
+  }

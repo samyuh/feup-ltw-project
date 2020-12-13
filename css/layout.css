@@ -103,6 +103,23 @@ header{
   grid-template-columns: 33% 33% 33%;
 }
 
+#displayPets .profile .info{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+@media screen and (max-width: 1700px){
+  #displayPets{
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  #displayPets{
+    grid-template-columns: 100%;
+  }
+}
+
 /* ---------- PROFILES LAYOUT ---------- */
 
 .infoGrid{
@@ -157,6 +174,15 @@ header{
 #add #petinfocontainer .inputsNewPet{
   display: flex;
   flex-direction: column;
+}
+
+#species_options,
+#gender_options,
+#size_options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5em;
 }
 
 /* ---------- PET INFORMATION LAYOUT ---------- */

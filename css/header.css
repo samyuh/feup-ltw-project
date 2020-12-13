@@ -111,7 +111,6 @@ body > header #signup a:first-child {
   }
 }
 
-
 @media screen and (max-width: 650px){
   header #name_slogan h1{
     display: none;

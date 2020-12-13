@@ -23,3 +23,10 @@
     margin-top: 1em;
     font-size: 16px;
 }
+
+#species_options,
+#gender_options,
+#size_options{
+    padding: 0.5em;
+    justify-content: center;
+}

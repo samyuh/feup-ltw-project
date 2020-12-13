@@ -68,7 +68,7 @@ function showArticle(data) {
     let color = data.color
 
     let section = document.createElement('section')
-    section.setAttribute('id','profile')
+    section.setAttribute('class','profile')
 
     let image = document.createElement('div')
     image.setAttribute('class','image')
