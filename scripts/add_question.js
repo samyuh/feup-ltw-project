@@ -46,16 +46,23 @@ function displayQuestions(data){
     let section = document.createElement('section')
     section.setAttribute('id','uniquequestion')
 
-    let p1 = document.createElement('p')
-    p1.innerText = data.question
-    let p2 = document.createElement('p')
-    p2.innerText = data.authorQuestion
-    let p3 = document.createElement('p')
-    p3.innerText = data.dateQuestion
+    let question = document.createElement('p')
+    question.innerText = data.question
 
-    section.appendChild(p1)
-    section.appendChild(p2)
-    section.appendChild(p3)
+    let reply = document.createElement('a')
+    reply.href = ""
+    reply.innerHTML = "reply" 
+
+    let spanAuthor = document.createElement('span')
+    spanAuthor.innerText = "Author: " + data.authorQuestion
+    
+    let spanDate = document.createElement('span')
+    spanDate.innerText = "Date: " + data.dateQuestion
+
+    section.appendChild(question)
+    section.appendChild(reply)
+    section.appendChild(spanAuthor)
+    section.appendChild(spanDate)
 
     return section
 }   
