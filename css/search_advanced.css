@@ -12,10 +12,15 @@
     font-style: normal;
 }
 
+#advanced_search input[type="text"], textarea{
+    background-color : hsl(50, 100%, 93%);
+}
+
 #displayPets .profile{
     display: flex;
     flex-direction: row;
     min-width: 10em;
+    background-color: hsl(49, 62%, 82%);
 }
 
 #displayPets .profile img{

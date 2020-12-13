@@ -1,14 +1,14 @@
 header{
-  background-image: linear-gradient(to bottom right, #326771, #28464B);
+  background-image: linear-gradient(to bottom right,hsl(72, 11%, 45%), hsl(72, 11%, 50%));
   padding: 1em;
 }
 
 header h1, h2{
-  font-style: italic;
   margin: 0;
 }
 
 header h2{
+  font-style: italic;
   font-size: small;
 }
 

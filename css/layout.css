@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column; 
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFAE2;
 }
 
 /* ---------- LOGIN/REGISTER LAYOUT ---------- */
