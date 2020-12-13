@@ -27,6 +27,7 @@
     <script src="../../scripts/favorite.js" defer> </script>
     <script src="../../scripts/add_question.js" defer> </script>
     <script src="../../scripts/notifications.js" defer> </script>
+    <script src="../../scripts/dog_informations.js" defer> </script>
    
   </head>
   <body>
