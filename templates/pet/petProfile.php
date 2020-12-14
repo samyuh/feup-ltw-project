@@ -27,14 +27,6 @@
       <section id="information_pet">
         <section id="information_and_update">
           <h2>Information</h2>
-          <?php 
-          if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
-            if(isOwner($_SESSION['user'], $pet['idPet'])) {
-          ?>
-          <form action="dog_update.php?idPet=<?=$pet['idPet']?>" method="post">
-            <button type="submit"><i class="fa fa-pencil"></i></button>
-          </form>
-          <?php } } ?>
           <section id="moreinfo">
             <form action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
               <button type="submit"><i class="fa fa-plus"></i></button>

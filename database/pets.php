@@ -56,11 +56,11 @@
         return $stmt->fetchAll();
     }
 
-      function addPet($user, $name, $race, $gender, $size, $color) {
+      function addPet($user, $name, $race, $gender, $size, $color, $bio) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($name, $race, $gender, $size, $color));
+        $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color, bio) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt->execute(array($name, $race, $gender, $size, $color, $bio));
 
         $idPet = $db->lastInsertId();
         
@@ -251,12 +251,12 @@
         }
       }
       
-    function updatePet($idPet, $npetName, $nspecie, $ngender, $nsize, $ncolor) {
+    function updatePet($idPet, $npetName, $bio, $nspecie, $ngender, $nsize, $ncolor) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('UPDATE Pet SET petName = ?, specie = ?, gender = ?, size = ?, color = ? WHERE idPet = ?');
+        $stmt = $db->prepare('UPDATE Pet SET petName = ?, bio = ?, specie = ?, gender = ?, size = ?, color = ? WHERE idPet = ?');
 
         $hashed_new_password = sha1($new_password);
-        $stmt->execute(array( $npetName, $nspecie, $ngender, $nsize, $ncolor, $idPet));  
+        $stmt->execute(array( $npetName, $bio, $nspecie, $ngender, $nsize, $ncolor, $idPet));  
     }
 ?>

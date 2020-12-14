@@ -3,6 +3,14 @@
       <section id="nameAndPhoto">
           <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
           <h1><a href=dog_profile.php?idPet=<?=$pet['idPet']?>><?=$pet['petName']?></a></h1>
+          <?php 
+          if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
+            if(isOwner($_SESSION['user'], $pet['idPet'])) {
+          ?>
+          <form action="dog_update.php?idPet=<?=$pet['idPet']?>" method="post">
+            <button type="submit"><i class="fa fa-pencil"></i></button>
+          </form>
+          <?php } } ?>
       </section>
 
       <section id="information">

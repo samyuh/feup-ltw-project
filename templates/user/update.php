@@ -57,7 +57,8 @@
           <section id="updateImage">
           </section>
           <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
-          <img id="output" style="max-height:15em; max-width:15em; alignment: center;" />
+          <img id="output" style="max-height:15em; max-width:15em;" />
+          <!--- Clean this --->
           <script>
             var loadFile = function(event) {
               var output = document.getElementById('output');
@@ -67,7 +68,7 @@
               }
             };
           </script>
-
+          <!--- Clean this --->
           <section id="updateActualPasswordError">
           </section>
           <input type="password" name="password" placeholder="Password">

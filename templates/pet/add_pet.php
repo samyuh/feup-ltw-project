@@ -3,12 +3,16 @@
     <section id="petinfocontainer">   
         <h1>Insert Pet Info</h1>
         <form class="inputsNewPet" id="addPetForm" action="../../action/action_add_pet.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
-            <input type="text" name="npetName" placeholder="Update Name">
+            <input type="text" name="npetName" placeholder="Name">
             Species:
             <section id="species_options">
                 <label>Dog <input type="radio" name="nspecie" value="dog" checked="checked"></label>
                 <label>Cat <input type="radio" name="nspecie" value="cat"></label>
             </section>
+            
+            Biography:
+            <input type="text" name="bio" placeholder="Pet biography">
+
             Gender:
             <section id="gender_options">
                 <label>Male <input type="radio" name="ngender" value="male" checked="checked"></label>

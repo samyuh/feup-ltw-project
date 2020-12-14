@@ -1,11 +1,12 @@
 <section id="update">
-    <form class="goback" action="dog_profile.php?idPet=<?=$pet['idPet']?>" method="post">
+    <form class="goback" action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
         <button type="submit">Back to Pet's page</button>
     </form>
     <section id="updatecontainers">
         <form class="updatepetinfo" action="../../action/action_update_dog.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">    
             <h1>Update Pet Info</h1>    
             <label>Update Name <input type="text" name="npetName" value="<?=$pet['petName']?>"></label>
+            <label>Update Description <input type="text" name="bio" value="<?=$pet['bio']?>"></label>
             <label>Update Specie <input type="text" name="nspecie" value="<?=$pet['specie']?>"></label>
             <label>Update Gender <input type="text" name="ngender" value="<?=$pet['gender']?>"></label>
             <label>Update Size <input type="text" name="nsize" value="<?=$pet['size']?>"></label>
