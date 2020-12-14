@@ -38,7 +38,7 @@ input,
     box-sizing: border-box;
 }
 
-#intro #found-pet a,
+#homepage-intro .found-pet a,
 input[type=submit],
 button{
     border: 1px solid #008080;
@@ -50,7 +50,7 @@ button{
     border-radius: 4px;
 }
 
-#intro #found-pet a:hover,
+#homepage-intro .found-pet a:hover,
 input[type=submit]:hover,
 button:hover{
     border: 1px solid #004646;

@@ -31,47 +31,47 @@
   </head>
   <body>
     <header>
-      <div id="name_slogan">
+      <div id="name-slogan">
         <h1><a title="Visit Pet Shelter" href="index.php">Pet Shelter</a></h1>
         <h2><a title="Visit Pet Shelter" href="index.php">Get your little animal right here, right now!</a></h2>
-        <form class="mobile_header" action="index.php">
+        <form class="mobile-header" action="index.php">
           <button title="Visit Pet Shelter" type="submit"><i class="fa fa-home"></i></button>
         </form>
       </div>
       <div id="search">
-        <form class="searchbar" action="index.php" method="post">
+        <form class="search-bar" action="index.php" method="post">
           <input type="text" placeholder="Search" name="search">
           <button title="Search" type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <div title="Advanced Search" id="advanced-search">
+        <div id="advanced-search" title="Advanced Search" >
             <a class="btn btn-default btn-sm" href="../../search.php">
               <i class="fa fa-search"></i> Advanced Search</a>
         </div>
-        <form class="mobile_search" action="../../search.php">
+        <form class="mobile-search" action="../../search.php">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
       
-      <div id="rightside">
+      <div id="right-side">
         <div id="settings">
           <?php if (!isLogged()) { ?>
-            <div id="signup">
+            <div id="sign-up">
               <a title="Create an Account" href="../../register.php">Register</a>
               <a title="Login" href="../../login.php">Login</a>
             </div>
           <?php } else { ?>
-            <div id="signedin">
-              <div id="Profile">
+            <div id="signed-in">
+              <div id="profile">
                 <a title="Visit Your Profile" href="profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
               </div>
               <div id="dropdown">
-                <div id="Notifications">
+                <div id="notifications">
                 <a title="See My Notifications" href="">Notifications</a>
                 </div>
-                <div id="Update">
+                <div id="update">
                   <a title="Update My Information" href="update.php">Update Profile</a>
                 </div>
-                <div id="Logout">
+                <div id="logout">
                   <a title="Logout from My Account" href="../../action/action_logout.php">Logout</a>
                 </div>
               </div>

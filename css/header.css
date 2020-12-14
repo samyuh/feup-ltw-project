@@ -1,4 +1,4 @@
-header{
+header {
   background-image: linear-gradient(to bottom right,hsl(72, 11%, 45%), hsl(72, 11%, 35%));
   padding: 1em;
   box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
@@ -8,7 +8,7 @@ header h1, h2{
   margin: 0;
 }
 
-header h1{
+header h1 {
   font-family: 'Lobster', cursive;
   font-weight: normal;
 }
@@ -18,30 +18,30 @@ header h2{
   font-size: small;
 }
 
-header #name_slogan{
+header #name-slogan{
   padding-right: 1em;
   border-right: 1px solid white;
 }
 
-.mobile_header button{
+.mobile-header button{
   display: none;
 }
 
-.mobile_search button{
+.mobile-search button{
   display: none;
 }
 
-header #rightside{
+header #right-side{
   margin-left: auto;
   margin-right: 5em;
 }
 
 header #search, 
-header #rightside #settings{
+header #right-side #settings{
   margin-right: 3em;
 }
 
-header #rightside #settings{
+header #right-side #settings{
   padding-top: 1em;
 }
 
@@ -59,7 +59,7 @@ header #search{
   padding: 0.2em;
 }
 
-header #signedin{
+header #signed-in{
   position: relative;
   display: inline-block;
 }
@@ -81,35 +81,37 @@ header #dropdown a {
   text-align: left;
 }
 
-header #dropdown a:hover {background-color: #f1f1f1;}
+header #dropdown a:hover {
+  background-color: #f1f1f1;
+}
 
-header #signedin:hover #dropdown{
+header #signed-in:hover #dropdown{
   display: block;
 }
 
-body > header #signup a:first-child {
+body > header #sign-up a:first-child {
   border-right: 1px solid white;
 }
 
-body > header #signup a {
+body > header #sign-up a {
   padding: 0 1em;
 }
 
-body > header #signup a:first-child {
+body > header #sign-up a:first-child {
   padding-left: 0;
 }
 
 /* -------------- RESPONSIVE HEADER -------------- */
 
 @media screen and (max-width: 1000px){
-  header #name_slogan h2{
+  header #name-slogan h2{
     display: none;
   }
-  header .searchbar button,
+  header .search-bar button,
   header #search input{
     display: none;
   }
-  header #rightside #settings{
+  header #right-side #settings{
     padding-top: .5em;
   }
   #advanced-search{
@@ -118,20 +120,20 @@ body > header #signup a:first-child {
 }
 
 @media screen and (max-width: 650px){
-  header #name_slogan h1{
+  header #name-slogan h1{
     display: none;
   }
   #advanced-search{
     display: none;
   }
-  .mobile_header button,
-  .mobile_search button{
+  .mobile-header button,
+  .mobile-search button{
     display: block;
     background-color: transparent;
     border: none;
   }
-  .mobile_header button:hover,
-  .mobile_search button:hover{
+  .mobile-header button:hover,
+  .mobile-search button:hover{
     border: none;
   }
   header #search{

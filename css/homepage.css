@@ -1,35 +1,35 @@
-#homepage{
+#homepage {
     padding-bottom: 20em;
 }
 
-#intro{
+#homepage-intro {
     padding-bottom: 2em;   
     padding-top: 2em; 
     text-align: center;
 }
 
-#intro h1{
+#homepage-intro h1 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
     font-family: 'Lobster', cursive;
     color: hsl(72, 23%, 22%)
 }
 
-#intro h2{
+#homepage-intro h2 {
     font-size: medium;
     font-style: normal;
 }
 
-#intro #found-pet{
+#homepage-intro .found-pet {
    padding-top: 1em;
 }
 
-#homepage_profile {
+#homepage-profile {
     position: relative;
     text-align: center;
 }
 
-#homepage_profile .image {
+#homepage-profile .profile-image {
     display: block;
     padding-top: 0;
     height: 19em;
@@ -43,15 +43,19 @@
     box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
-#homepage_profile p {
+#homepage-profile p {
     text-align: center;
 }
 
-#homepage_profile .petname{
+#homepage-profile .pet-name{
     font-size: 1.5em;
 }
 
-.overlay {
+#homepage-profile a:hover {
+    animation: pink_and_blue 3s infinite;
+}
+
+#homepage-profile .profile-overlay {
     position: absolute;
     right: 0;
     left: 0;
@@ -66,11 +70,7 @@
     border-radius: 20%;
 }
 
-.overlay:hover {
-    opacity: 0.7;
-}
-
-.text {
+#homepage-profile .profile-overlay {
     width: 300px;
     color: white;
     font-size: 20px;
@@ -80,6 +80,8 @@
     transform: translate(-50%, -50%);
 }
 
-#homepage_profile a:hover {
-    animation: pink_and_blue 3s infinite;
+#homepage-profile .profile-overlay:hover {
+    opacity: 0.7;
 }
+
+
