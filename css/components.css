@@ -1,5 +1,32 @@
 /* ------------- BUTTONS AND INPUTS ------------- */
 
+/* Radio Buttons */
+.hide{display: none;}
+input[type="radio"] + .fa,
+input[type="radio"] + label > .fa { cursor: pointer; }
+/* Unchecked */
+input[type="radio"] + .fa-check-circle:before,
+input[type="radio"] + label > .fa-check-circle:before { content: "\f111"; }
+input[type="radio"] + .fa-venus:before,
+input[type="radio"] + label > .fa-check-circle:before { opacity: 0.4; }
+input[type="radio"] + .fa-mars:before,
+input[type="radio"] + label > .fa-check-circle:before { opacity: 0.4; }
+input[type="radio"] + .fa-paw:before,
+input[type="radio"] + label > .fa-check-circle:before { opacity: 0.4; }
+input[type="radio"] + .fa-genderless:before,
+input[type="radio"] + label > .fa-genderless:before { opacity: 0.4; }
+/* Checked */
+input[type="radio"]:checked + .fa-check-circle:before,
+input[type="radio"]:checked + label > .fa-check-circle:before { content: "\f058"; }
+input[type="radio"]:checked + .fa-venus:before,
+input[type="radio"]:checked + label > .fa-venus:before { color: fuchsia; opacity:1; }
+input[type="radio"]:checked + .fa-mars:before,
+input[type="radio"]:checked + label > .fa-mars:before { color: blue; opacity:1;}
+input[type="radio"]:checked + .fa-paw:before,
+input[type="radio"]:checked + label > .fa-paw:before { color: #008080; opacity:1;}
+input[type="radio"]:checked + .fa-genderless:before,
+input[type="radio"]:checked + label > .fa-genderless:before { color: #008080; opacity:1;}
+
 input, 
 .login button, 
 #register button,
@@ -32,7 +59,6 @@ button:hover{
 
 #pet button[type=submit]{
     cursor: pointer;
-    background-color: white;
     border: none;
     outline: none;
     font-size: large;
@@ -43,17 +69,26 @@ button:hover{
 }
 
 #pet .name_and_favorite button[type=submit]{
+    background-color: transparent;
     color: orange;
 }
 
 header .searchbar button,
 #information_and_update button{
-    background-color: white;
+    border: none;
     border-radius: 0;
     color: black;
     padding: 0.3em;
     margin: 0;
-  }
+}
+
+header .searchbar button{
+    background-color: white;
+}
+
+#information_and_update button{
+    background-color: transparent;
+}
 
 input[type=text], input[type=password]{
     border: 1px solid #ccc;
@@ -79,6 +114,7 @@ input[type=text], input[type=password]{
 a{
     color: black;
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:visited {color: black;}
