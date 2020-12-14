@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- icon library -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
     <link href="../../css/update.css" rel="stylesheet">
     <link href="../../css/containers.css" rel="stylesheet">
@@ -21,14 +22,12 @@
     <link href="../../css/newPet.css" rel="stylesheet">
     <link href="../../css/error404.css" rel="stylesheet">
     <link href="../../css/profile.css" rel="stylesheet">
-    <!-- Add icon library -->
     
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/addPet.js" defer> </script>
     <script src="../../scripts/favorite.js" defer> </script>
     <script src="../../scripts/add_question.js" defer> </script>
-   
   </head>
   <body>
     <header>
@@ -55,17 +54,15 @@
       
       <div id="rightside">
         <div id="settings">
-          <?php 
-          if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
-            ?>
+          <?php if (!isLogged()) { ?>
             <div id="signup">
               <a title="Create an Account" href="../../register.php">Register</a>
               <a title="Login" href="../../login.php">Login</a>
             </div>
-            <?php } else { ?>
+          <?php } else { ?>
             <div id="signedin">
               <div id="Profile">
-                <a title="Visit Your Profile" href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
+                <a title="Visit Your Profile" href="profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
               </div>
               <div id="dropdown">
                 <div id="Notifications">
@@ -79,7 +76,7 @@
                 </div>
               </div>
             </div>
-            <?php } ?> 
+          <?php } ?> 
         </div> 
       </div>
     </header>

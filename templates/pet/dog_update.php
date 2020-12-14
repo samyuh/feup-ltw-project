@@ -5,12 +5,12 @@
     <section id="updatecontainers">
         <form class="updatepetinfo" action="../../action/action_update_dog.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
             <h1>Update Pet Info</h1>    
-            <label>Update Name <input type="text" name="npetName" value="<?=$pet['petName']?>"></label>
-            <label>Update Description <input type="text" name="bio" value="<?=$pet['bio']?>"></label>
-            <label>Update Specie <input type="text" name="nspecie" value="<?=$pet['specie']?>"></label>
-            <label>Update Gender <input type="text" name="ngender" value="<?=$pet['gender']?>"></label>
-            <label>Update Size <input type="text" name="nsize" value="<?=$pet['size']?>"></label>
-            <label>Update color <input type="text" name="ncolor" value="<?=$pet['color']?>"></label>
+            <label>Update Name <input type="text" name="npetName" value="<?= htmlentities($pet['petName']) ?>"></label>
+            <label>Update Description <input type="text" name="bio" value="<?= htmlentities($pet['bio']) ?>"></label>
+            <label>Update Specie <input type="text" name="nspecie" value="<?= htmlentities($pet['specie']) ?>"></label>
+            <label>Update Gender <input type="text" name="ngender" value="<?= htmlentities($pet['gender']) ?>"></label>
+            <label>Update Size <input type="text" name="nsize" value="<?= htmlentities($pet['size']) ?>"></label>
+            <label>Update color <input type="text" name="ncolor" value="<?= htmlentities($pet['color']) ?>"></label>
             <!-- Fazer aqui alterar a foto do cão! -->
             <input type="submit" value="Update">
         </form>
@@ -20,7 +20,7 @@
             <?php foreach($posts as $post) {?>
                 <section id="buttonsposts">
                     <form action="../../action/action_dog_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                        <label>Update Post <input type="text" name="post" value="<?=$post['POST']?>"></label>
+                        <label>Update Post <input type="text" name="post" value="<?= htmlentities($post['POST']) ?>"></label>
                         <input class="column" type="submit" value="Update Post">
                     </form> 
                     <form action="../../action/action_dog_delete_post.php?id=<?=$post['id']?>" method="post">
