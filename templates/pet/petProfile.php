@@ -3,7 +3,7 @@
     <div class="header">
     </div>
     <div class="image">
-    <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
+    <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet profile pic">
     </div>
     
 

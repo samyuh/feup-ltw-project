@@ -34,7 +34,7 @@
             <h1>Insert Pet Photo</h1>
             <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
                 <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
-                    <img id="output" style="max-height:15em; max-width:15em;" />
+                    <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Submit Photo"/>
                     <!--- Clean this --->
                     <script>
                         var loadFile = function(event) {
@@ -55,7 +55,7 @@
             <?php foreach($photos as $photo) {?>
                 <section id="buttonsphotos">
                 <form action="../../action/action_delete_pet_photo.php?idPhoto=<?=$photo['idPhoto']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                        <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying dog image" width="400" height="400">
+                        <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Display Pet Image" width="400" height="400">
                         <input class="column" type="submit" value="Delete Photo">
                 </section>            
                 <?php } ?>

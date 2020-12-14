@@ -1,5 +1,4 @@
 <section id="add">
-   
     <section id="petinfocontainer">   
         <h1>Insert Pet Info</h1>
         <form class="inputsNewPet" id="addPetForm" action="../../action/action_add_pet.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
@@ -26,7 +25,7 @@
             </section>
             <input type="text" name="ncolor" placeholder="Update color">
             <input type="file" name="image"  accept="image/*" onchange="loadFile(event)">>
-          <img id="output" style="max-height:15em; max-width:15em;" />
+          <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Image Preview" />
           <!--- Clean this --->
           <script>
             var loadFile = function(event) {

@@ -1,8 +1,8 @@
 <div id="petInformation">
   <aside id="informationSidebar">
       <section id="nameAndPhoto">
-          <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200">
-          <h1><a href=dog_profile.php?idPet=<?=$pet['idPet']?>><?=$pet['petName']?></a></h1>
+          <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet Profile Picture">
+          <h1><a href="dog_profile.php?idPet=<?=$pet['idPet']?>"><?=$pet['petName']?></a></h1>
           <?php 
           if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
             if(isOwner($_SESSION['user'], $pet['idPet'])) {
@@ -29,7 +29,6 @@
     </aside>
 
     <section id="content">
-      
       <section id="top-content">
         <section id="biography"> 
             <h2>Biography</h2>
@@ -57,14 +56,14 @@
           <input type="text" name="post">
           <input type="submit" value="Post">
         </form>
+        <section id="uniquepost">
         <?php } ?>
         <?php foreach($posts as $post) {?>
-          <section id="uniquepost"/>
             <p><?=$post['post']?></p>
             <p><?=$post['datePost']?></p>
             <p>By <?=$post['author']?></p>
-          </section>
         <?php } ?>
+        </section>
       </section>
     </section>
 </div>
