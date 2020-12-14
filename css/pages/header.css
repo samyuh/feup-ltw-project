@@ -27,7 +27,7 @@ header #name-slogan{
   display: none;
 }
 
-.mobile-search button{
+.mobile-search-bar button{
   display: none;
 }
 
@@ -36,7 +36,7 @@ header #right-side{
   margin-right: 5em;
 }
 
-header #search, 
+header #search-bar, 
 header #right-side #settings{
   margin-right: 3em;
 }
@@ -45,16 +45,16 @@ header #right-side #settings{
   padding-top: 1em;
 }
 
-header #search{
+header #search-bar {
   margin-left: 3em;
 }
 
 /* SEARCH BAR */
-#search #advanced-search a{
+#search-bar #advanced-search-bar a{
   font-size: small;
 }
 
-#search input[type="text"]{
+#search-bar input[type="text"]{
   width: 20em;
   padding: 0.2em;
 }
@@ -108,13 +108,13 @@ body > header #sign-up a:first-child {
     display: none;
   }
   header .search-bar button,
-  header #search input{
+  header #search-bar input{
     display: none;
   }
   header #right-side #settings{
     padding-top: .5em;
   }
-  #advanced-search{
+  #advanced-search-bar {
     padding-top: .5em;
   }
 }
@@ -123,20 +123,20 @@ body > header #sign-up a:first-child {
   header #name-slogan h1{
     display: none;
   }
-  #advanced-search{
+  #advanced-search-bar {
     display: none;
   }
   .mobile-header button,
-  .mobile-search button{
+  .mobile-search-bar button{
     display: block;
     background-color: transparent;
     border: none;
   }
   .mobile-header button:hover,
-  .mobile-search button:hover{
+  .mobile-search-bar button:hover{
     border: none;
   }
-  header #search{
+  header #search-bar {
     margin-left: 1em;
   }
 }

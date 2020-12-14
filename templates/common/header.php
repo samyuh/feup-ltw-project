@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
-    <link href="../../css/update.css" rel="stylesheet">
+    <link href="../../css/pages/update.css" rel="stylesheet">
+    <link href="../../css/pages/header.css" rel="stylesheet">
+    <link href="../../css/pages/footer.css" rel="stylesheet">
+    <link href="../../css/pages/pet_information.css" rel="stylesheet">
+    <link href="../../css/pages/homepage.css" rel="stylesheet">
+    <link href="../../css/pages/search_advanced.css" rel="stylesheet">
+    <link href="../../css/pages/add_pet.css" rel="stylesheet">
+    <link href="../../css/pages/error404.css" rel="stylesheet">
+    <link href="../../css/pages/profile.css" rel="stylesheet">
     <link href="../../css/containers.css" rel="stylesheet">
-    <link href="../../css/layout.css" rel="stylesheet">
-    <link href="../../css/header.css" rel="stylesheet">
-    <link href="../../css/footer.css" rel="stylesheet">
     <link href="../../css/components.css" rel="stylesheet">
-    <link href="../../css/petInformation.css" rel="stylesheet">
-    <link href="../../css/homepage.css" rel="stylesheet">
-    <link href="../../css/search_advanced.css" rel="stylesheet">
-    <link href="../../css/newPet.css" rel="stylesheet">
-    <link href="../../css/error404.css" rel="stylesheet">
-    <link href="../../css/profile.css" rel="stylesheet">
+    <link href="../../css/layout.css" rel="stylesheet">
     
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
@@ -38,16 +38,16 @@
           <button title="Visit Pet Shelter" type="submit"><i class="fa fa-home"></i></button>
         </form>
       </div>
-      <div id="search">
-        <form class="search-bar" action="index.php" method="post">
+      <div id="search-bar">
+        <form class="form-search-bar" action="index.php" method="post">
           <input type="text" placeholder="Search" name="search">
           <button title="Search" type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <div id="advanced-search" title="Advanced Search" >
+        <div id="advanced-search-bar" title="Advanced Search" >
             <a class="btn btn-default btn-sm" href="../../search.php">
               <i class="fa fa-search"></i> Advanced Search</a>
         </div>
-        <form class="mobile-search" action="../../search.php">
+        <form class="mobile-search-bar" action="../../search.php">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>

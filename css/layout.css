@@ -64,7 +64,7 @@ header{
 #error404, 
 #homepage,
 #add,
-#advanced_search_page,
+#advanced-search-page,
 #pet-update,
 #update{
   height: 100%;
@@ -81,7 +81,7 @@ header{
 #error404,
 #homepage,
 #add,
-#advanced_search_page{
+#advanced-search-page{
   display: flex;
   flex-direction: column;
 }
@@ -114,25 +114,25 @@ header{
 
 /* ---------- ADVANCED SEARCH LAYOUT ---------- */
 
-#displayPets{
+#search-pet-profile {
   padding-top: 2em;
   display: grid;
   grid-template-columns: 33% 33% 33%;
 }
 
-#displayPets .profile .info{
+#search-pet-profile .profile .info{
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
 @media screen and (max-width: 1700px){
-  #displayPets{
+  #search-pet-profile {
     grid-template-columns: 50% 50%;
   }
 }
 
 @media screen and (max-width: 1200px){
-  #displayPets{
+  #search-pet-profile {
     grid-template-columns: 100%;
   }
 }

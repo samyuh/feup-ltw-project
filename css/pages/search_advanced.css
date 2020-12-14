@@ -1,49 +1,47 @@
-#advanced_search_page{
+#advanced-search-page {
     align-items: center;
 }
 
-#advanced_search{
+#advanced-search {
     border: none;
     text-align: center;
     width: 40em;
 }
 
-#advanced_search h2{
+#advanced-search h2 {
     font-style: normal;
 }
 
-#advanced_search input[type="text"], textarea{
+#advanced-search input[type="text"], textarea {
     background-color : hsl(50, 100%, 93%);
 }
 
-#displayPets .profile{
+#advanced-search .options{
+    padding: 0.5em;
+    justify-content: center;
+}
+
+#search-pet-profile .profile {
     display: flex;
     flex-direction: row;
     min-width: 10em;
     background-color: hsl(49, 62%, 82%);
 }
 
-#displayPets .profile img{
+#search-pet-profile .profile img {
     border-radius: 20%;
 }
 
-#displayPets .profile .info{
+#search-pet-profile .profile .info{
     margin-left: 1em;
     padding: 1em;
     width: 100%; 
 }
 
-#species_options,
-#gender_options,
-#size_options{
-    padding: 0.5em;
-    justify-content: center;
-}
-
 /* -------------- RESPONSIVE ADVANCED SEARCH -------------- */
 
 @media screen and (max-width: 650px){
-    #displayPets .profile .info{
+    #search-pet-profile .profile .info{
         display: none;
     }
   }

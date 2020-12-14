@@ -1,7 +1,7 @@
 'use strict';
 
 let form = document.getElementById('name_search')
-let place = document.getElementById('displayPets')
+let place = document.getElementById('search-pet-profile')
 
 // Remove after including javascript in the correct place
 if(document.getElementById('name_search') != undefined) {
