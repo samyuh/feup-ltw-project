@@ -48,7 +48,7 @@
             <a class="btn btn-default btn-sm" href="../../search.php">
               <i class="fa fa-search"></i> Advanced Search</a>
         </div>
-        <form class="mobile_search" action=../../search.php">
+        <form class="mobile_search" action="../../search.php">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
