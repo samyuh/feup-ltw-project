@@ -54,8 +54,6 @@
             $originalFileName = "../images/user/user-$idUser.jpg";
             move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
 
-            $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
-
             if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
                 return TRUE;
             }
@@ -67,6 +65,22 @@
             return FALSE;
         }
     }
+
+    function updateUserInfo($user, $new_gender, $new_age, $new_location, $password) {
+        $db = Database::instance()->db();
+
+        if (checkUserPassword($user['username'], $password) !== false) {
+            $stmt = $db->prepare('UPDATE User SET gender = ?, age = ?, location = ? WHERE idUser = ?');
+            $stmt->execute(array($new_gender, $new_age, $new_location, $user['idUser']));
+            
+            $idUser = $user['idUser'];
+            $originalFileName = "../images/user/user-$idUser.jpg";
+            move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+
+            return TRUE;
+        }
+        else return FALSE;
+      }
 
     function updateUsername($user, $new_username, $password) {
         $db = Database::instance()->db();

@@ -37,6 +37,45 @@
         </form>
     </section>
 
+    <section id="updateInformation">
+        <form id="updateInformationForm" class="changeInformation" action="../../action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+          <h1>Update Information</h1> 
+          <section id="updateGender">
+          </section>
+          Male <input type="radio" name="gender" value="male">
+          Female <input type="radio" name="gender" value="female">
+
+          <section id="updateAge">
+          </section>
+          Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
+          <output>20</output>
+
+          <section id="updateLocation">
+          </section>
+          <input type="text" name="location" placeholder="Location">
+
+          <section id="updateImage">
+          </section>
+          <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
+          <img id="output" style="max-height:15em; max-width:15em; alignment: center;" />
+          <script>
+            var loadFile = function(event) {
+              var output = document.getElementById('output');
+              output.src = URL.createObjectURL(event.target.files[0]);
+              output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+              }
+            };
+          </script>
+
+          <section id="updateActualPasswordError">
+          </section>
+          <input type="password" name="password" placeholder="Password">
+
+          <button id="updatePasswordButton" type="submit" value="Update Password">Update Information</button>
+        </form>
+    </section>
+
     <section id="deleteProfile">
         <form id="deleteProfileForm" class="deleteProfile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
           <h1>Delete Profile</h1>  

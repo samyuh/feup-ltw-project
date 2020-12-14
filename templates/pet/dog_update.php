@@ -31,7 +31,19 @@
         <div class="add-photo">
             <h1>Insert Pet Photo</h1>
             <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
-                <input type="file" name="image">
+                <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
+                    <img id="output" style="max-height:15em; max-width:15em;" />
+                    <!--- Clean this --->
+                    <script>
+                        var loadFile = function(event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                        output.onload = function() {
+                            URL.revokeObjectURL(output.src) 
+                        }
+                        };
+                    </script>
+                    <!--- Clean this --->
                 <input type="submit" value="Update">
             </form>
         </div>

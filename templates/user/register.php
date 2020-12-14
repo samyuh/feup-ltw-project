@@ -36,7 +36,19 @@
         <section id="registerImageError">
         </section>
         <div class="image">
-          <input type="file" name="image">
+          <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
+          <img id="output" style="max-height:15em; max-width:15em;" />
+          <!--- Clean this --->
+          <script>
+            var loadFile = function(event) {
+              var output = document.getElementById('output');
+              output.src = URL.createObjectURL(event.target.files[0]);
+              output.onload = function() {
+                URL.revokeObjectURL(output.src) 
+              }
+            };
+          </script>
+          <!--- Clean this --->
         </div>
         <div class="submit">
           <button id="registerButton" type="submit" value="Register">Create an Account</button>
