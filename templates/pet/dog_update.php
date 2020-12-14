@@ -3,7 +3,7 @@
         <button type="submit">Back to Pet's page</button>
     </form>
     <section id="updatecontainers">
-        <form class="updatepetinfo" action="../../action/action_update_dog.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">    
+        <form class="updatepetinfo" action="../../action/action_update_dog.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
             <h1>Update Pet Info</h1>    
             <label>Update Name <input type="text" name="npetName" value="<?=$pet['petName']?>"></label>
             <label>Update Description <input type="text" name="bio" value="<?=$pet['bio']?>"></label>
@@ -11,6 +11,7 @@
             <label>Update Gender <input type="text" name="ngender" value="<?=$pet['gender']?>"></label>
             <label>Update Size <input type="text" name="nsize" value="<?=$pet['size']?>"></label>
             <label>Update color <input type="text" name="ncolor" value="<?=$pet['color']?>"></label>
+            <!-- Fazer aqui alterar a foto do cão! -->
             <input type="submit" value="Update">
         </form>
         
@@ -47,6 +48,17 @@
                     <!--- Clean this --->
                 <input type="submit" value="Update">
             </form>
+        </div>
+
+        <div class="delete-photo">
+            <h1>Delete Pet Photo</h1>
+            <?php foreach($photos as $photo) {?>
+                <section id="buttonsphotos">
+                <form action="../../action/action_delete_pet_photo.php?idPhoto=<?=$photo['idPhoto']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                        <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying dog image" width="400" height="400">
+                        <input class="column" type="submit" value="Delete Photo">
+                </section>            
+                <?php } ?>
         </div>
     </section>
 

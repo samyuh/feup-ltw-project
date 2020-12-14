@@ -15,6 +15,8 @@
 
   $pet = getPet($_GET['idPet']);
   $posts = getPosts($_GET['idPet']);
+
+  $photos = getAllPhotos($_GET['idPet']);
   
   /* HTML Code */
   include_once('templates/common/header.php');

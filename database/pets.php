@@ -136,6 +136,15 @@
         return TRUE;
       }
 
+      function deletePhoto($idPhoto) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('DELETE FROM PetPhoto WHERE idPhoto = ?');
+        $stmt->execute(array($idPhoto));
+
+        return TRUE;
+      }
+
     function isFavorited($user, $idPet) {
         $db = Database::instance()->db();
         
@@ -258,5 +267,9 @@
 
         $hashed_new_password = sha1($new_password);
         $stmt->execute(array( $npetName, $bio, $nspecie, $ngender, $nsize, $ncolor, $idPet));  
+
+
+        $originalFileName = "../images/pet-profile/pet-$idPet/profile.jpg";
+        move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
     }
 ?>
