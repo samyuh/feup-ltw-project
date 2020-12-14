@@ -7,7 +7,7 @@
     if (!(!array_key_exists('user', $_SESSION) || empty($_SESSION['user']))) {
     ?>
     <section id="found-pet">
-      <p><a href=add_pet.php>Add a Pet</a></p>
+      <p><a title="Add New Pet" href=add_pet.php>Add a Pet</a></p>
     </section>
     <?php
       }
@@ -20,7 +20,7 @@
     <article>
     <section id="homepage_profile">
       <img class="image" src="./images/pet-profile/pet-<?=$article['idPet']?>/profile.jpg" width="300" height="300">
-      <p><a href=dog_profile.php?idPet=<?=$article['idPet']?>><?=$article['petName']?></a></p>
+      <p><a class="petname" title="Visit <?=$article['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$article['idPet']?>><?=$article['petName']?></a></p>
       <div class="overlay">
         <div class="text">
           <p>Raça: <?=$article['specie']?></p>

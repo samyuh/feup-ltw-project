@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="../../css/update.css" rel="stylesheet">
     <link href="../../css/containers.css" rel="stylesheet">
     <link href="../../css/layout.css" rel="stylesheet">
     <link href="../../css/header.css" rel="stylesheet">
@@ -13,7 +17,6 @@
     <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/petInformation.css" rel="stylesheet">
     <link href="../../css/homepage.css" rel="stylesheet">
-    <link href="../../css/update.css" rel="stylesheet">
     <link href="../../css/search_advanced.css" rel="stylesheet">
     <link href="../../css/newPet.css" rel="stylesheet">
     <link href="../../css/error404.css" rel="stylesheet">
@@ -30,18 +33,18 @@
   <body>
     <header>
       <div id="name_slogan">
-        <h1><a href="index.php">Pet Shelter</a></h1>
-        <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
+        <h1><a title="Visit Pet Shelter" href="index.php">Pet Shelter</a></h1>
+        <h2><a title="Visit Pet Shelter" href="index.php">Get your little animal right here, right now!</a></h2>
         <form class="mobile_header" action="index.php">
-          <button type="submit"><i class="fa fa-home"></i></button>
+          <button title="Visit Pet Shelter" type="submit"><i class="fa fa-home"></i></button>
         </form>
       </div>
       <div id="search">
         <form class="searchbar" action="index.php" method="post">
           <input type="text" placeholder="Search" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+          <button title="Search" type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <div id="advanced-search">
+        <div title="Advanced Search" id="advanced-search">
             <a class="btn btn-default btn-sm" href="../../search.php">
               <i class="fa fa-search"></i> Advanced Search</a>
         </div>
@@ -56,23 +59,23 @@
           if (!array_key_exists('user', $_SESSION) || empty($_SESSION['user'])) {
             ?>
             <div id="signup">
-              <a href="../../register.php">Register</a>
-              <a href="../../login.php">Login</a>
+              <a title="Create an Account" href="../../register.php">Register</a>
+              <a title="Login" href="../../login.php">Login</a>
             </div>
             <?php } else { ?>
             <div id="signedin">
               <div id="Profile">
-                <a href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
+                <a title="Visit Your Profile" href="profile.php?user=<?=$_SESSION['user']['username']?>"><?= $_SESSION['user']['username']?></a>
               </div>
               <div id="dropdown">
                 <div id="Notifications">
-                <a href="">Notifications</a>
+                <a title="See My Notifications" href="">Notifications</a>
                 </div>
                 <div id="Update">
-                  <a href="update.php">Update Profile</a>
+                  <a title="Update My Information" href="update.php">Update Profile</a>
                 </div>
                 <div id="Logout">
-                  <a href="../../action/action_logout.php">Logout</a>
+                  <a title="Logout from My Account" href="../../action/action_logout.php">Logout</a>
                 </div>
               </div>
             </div>

@@ -6,21 +6,24 @@ html{
 
 body {
   margin: 0 auto;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column; 
   font-family: Arial, Helvetica, sans-serif;
   background-color: #FFFAE2;
+  min-height: 100%;
 }
 
 /* ---------- LOGIN/REGISTER LAYOUT ---------- */
+
+.login, #register{
+  display: flex;
+  flex-direction: row;
+}
 
 .container_forms{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
-  background-color:rgba(256, 256, 256, 0.6);
 }
 
 .gender{
@@ -31,6 +34,19 @@ body {
 .genderoptions{
   display: flex;
   flex-direction: row;
+}
+
+@media screen and (max-width: 1150px){
+  .login, #register{
+    flex-direction: column;
+    gap: 0;
+  }
+  .container_forms{
+    order: 2
+  }
+  .name_and_slogan{
+    order: 1;
+  }
 }
 
 /* ---------- HEADER LAYOUT ---------- */
@@ -209,6 +225,11 @@ header{
   text-align: center;
 }
 
+#petInformation #informationSidebar #information{
+  display: flex;
+  flex-direction: column;
+}
+
 #petInformation #content{
   flex: 4;
   display: flex;
@@ -224,6 +245,21 @@ header{
     flex: 1;
 }
 
+@media screen and (max-width: 1260px){
+  #petInformation #content #top-content{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #petInformation{
+    display: flex;
+    flex-direction: column;
+  }
+  #petInformation #informationSidebar #information{
+    flex-direction: row;
+  }
+}
 /* ---------- UPDATE PROFILES/INFORMATION LAYOUT ---------- */
 
 #update{    
@@ -245,7 +281,19 @@ header{
     flex-direction: column;
 }
 
-
 .updateposts #buttonsposts{
     display: flex;
+}
+
+@media screen and (max-width: 1600px){
+  #updatecontainers{
+    flex-direction: column;
+  }
+  .changeUsername,
+  .changePassword,
+  .updatepetinfo,
+  .updateposts,
+  .add-photo{
+    height: auto;
+  } 
 }

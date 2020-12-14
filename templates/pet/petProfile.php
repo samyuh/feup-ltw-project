@@ -32,12 +32,12 @@
             if(isOwner($_SESSION['user'], $pet['idPet'])) {
           ?>
           <form action="dog_update.php?idPet=<?=$pet['idPet']?>" method="post">
-            <button type="submit"><i class="fa fa-pencil"></i></button>
+            <button title="Edit Information" type="submit"><i class="fa fa-pencil"></i></button>
           </form>
           <?php } } ?>
           <section id="moreinfo">
             <form action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
-              <button type="submit"><i class="fa fa-plus"></i></button>
+              <button title="More Information" type="submit"><i class="fa fa-plus"></i></button>
             </form>
           </section>
         </section>
@@ -45,9 +45,9 @@
           <p>Gender: <?=$pet['gender']?></p>
           <p>Size: <?=$pet['size']?></p>
           <p>Color: <?=$pet['color']?></p>
-          <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : $owner['username']?></a></p>
+          <p>Found by:<a title="Visit <?=$owner['username']?>'s Profile" href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : $owner['username']?></a></p>
             <?php if(!empty($adopted)) { ?>
-                <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= empty($adopted['username']) ? 'Deleted User' : $adopted['username'] ?></a></p>
+                <p>Adopted by:<a title="Visit <?=$adopted['username']?>'s Profile" href="profile.php?user=<?=$adopted['username']?>"><?= empty($adopted['username']) ? 'Deleted User' : $adopted['username'] ?></a></p>
             <?php } else { ?>
                 <p>Not adopted yet!</p>
             <?php } ?>
@@ -59,7 +59,7 @@
         <form id='questionForm' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
           <input type="text" name="question">
           <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
-          <input id="questionFormButton" type="submit" value="Ask">
+          <input title="Ask Question" id="questionFormButton" type="submit" value="Ask">
         </form>
         <section id="qs">
           

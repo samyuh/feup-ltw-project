@@ -5,8 +5,8 @@
           <h1><a href=dog_profile.php?idPet=<?=$pet['idPet']?>><?=$pet['petName']?></a></h1>
       </section>
 
+      <h2>Information</h2>
       <section id="information">
-        <h2>Information</h2>
           <p>Species: <?=$pet['specie']?></p>
           <p>Gender: <?=$pet['gender']?></p>
           <p>Size: <?=$pet['size']?></p>
