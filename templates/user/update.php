@@ -1,27 +1,22 @@
-<section id="update">
-  <section id="updatecontainers">
-    <section id="updateUsername">
+<div id="update">
+  <article id="updateUsername">
         <form id="updateUsernameForm" class="changeUsername" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
-        <h1>Update Username</h1>  
-          <div id="usernameinputs">
-
-            <section id="updateNewUsernameError">
-            </section>
-            <input type="text" name="new_username" placeholder="New Username">
+          <h2>Update Username</h2> 
+          <section id="updateNewUsernameError">
+          </section>
+          <input type="text" name="new_username" placeholder="New Username">
             
-            <section id="updateActualPasswordError">
-            </section>
-            <input type="password" name="password" placeholder="Actual Password">
+          <section id="updateActualPasswordError">
+          </section>
+          <input type="password" name="password" placeholder="Actual Password">
             
-          </div>
           <button id="updateUsernameButton" type="submit" value="Update Username">Update Username</button>
         </form>
-    </section>
+    </article>
 
-    <section id="updatePassword">
+    <article id="updatePassword">
         <form id="updatePasswordForm" class="changePassword" action="../../action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
-          <h1>Update Password</h1> 
-
+        <h2>Update Password</h2>
           <section id="updateNewPasswordError">
           </section>
           <input type="password" name="new_password" placeholder="New Password">
@@ -35,11 +30,12 @@
           <input type="password" name="password" placeholder="Current Password">
           <button id="updatePasswordButton" type="submit" value="Update Password">Update Password</button>
         </form>
-    </section>
+    </article>
 
-    <section id="updateInformation">
+    <article id="updateInformation">
         <form id="updateInformationForm" class="changeInformation" action="../../action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
-          <h1>Update Information</h1> 
+          <h2>Update Information</h2>
+
           <section id="updateGender">
           </section>
           Male <input type="radio" name="gender" value="male">
@@ -50,6 +46,7 @@
           Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
           <output>20</output>
 
+
           <section id="updateLocation">
           </section>
           <input type="text" name="location" placeholder="Location">
@@ -57,8 +54,8 @@
           <section id="updateImage">
           </section>
           <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
-          <img id="output" style="max-height:15em; max-width:15em;" />
-          <!--- Clean this --->
+          <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Image Preview" />
+          <!--- Clean this -->
           <script>
             var loadFile = function(event) {
               var output = document.getElementById('output');
@@ -68,23 +65,22 @@
               }
             };
           </script>
-          <!--- Clean this --->
-          <section id="updateActualPasswordError">
+          <!--- Clean this -->
+          <section id="updateActualPasswordInformationError">
           </section>
           <input type="password" name="password" placeholder="Password">
 
-          <button id="updatePasswordButton" type="submit" value="Update Password">Update Information</button>
+          <button id="updateInformationButton" type="submit" value="Update Password">Update Information</button>
         </form>
-    </section>
+    </article>
 
-    <section id="deleteProfile">
+    <article id="deleteProfile">
         <form id="deleteProfileForm" class="deleteProfile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
-          <h1>Delete Profile</h1>  
-          <label>
-            Actual Password<input type="password" name="password">
-          </label>
+          <h2>Delete Profile</h2>
+
+          <input type="password" name="password" placeholder="Actual Password">
+
           <button id="deleteProfileButton" type="submit" value="Update Password">Delete Profile Permanently</button>
         </form>
-    </section>
-  </section>
-</section>
+    </article>
+</div>
