@@ -1,36 +1,7 @@
-/* ---------- HTML AND BODY ----------  */
+/* ---------- HTML LAYOUT ---------- */
 html{
   height: 100%;
   width: 100%;
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column; 
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #FFFAE2;
-}
-
-/* ---------- LOGIN/REGISTER LAYOUT ---------- */
-
-.container_forms{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
-  background-color:rgba(256, 256, 256, 0.6);
-}
-
-.gender{
-  display: flex;
-  flex-direction: column;
-}
-
-.genderoptions{
-  display: flex;
-  flex-direction: row;
 }
 
 /* ---------- HEADER LAYOUT ---------- */
@@ -40,212 +11,48 @@ header{
   flex-direction: row;
 }
 
+/* ---------- BODY LAYOUT ---------- */
+body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFAE2;
+  min-height: 100%;
+}
+
 /* ---------- PAGES LAYOUT ----------  */
 
-#pet,
 #owner,
-#petInformation,
-#error404, 
-#homepage,
-#add,
-#advanced_search_page,
-#pet-update,
-#update{
+#pet,
+#pet-update {
   height: 100%;
   width: 100%;
   flex: 1;
 }
 
-#petInformation,
-#update{
+#pet-information,
+#update-page {
   display: flex;
   flex-direction: row;
+  height: 100%;
+  width: 100%;
+  flex: 1;
 }
 
 #error404,
 #homepage,
-#add,
-#advanced_search_page{
+#add-pet,
+#advanced-search-page{
   display: flex;
   flex-direction: column;
-}
-
-/* ---------- HOMEPAGE LAYOUT ---------- */
-
-#dogs_information{
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  text-align: center;
-}
-
-@media screen and (max-width: 1250px){
-  #dogs_information{
-    grid-template-columns: 33% 33% 33%;
-  }
-}
-
-@media screen and (max-width: 980px){
-  #dogs_information{
-    grid-template-columns: 50% 50%;
-  }
-}
-
-@media screen and (max-width: 650px){
-  #dogs_information{
-    grid-template-columns: 100%;
-  }
-}
-
-/* ---------- ADVANCED SEARCH LAYOUT ---------- */
-
-#displayPets{
-  padding-top: 2em;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-}
-
-#displayPets .profile .info{
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-@media screen and (max-width: 1700px){
-  #displayPets{
-    grid-template-columns: 50% 50%;
-  }
-}
-
-@media screen and (max-width: 1200px){
-  #displayPets{
-    grid-template-columns: 100%;
-  }
-}
-
-/* ---------- PROFILES LAYOUT ---------- */
-
-#information{
-  display: flex;
-  justify-content: center;
-}
-
-.infoGrid{
+  height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  grid-gap: 2em;
-  column-width: 10em;
-}
-
-#owner .infoGrid #information_person{
-  text-align: left;
-  grid-row: 1;
-  grid-column: 1;
-  padding: 2em;
-}
-
-#pet .infoGrid #information_pet{
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;  
-  text-align: left;
-  padding: 2em;
-}
-
-#owner .infoGrid #favPets{
-  text-align: left;
-  grid-column: 1;
-  grid-row: 2;
-  padding: 2em;
-}
-
-#owner .infoGrid #petsForAdoption, 
-#pet .infoGrid #posts, 
-#pet .infoGrid #proposals{
-  text-align: left;
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  padding: 2em;
-}
-
-#pet .infoGrid #question, 
-#owner .infoGrid #adopted{
-  text-align: left;
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  padding: 2em;
-}
-
-@media screen and (max-width: 1200px){
-  .infoGrid{
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-/* ---------- ADD NEW PET LAYOUT ---------- */
-
-#add #petinfocontainer .inputsNewPet{
-  display: flex;
-  flex-direction: column;
-}
-
-#species_options,
-#gender_options,
-#size_options{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0.5em;
-}
-
-/* ---------- PET INFORMATION LAYOUT ---------- */
-
-#petInformation #informationSidebar{
-  padding-top: 1em;
   flex: 1;
-  text-align: center;
-}
-
-#petInformation #content{
-  flex: 4;
-  display: flex;
-  flex-direction: column;
-}
-
-#petInformation #content #top-content{
-  display: flex;
-}
-
-#petInformation #content #top-content #photos,
-#petInformation #content #top-content #biography{
-    flex: 1;
-}
-
-/* ---------- UPDATE PROFILES/INFORMATION LAYOUT ---------- */
-
-#update{    
-  display: flex;
-  flex-direction: column;
-}
-
-#updatecontainers{
-  display: flex;
-  flex-direction: row;
-}
-
-.changeUsername,
-.changePassword,
-.updatepetinfo,
-.updateposts,
-.add-photo{
-    display: flex;
-    flex-direction: column;
 }
 
 
-.updateposts #buttonsposts{
-    display: flex;
-}
+
+
+
+

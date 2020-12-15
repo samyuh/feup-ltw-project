@@ -1,15 +1,31 @@
 <?php
-    function addQuestion($idPet, $question) {
+    function addQuestion($idPet, $author, $question) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, info) VALUES (?, ?)');
-        $stmt->execute(array($idPet, $question));
+        $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, dateQuestion, authorQuestion, question) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($idPet, date("Y/m/d"), $author, $question));
+    }
+
+    function addAnswer($idQuestion, $author, $answer) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserFoundPet, PetQuestion WHERE 
+                                                                            PetQuestion.idQuestion = ? 
+                                                                            and PetQuestion.idPet = UserFoundPet.idPet
+                                                                            and User.idUser = UserFoundPet.idUser');
+        $stmt->execute(array($idQuestion));
+        $question = $stmt->fetch();
+
+        if((!empty($question)) && ($question['username'] == $author)) {
+            $update = $db->prepare('UPDATE PetQuestion SET dateAnswer = ?, authorAnswer = ?, answer = ? WHERE idQuestion = ?');
+            $update->execute(array(date("Y/m/d"), $author, $answer, $idQuestion));  
+        }
     }
 
     function getQuestions($idPet) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idPet = ?');
+        $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idPet = ? ORDER BY idQuestion DESC');
         
         $stmt->execute(array($idPet));
         $petsID = $stmt->fetchAll();
@@ -98,7 +114,7 @@
       function getAdoptionProposalList($idPet) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idPet = ?');
+        $stmt = $db->prepare('SELECT * FROM User, AdoptionProposal WHERE AdoptionProposal.idPet = ? AND AdoptionProposal.idUser = User.idUser');
         $stmt->execute(array($idPet));
         $petsID = $stmt->fetchAll();
 

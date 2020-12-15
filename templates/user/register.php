@@ -1,46 +1,45 @@
-  <section id="register">
-    <div class="name_slogan">
+  <div id="register">
+    <section class="name-slogan">
       <h1><a href="index.php">Pet Shelter</a></h1>
       <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
-    </div>
-    <div class="container_forms">
-      <form id="registerForm" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
-        <div class="username">
-        <section id="registerUsernameError"></section>
-          <input type="text" name="username" placeholder="Username">
-        </div>
+    </section>
 
-        <div class="gender">
-          Male <input type="radio"  name="gender" value="male" checked="checked">
-          Female <input type="radio"  name="gender" value="female">
-        </div>
+    <div class="container-forms">
+      <article class="register-forms">
+        <form id="register-form" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
 
-        <div class="age">
-          Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
-          <output>20</output>
-        </div>    
+        <aside id="register-username-error"></aside>
+        <input type="text" name="username" placeholder="Username">
+
+        Male <input type="radio"  name="gender" value="male" checked="checked">
+        Female <input type="radio"  name="gender" value="female">
+
+        Age <input type="range" name="age" id="register-age" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
+        <output>20</output>
+  
+        <aside id="register-location-error"></aside>
+        <input type="text" name="location" placeholder="Location">
+
+        <aside id="register-password-error"></aside>
+        <input type="password" name="password" placeholder="Password">
         
-        <div class="location">
-          <section id="registerLocationError"></section>
-          <input type="text" name="location" placeholder="Location">
-        </div>
-        <div class="password">
-
-          <section id="registerPasswordError">
-          </section>
-          <label>
-            <input type="password" name="password" placeholder="Password">
-          </label>
-        </div>
-        
-        <section id="registerImageError">
-        </section>
-        <div class="image">
-          <input type="file" name="image">
-        </div>
-        <div class="submit">
-          <button id="registerButton" type="submit" value="Register">Create an Account</button>
-        </div>
-      </form>
+        <aside id="register-image-error"></aside>
+        <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
+        <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Preview Image"/>
+        <button id="register-button" type="submit" value="Register">Create an Account</button>
+        </form>
+      </article>
     </div>
-  </section>
+  </div>
+
+<!--- Clean this -->
+<script>
+var loadFile = function(event) {
+  var output = document.getElementById('output');
+  output.src = URL.createObjectURL(event.target.files[0]);
+  output.onload = function() {
+    URL.revokeObjectURL(output.src) 
+  }
+};
+</script>
+<!--- Clean this -->

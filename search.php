@@ -5,6 +5,7 @@
 
   /* Database Managers Files */
   include_once('./database/pets.php');
+  include_once('database/users.php');
 
   /* HTML Code */
   include_once('templates/common/header.php');

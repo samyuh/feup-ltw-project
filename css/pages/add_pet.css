@@ -1,0 +1,47 @@
+/* ---------- ADD NEW PET LAYOUT ---------- */
+
+#add-pet #add-pet-container .form-new-pet {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-pet #add-pet-container .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+/* style */
+#add-pet {    
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-pet #add-pet-container {
+    width: 30em;
+    text-align: center;
+}
+
+#add-pet #add-pet-container .options{
+    padding: 0.5em;
+    justify-content: center;
+}
+
+#add-pet #add-pet-container .inputsNewPet input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+#add-pet #add-pet-container .inputsNewPet input[type=submit]{
+    margin-top: 1em;
+    font-size: 16px;
+}
+
+

@@ -1,34 +1,36 @@
-/*-----------------------------------------------
------------------- CONTAINERS -------------------
-------------------------------------------------*/
+/* Containers model for most of the boxes on our webpage*/
 
-#add #petinfocontainer,
-#petInformation #content #photos,
-#petInformation #content #biography,
-#petInformation #content #posts,
-#information_person,
-#petsForAdoption,
-#adopted,
-#favPets,
-#information_pet,
-#proposals, 
-#posts, 
-#question,
-#advanced_search,
-#displayPets .profile,
-#update #updatecontainers .updatepetinfo,
-#update #updatecontainers .updateposts,
-#update #updatecontainers .add-photo,
-#update .changeUsername,
-#update .changePassword{
+/* Add Pet */
+#add-pet #add-pet-container,
+/* Pet Detailed Information */
+#pet-information #photos,
+#pet-information #biography,
+#pet-information #posts,
+#pet-information #pet-detailed-information,
+/* Profile */
+#information-profile,
+/* User Page */
+#owner #adoption-pets,
+#owner #adopted,
+#owner #favorite-pets,
+/* Pet Page */
+#pet #question,
+#pet #proposals, 
+/* Advanced Search */
+#advanced-search,
+#search-pet-profile .profile,
+/* Update User/Pet Profile */
+#update-page .update-form {
     margin:1em;
     padding: 2em;
     border-radius: 10px;
     box-sizing: border-box;
+    background-color: rgba(255,255,255,0.6);
     box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
 
-/* || Speech Bubbles */
+/* || Speech Bubbles */ 
+/* Magic happens bellow, only zini knows  dont touch while refactor */
 
 #pet .infoGrid #question input[type=text], 
 #pet .infoGrid #question #uniquequestion p{

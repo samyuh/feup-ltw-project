@@ -1,13 +1,13 @@
 'use strict'
 
-let form = document.getElementById('name_search')
-let place = document.getElementById('displayPets')
+let form = document.getElementById('name-search')
+let place = document.getElementById('search-pet-profile')
 
 // Remove after including javascript in the correct place
-if(document.getElementById('name_search') != undefined) {
+if(document.getElementById('name-search') != undefined) {
     refresh()
     window.setInterval(refresh, 250)
-    document.getElementById('name_search').addEventListener('change',sendMessage)
+    document.getElementById('name-search').addEventListener('change',sendMessage)
 }
 
 // Ask for new messages
@@ -113,7 +113,7 @@ function showArticle(data) {
     section.appendChild(info)
 
     section.onclick = function(){
-      location.href = "/dog_profile.php?idPet=" + id
+      location.href = "/pet_profile.php?idPet=" + id
     }
 
     return section
