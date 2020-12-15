@@ -1,3 +1,18 @@
+/* ---------- ADD NEW PET LAYOUT ---------- */
+
+#add-pet #add-pet-container .form-new-pet {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #add-pet #add-pet-container .options {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.5em;
+  }
+
+/* style */
 #add-pet {    
     overflow: hidden;
     justify-content: center;

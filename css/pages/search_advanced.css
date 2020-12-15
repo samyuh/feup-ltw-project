@@ -1,3 +1,30 @@
+/* ---------- ADVANCED SEARCH LAYOUT ---------- */
+
+#search-pet-profile {
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  
+  #search-pet-profile .profile .info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  
+  @media screen and (max-width: 1700px){
+    #search-pet-profile {
+      grid-template-columns: 50% 50%;
+    }
+  }
+  
+  @media screen and (max-width: 1200px){
+    #search-pet-profile {
+      grid-template-columns: 100%;
+    }
+  }
+
+/* style */
+
 #advanced-search-page {
     align-items: center;
 }

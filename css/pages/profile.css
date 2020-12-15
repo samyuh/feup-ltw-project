@@ -1,3 +1,55 @@
+
+/* ---------- PROFILES LAYOUT ---------- */
+
+#information{
+  display: flex;
+  justify-content: center;
+}
+
+#profile-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 2em;
+  column-width: 10em;
+}
+
+#owner #profile-grid #favorite-pets {
+  text-align: left;
+  grid-column: 1;
+  grid-row: 2;
+  padding: 2em;
+}
+
+#owner #adoption-pets, 
+#pet #posts, 
+#pet #proposals{
+  text-align: left;
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 2em;
+}
+
+#pet #question, 
+#owner #adopted{
+  text-align: left;
+  grid-column: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 2em;
+}
+
+@media screen and (max-width: 1200px){
+  #profile-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*style */
+
+
 /* -------------  Common Between Profile Types ------------- */
 .profile-header .profile-image img{
   position: relative;

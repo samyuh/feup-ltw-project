@@ -1,3 +1,31 @@
+/* ---------- HOMEPAGE LAYOUT ---------- */
+
+#homepage-profile {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 1250px){
+    #homepage-profile {
+      grid-template-columns: 33% 33% 33%;
+    }
+  }
+  
+  @media screen and (max-width: 980px){
+    #homepage-profile {
+      grid-template-columns: 50% 50%;
+    }
+  }
+  
+  @media screen and (max-width: 650px){
+    #homepage-profile {
+      grid-template-columns: 100%;
+    }
+  }
+
+/* style */
+
 #homepage {
     padding-bottom: 20em;
 }

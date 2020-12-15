@@ -1,9 +1,17 @@
-/* ---------- HTML AND BODY ----------  */
+/* ---------- HTML LAYOUT ---------- */
 html{
   height: 100%;
   width: 100%;
 }
 
+/* ---------- HEADER LAYOUT ---------- */
+
+header{
+  display: flex;
+  flex-direction: row;
+}
+
+/* ---------- BODY LAYOUT ---------- */
 body {
   margin: 0 auto;
   display: flex;
@@ -13,8 +21,37 @@ body {
   min-height: 100%;
 }
 
-/* ---------- LOGIN/REGISTER LAYOUT ---------- */
+/* ---------- PAGES LAYOUT ----------  */
 
+#owner,
+#pet,
+#pet-update {
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+#pet-information,
+#update{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+#error404,
+#homepage,
+#add,
+#advanced-search-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+/* ---------- LOGIN/REGISTER LAYOUT ---------- */
 .login, #register{
   display: flex;
   flex-direction: row;
@@ -49,197 +86,6 @@ body {
   }
 }
 
-/* ---------- HEADER LAYOUT ---------- */
 
-header{
-  display: flex;
-  flex-direction: row;
-}
 
-/* ---------- PAGES LAYOUT ----------  */
 
-#owner,
-#pet,
-#pet-update {
-  height: 100%;
-  width: 100%;
-  flex: 1;
-}
-
-#pet-information,
-#update{
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-  flex: 1;
-}
-
-#error404,
-#homepage,
-#add,
-#advanced-search-page{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  flex: 1;
-}
-
-/* ---------- HOMEPAGE LAYOUT ---------- */
-
-#homepage-profile {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  text-align: center;
-}
-
-@media screen and (max-width: 1250px){
-  #homepage-profile {
-    grid-template-columns: 33% 33% 33%;
-  }
-}
-
-@media screen and (max-width: 980px){
-  #homepage-profile {
-    grid-template-columns: 50% 50%;
-  }
-}
-
-@media screen and (max-width: 650px){
-  #homepage-profile {
-    grid-template-columns: 100%;
-  }
-}
-
-/* ---------- ADVANCED SEARCH LAYOUT ---------- */
-
-#search-pet-profile {
-  padding-top: 2em;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-}
-
-#search-pet-profile .profile .info{
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-@media screen and (max-width: 1700px){
-  #search-pet-profile {
-    grid-template-columns: 50% 50%;
-  }
-}
-
-@media screen and (max-width: 1200px){
-  #search-pet-profile {
-    grid-template-columns: 100%;
-  }
-}
-
-/* ---------- PROFILES LAYOUT ---------- */
-
-#information{
-  display: flex;
-  justify-content: center;
-}
-
-#profile-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  grid-gap: 2em;
-  column-width: 10em;
-}
-
-#owner #profile-grid #favorite-pets {
-  text-align: left;
-  grid-column: 1;
-  grid-row: 2;
-  padding: 2em;
-}
-
-#owner #adoption-pets, 
-#pet #posts, 
-#pet #proposals{
-  text-align: left;
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  padding: 2em;
-}
-
-#pet #question, 
-#owner #adopted{
-  text-align: left;
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  padding: 2em;
-}
-
-@media screen and (max-width: 1200px){
-  #profile-grid {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-/* ---------- ADD NEW PET LAYOUT ---------- */
-
-#add-pet #add-pet-container .form-new-pet {
-  display: flex;
-  flex-direction: column;
-}
-
-#add-pet #add-pet-container .options {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0.5em;
-}
-
-/* ---------- PET INFORMATION LAYOUT ---------- */
-
-#pet-information #pet-information-sidebar {
-  padding-top: 1em;
-  flex: 1;
-  text-align: center;
-}
-
-#pet-information #pet-detailed-information{
-  display: flex;
-  flex-direction: column;
-}
-
-#pet-information #container {
-  flex: 4;
-  display: flex;
-  flex-direction: column;
-}
-
-#pet-information #top-container {
-  display: flex;
-}
-
-#pet-information #photos,
-#pet-information #biography {
-    flex: 1;
-}
-
-@media screen and (max-width: 1260px) {
-  #pet-information #top-container{
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #pet-information {
-    display: flex;
-    flex-direction: column;
-  }
-  #pet-information #pet-detailed-information {
-    flex-direction: row;
-  }
-}
