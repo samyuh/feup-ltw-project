@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('register')) {
-    document.getElementById('registerButton').addEventListener("click", validateRegistration)
+    document.getElementById('register-button').addEventListener("click", validateRegistration)
 }
 
 //This function validates the username, if it doesnt work a message is raised
 function validateRegistration(event) {
     event.preventDefault()
 
-    let form = document.getElementById("registerForm")
+    let form = document.getElementById("register-form")
 
     let username = form.querySelector('input[name="username"]').value
     let location = form.querySelector('input[name="location"]').value

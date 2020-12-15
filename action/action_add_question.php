@@ -15,10 +15,11 @@
   if ($_SESSION['csrf'] != $_GET['token']) {
     header('Location: ../error404.php');
   }
-  
+  $idPet = $_POST['idPet'];
   $question = $_POST['question'];
+  
   if(validText($question)) {
-    addQuestion($_GET['idPet'], $question);
+    addQuestion($idPet, $question);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('question-form')) {
     var questionForm =  document.getElementById('question-form')
     var questionPlace =  document.getElementById('question-submit')
-    document.getElementById('questionFormButton').addEventListener('click', addQuestion)
+    document.getElementById('question-form-button').addEventListener('click', addQuestion)
     refreshProfile()
 }
 
@@ -15,14 +15,13 @@ function refreshProfile(){
     request.open('post', 'api/get_questions.php?',true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     
-    request.addEventListener('load', questionsReceived);
+    request.addEventListener('load', questionsReceived)
     request.send(encodeForAjax({'idPet': idPet}))
 }
 
 function questionsReceived(){
     questionPlace.innerHTML = ''
-    console.log(this.responseText)
-    let lines = JSON.parse(this.responseText);
+    let lines = JSON.parse(this.responseText)
     lines.forEach(function(data){
         let line = displayQuestions(data)
         questionPlace.append(line);
@@ -36,7 +35,7 @@ function addQuestion(event) {
     let idPet = questionForm.querySelector('input[name="idPet').value
 
     let request = new XMLHttpRequest()
-    request.open("post", "api/add_question.php", true)
+    request.open("post", "action/action_add_question.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'question': question, 'idPet':idPet}))
 
@@ -106,7 +105,7 @@ function addReply(idQuestion){
     let question = form.querySelector('input[name="idReply').value
 
     let request = new XMLHttpRequest();
-    request.open('post', 'api/add_reply.php?',true)
+    request.open('post', 'action/action_add_reply.php?',true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'question': question,'idQuestion': idQuestion}))
 

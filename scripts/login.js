@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('login')) {
     document.getElementById('login-button').addEventListener("click", validateLogin)

@@ -1,18 +1,17 @@
-'use strict';
+'use strict'
 
-if(document.getElementById('addPetForm')) {
-    document.getElementById('addPetButton').addEventListener("click", validateAddPet)
+if(document.getElementById('form-new-pet')) {
+    document.getElementById('add-pet-button').addEventListener("click", validateAddPet)
 }
 
 
 function validateAddPet(event) {
     event.preventDefault()
 
-    let form = document.getElementById("addPetForm")
+    let form = document.getElementById("form-new-pet")
 
     let username = form.querySelector('input[name="npetName"]').value
     let color = form.querySelector('input[name="ncolor"]').value
-    
     let path = form.querySelector('input[name="image"]').value
     let file = path.replace(/^.*\\/, "");
 

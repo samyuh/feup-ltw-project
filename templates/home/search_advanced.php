@@ -1,7 +1,7 @@
 <div id="advanced-search-page">
     <section id="advanced-search">
       <h2>Advanced search</h2>
-        <form id="name_search" action="/search.php" method="post">
+        <form id="name-search" action="/search.php" method="post">
           <label>Insert Name: <input type="text" name="nameSearch" id="searchName"></label>
           <section class="options">
             Insert Species:

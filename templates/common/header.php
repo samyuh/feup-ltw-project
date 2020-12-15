@@ -25,8 +25,8 @@
     
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
-    <script src="../../scripts/addPet.js" defer> </script>
-    <script src="../../scripts/favorite.js" defer> </script>
+    <script src="../../scripts/add_pet.js" defer> </script>
+    <script src="../../scripts/set_favorite.js" defer> </script>
     <script src="../../scripts/add_question.js" defer> </script>
   </head>
   <body>

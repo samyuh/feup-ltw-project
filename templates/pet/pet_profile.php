@@ -44,10 +44,10 @@
       <section id="question">
         <h2>Ask a Question</h2>
         <?php if (isLogged()) { ?>
-          <form id='question-form' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+          <form id='question-form' action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="text" name="question">
             <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
-            <input id="questionFormButton" type="submit" value="Ask">
+            <input id="question-form-button" type="submit" value="Ask">
           </form>
           
           <section id="question-submit">
