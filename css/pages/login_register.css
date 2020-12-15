@@ -66,6 +66,7 @@ body, html{
     text-align: center;
     padding: 3em;
     width: 20em;
+    margin-bottom: 1em;
 }
 
 #login .container-forms{
