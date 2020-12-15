@@ -1,14 +1,14 @@
 'use strict';
 
-if(document.getElementById('updateUsername') && document.getElementById('updatePassword')) {
-    document.getElementById('updateUsernameButton').addEventListener("click",validateUpdateUsername)
-    document.getElementById('updatePasswordButton').addEventListener("click",validateUpdatePassword)
+if(document.getElementById('update-username-form') && document.getElementById('update-password')) {
+    document.getElementById('update-username-button').addEventListener("click",validateUpdateUsername)
+    document.getElementById('update-password-button').addEventListener("click",validateUpdatePassword)
 }
 
 //This function validates the username, if it doesnt work a message is raised
 function validateUpdateUsername(e){
     e.preventDefault()
-    let form = document.getElementById("updateUsernameForm")
+    let form = document.getElementById("update-username-form")
 
     let username = form.querySelector('input[name="new_username"]').value
     let password = form.querySelector('input[name="password"]').value
@@ -22,10 +22,10 @@ function validateUpdateUsername(e){
     let passwordError = false
 
     if(!regex.test(username)) {
-        usernameError = updateError('updateNewUsernameError',"Invalid username. Use letters and numbers only.")
+        usernameError = updateError('update-new-username-error',"Invalid username. Use letters and numbers only.")
     }
     if(!regexPassword.test(password)) {
-        passwordError = updateError('updateActualPasswordError',"Invalid password. Must contain at least a letter and a number.")
+        passwordError = updateError('update-actual-password-error',"Invalid password. Must contain at least a letter and a number.")
     }
     if(!usernameError && !passwordError){
         form.submit()
@@ -45,20 +45,17 @@ function updateError(id,message){
 
 
 function clearUpdateHTML(){
-    document.getElementById('updateNewUsernameError').innerHTML = ''
-    document.getElementById('updateActualPasswordError').innerHTML = ''
-    document.getElementById('updateNewPasswordError').innerHTML = ''
-    document.getElementById('updateConfirmPasswordError').innerHTML = ''
-    document.getElementById('updateCurrentPasswordError').innerHTML = ''
+    document.getElementById('update-new-username-error').innerHTML = ''
+    document.getElementById('update-actual-password-error').innerHTML = ''
+    document.getElementById('update-new-password-error').innerHTML = ''
+    document.getElementById('update-confirm-password-error').innerHTML = ''
+    document.getElementById('update-current-password-error').innerHTML = ''
 }
-
-
-
 
 //This function validates the username, if it doesnt work a message is raised
 function validateUpdatePassword(e){
     e.preventDefault()
-    let form = document.getElementById("updatePasswordForm")
+    let form = document.getElementById("update-password-form")
 
     let new_password = form.querySelector('input[name="new_password"]').value
     let confirm_password = form.querySelector('input[name="confirm_password"]').value
@@ -74,11 +71,11 @@ function validateUpdatePassword(e){
     let passError = false
 
     if(!regexPassword.test(new_password)){
-        newPassError = updateError("updateNewPasswordError","Invalid new password. Must contain at least a letter and a number.")
+        newPassError = updateError("update-new-password-error","Invalid new password. Must contain at least a letter and a number.")
     }if(!regexPassword.test(confirm_password)){
-        confPassError = updateError("updateConfirmPasswordError","Invalid password confirmation. Must contain at least a letter and a number.")
+        confPassError = updateError("update-confirm-password-error","Invalid password confirmation. Must contain at least a letter and a number.")
     }if(!regexPassword.test(password)){
-        passError = updateError("updateCurrentPasswordError","Invalid password. Must contain at least a letter and a number.")
+        passError = updateError("update-current-password-error","Invalid password. Must contain at least a letter and a number.")
     }if(!newPassError && !confPassError && !passError){
         form.submit()
     } 
