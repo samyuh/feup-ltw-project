@@ -3,14 +3,14 @@
 #add-pet #add-pet-container .form-new-pet {
     display: flex;
     flex-direction: column;
-  }
-  
-  #add-pet #add-pet-container .options {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 0.5em;
-  }
+}
+
+#add-pet #add-pet-container .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5em;
+}
 
 /* style */
 #add-pet {    
@@ -19,9 +19,14 @@
     align-items: center;
 }
 
-#add-pet #add-pet-container{
+#add-pet #add-pet-container {
     width: 30em;
     text-align: center;
+}
+
+#add-pet #add-pet-container .options{
+    padding: 0.5em;
+    justify-content: center;
 }
 
 #add-pet #add-pet-container .inputsNewPet input[type=text]{
@@ -39,7 +44,4 @@
     font-size: 16px;
 }
 
-#add-pet #add-pet-container .options{
-    padding: 0.5em;
-    justify-content: center;
-}
+

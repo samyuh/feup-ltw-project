@@ -1,4 +1,4 @@
-<div class="login">
+<div id="login">
   <section class="name-slogan">
       <h1><a href="index.php">Pet Shelter</a></h1>
       <h2><a href="index.php">Get your little animal right here, right now!</a></h2>~

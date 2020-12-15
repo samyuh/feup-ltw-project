@@ -1,39 +1,4 @@
 /* ---------- LOGIN/REGISTER LAYOUT ---------- */
-.login, #register{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .container-forms{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  
-  .gender{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .genderoptions{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  @media screen and (max-width: 1150px){
-    .login, #register{
-      flex-direction: column;
-      gap: 0;
-    }
-    .container-forms{
-      order: 2
-    }
-    .name-and-slogan{
-      order: 1;
-    }
-  }
-  
-
 body, html{
     background-position: center;
     background-repeat: no-repeat;
@@ -42,49 +7,62 @@ body, html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.login{
+
+#login,
+#register {
     height: 96%;
     width: 100%;
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
     gap: 10em;
+    flex: 1;
 }
 
-#register{
-    height: 96%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 10em;
+.container-forms{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
 }
 
-.name-slogan{
+.gender{
+    display: flex;
+    flex-direction: column;
+}
+
+.genderoptions{
+    display: flex;
+    flex-direction: row;
+}
+
+.name-slogan {
     text-align: center;
 }
 
-.name-slogan a{
+.name-slogan a {
     color: white;
     text-decoration: none;
 }
 
-.name-slogan h1{
+.name-slogan h1 {
     font-size: 5em;
     margin: 0;
     animation: bounceIn 10s infinite;
 }
 
-.name-slogan h2{
+.name-slogan h2 {
     font-style: italic;
 }
 
-.container-forms{
+.container-forms {
     background-color:rgba(256, 256, 256, 0.6);
     text-align: center;
     padding: 3em;
     width: 20em;
 }
 
-.login .container-forms{
+#login .container-forms{
     height: 17;
 }
 
@@ -92,11 +70,11 @@ body, html{
     height: 30em;
 }
 
-.submit{
+.submit {
     padding-top: 1em;
 }
 
-.submit-register{
+.submit-register {
     padding-top: 0.5em;
 }
 
@@ -110,5 +88,19 @@ body, html{
 @media screen and (max-width: 550px){
     .login h1, #register h2{
         font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 1150px){
+    #login, 
+    #register{
+        flex-direction: column;
+        gap: 0;
+    }
+    .container-forms{
+        order: 2
+    }
+    .name-and-slogan{
+        order: 1;
     }
 }

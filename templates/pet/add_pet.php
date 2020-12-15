@@ -1,7 +1,7 @@
 <div id="add-pet">
     <section id="add-pet-container">   
         <h1>Insert Pet Info</h1>
-        <form class="form-new-pet" id="addPetForm" action="../../action/action_add_pet.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+        <form class="form-new-pet" action="../../action/action_add_pet.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
             <input type="text" name="npetName" placeholder="Name">
             Species:
             <section class="options">
