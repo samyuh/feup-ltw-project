@@ -1,12 +1,12 @@
 <?php
-    function addQuestion($idPet, $question) {
+    function addQuestion($idPet, $author, $question) {
         $db = Database::instance()->db();
         
         $stmt = $db->prepare('INSERT INTO PetQuestion(idPet, dateQuestion, authorQuestion, question) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($idPet, "date", "author", $question));
+        $stmt->execute(array($idPet, date("Y/m/d"), $author, $question));
     }
 
-    function addAnswer($idQuestion, $answer) {
+    function addAnswer($idQuestion, $author, $answer) {
         $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idQuestion = ?');
@@ -15,7 +15,7 @@
 
         if(!empty($question)) {
             $update = $db->prepare('UPDATE PetQuestion SET dateAnswer = ?, authorAnswer = ?, answer = ? WHERE idQuestion = ?');
-            $update->execute(array('Answerdate', 'Answerauthor', $answer, $idQuestion));  
+            $update->execute(array(date("Y/m/d"), $author, $answer, $idQuestion));  
         }
     }
 
