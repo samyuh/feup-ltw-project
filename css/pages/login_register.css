@@ -16,8 +16,14 @@ body, html{
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 10em;
     flex: 1;
+}
+
+#login {
+    gap: 10em;
+}
+#register {
+    gap: 5em;
 }
 
 .container-forms{
@@ -60,6 +66,7 @@ body, html{
     text-align: center;
     padding: 3em;
     width: 20em;
+    margin-bottom: 1em;
 }
 
 #login .container-forms{
@@ -67,7 +74,7 @@ body, html{
 }
 
 #register .container-forms{
-    height: 30em;
+    height: auto;
 }
 
 .submit {
@@ -78,15 +85,19 @@ body, html{
     padding-top: 0.5em;
 }
 
+#login button[type=submit]{
+    width: 100%;
+}
+
 /* ------------------ RESPONSIVE LOGIN/REGISTER ------------------ */
 @media screen and (max-width: 1150px){
-    .login h2, #register h2{
+    #login h2, #register h2{
         display: none;
-    }
+    } 
 }
 
 @media screen and (max-width: 550px){
-    .login h1, #register h2{
+    #login h1, #register h1{
         font-size: 3em;
     }
 }
@@ -95,7 +106,7 @@ body, html{
     #login, 
     #register{
         flex-direction: column;
-        gap: 0;
+        gap: 6em;
     }
     .container-forms{
         order: 2

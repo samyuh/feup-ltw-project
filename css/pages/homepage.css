@@ -57,20 +57,6 @@
     text-align: center;
 }
 
-#homepage-profile .profile-image {
-    display: block;
-    padding-top: 0;
-    height: 19em;
-    width: 19em;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto auto;
-    border-radius: 20%;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
-}
-
 #homepage-profile p {
     text-align: center;
 }
@@ -83,33 +69,45 @@
     animation: pink_and_blue 3s infinite;
 }
 
-#homepage-profile .profile-overlay {
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 10;
-    margin: auto auto;
-    height: 19em;
-    width: 19em;
-    opacity: 0;
-    transition: .5s ease-out;
-    background-color: black;
-    border-radius: 20%;
+#homepage-profile .card{
+  width: 300px;
+  height: 300px;
+  position: relative;
 }
 
-#homepage-profile .profile-overlay {
-    width: 300px;
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.card .profile-overlay {
+  transition: .5s ease-out;
+  background-color: black;
+  border-radius: 20%;  
+  opacity: 0;  
+
+  color: white;
+  font-size: 20px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
 }
 
-#homepage-profile .profile-overlay:hover {
-    opacity: 0.7;
+.card .profile-image{
+  display: block;
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;  
+  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+.card:hover .profile-overlay {
+  opacity: .6;
 }
 
 
