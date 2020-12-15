@@ -2,12 +2,14 @@
   <aside id="pet-information-sidebar">
       <aside id="pet-name-photo">
           <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet Profile Picture">
-          <h1><a href="pet_profile.php?idPet=<?=$pet['idPet']?>"><?= htmlentities($pet['petName']) ?></a></h1>
-          <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) {?>
-            <form action="pet_update.php?idPet=<?=$pet['idPet'] ?>" method="post">
-              <button type="submit"><i class="fa fa-pencil"></i></button>
-            </form>
-          <?php } ?>
+          <section id="name_and_edit">
+            <h1><a href="pet_profile.php?idPet=<?=$pet['idPet']?>"><?= htmlentities($pet['petName']) ?></a></h1>
+            <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) {?>
+              <form action="pet_update.php?idPet=<?=$pet['idPet'] ?>" method="post">
+                <button type="submit"><i class="fa fa-pencil"></i></button>
+              </form>
+            <?php } ?>
+          </section>
       </aside>
 
       <section id="pet-detailed-information">

@@ -1,5 +1,13 @@
 /* ---------- PET INFORMATION LAYOUT ---------- */
 
+#pet-information #name_and_edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  zoom: 1.3;
+  text-align: center;
+}
+
 #pet-information #pet-information-sidebar {
     padding-top: 1em;
     flex: 1;

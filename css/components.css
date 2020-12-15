@@ -68,13 +68,13 @@ button:hover{
     color: green;
 }
 
-#pet .name_and_favorite button[type=submit]{
+#pet #favorite button[type=submit]{
     background-color: transparent;
     color: orange;
 }
 
 header .searchbar button,
-#information-profile-header button{
+#name_and_edit button{
     border: none;
     border-radius: 0;
     color: black;
@@ -86,7 +86,7 @@ header .searchbar button{
     background-color: white;
 }
 
-#information-profile-header button{
+#name_and_edit button{
     background-color: transparent;
 }
 
