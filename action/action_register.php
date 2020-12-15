@@ -7,7 +7,6 @@
   include_once('../database/users.php'); 
 
   /* Verifications and set variables */
-
   $username = $_POST['username'];
   $gender = $_POST['gender'];
   $age = $_POST['age'];

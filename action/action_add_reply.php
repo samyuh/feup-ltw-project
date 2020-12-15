@@ -7,6 +7,7 @@
   include_once('../database/users.php');   
   include_once('../database/adopt_pet.php');
 
+  /* Verifications and set variables */
   if(!isLogged()) {
     header('Location: ../error404.php');
   }
@@ -15,5 +16,5 @@
   $author = $_SESSION['user']['username'];
   $question = $_POST['question'];
 
-  addAnswer($isQuestion, $author, $question);  
+  addAnswer($idQuestion, $author, $question);  
 ?>

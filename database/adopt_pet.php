@@ -9,7 +9,10 @@
     function addAnswer($idQuestion, $author, $answer) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idQuestion = ?');
+        $stmt = $db->prepare('SELECT User.username FROM User, UserFoundPet, PetQuestion WHERE 
+                                                                            PetQuestion.idQuestion = ? 
+                                                                            and PetQuestion.idPet = UserFoundPet.idPet
+                                                                            and User.idUser = UserFoundPet.idUser');
         $stmt->execute(array($idQuestion));
         $question = $stmt->fetch();
 

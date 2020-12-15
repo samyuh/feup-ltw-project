@@ -77,7 +77,7 @@ CREATE TABLE PostsPet (
     id         INTEGER                  PRIMARY KEY,
     idPet      INTEGER              REFERENCES Pet(idPet),
     author     VARCHAR(255),
-    datePost VARCHAR(255),
-    post VARCHAR(255)
+    datePost   VARCHAR(255),
+    post       VARCHAR(255)
 );
 
