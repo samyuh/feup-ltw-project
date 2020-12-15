@@ -18,7 +18,6 @@
   }
   
   deletePhoto($_GET['idPhoto']);
-  print($_GET['idPhoto']);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

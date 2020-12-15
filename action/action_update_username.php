@@ -16,11 +16,17 @@
   }
   
   $user = $_SESSION['user'];
-  $new_name = $_POST['new_username'];  
-  
-  if(updateUsername($user, $new_name, $_POST['password'])) {
-    $_SESSION['user']['username'] = $new_name; 
-    header('Location: ../index.php');
+  $new_name = $_POST['new_username']; 
+
+  if(validUsername($new_name)) {
+    if(updateUsername($user, $new_name, $_POST['password'])) {
+      $_SESSION['user']['username'] = $new_name; 
+      
+      header('Location: ../index.php');
+    }
+    else {
+      header('Location: ../update.php');
+    }
   }
   else {
     header('Location: ../update.php');

@@ -18,7 +18,21 @@
   }
   
   $user = $_SESSION['user'];
-  addPet($user, $_POST['npetName'], $_POST['nspecie'], $_POST['ngender'], $_POST['nsize'], $_POST['ncolor'], $_POST['bio']);
+  $petName = $_POST['npetName'];
+  $specie =  $_POST['nspecie'];
+  $gender =  $_POST['ngender'];
+  $size =  $_POST['nsize'];
+  $color =  $_POST['ncolor'];
+  $bio = $_POST['nspecie'];
 
-  header('Location: ../index.php');
+  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validColor($color) && validText($bio)) {
+    addPet($user, $_POST['npetName'], $_POST['nspecie'], $_POST['ngender'], $_POST['nsize'], $_POST['ncolor'], $_POST['bio']);
+    
+    header('Location: ../index.php');
+  }
+  else {
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
+
+  
 ?>

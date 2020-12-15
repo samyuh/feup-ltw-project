@@ -21,16 +21,19 @@
   $new_location = $_POST['location'];   
   $password = $_POST['password'];
 
-  if(updateUserInfo($user, $new_gender, $new_age, $new_location, $password)) {
-    $_SESSION['user']['gender'] = $new_gender; 
-    print($new_gender);
-    $_SESSION['user']['new_age'] = $new_age; 
-    print($new_age);
-    $_SESSION['user']['new_location'] = $new_location;  
-    print($new_location);
-    header('Location: ../index.php');
+  if(validUsername($username) && validGender($gender) && validAge($age) && validLocation($location) && validPassword($password)) {
+    if(updateUserInfo($user, $new_gender, $new_age, $new_location, $password)) {
+      $_SESSION['user']['gender'] = $new_gender; 
+      $_SESSION['user']['new_age'] = $new_age; 
+      $_SESSION['user']['new_location'] = $new_location;  
+
+      header('Location: ../index.php');
+    }
+    else {
+      header('Location: ../update.php');
+    }
   }
   else {
-    header('Location: ../update.php');
+    header('Location: ../register.php');
   }
 ?>

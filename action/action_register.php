@@ -7,8 +7,20 @@
   include_once('../database/users.php'); 
 
   /* Verifications and set variables */
-  if(insertUser($_POST['username'], $_POST['gender'], $_POST['age'], $_POST['location'], $_POST['password'])) {
-   header('Location: ../login.php');
+
+  $username = $_POST['username'];
+  $gender = $_POST['gender'];
+  $age = $_POST['age'];
+  $location = $_POST['location'];
+  $password = $_POST['password'];
+
+  if(validUsername($username) && validGender($gender) && validAge($age) && validLocation($location) && validPassword($password)) {
+    if(insertUser($username, $gender, $age, $location, $password)) {
+      header('Location: ../login.php');
+    }
+    else {
+      header('Location: ../register.php');
+    }
   }
   else {
     header('Location: ../register.php');

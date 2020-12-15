@@ -16,7 +16,10 @@
     header('Location: ../error404.php');
   }
   
-  addQuestion($_GET['idPet'], $_POST['question']);
+  $question = $_POST['question'];
+  if(validText($question)) {
+    addQuestion($_GET['idPet'], $question);
+  }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

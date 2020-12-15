@@ -1,14 +1,14 @@
 'use strict';
 
 if(document.getElementById('login')) {
-    document.getElementById('loginButton').addEventListener("click", validateLogin)
+    document.getElementById('login-button').addEventListener("click", validateLogin)
 }
 
 //This function validates the input, if it doesnt work a message is raised
 function validateLogin(event) {
     event.preventDefault()
 
-    let form = document.getElementById('loginForm')
+    let form = document.getElementById('login-form')
     let username = form.querySelector('input[name="username"]').value
     let password = form.querySelector('input[name="password"]').value
 

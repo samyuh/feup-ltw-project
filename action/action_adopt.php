@@ -17,7 +17,9 @@
   }
   
   $user = $_SESSION['user'];
-  updateAdoptList($user, $_GET['idPet']);
+  $petId = $_GET['idPet'];
+
+  updateAdoptList($user, $petId);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

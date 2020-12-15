@@ -6,7 +6,7 @@
 
     <div class="container-forms">
       <article class="register-forms">
-        <form id="registerForm" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
+        <form id="register-form" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
 
         <aside id="register-username-error"></aside>
         <input type="text" name="username" placeholder="Username">
@@ -14,7 +14,7 @@
         Male <input type="radio"  name="gender" value="male" checked="checked">
         Female <input type="radio"  name="gender" value="female">
 
-        Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
+        Age <input type="range" name="age" id="register-age" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
         <output>20</output>
   
         <aside id="register-location-error"></aside>
@@ -26,7 +26,7 @@
         <aside id="register-image-error"></aside>
         <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
         <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Preview Image"/>
-        <button id="registerButton" type="submit" value="Register">Create an Account</button>
+        <button id="register-button" type="submit" value="Register">Create an Account</button>
         </form>
       </article>
     </div>
