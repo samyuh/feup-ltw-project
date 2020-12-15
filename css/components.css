@@ -38,7 +38,7 @@ input,
     box-sizing: border-box;
 }
 
-#intro #found-pet a,
+#homepage-intro .found-pet a,
 input[type=submit],
 button{
     border: 1px solid #008080;
@@ -50,7 +50,7 @@ button{
     border-radius: 4px;
 }
 
-#intro #found-pet a:hover,
+#homepage-intro .found-pet a:hover,
 input[type=submit]:hover,
 button:hover{
     border: 1px solid #004646;
@@ -68,13 +68,13 @@ button:hover{
     color: green;
 }
 
-#pet .name_and_favorite button[type=submit]{
+#pet #favorite button[type=submit]{
     background-color: transparent;
     color: orange;
 }
 
 header .searchbar button,
-#information_and_update button{
+#name_and_edit button{
     border: none;
     border-radius: 0;
     color: black;
@@ -86,7 +86,7 @@ header .searchbar button{
     background-color: white;
 }
 
-#information_and_update button{
+#name_and_edit button{
     background-color: transparent;
 }
 
@@ -111,7 +111,7 @@ input[type=text], input[type=password]{
 
 /* ------------- COMMON COMPONENTS ------------- */
 
-a{
+a {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -120,12 +120,12 @@ a{
 a:visited {color: black;}
 
 footer a:visited,
-header a:visited{
+header a:visited {
     color: white;
 }
 
 footer a,
-header a{
+header a {
     color: white;
     text-decoration: none;
 }
@@ -137,8 +137,6 @@ header a{
     50%  {color: rgb(19, 77, 165);}
     100%  {color: rgb(230, 103, 124);}
 }
-
-  
 
 @keyframes bounceIn {
     0% {

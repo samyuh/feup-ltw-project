@@ -1,0 +1,84 @@
+/* ---------- PET INFORMATION LAYOUT ---------- */
+
+#pet-information #name_and_edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  zoom: 1.3;
+  text-align: center;
+}
+
+#pet-information #pet-information-sidebar {
+    padding-top: 1em;
+    flex: 1;
+    text-align: center;
+  }
+  
+  #pet-information #pet-detailed-information{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #pet-information #container {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #pet-information #top-container {
+    display: flex;
+  }
+  
+  #pet-information #photos,
+  #pet-information #biography {
+      flex: 1;
+  }
+  
+  @media screen and (max-width: 1260px) {
+    #pet-information #top-container{
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #pet-information {
+      display: flex;
+      flex-direction: column;
+    }
+    #pet-information #pet-detailed-information {
+      flex-direction: row;
+    }
+  }
+  
+
+#pet-information #container h2 {
+    padding-bottom: 1em;
+}
+
+/* Slideshow container */
+#pet-information #photos .slideshow-container {
+    width: 400px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+#pet-information #photos .prev, 
+#pet-information #photos .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+#pet-information #photos .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}

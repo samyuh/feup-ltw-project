@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
 if(document.getElementById('register')) {
-    document.getElementById('registerButton').addEventListener("click", validateRegistration)
+    document.getElementById('register-button').addEventListener("click", validateRegistration)
 }
 
 //This function validates the username, if it doesnt work a message is raised
 function validateRegistration(event) {
     event.preventDefault()
 
-    let form = document.getElementById("registerForm")
+    let form = document.getElementById("register-form")
 
     let username = form.querySelector('input[name="username"]').value
     let location = form.querySelector('input[name="location"]').value
@@ -32,16 +32,16 @@ function validateRegistration(event) {
 
 
     if(!regex.test(username)) {
-        errorUsername = registerError('registerUsernameError',"Invalid username. Use letters and numbers only.")
+        errorUsername = registerError('register-username-error',"Invalid username. Use letters and numbers only.")
     }
     if(!regexLocation.test(location)) {
-        errorLocation = registerError('registerLocationError',"Invalid location. Use letters, numbers and blank space only.")
+        errorLocation = registerError('register-location-error',"Invalid location. Use letters, numbers and blank space only.")
     }
     if(!regexPassword.test(password)) {
-        errorPassword = registerError('registerPasswordError',"Invalid password. Must contain at least a letter and a number.")
+        errorPassword = registerError('register-password-error',"Invalid password. Must contain at least a letter and a number.")
     }
     if(!isFileImage(file)){
-        errorImage = registerError('registerImageError',"Invalid file. Must be an image.")
+        errorImage = registerError('register-image-error',"Invalid file. Must be an image.")
     }
     if(!errorUsername && !errorLocation && !errorPassword && !errorImage){
         form.submit()
@@ -69,9 +69,9 @@ function registerError(id,message){
 
 
 function clearRegisterHTML(){
-    document.getElementById('registerUsernameError').innerHTML = ''
-    document.getElementById('registerLocationError').innerHTML = ''
-    document.getElementById('registerPasswordError').innerHTML = ''
-    document.getElementById('registerImageError').innerHTML = ''
+    document.getElementById('register-username-error').innerHTML = ''
+    document.getElementById('register-location-error').innerHTML = ''
+    document.getElementById('register-password-error').innerHTML = ''
+    document.getElementById('register-image-error').innerHTML = ''
     
 }

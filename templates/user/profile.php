@@ -1,41 +1,40 @@
-<section id="owner">
-  <div class="profileHeader">
-    <div class="header">
-    </div>
-    <div class="image">
-      <img src="../images/user/user-<?=$user['idUser']?>.jpg" width="200" height="200" alt="">
-    </div>
-    <div class="name">
+<div id="owner">
+  <div class="profile-header">
+    <section class="profile-image">
+      <img src="../images/user/user-<?=$user['idUser']?>.jpg" width="200" height="200" alt="Profile Picture">
+    </section>
+    <section class="profile-text">
       <h1><?=$user['username']?></h1>
-    </div>
+    </section>
   </div>
-  <section id="information">
-    <div class="infoGrid">
-      <section id="information_person">
-        <h2>Information</h2>
-        <p>Gender: <?=$user['gender']?></p>
-        <p>Age: <?=$user['age']?></p>
-        <p>Location: <?=$user['location']?></p>
-        <p>Favorite Animal: </p>
-      </section>
-      <section id="favPets">
-        <h2>Favorite Pets</h2>
-        <?php foreach($userPets as $fav) {?>
-          <p><a title="Visit <?=$fav['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$fav['idPet']?>><?=$fav['petName']?></a></p>
-        <?php } ?>
-      </section>
-      <section id="petsForAdoption">
-        <h2>Pets for Adoption</h2>
-        <?php foreach($toAdoptPets as $fav3) {?>
-          <p><a title="Visit <?=$fav3['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$fav3['idPet']?>><?=$fav3['petName']?></a></p>
-        <?php } ?>
-      </section>
-      <section id="adopted">
-        <h2>Adopted Pets!</h2>
-        <?php foreach($adoptPets as $fav2) {?>
-          <p><a title="Visit <?=$fav2['petName']?>'s Profile" href=dog_profile.php?idPet=<?=$fav2['idPet']?>><?=$fav2['petName']?></a></p>
-        <?php } ?>
-      </section>
-    </div>  
-  </section>
-</section>
+
+  <div id="profile-grid">
+    <section id="information-profile">
+      <h2>Information</h2>
+      <p>Gender: <?= htmlentities($user['gender']) ?></p>
+      <p>Age: <?= htmlentities($user['age']) ?></p>
+      <p>Location: <?= htmlentities($user['location']) ?></p>
+    </section>
+    <section id="favorite-pets">
+      <h2>Favorite Pets</h2>
+      <?php foreach($userPets as $fav) { ?>
+        <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
+        <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+      <?php } ?>
+    </section>
+    <section id="adoption-pets">
+      <h2>Pets for Adoption</h2>
+      <?php foreach($toAdoptPets as $fav) { ?>
+        <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
+        <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+      <?php } ?>
+    </section>
+    <section id="adopted">
+      <h2>Adopted Pets!</h2>
+      <?php foreach($adoptPets as $fav) { ?>
+        <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
+        <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+      <?php } ?>
+    </section>
+  </div>
+</div>

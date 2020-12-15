@@ -16,8 +16,17 @@
   if ($_SESSION['csrf'] != $_GET['token']) {
     header('Location: ../error404.php');
   }
+
+  $petName = $_POST['npetName'];
+  $specie =  $_POST['nspecie'];
+  $gender =  $_POST['ngender'];
+  $size =  $_POST['nsize'];
+  $color =  $_POST['ncolor'];
+  $bio = $_POST['nspecie'];
   
-  updatePet($_GET['idPet'], $_POST['npetName'], $_POST['nspecie'], $_POST['ngender'], $_POST['nsize'], $_POST['ncolor']);
+  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validColor($color) && validText($bio)) {
+    updatePet($_GET['idPet'], $petName, $bio, $specie, $gender, $size, $color);
+  }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

@@ -4,8 +4,9 @@
   include_once('../includes/database.php');
 
   /* Database Managers Files */
-  include_once('../database/adopt_pet.php');      // loads the functions responsible for the users table
+  include_once('../database/adopt_pet.php');
 
   $questions = getQuestions($_POST['idPet']);
+
   echo json_encode($questions);
 ?>

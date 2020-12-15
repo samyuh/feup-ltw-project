@@ -56,11 +56,11 @@
         return $stmt->fetchAll();
     }
 
-      function addPet($user, $name, $race, $gender, $size, $color) {
+      function addPet($user, $name, $race, $gender, $size, $color, $bio) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($name, $race, $gender, $size, $color));
+        $stmt = $db->prepare('INSERT INTO Pet(petName, specie, gender, size, color, bio) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt->execute(array($name, $race, $gender, $size, $color, $bio));
 
         $idPet = $db->lastInsertId();
         
@@ -99,9 +99,7 @@
         $stmt->execute(array($id));
         $petsID = $stmt->fetchAll();
 
-
         return $petsID;
-
     }
 
     function getAllPhotos($id) {
@@ -111,7 +109,6 @@
         
         $stmt->execute(array($id));
         $petsID = $stmt->fetchAll();
-
 
         return $petsID;
     }
@@ -136,6 +133,15 @@
         return TRUE;
       }
 
+      function deletePhoto($idPhoto) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('DELETE FROM PetPhoto WHERE idPhoto = ?');
+        $stmt->execute(array($idPhoto));
+
+        return TRUE;
+      }
+
     function isFavorited($user, $idPet) {
         $db = Database::instance()->db();
         
@@ -155,7 +161,7 @@
     function getPosts($idPet) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM PostsPet WHERE idPet = ?');
+        $stmt = $db->prepare('SELECT * FROM PostsPet WHERE idPet = ?  ORDER BY id DESC');
         
         $stmt->execute(array($idPet));
         $petsID = $stmt->fetchAll();
@@ -178,11 +184,11 @@
         }
     }
 
-    function addPost($idPet, $question) {
+    function addPost($idPet, $username, $post) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('INSERT INTO PostsPet(idPet, POST) VALUES (?, ?)');
-        $stmt->execute(array($idPet, $question));
+        $stmt = $db->prepare('INSERT INTO PostsPet(idPet, author, datePost, post) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($idPet, $username, date("Y/m/d"), $post));
     }
 
     function deletePost($idPost) {
@@ -251,12 +257,16 @@
         }
       }
       
-    function updatePet($idPet, $npetName, $nspecie, $ngender, $nsize, $ncolor) {
+    function updatePet($idPet, $npetName, $bio, $nspecie, $ngender, $nsize, $ncolor) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('UPDATE Pet SET petName = ?, specie = ?, gender = ?, size = ?, color = ? WHERE idPet = ?');
+        $stmt = $db->prepare('UPDATE Pet SET petName = ?, bio = ?, specie = ?, gender = ?, size = ?, color = ? WHERE idPet = ?');
 
         $hashed_new_password = sha1($new_password);
-        $stmt->execute(array( $npetName, $nspecie, $ngender, $nsize, $ncolor, $idPet));  
+        $stmt->execute(array( $npetName, $bio, $nspecie, $ngender, $nsize, $ncolor, $idPet));  
+
+
+        $originalFileName = "../images/pet-profile/pet-$idPet/profile.jpg";
+        move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
     }
 ?>

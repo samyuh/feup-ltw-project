@@ -54,8 +54,6 @@
             $originalFileName = "../images/user/user-$idUser.jpg";
             move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
 
-            $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options)));
-
             if(($username != NULL) && ($gender != NULL) && ($age != NULL) && ($location != NULL) && ($password != NULL)) {
                 return TRUE;
             }
@@ -67,6 +65,22 @@
             return FALSE;
         }
     }
+
+    function updateUserInfo($user, $new_gender, $new_age, $new_location, $password) {
+        $db = Database::instance()->db();
+
+        if (checkUserPassword($user['username'], $password) !== false) {
+            $stmt = $db->prepare('UPDATE User SET gender = ?, age = ?, location = ? WHERE idUser = ?');
+            $stmt->execute(array($new_gender, $new_age, $new_location, $user['idUser']));
+            
+            $idUser = $user['idUser'];
+            $originalFileName = "../images/user/user-$idUser.jpg";
+            move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+
+            return TRUE;
+        }
+        else return FALSE;
+      }
 
     function updateUsername($user, $new_username, $password) {
         $db = Database::instance()->db();
@@ -116,4 +130,45 @@
         }
         else return FALSE;
       }
+
+    /* REGEX VALIDATORS */
+    function validUsername($element) {
+        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
+    }
+
+    function validGender($element) {
+        return preg_match ("/^(fe)?male$/", $element);
+    }
+
+    function validAge($element) {
+        return preg_match ("/^\d+$/", $element);
+    }
+
+    function validLocation($element) {
+        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
+    }
+
+    function validPassword($element) {
+        return preg_match ("/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/", $element);
+    }
+
+    function validName($element) {
+        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
+    }
+
+    function validSpecie($element) {
+        return preg_match ("/^dog|cat$/", $element);
+    }
+
+    function validSize($element) {
+        return preg_match ("/^small|medium|large$/", $element);
+    }
+
+    function validColor($element) {
+        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
+    }
+
+    function validText($element) {
+        return preg_match ("/^[a-zA-Z0-9\s]+$/", $element);
+    }
 ?>

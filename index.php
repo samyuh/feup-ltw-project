@@ -5,6 +5,7 @@
 
   /* Database Managers Files */
   include_once('database/pets.php');
+  include_once('database/users.php');
 
   /* Verifications and set variables */
   $articles = isset($_POST["search"]) ? getPetsByName($_POST["search"]) : getAllDogs();
