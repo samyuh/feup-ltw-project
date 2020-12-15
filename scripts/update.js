@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-if(document.getElementById('update-username-form') && document.getElementById('update-password')) {
+if(document.getElementById('update-username-form') && document.getElementById('update-password-form')) {
     document.getElementById('update-username-button').addEventListener("click",validateUpdateUsername)
     document.getElementById('update-password-button').addEventListener("click",validateUpdatePassword)
 }

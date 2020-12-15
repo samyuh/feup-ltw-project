@@ -10,8 +10,8 @@
         $star = isFavorited($_SESSION['user'], $pet['idPet']) ? "fa fa-star-o" : "fa fa-star";  
       ?>
         <section id="favorite">
-          <form id="favoriteForm" action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-            <button id="favoriteFormButton" title="Favorite Pet" type="submit" class="<?=$star?>" value="<?=$pet['idPet']?>"></button>
+          <form id="favorite-form" action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+            <button id="favorite-form-button" title="Favorite Pet" type="submit" class="<?=$star?>" value="<?=$pet['idPet']?>"></button>
           </form>
         </section>
       <?php } ?>
