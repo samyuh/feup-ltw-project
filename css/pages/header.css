@@ -59,6 +59,17 @@ header #search-bar {
   padding: 0.2em;
 }
 
+#search-bar button[type="submit"]{
+  background-color: white;
+  border: none;
+  padding: 0.3em;
+  color: black;
+}
+
+#search-bar .mobile-search-bar button{
+  padding-top: 1em;
+}
+
 header #signed-in{
   position: relative;
   display: inline-block;
@@ -107,7 +118,7 @@ body > header #sign-up a:first-child {
   header #name-slogan h2{
     display: none;
   }
-  header .search-bar button,
+  header #search-bar button,
   header #search-bar input{
     display: none;
   }
@@ -127,16 +138,20 @@ body > header #sign-up a:first-child {
     display: none;
   }
   .mobile-header button,
-  .mobile-search-bar button{
+  #search-bar .mobile-search-bar button{
     display: block;
     background-color: transparent;
     border: none;
+    color: white;
   }
   .mobile-header button:hover,
-  .mobile-search-bar button:hover{
+  #search-bar .mobile-search-bar button:hover{
     border: none;
   }
   header #search-bar {
     margin-left: 1em;
+  }
+  header #name-slogan{
+    border-right: none;
   }
 }
