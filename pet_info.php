@@ -19,9 +19,10 @@
   $questions = getQuestions($_GET['idPet']);
   $posts = getPosts($_GET['idPet']);
   $proposals = getAdoptionProposalList($_GET['idPet']);
-  
+  $photos = getAllPhotos($_GET['idPet']);
+
   /* HTML Code */
   include_once('templates/common/header.php');
-  include_once('templates/pet/petProfile.php');
+  include_once('templates/pet/pet_information.php');
   include_once('templates/common/footer.php');
 ?>

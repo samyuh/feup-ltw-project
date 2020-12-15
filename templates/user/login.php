@@ -1,18 +1,16 @@
 <div class="login">
-  <section class="name_slogan">
+  <section class="name-slogan">
       <h1><a href="index.php">Pet Shelter</a></h1>
-      <h2><a href="index.php">Get your little animal right here, right now!</a></h2>
+      <h2><a href="index.php">Get your little animal right here, right now!</a></h2>~
   </section>
 
-  <div class="container_forms">
-    <article class="login_forms">
+  <div class="container-forms">
+    <article class="login-forms">
       <form id="loginForm" action="../../action/action_login.php" method="post">
-        <section id="loginUsernameError">
-        </section>
+        <aside id="login-username-error"></aside>
         <input type="text" name="username" placeholder="Username">
  
-        <section id="loginPasswordError">
-        </section>
+        <aside id="login-password-error"></aside>
         <input type="password" name="password" placeholder="Password">
 
         <button id="loginButton" type="submit" value="Log In">Log In</button>

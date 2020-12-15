@@ -21,10 +21,10 @@ function validateLogin(event) {
     clearHTML()
 
     if(!regex.test(username)) {
-        errorUsername = loginError('loginUsernameError',"Invalid username. Use letters and numbers only.")
+        errorUsername = loginError('login-username-error',"Invalid username. Use letters and numbers only.")
     }
     if(!regexPassword.test(password)) {
-        errorPassword = loginError('loginPasswordError',"Invalid password. Must contain at least a letter and a number.")
+        errorPassword = loginError('login-password-error',"Invalid password. Must contain at least a letter and a number.")
     }
     if(!errorUsername && !errorPassword){
         form.submit()
@@ -46,6 +46,6 @@ function loginError(id,message){
 
 
 function clearHTML(){
-    document.getElementById('loginUsernameError').innerHTML = ''
-    document.getElementById('loginPasswordError').innerHTML = ''
+    document.getElementById('login-username-error').innerHTML = ''
+    document.getElementById('login-password-error').innerHTML = ''
 }

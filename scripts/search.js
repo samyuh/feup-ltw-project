@@ -113,7 +113,7 @@ function showArticle(data) {
     section.appendChild(info)
 
     section.onclick = function(){
-      location.href = "/dog_profile.php?idPet=" + id
+      location.href = "/pet_profile.php?idPet=" + id
     }
 
     return section

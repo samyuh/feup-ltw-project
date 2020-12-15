@@ -14,7 +14,7 @@
       <article>
         <img class="profile-image" src="./images/pet-profile/pet-<?= htmlentities($article['idPet']) ?>/profile.jpg" width="300" height="300" alt="Pet Profile Picture">
         <p>
-          <a class="profile-pet" title="Visit <?= htmlentities($article['petName']) ?>'s Profile" href="dog_profile.php?idPet=<?=$article['idPet']?>"><?= htmlentities($article['petName']) ?>
+          <a class="profile-pet" title="Visit <?= htmlentities($article['petName']) ?>'s Profile" href="pet_profile.php?idPet=<?=$article['idPet']?>"><?= htmlentities($article['petName']) ?>
           </a>
         </p>
         <aside class="profile-overlay">

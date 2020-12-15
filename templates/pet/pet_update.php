@@ -1,12 +1,12 @@
 <aside class="update-back-profile">
-        <form action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
+        <form action="pet_info.php?idPet=<?=$pet['idPet']?>" method="post">
             <button type="submit">Back to Pet's page</button>
         </form>
 </aside>
 
 <section id="update">
         <article class="update">
-            <form class="update-pet-info" action="../../action/action_update_dog.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
+            <form class="update-pet-info" action="../../action/action_update_pet.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
                 <h1>Update Pet Info</h1>    
                 <label>Update Name <input type="text" name="npetName" value="<?= htmlentities($pet['petName']) ?>"></label>
                 <label>Update Description <input type="text" name="bio" value="<?= htmlentities($pet['bio']) ?>"></label>
@@ -24,11 +24,11 @@
             <h1>Update Pet Posts</h1>
             <?php foreach($posts as $post) {?>
                 <section id="buttons-posts">
-                    <form action="../../action/action_dog_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                        <label>Update Post <input type="text" name="post" value="<?= htmlentities($post['POST']) ?>"></label>
+                    <form action="../../action/action_pet_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                        <label>Update Post <input type="text" name="post" value="<?= htmlentities($post['post']) ?>"></label>
                         <input class="column" type="submit" value="Update Post">
                     </form> 
-                    <form action="../../action/action_dog_delete_post.php?id=<?=$post['id']?>" method="post">
+                    <form action="../../action/action_pet_delete_post.php?id=<?=$post['id']?>" method="post">
                         <button type="submit"> Delete Post</button>
                     </form>
                 </section>            

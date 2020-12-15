@@ -24,7 +24,7 @@
           <h2>Information</h2>
 
           <aside id="information-profile-more">
-            <form action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
+            <form action="pet_info.php?idPet=<?=$pet['idPet']?>" method="post">
               <button type="submit"><i class="fa fa-plus"></i></button>
             </form>
           </aside>
@@ -50,7 +50,7 @@
             <input id="questionFormButton" type="submit" value="Ask">
           </form>
           
-          <section id="qs">
+          <section id="question-submit">
             
           </section>
         <?php } ?>

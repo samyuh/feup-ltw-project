@@ -1,8 +1,8 @@
 'use strict';
 
-if(document.getElementById('questionForm')) {
-    var questionForm =  document.getElementById('questionForm')
-    var questionPlace =  document.getElementById('qs')
+if(document.getElementById('question-form')) {
+    var questionForm =  document.getElementById('question-form')
+    var questionPlace =  document.getElementById('question-submit')
     document.getElementById('questionFormButton').addEventListener('click', addQuestion)
     refreshProfile()
 }
@@ -116,7 +116,6 @@ function addReply(idQuestion){
 
 function showReplies(data,section){
     event.preventDefault()
-    
 }
 
 

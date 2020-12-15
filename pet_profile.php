@@ -9,17 +9,19 @@
   include_once('database/users.php');
   
   /* Verifications and set variables */
-  if(!isLogged()) {
+  $pet = getPet($_GET['idPet']);
+  if(empty($pet)) {
     header('Location: ../error404.php');
   }
 
-  $pet = getPet($_GET['idPet']);
+  $owner = getPetOwner($_GET['idPet']);
+  $adopted = getPetAdopted($_GET['idPet']);
+  $questions = getQuestions($_GET['idPet']);
   $posts = getPosts($_GET['idPet']);
-
-  $photos = getAllPhotos($_GET['idPet']);
+  $proposals = getAdoptionProposalList($_GET['idPet']);
   
   /* HTML Code */
   include_once('templates/common/header.php');
-  include_once('templates/pet/dog_update.php');
+  include_once('templates/pet/pet_profile.php');
   include_once('templates/common/footer.php');
 ?>
