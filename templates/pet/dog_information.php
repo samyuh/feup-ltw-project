@@ -1,6 +1,6 @@
-<div id="petInformation">
-  <aside id="informationSidebar">
-      <section id="nameAndPhoto">
+<div id="pet-information">
+  <aside id="pet-information-sidebar">
+      <aside id="pet-name-photo">
           <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet Profile Picture">
           <h1><a href="dog_profile.php?idPet=<?=$pet['idPet']?>"><?= htmlentities($pet['petName']) ?></a></h1>
           <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) {?>
@@ -8,10 +8,10 @@
               <button type="submit"><i class="fa fa-pencil"></i></button>
             </form>
           <?php } ?>
-      </section>
+      </aside>
 
-      <h2>Information</h2>
-      <section id="information">
+      <section id="pet-detailed-information">
+          <h3>Information</h3>
           <p>Species: <?= htmlentities($pet['specie']) ?></p>
           <p>Gender: <?= htmlentities($pet['gender']) ?></p>
           <p>Size: <?= htmlentities($pet['size']) ?></p>
@@ -25,8 +25,8 @@
       </section>
     </aside>
 
-    <section id="content">
-      <section id="top-content">
+    <section id="container">
+      <section id="top-container">
         <section id="biography"> 
             <h2>Biography</h2>
             <p><?= htmlentities($pet['bio']) ?></p>   
@@ -53,15 +53,14 @@
               <input type="text" name="post">
               <input type="submit" value="Post">
             </form>
-            <section id="uniquepost">
           <?php } ?>
-          
+          <section id="uniquepost">
           <?php foreach($posts as $post) {?>
               <p><?= htmlentities($post['post']) ?></p>
               <p><?= htmlentities($post['datePost']) ?></p>
               <p>By <?= htmlentities($post['author']) ?></p>
           <?php } ?>
-        </section>
+          </section>
       </section>
     </section>
 </div>

@@ -2,15 +2,14 @@
 ------------------ CONTAINERS -------------------
 ------------------------------------------------*/
 
-#add #petinfocontainer,
-#petInformation #content #photos,
-#petInformation #content #biography,
-#petInformation #content #posts,
-#information_person,
+#add-pet #add-pet-container,
+#pet-information #photos,
+#pet-information #biography,
+#pet-information #posts,
+#information-profile,
 #petsForAdoption,
 #adopted,
 #favPets,
-#information_pet,
 #proposals, 
 #posts, 
 #question,

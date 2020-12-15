@@ -1,15 +1,15 @@
-#add{    
+#add-pet {    
     overflow: hidden;
     justify-content: center;
     align-items: center;
 }
 
-#add #petinfocontainer{
+#add-pet #add-pet-container{
     width: 30em;
     text-align: center;
 }
 
-#add #petinfocontainer .inputsNewPet input[type=text]{
+#add-pet #add-pet-container .inputsNewPet input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -19,14 +19,12 @@
     border: 1px solid #ccc;
 }
 
-#add #petinfocontainer .inputsNewPet input[type=submit]{
+#add-pet #add-pet-container .inputsNewPet input[type=submit]{
     margin-top: 1em;
     font-size: 16px;
 }
 
-#species_options,
-#gender_options,
-#size_options{
+#add-pet #add-pet-container .options{
     padding: 0.5em;
     justify-content: center;
 }

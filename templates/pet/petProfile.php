@@ -1,12 +1,10 @@
 <div id="pet">
-  <div class="profileHeader">
-    <div class="header">
-    </div>
-    <div class="image">
-    <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet profile pic">
-    </div>
+  <div class="profile-header">
+    <section class="profile-image">
+      <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet profile pic">
+    </section>
     
-    <div class="name_and_favorite">
+    <section class="profile-text">
       <h1><?=$pet['petName']?></h1>
       <?php if (isLogged()) {
         $star = isFavorited($_SESSION['user'], $pet['idPet']) ? "fa fa-star-o" : "fa fa-star";  
@@ -17,19 +15,19 @@
           </form>
         </section>
       <?php } ?>
-    </div>
+    </section>
   </div>
-  <section id="profile">
-    <div class="infoGrid">
 
-      <section id="information_pet">
-        <section id="information_and_update">
+  <div id="profile-grid">
+      <section id="information-profile">
+        <section id="information-profile-header">
           <h2>Information</h2>
-          <section id="moreinfo">
+
+          <aside id="information-profile-more">
             <form action="dog_info.php?idPet=<?=$pet['idPet']?>" method="post">
               <button type="submit"><i class="fa fa-plus"></i></button>
             </form>
-          </section>
+          </aside>
         </section>
           <p>Species: <?= htmlentities($pet['specie']) ?></p>
           <p>Gender: <?= htmlentities($pet['gender']) ?></p>
@@ -46,7 +44,7 @@
       <section id="question">
         <h2>Ask a Question</h2>
         <?php if (isLogged()) { ?>
-          <form id='questionForm' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+          <form id='question-form' class="questionform" action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="text" name="question">
             <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
             <input id="questionFormButton" type="submit" value="Ask">
@@ -61,19 +59,19 @@
       <section id="proposals">
         <h2>Adoption Proposals</h2>
         <?php foreach($proposals as $prop) {?>
-          <section id="uniqueproposal">
+          <article class="unique-proposal">
             <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="20" height="20" alt="">
             <p><?= htmlentities($prop['username']) ?></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
               <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
                 <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
               </form>
-            </section>
+          </article>
         <?php } } ?>
         <?php  
         if (isLogged()) {
           if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
-          <section id="adoption-propose">
+          <section id="adoption-proposal">
             <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
               <input type="submit" value="Propose to adopt this pet!">
             </form>
@@ -81,5 +79,4 @@
         <?php } } ?>
       </section>
     </div>  
-  </section>
 </div>

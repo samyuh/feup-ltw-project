@@ -58,24 +58,21 @@ header{
 
 /* ---------- PAGES LAYOUT ----------  */
 
-#pet,
 #owner,
-#petInformation,
-#error404, 
-#homepage,
-#add,
-#advanced-search-page,
-#pet-update,
-#update{
+#pet,
+#pet-update {
   height: 100%;
   width: 100%;
   flex: 1;
 }
 
-#petInformation,
+#pet-information,
 #update{
   display: flex;
   flex-direction: row;
+  height: 100%;
+  width: 100%;
+  flex: 1;
 }
 
 #error404,
@@ -84,6 +81,9 @@ header{
 #advanced-search-page{
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
 }
 
 /* ---------- HOMEPAGE LAYOUT ---------- */
@@ -144,7 +144,7 @@ header{
   justify-content: center;
 }
 
-.infoGrid{
+#profile-grid {
   width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -153,14 +153,7 @@ header{
   column-width: 10em;
 }
 
-#owner .infoGrid #information_person{
-  text-align: left;
-  grid-row: 1;
-  grid-column: 1;
-  padding: 2em;
-}
-
-#pet .infoGrid #information_pet{
+#information_profile {
   grid-column: 1;
   grid-row-start: 1;
   grid-row-end: 3;  
@@ -175,9 +168,9 @@ header{
   padding: 2em;
 }
 
-#owner .infoGrid #petsForAdoption, 
-#pet .infoGrid #posts, 
-#pet .infoGrid #proposals{
+#owner #petsForAdoption, 
+#pet #posts, 
+#pet #proposals{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;
@@ -185,8 +178,8 @@ header{
   padding: 2em;
 }
 
-#pet .infoGrid #question, 
-#owner .infoGrid #adopted{
+#pet #question, 
+#owner #adopted{
   text-align: left;
   grid-column: 3;
   grid-row-start: 1;
@@ -195,7 +188,7 @@ header{
 }
 
 @media screen and (max-width: 1200px){
-  .infoGrid{
+  #profile-grid {
     display: flex;
     flex-direction: column;
   }
@@ -203,14 +196,12 @@ header{
 
 /* ---------- ADD NEW PET LAYOUT ---------- */
 
-#add #petinfocontainer .inputsNewPet{
+#add-pet #add-pet-container .form-new-pet {
   display: flex;
   flex-direction: column;
 }
 
-#species_options,
-#gender_options,
-#size_options{
+#add-pet #add-pet-container .options {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -219,44 +210,44 @@ header{
 
 /* ---------- PET INFORMATION LAYOUT ---------- */
 
-#petInformation #informationSidebar{
+#pet-information #pet-information-sidebar {
   padding-top: 1em;
   flex: 1;
   text-align: center;
 }
 
-#petInformation #informationSidebar #information{
+#pet-information #pet-detailed-information{
   display: flex;
   flex-direction: column;
 }
 
-#petInformation #content{
+#pet-information #container {
   flex: 4;
   display: flex;
   flex-direction: column;
 }
 
-#petInformation #content #top-content{
+#pet-information #top-container {
   display: flex;
 }
 
-#petInformation #content #top-content #photos,
-#petInformation #content #top-content #biography{
+#pet-information #photos,
+#pet-information #biography {
     flex: 1;
 }
 
-@media screen and (max-width: 1260px){
-  #petInformation #content #top-content{
+@media screen and (max-width: 1260px) {
+  #pet-information #top-container{
     flex-direction: column;
   }
 }
 
-@media screen and (max-width: 600px){
-  #petInformation{
+@media screen and (max-width: 600px) {
+  #pet-information {
     display: flex;
     flex-direction: column;
   }
-  #petInformation #informationSidebar #information{
+  #pet-information #pet-detailed-information {
     flex-direction: row;
   }
 }

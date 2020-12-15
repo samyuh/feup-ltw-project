@@ -1,16 +1,17 @@
-#petInformation #content h2{
+#pet-information #container h2 {
     padding-bottom: 1em;
 }
+
 /* Slideshow container */
-#petInformation #content #top-content #photos .slideshow-container {
+#pet-information #photos .slideshow-container {
     width: 400px;
     position: relative;
     margin: auto;
 }
 
 /* Next & previous buttons */
-#petInformation #content #top-content #photos .prev, 
-#petInformation #content #top-content #photos .next {
+#pet-information #photos .prev, 
+#pet-information #photos .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -24,7 +25,7 @@
 }
 
 /* Position the "next button" to the right */
-#petInformation #content #top-content #photos .next {
+#pet-information #photos .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }

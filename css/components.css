@@ -74,7 +74,7 @@ button:hover{
 }
 
 header .searchbar button,
-#information_and_update button{
+#information-profile-header button{
     border: none;
     border-radius: 0;
     color: black;
@@ -86,7 +86,7 @@ header .searchbar button{
     background-color: white;
 }
 
-#information_and_update button{
+#information-profile-header button{
     background-color: transparent;
 }
 
