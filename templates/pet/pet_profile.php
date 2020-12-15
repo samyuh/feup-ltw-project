@@ -58,12 +58,15 @@
 
       <section id="proposals">
         <h2>Adoption Proposals</h2>
+        <?php if(isAdopted($pet['idPet'])) {?>
+          <p> This pet is already adopted! </p>
+        <?php } else {?>
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
             <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="20" height="20" alt="">
             <p><?= htmlentities($prop['username']) ?></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-              <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+              <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
                 <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
               </form>
           </article>
@@ -76,7 +79,7 @@
               <input type="submit" value="Propose to adopt this pet!">
             </form>
           </section>
-        <?php } } ?>
+        <?php } } } ?>
       </section>
     </div>  
 </div>

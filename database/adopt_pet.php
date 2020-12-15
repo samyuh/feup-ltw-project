@@ -122,16 +122,16 @@
 
       }
 
-      function updateAdoptList($user, $idPet) {
+      function updateAdoptList($idUser, $idPet) {
         $db = Database::instance()->db();
         
         $stmt = $db->prepare('SELECT * FROM UserAdoptedPet WHERE idUser = ? and idPet = ?');
         
-        $stmt->execute(array($user['idUser'], $idPet));
+        $stmt->execute(array($idUser, $idPet));
         $petsID = $stmt->fetchAll();
         if(empty($petsID)) {
             $stmt = $db->prepare('INSERT INTO UserAdoptedPet VALUES (?, ?)');
-            $stmt->execute(array($user['idUser'], $idPet));
+            $stmt->execute(array($idUser, $idPet));
             print('add');
         }
         else {

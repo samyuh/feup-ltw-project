@@ -16,10 +16,10 @@
     header('Location: ../error404.php');
   }
   
-  $user = $_SESSION['user'];
+  $idUser = $_GET['idUser'];
   $petId = $_GET['idPet'];
 
-  updateAdoptList($user, $petId);
+  updateAdoptList($idUser, $petId);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
