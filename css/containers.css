@@ -18,16 +18,8 @@
 /* Advanced Search */
 #advanced-search,
 #search-pet-profile .profile,
-/* Update Pet Profile */
-#update .update-pet-info,
-#update .update-posts,
-#update .add-photo, 
-#update .delete-photo,
-/* Update User Profile */
-#update .change-username,
-#update .change-password,
-#update .change-information,
-#update .delete-profile {
+/* Update User/Pet Profile */
+#update .update-form {
     margin:1em;
     padding: 2em;
     border-radius: 10px;

@@ -1,80 +1,52 @@
 
-/* ---------- UPDATE PROFILES/INFORMATION LAYOUT ---------- */
-
-#update .update {    
-display: flex;
-flex-direction: column;
-}
-
-
-.change-username,
-.change-password,
-.change-information,
-.delete-profile,
-.update-pet-info,
-.update-posts,
-.add-photo 
-.delete-photo{
+/* --- User and Pet Update CSS --- */
+.update-form{
+    /* Layout */
     display: flex;
     flex-direction: column;
-}
 
-.update-posts #buttons-posts{
-    display: flex;
-}
-
-@media screen and (max-width: 1600px){
-    #update {
-        flex-direction: column;
-    }
-    .change-username,
-    .change-password,
-    .change-information,
-    .delete-profile,
-    .update-pet-info,
-    .update-posts,
-    .add-photo 
-    .delete-photo{
-        height: auto;
-    } 
-}
-
-/* GENERAL */
-#update{    
-    align-items: center;
-    column-gap: 2em;
-}
-
-/* pet */
-
-#update button{
-    margin-top: auto;
-}
-
-/* User */
-.change-username,
-.change-password,
-.change-information,
-.delete-profile,
-/* Pet */
-.update-pet-info,
-.update-posts,
-.add-photo 
-.delete-photo {
+    /* style */
     height: 40em;
     width: 30em;
     text-align: center;
 }
 
-.update-back-profile {
+#update {    
+    align-items: center;
+    column-gap: 2em;
+}
+
+#update button {
+    margin-top: auto;
+}
+
+@media screen and (max-width: 1600px) {
+    .update-form {
+        height: auto;
+    } 
+
+    #update {
+        flex-direction: column;
+    }
+}
+
+/* --- User only CSS --- */
+#update #delete-profile {
+    padding-bottom: 1em;
+}
+
+/* --- Pet only CSS --- */
+#update .update-post {
+    display: flex;
+}
+
+#update .update-post input[type=submit] {
+    width: 50%;
+}
+
+.update-back-profile-button {
     text-align: center;
     padding: 1em;
 }
 
-.update-posts #buttons-posts input[type=submit]{
-    width: 50%;
-}
 
-#delete-profile{
-    padding-bottom: 1em;
-}

@@ -1,7 +1,7 @@
 <div id="update">
-  <article class="update">
+  <article class="update-form">
+        <h2>Update Username</h2> 
         <form id="updateUsernameForm" class="change-username" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
-          <h2>Update Username</h2> 
           <section id="updateNewUsernameError">
           </section>
           <input type="text" name="new_username" placeholder="New Username">
@@ -14,9 +14,10 @@
         </form>
     </article>
 
-    <article class="update">
-        <form id="updatePasswordForm" class="change-password" action="../../action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
+    <article class="update-form">
         <h2>Update Password</h2>
+        <form id="updatePasswordForm" class="change-password" action="../../action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
+        
           <section id="updateNewPasswordError">
           </section>
           <input type="password" name="new_password" placeholder="New Password">
@@ -32,9 +33,9 @@
         </form>
     </article>
 
-    <article class="update">
+    <article class="update-form">
+        <h2>Update Information</h2>
         <form id="updateInformationForm" class="change-information" action="../../action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
-          <h2>Update Information</h2>
 
           <section id="updateGender">
           </section>
@@ -55,17 +56,6 @@
           </section>
           <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
           <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Image Preview" />
-          <!--- Clean this -->
-          <script>
-            var loadFile = function(event) {
-              var output = document.getElementById('output');
-              output.src = URL.createObjectURL(event.target.files[0]);
-              output.onload = function() {
-                URL.revokeObjectURL(output.src) // free memory
-              }
-            };
-          </script>
-          <!--- Clean this -->
           <section id="updateActualPasswordInformationError">
           </section>
           <input type="password" name="password" placeholder="Password">
@@ -74,9 +64,10 @@
         </form>
     </article>
 
-    <article class="update">
+    <article class="update-form">
+        <h2>Delete Profile</h2>
         <form id="deleteProfileForm" class="delete-profile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
-          <h2>Delete Profile</h2>
+          
 
           <input type="password" name="password" placeholder="Actual Password">
 
@@ -84,3 +75,15 @@
         </form>
     </article>
 </div>
+
+<!--- Clean this -->
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
+<!--- Clean this -->
