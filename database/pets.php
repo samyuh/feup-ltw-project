@@ -99,9 +99,7 @@
         $stmt->execute(array($id));
         $petsID = $stmt->fetchAll();
 
-
         return $petsID;
-
     }
 
     function getAllPhotos($id) {
@@ -111,7 +109,6 @@
         
         $stmt->execute(array($id));
         $petsID = $stmt->fetchAll();
-
 
         return $petsID;
     }
@@ -164,7 +161,7 @@
     function getPosts($idPet) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM PostsPet WHERE idPet = ?');
+        $stmt = $db->prepare('SELECT * FROM PostsPet WHERE idPet = ?  ORDER BY id DESC');
         
         $stmt->execute(array($idPet));
         $petsID = $stmt->fetchAll();

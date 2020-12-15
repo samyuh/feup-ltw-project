@@ -9,14 +9,14 @@
     function addAnswer($idQuestion, $author, $answer) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('SELECT User.username FROM User, UserFoundPet, PetQuestion WHERE 
+        $stmt = $db->prepare('SELECT * FROM User, UserFoundPet, PetQuestion WHERE 
                                                                             PetQuestion.idQuestion = ? 
                                                                             and PetQuestion.idPet = UserFoundPet.idPet
                                                                             and User.idUser = UserFoundPet.idUser');
         $stmt->execute(array($idQuestion));
         $question = $stmt->fetch();
 
-        if(!empty($question)) {
+        if((!empty($question)) && ($question['username'] == $author)) {
             $update = $db->prepare('UPDATE PetQuestion SET dateAnswer = ?, authorAnswer = ?, answer = ? WHERE idQuestion = ?');
             $update->execute(array(date("Y/m/d"), $author, $answer, $idQuestion));  
         }
@@ -25,7 +25,7 @@
     function getQuestions($idPet) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idPet = ?');
+        $stmt = $db->prepare('SELECT * FROM PetQuestion WHERE idPet = ? ORDER BY idQuestion DESC');
         
         $stmt->execute(array($idPet));
         $petsID = $stmt->fetchAll();

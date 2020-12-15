@@ -77,7 +77,7 @@ function displayQuestions(data) {
 
         let submit = document.createElement('button')
         submit.setAttribute('name','submitButton')
-        submit.innerHTML = "Submit"
+        submit.innerHTML = "Reply"
         submit.addEventListener('click', function(){addReply(data.idQuestion)})
         submit.addEventListener('click', prevent)
 
