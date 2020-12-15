@@ -19,10 +19,10 @@
     <link href="../../css/pages/add_pet.css" rel="stylesheet">
     <link href="../../css/pages/error404.css" rel="stylesheet">
     <link href="../../css/pages/profile.css" rel="stylesheet">
+    <link href="../../css/pages/modal.css" rel="stylesheet">
     <link href="../../css/containers.css" rel="stylesheet">
     <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/layout.css" rel="stylesheet">
-    <link href="../../css/modal.css" rel="stylesheet">
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/add_pet.js" defer> </script>
@@ -67,8 +67,8 @@
                 <a title="Visit Your Profile" href="profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
               </div>
               <div id="dropdown">
-                <div id="Notifications">
-                  <a id="myBtn">Notifications</a>
+                <div id="notifications">
+                  <a id="notifications-button">Notifications</a>
                 </div>
                 <div id="update">
                   <a title="Update My Information" href="update.php">Update Profile</a>
@@ -82,14 +82,12 @@
         </div> 
       </div>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Notifications Menu..</p>
-    </div>
-
-    </div>
+      <!-- The Modal -->
+      <div id="my-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Notifications Menu..</p>
+        </div>
+      </div>
     </header>
