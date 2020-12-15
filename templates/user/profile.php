@@ -15,14 +15,14 @@
       <p>Age: <?= htmlentities($user['age']) ?></p>
       <p>Location: <?= htmlentities($user['location']) ?></p>
     </section>
-    <section id="favPets">
+    <section id="favorite-pets">
       <h2>Favorite Pets</h2>
       <?php foreach($userPets as $fav) { ?>
         <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
         <p><a href="dog_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
       <?php } ?>
     </section>
-    <section id="petsForAdoption">
+    <section id="adoption-pets">
       <h2>Pets for Adoption</h2>
       <?php foreach($toAdoptPets as $fav) { ?>
         <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">

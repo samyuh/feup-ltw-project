@@ -1,6 +1,6 @@
 <div id="update">
-  <article id="updateUsername">
-        <form id="updateUsernameForm" class="changeUsername" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
+  <article class="update">
+        <form id="updateUsernameForm" class="change-username" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
           <h2>Update Username</h2> 
           <section id="updateNewUsernameError">
           </section>
@@ -14,8 +14,8 @@
         </form>
     </article>
 
-    <article id="updatePassword">
-        <form id="updatePasswordForm" class="changePassword" action="../../action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
+    <article class="update">
+        <form id="updatePasswordForm" class="change-password" action="../../action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
         <h2>Update Password</h2>
           <section id="updateNewPasswordError">
           </section>
@@ -32,8 +32,8 @@
         </form>
     </article>
 
-    <article id="updateInformation">
-        <form id="updateInformationForm" class="changeInformation" action="../../action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+    <article class="update">
+        <form id="updateInformationForm" class="change-information" action="../../action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
           <h2>Update Information</h2>
 
           <section id="updateGender">
@@ -74,8 +74,8 @@
         </form>
     </article>
 
-    <article id="deleteProfile">
-        <form id="deleteProfileForm" class="deleteProfile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
+    <article class="update">
+        <form id="deleteProfileForm" class="delete-profile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
           <h2>Delete Profile</h2>
 
           <input type="password" name="password" placeholder="Actual Password">

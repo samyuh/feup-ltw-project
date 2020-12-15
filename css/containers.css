@@ -1,25 +1,34 @@
 /*-----------------------------------------------
 ------------------ CONTAINERS -------------------
 ------------------------------------------------*/
-
+/* Add Pet */
 #add-pet #add-pet-container,
+/* Pet Detailed Information */
 #pet-information #photos,
 #pet-information #biography,
 #pet-information #posts,
+/* Profile */
 #information-profile,
-#petsForAdoption,
-#adopted,
-#favPets,
-#proposals, 
-#posts, 
-#question,
+/* User Page */
+#owner #adoption-pets,
+#owner #adopted,
+#owner #favorite-pets,
+/* Pet Page */
+#pet #question,
+#pet #proposals, 
+/* Advanced Search */
 #advanced-search,
 #search-pet-profile .profile,
-#update #updatecontainers .updatepetinfo,
-#update #updatecontainers .updateposts,
-#update #updatecontainers .add-photo,
-#update .changeUsername,
-#update .changePassword{
+/* Update Pet Profile */
+#update .update-pet-info,
+#update .update-posts,
+#update .add-photo, 
+#update .delete-photo,
+/* Update User Profile */
+#update .change-username,
+#update .change-password,
+#update .change-information,
+#update .delete-profile {
     margin:1em;
     padding: 2em;
     border-radius: 10px;

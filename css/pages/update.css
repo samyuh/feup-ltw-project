@@ -1,38 +1,80 @@
+
+/* ---------- UPDATE PROFILES/INFORMATION LAYOUT ---------- */
+
+#update .update {    
+display: flex;
+flex-direction: column;
+}
+
+
+.change-username,
+.change-password,
+.change-information,
+.delete-profile,
+.update-pet-info,
+.update-posts,
+.add-photo 
+.delete-photo{
+    display: flex;
+    flex-direction: column;
+}
+
+.update-posts #buttons-posts{
+    display: flex;
+}
+
+@media screen and (max-width: 1600px){
+    #update {
+        flex-direction: column;
+    }
+    .change-username,
+    .change-password,
+    .change-information,
+    .delete-profile,
+    .update-pet-info,
+    .update-posts,
+    .add-photo 
+    .delete-photo{
+        height: auto;
+    } 
+}
+
+/* GENERAL */
 #update{    
     align-items: center;
     column-gap: 2em;
 }
 
-#updatecontainers{
-    justify-content: center; /*centers items on the line (the x-axis by default)*/
-    align-items: center; /*centers items on the cross-axis (y by default)*/ 
-    column-gap: 2em;
-    padding: 1em;
-}
+/* pet */
 
 #update button{
     margin-top: auto;
 }
 
-.changeUsername,
-.changePassword,
-.updatepetinfo,
-.updateposts,
-.add-photo{
+/* User */
+.change-username,
+.change-password,
+.change-information,
+.delete-profile,
+/* Pet */
+.update-pet-info,
+.update-posts,
+.add-photo 
+.delete-photo {
     height: 40em;
     width: 30em;
     text-align: center;
 }
 
-.goback{
+.update-back-profile {
     text-align: center;
     padding: 1em;
 }
 
-.updateposts #buttonsposts input[type=submit]{
+.update-posts #buttons-posts input[type=submit]{
     width: 50%;
 }
 
-#deleteProfile{
+#delete-profile{
     padding-bottom: 1em;
 }

@@ -153,22 +153,14 @@ header{
   column-width: 10em;
 }
 
-#information_profile {
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;  
-  text-align: left;
-  padding: 2em;
-}
-
-#owner .infoGrid #favPets{
+#owner #profile-grid #favorite-pets {
   text-align: left;
   grid-column: 1;
   grid-row: 2;
   padding: 2em;
 }
 
-#owner #petsForAdoption, 
+#owner #adoption-pets, 
 #pet #posts, 
 #pet #proposals{
   text-align: left;
@@ -250,41 +242,4 @@ header{
   #pet-information #pet-detailed-information {
     flex-direction: row;
   }
-}
-/* ---------- UPDATE PROFILES/INFORMATION LAYOUT ---------- */
-
-#update{    
-  display: flex;
-  flex-direction: column;
-}
-
-#updatecontainers{
-  display: flex;
-  flex-direction: row;
-}
-
-.changeUsername,
-.changePassword,
-.updatepetinfo,
-.updateposts,
-.add-photo{
-    display: flex;
-    flex-direction: column;
-}
-
-.updateposts #buttonsposts{
-    display: flex;
-}
-
-@media screen and (max-width: 1600px){
-  #updatecontainers{
-    flex-direction: column;
-  }
-  .changeUsername,
-  .changePassword,
-  .updatepetinfo,
-  .updateposts,
-  .add-photo{
-    height: auto;
-  } 
 }
