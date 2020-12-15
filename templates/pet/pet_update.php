@@ -4,7 +4,7 @@
         </form>
 </aside>
 
-<section id="update">
+<section id="update-page">
         <article class="update-form">
             <form class="update-pet-info" action="../../action/action_update_pet.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
                 <h1>Update Pet Info</h1>    

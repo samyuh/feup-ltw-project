@@ -1,4 +1,4 @@
-<div id="update">
+<div id="update-page">
   <article class="update-form">
         <h2>Update Username</h2> 
         <form id="updateUsernameForm" class="change-username" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">

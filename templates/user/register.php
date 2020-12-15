@@ -26,19 +26,20 @@
         <aside id="register-image-error"></aside>
         <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
         <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Preview Image"/>
-        <!--- Clean this -->
-        <script>
-          var loadFile = function(event) {
-            var output = document.getElementById('output');
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
-              URL.revokeObjectURL(output.src) 
-            }
-          };
-        </script>
-        <!--- Clean this -->
         <button id="registerButton" type="submit" value="Register">Create an Account</button>
         </form>
       </article>
     </div>
   </div>
+
+<!--- Clean this -->
+<script>
+var loadFile = function(event) {
+  var output = document.getElementById('output');
+  output.src = URL.createObjectURL(event.target.files[0]);
+  output.onload = function() {
+    URL.revokeObjectURL(output.src) 
+  }
+};
+</script>
+<!--- Clean this -->

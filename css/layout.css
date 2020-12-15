@@ -32,7 +32,7 @@ body {
 }
 
 #pet-information,
-#update{
+#update-page {
   display: flex;
   flex-direction: row;
   height: 100%;

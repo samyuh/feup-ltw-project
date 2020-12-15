@@ -11,7 +11,7 @@
       ?>
         <section id="favorite">
           <form id="favoriteForm" action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
-            <button id="favoriteFormButton" title="Favorite Pet" type="submit"class="<?=$star?>" value="<?=$pet['idPet']?>"></button>
+            <button id="favoriteFormButton" title="Favorite Pet" type="submit" class="<?=$star?>" value="<?=$pet['idPet']?>"></button>
           </form>
         </section>
       <?php } ?>

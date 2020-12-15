@@ -11,12 +11,12 @@
     text-align: center;
 }
 
-#update {    
+#update-page {    
     align-items: center;
     column-gap: 2em;
 }
 
-#update button {
+#update-page button {
     margin-top: auto;
 }
 
@@ -25,22 +25,22 @@
         height: auto;
     } 
 
-    #update {
+    #update-page {
         flex-direction: column;
     }
 }
 
 /* --- User only CSS --- */
-#update #delete-profile {
+#update-page #delete-profile {
     padding-bottom: 1em;
 }
 
 /* --- Pet only CSS --- */
-#update .update-post {
+#update-page .update-post {
     display: flex;
 }
 
-#update .update-post input[type=submit] {
+#update-page .update-post input[type=submit] {
     width: 50%;
 }
 
