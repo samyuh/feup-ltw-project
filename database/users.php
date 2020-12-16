@@ -119,6 +119,22 @@
         return $user_profile;
     }
 
+    function getUserNotifications($idUser) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT User.idUser, User.username, Pet.idPet, Pet.petName 
+                                from User, Pet, UserFoundPet, AdoptionProposal 
+                                where UserFoundPet.idUser = ?
+                                and AdoptionProposal.idPet = Pet.idPet
+                                and UserFoundPet.idpet = Pet.idPet
+                                and User.idUser = AdoptionProposal.iduser');
+        
+        $stmt->execute(array($idUser));
+        $notifications = $stmt->fetchAll();
+
+        return $notifications;
+    }
+
     function deleteUser($user, $password) {
         $db = Database::instance()->db();
 
