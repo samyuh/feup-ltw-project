@@ -60,7 +60,7 @@
         <h2>Adoption Proposals</h2>
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
-            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="20" height="20" alt="">
+            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="45" height="45" alt="">
             <p><?= htmlentities($prop['username']) ?></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
               <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">

@@ -77,8 +77,7 @@
   border-width: 1px;
 }
 
-#information-profile-header, 
-#proposals .unique-proposal {
+#information-profile-header{
   display: flex;
   align-items: center;
   justify-content: left;
@@ -92,6 +91,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+#proposals .unique-proposal {
+  display: grid;
+  grid-template-columns: 50px auto 200px ;
+  
+}
+
+#proposals h2{
+  padding-bottom: 20px;
+}
+
+.unique-proposal img{
+  border-radius: 50%;
+  align-self: center;
+}
+
+.unique-proposal p,
+.unique-proposal form{
+  align-self: center;
 }
 
 #proposals #adoption-proposal {
