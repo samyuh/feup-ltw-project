@@ -40,7 +40,7 @@ button{
 
 #homepage-intro .found-pet a:hover,
 input[type=submit]:hover,
-button:hover{
+button:hover {
     border: 1px solid var(--found-pet-hover);
     background-color: var(--found-pet-hover);
 }
@@ -86,7 +86,7 @@ a {
     cursor: pointer;
 }
 
-a:visited {color: var(--href-common);}
+a:visited { color: var(--href-common);}
 
 footer a:visited,
 header a:visited {

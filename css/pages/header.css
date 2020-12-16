@@ -54,16 +54,17 @@ header #search-bar {
   font-size: small;
 }
 
-#search-bar input[type="text"]{
+#search-bar input[type="text"] {
   width: 20em;
   padding: 0.2em;
+  background-color: var(--search-background-color);
 }
 
 #search-bar button[type="submit"]{
-  background-color: var(--search-background-color);
   border: none;
   padding: 0.3em;
   color: var(--search-background-icon);
+  background-color: var(--search-background-color);
 }
 
 #search-bar .mobile-search-bar button{
