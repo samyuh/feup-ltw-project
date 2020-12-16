@@ -3,7 +3,7 @@
   include_once('../includes/session.php');
   include_once('../includes/database.php');
 
-  /* Database Managers Files */
+  /* Database Managers Files */  
   include_once('../database/users.php');  
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  

@@ -71,18 +71,16 @@ Users looking for a pet should be able to:
 
 #### Extra Features
 
-- [ ] A slideshow with all pet photos
-- [ ] A notification menu where users can see if their pet had an adoption proposal
-- [ ]
-- [ ]
+- [x] A slideshow with all pet photos
+- [x] A notification menu where users can see if their pet had an adoption proposal
 
 
 #### Security Features
 
-- [ ] Hashed passwords (with SALT)
-- [ ] Session CSRF Tokens
-- [ ] XSS attacks prevented (using htmlentities)
-
+- [x] Hashed passwords (with SALT)
+- [x] Session CSRF Tokens
+- [x] XSS attacks prevented (using htmlentities)
+- [x] Regex to filter user input
 
 
 
