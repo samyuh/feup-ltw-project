@@ -40,7 +40,7 @@
 }
 
 #advanced-search input[type="text"], textarea {
-    background-color : hsl(50, 100%, 93%);
+    background-color : var(--search-background-color);
 }
 
 #advanced-search .options{
@@ -52,7 +52,6 @@
     display: flex;
     flex-direction: row;
     min-width: 10em;
-    background-color: hsl(49, 62%, 82%);
 }
 
 #search-pet-profile .profile img {

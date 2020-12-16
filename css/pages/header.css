@@ -1,7 +1,7 @@
 header {
-  background-image: linear-gradient(to bottom right,hsl(72, 11%, 45%), hsl(72, 11%, 35%));
+  background-image: linear-gradient(to bottom right,var(--background-gradient-first), var(--background-gradient-second));
   padding: 1em;
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+  box-shadow:	0 0.125rem 0.5rem var(--container-primary-shadow), 0 0.0625rem 0.125rem var(--container-secondary-shadow);
 }
 
 header h1, h2{
@@ -20,7 +20,7 @@ header h2{
 
 header #name-slogan{
   padding-right: 1em;
-  border-right: 1px solid white;
+  border-right: 1px solid var(--header-border);
 }
 
 .mobile-header button{
@@ -60,10 +60,10 @@ header #search-bar {
 }
 
 #search-bar button[type="submit"]{
-  background-color: white;
+  background-color: var(--search-background-color);
   border: none;
   padding: 0.3em;
-  color: black;
+  color: var(--search-background-icon);
 }
 
 #search-bar .mobile-search-bar button{
@@ -78,14 +78,14 @@ header #signed-in{
 header #dropdown{
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: var(--dropdown-color);
   min-width: 10em;
-  box-shadow: 0px 1em 2em 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1em 2em 0px var(--container-secondary-shadow);
   z-index: 1;
 }
 
 header #dropdown a {
-  color: black;
+  color: var(--dropdown-href-a);
   padding: 1em 0.5em;
   text-decoration: none;
   display: block;
@@ -93,7 +93,7 @@ header #dropdown a {
 }
 
 header #dropdown a:hover {
-  background-color: #f1f1f1;
+  background-color: var(--dropdown-hover);
 }
 
 header #signed-in:hover #dropdown{
@@ -101,7 +101,7 @@ header #signed-in:hover #dropdown{
 }
 
 body > header #sign-up a:first-child {
-  border-right: 1px solid white;
+  border-right: 1px solid var(--header-border);
 }
 
 body > header #sign-up a {
@@ -142,7 +142,7 @@ body > header #sign-up a:first-child {
     display: block;
     background-color: transparent;
     border: none;
-    color: white;
+    color: var(--icon-mobile);
   }
   .mobile-header button:hover,
   #search-bar .mobile-search-bar button:hover{
