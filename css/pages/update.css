@@ -7,8 +7,9 @@
 
     /* style */
     height: 40em;
-    width: 30em;
+    width: 250px;
     text-align: center;
+    align-self: flex-start;
 }
 
 #update-page {    

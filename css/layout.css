@@ -34,9 +34,8 @@ body {
 #pet-information,
 #update-page {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  height: 100%;
-  width: 100%;
   flex: 1;
 }
 
