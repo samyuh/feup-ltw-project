@@ -58,8 +58,10 @@
           <?php } ?>
           <section id="uniquepost">
           <?php foreach($posts as $post) {?>
-              <p><?= htmlentities($post['post']) ?></p>
-              <span>By <?= htmlentities($post['author']) ?></span><span> on <?= htmlentities($post['datePost']) ?></span>
+              <section>
+                <p><?= htmlentities($post['post']) ?></p>
+                <span>By <?= htmlentities($post['author']) ?></span><span> on <?= htmlentities($post['datePost']) ?></span>
+              </section>
           <?php } ?>
           </section>
       </section>

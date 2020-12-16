@@ -1,11 +1,15 @@
 /* ---------- PET INFORMATION LAYOUT ---------- */
 
+#pet-information #pet-name-photo img{
+  border-radius: 50%;
+}
+
 #pet-information #name_and_edit{
   display: flex;
   align-items: center;
   justify-content: center;
   zoom: 1.3;
-  text-align: center;
+  text-align: left;
 }
 
 #pet-information #pet-information-sidebar {
@@ -15,8 +19,7 @@
   }
   
   #pet-information #pet-detailed-information{
-    display: flex;
-    flex-direction: column;
+    text-align: left;
   }
   
   #pet-information #container {
@@ -55,6 +58,38 @@
     padding-bottom: 1em;
 }
 
+#pet-information #posts {
+  display: flex;
+  flex-direction: column;
+}
+
+#pet-information #posts #uniquepost section{
+  border: #cccccc 1px solid;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+#pet-information #posts p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#pet-information #posts span{
+  font-size: 11px;
+}
+
+#pet-information #posts h2{
+  padding-bottom: 20px;
+}
+
+#pet-information #pet-detailed-information p{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: #000000 1px solid;
+}
+
+
 /* Slideshow container */
 #pet-information #photos .slideshow-container {
     width: 400px;
@@ -82,3 +117,5 @@
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+
+

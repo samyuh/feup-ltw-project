@@ -20,6 +20,20 @@
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
+
+  .modal-content img{
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  .modal-content span {
+    vertical-align: middle;
+  }
+
+  .modal-content article a{
+    color:	#0000CD;
+    vertical-align: middle;
+  }
   
   /* The Close Button */
   .close {
