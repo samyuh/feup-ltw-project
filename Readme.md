@@ -64,15 +64,17 @@ Users that found a pet and are looking for someone to adopt it should be able to
 
 Users looking for a pet should be able to:
 - [x] Search for a pet using several search criteria.
-- [x] Add pets to a favourites list.
+- [x] Add pets to a favorites list.
 - [x] Ask questions about a pet listed for adoption.
 - [x] Propose to adopt a pet and list previous proposals.
 
 
 #### Extra Features
 
-- [x] A slideshow with all pet photos
+- [x] A slideshow with all pet photos on pet page
+- [x] Users that adopt a pet can still post photos of that animal after the adoption and edit their information
 - [x] A notification menu where users can see if their pet had an adoption proposal
+- [x] Users can list all of their favorite pets, pets to adoption and adopted pets on their profile
 
 
 #### Security Features

@@ -4,6 +4,7 @@
   include_once('../includes/database.php');
   
   /* Database Managers Files */
+  include_once('../database/regex.php');
   include_once('../database/users.php');     
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
@@ -18,7 +19,13 @@
     header('Location: ../error404.php');
   }
   
-  updatePost($_GET['id'], $_POST['post']);
+  $idUser = $_SESSION['user']['idUser'];
+  $idPost = $_GET['id'];
+  $info = $_POST['post'];
+
+  if(validText($info)) {
+    updatePost($idUser, $idPost, $info);
+  }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

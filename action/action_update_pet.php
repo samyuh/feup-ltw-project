@@ -19,15 +19,18 @@
     header('Location: ../error404.php');
   }
 
+  $idUser = $_SESSION['user']['idUser'];
+  $idPet = $_GET['idPet'];
   $petName = $_POST['npetName'];
+  $bio = $_POST['bio'];
   $specie =  $_POST['nspecie'];
   $gender =  $_POST['ngender'];
   $size =  $_POST['nsize'];
   $color =  $_POST['ncolor'];
-  $bio = $_POST['nspecie'];
   
-  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validColor($color) && validText($bio)) {
-    updatePet($_GET['idPet'], $petName, $bio, $specie, $gender, $size, $color);
+  
+  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validText($color) && validText($bio)) {
+    updatePet($idUser, $idPet, $petName, $bio, $specie, $gender, $size, $color);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

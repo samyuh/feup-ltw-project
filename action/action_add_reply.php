@@ -15,10 +15,11 @@
     header('Location: ../error404.php');
   }
 
+  $user = $_SESSION['user'];
   $idQuestion = $_POST['idQuestion'];
-  $author = $_SESSION['user']['username'];
   $question = $_POST['question'];
+
   if(validText($question)) {
-    addAnswer($idQuestion, $author, $question);
+    addAnswer($user, $idQuestion, $question);
   }
 ?>

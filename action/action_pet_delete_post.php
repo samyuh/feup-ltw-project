@@ -18,7 +18,9 @@
     header('Location: ../error404.php');
   }
   
-  deletePost($_GET['id']);
+  $idUser = $_SESSION['user']['idUser'];
+  $postId = $_GET['id'];
+  deletePost($idUser, $postId);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

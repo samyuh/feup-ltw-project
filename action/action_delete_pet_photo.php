@@ -18,7 +18,8 @@
     header('Location: ../error404.php');
   }
   
-  deletePhoto($_GET['idPhoto']);
+  $idUser = $_SESSION['user']['idUser'];
+  deletePhoto($idUser, $_GET['idPhoto']);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

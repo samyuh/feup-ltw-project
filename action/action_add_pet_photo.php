@@ -18,7 +18,8 @@
     header('Location: ../error404.php');
   }
   
-  addPetPhoto($_GET['idPet']);
+  $idUser = $_SESSION['user']['idUser'];
+  addPetPhoto($idUser, $_GET['idPet']);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

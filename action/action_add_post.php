@@ -20,8 +20,9 @@
   }
   
   $post = $_POST['post'];
+  
   if(validText($post)) {
-    addPost($_GET['idPet'], $_SESSION['user']['username'], $post);
+    addPost($_SESSION['user'], $_GET['idPet'], $post);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
