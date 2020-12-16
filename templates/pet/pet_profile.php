@@ -66,8 +66,9 @@
               <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
                 <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
               </form>
+            <?php } ?>
           </article>
-        <?php } } ?>
+        <?php } ?>
         <?php  
         if (isLogged()) {
           if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>

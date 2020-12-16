@@ -21,7 +21,7 @@
         <article class="unique-favorite-pet">
           <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="45" height="45" alt="Pet Images">
           <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
-      </article>
+        </article>
       <?php } ?>
     </section>
     <section id="adoption-pets">
