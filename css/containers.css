@@ -56,3 +56,10 @@ border-bottom: none;
   border-top-color: rgb(197, 235, 223);
   box-shadow:	rgba(0, 0, 0, .3);
 }
+
+#pet #question #question-submit section{
+  border: #cccccc 1px solid;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 15px;
+}

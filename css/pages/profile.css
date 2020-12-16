@@ -100,7 +100,7 @@
   
 }
 
-#proposals h2{
+#proposals h2, #question h2{
   padding-bottom: 20px;
 }
 
@@ -123,6 +123,15 @@
 #question {
   display: flex;
   flex-direction: column;
+}
+
+#question p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#question span{
+  font-size: 11px;
 }
 
 #question .question-form {
