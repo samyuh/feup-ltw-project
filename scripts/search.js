@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 let form = document.getElementById('name-search')
 let place = document.getElementById('search-pet-profile')

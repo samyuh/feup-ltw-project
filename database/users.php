@@ -1,4 +1,11 @@
 <?php
+    /* 
+     * Functions related to the user experience
+    */
+
+    /* 
+     * Check if the user is loggedIn
+    */
     function isLogged() {
         $db = Database::instance()->db();
 
@@ -9,6 +16,51 @@
             return TRUE;
         }
      }
+
+    /* 
+     * Get User Information 
+     */
+    function getUser($user) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');;
+        
+        $stmt->execute(array($user));
+        $user_profile = $stmt->fetch();
+
+        return $user_profile;
+    }
+
+    function getUserNotifications($idUser) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT User.idUser, User.username, Pet.idPet, Pet.petName 
+                                from User, Pet, UserFoundPet, AdoptionProposal 
+                                where UserFoundPet.idUser = ?
+                                and AdoptionProposal.idPet = Pet.idPet
+                                and UserFoundPet.idpet = Pet.idPet
+                                and User.idUser = AdoptionProposal.iduser');
+        
+        $stmt->execute(array($idUser));
+        $notifications = $stmt->fetchAll();
+
+        return $notifications;
+    }
+
+     /* 
+     * Login and Register related functions 
+     */
+     function userUnique($username) {
+        $db = Database::instance()->db();
+
+        $stmtUserCheck = $db->prepare('SELECT * FROM User WHERE username = ?');;
+        
+        $stmtUserCheck->execute(array($username));
+        $userValid = $stmtUserCheck->fetch();
+
+        if(empty($userValid)) return TRUE;
+        else return FALSE;
+    }
 
     function checkUserPassword($username, $password) {
         $db = Database::instance()->db();
@@ -24,21 +76,6 @@
         else {
             return false;
         }
-    }
-
-    function userUnique($username) {
-        $db = Database::instance()->db();
-
-        $stmtUserCheck = $db->prepare('SELECT * FROM User WHERE username = ?');;
-        
-        $stmtUserCheck->execute(array($username));
-        $userValid = $stmtUserCheck->fetch();
-
-        if(empty($userValid)) {
-            return TRUE;
-        }
-        else return FALSE;
-
     }
 
     function insertUser($username, $gender, $age, $location, $password) {
@@ -66,6 +103,21 @@
         }
     }
 
+    /* 
+     * Update user information 
+     */
+    function updateUsername($user, $new_username, $password) {
+        $db = Database::instance()->db();
+
+        if (checkUserPassword($user['username'], $password) !== false && userUnique($new_username)) {
+            $stmt = $db->prepare('UPDATE User SET username = ? WHERE idUser = ?');
+            $stmt->execute(array($new_username, $user['idUser']));
+
+            return TRUE;
+        }
+        else return FALSE;
+      }
+
     function updateUserInfo($user, $new_gender, $new_age, $new_location, $password) {
         $db = Database::instance()->db();
 
@@ -76,18 +128,6 @@
             $idUser = $user['idUser'];
             $originalFileName = "../images/user/user-$idUser.jpg";
             move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
-
-            return TRUE;
-        }
-        else return FALSE;
-      }
-
-    function updateUsername($user, $new_username, $password) {
-        $db = Database::instance()->db();
-
-        if (checkUserPassword($user['username'], $password) !== false && userUnique($new_username)) {
-            $stmt = $db->prepare('UPDATE User SET username = ? WHERE idUser = ?');
-            $stmt->execute(array($new_username, $user['idUser']));
 
             return TRUE;
         }
@@ -108,17 +148,6 @@
         else return FALSE;
       }
 
-    function getUser($user) {
-        $db = Database::instance()->db();
-        
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = (?)');;
-        
-        $stmt->execute(array($user));
-        $user_profile = $stmt->fetch();
-
-        return $user_profile;
-    }
-
     function deleteUser($user, $password) {
         $db = Database::instance()->db();
 
@@ -130,45 +159,4 @@
         }
         else return FALSE;
       }
-
-    /* REGEX VALIDATORS */
-    function validUsername($element) {
-        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
-    }
-
-    function validGender($element) {
-        return preg_match ("/^(fe)?male$/", $element);
-    }
-
-    function validAge($element) {
-        return preg_match ("/^\d+$/", $element);
-    }
-
-    function validLocation($element) {
-        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
-    }
-
-    function validPassword($element) {
-        return preg_match ("/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/", $element);
-    }
-
-    function validName($element) {
-        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
-    }
-
-    function validSpecie($element) {
-        return preg_match ("/^dog|cat$/", $element);
-    }
-
-    function validSize($element) {
-        return preg_match ("/^small|medium|large$/", $element);
-    }
-
-    function validColor($element) {
-        return preg_match ("/^[a-zA-Z0-9]+$/", $element);
-    }
-
-    function validText($element) {
-        return preg_match ("/^[a-zA-Z0-9\s]+$/", $element);
-    }
 ?>

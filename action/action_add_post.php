@@ -4,9 +4,11 @@
   include_once('../includes/database.php');
   
   /* Database Managers Files */
+  include_once('../database/regex.php');
   include_once('../database/users.php');
-  include_once('../database/adopt_pet.php');    
-  include_once('../database/pets.php');      
+  include_once('../database/pets.php');  
+  include_once('../database/pets_adoption.php');  
+  include_once('../database/pets_profile.php');        
 
   /* Verifications and set variables */
   if(!isLogged()) {
@@ -18,8 +20,9 @@
   }
   
   $post = $_POST['post'];
+  
   if(validText($post)) {
-    addPost($_GET['idPet'], $_SESSION['user']['username'], $post);
+    addPost($_SESSION['user'], $_GET['idPet'], $post);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

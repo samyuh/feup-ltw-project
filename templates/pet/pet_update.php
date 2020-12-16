@@ -14,7 +14,8 @@
                 <label>Update Gender <input type="text" name="ngender" value="<?= htmlentities($pet['gender']) ?>"></label>
                 <label>Update Size <input type="text" name="nsize" value="<?= htmlentities($pet['size']) ?>"></label>
                 <label>Update color <input type="text" name="ncolor" value="<?= htmlentities($pet['color']) ?>"></label>
-                <!-- Fazer aqui alterar a foto do cão! -->
+                <input type="file" name="image" accept="image/*" onchange="loadFile2(event)">>
+                    <img id="output2" src="#" style="max-height:15em; max-width:15em;" alt="Submit Photo"/>
                 <input type="submit" value="Update">
             </form>
         </article>
@@ -37,7 +38,7 @@
         <article class="update-form">
             <h1>Insert Pet Photo</h1>
             <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
-                <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
+                <input type="file" name="image-album" accept="image/*" onchange="loadFile(event)">>
                     <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Submit Photo"/>
                 <input type="submit" value="Update">
             </form>
@@ -60,6 +61,14 @@
 <script>
     var loadFile = function(event) {
     var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+        URL.revokeObjectURL(output.src) 
+    }
+    };
+
+    var loadFile2 = function(event) {
+    var output = document.getElementById('output2');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = function() {
         URL.revokeObjectURL(output.src) 

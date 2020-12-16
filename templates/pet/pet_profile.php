@@ -46,24 +46,32 @@
         <?php if (isLogged()) { ?>
           <form id='question-form' action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="text" name="question">
-            <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
+            <input type="hidden" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
+            <input type="hidden" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
+            <input type="hidden" name="owner" value="<?= htmlentities($owner['idUser']) ?>">
             <input id="question-form-button" type="submit" value="Ask">
           </form>
           
           <section id="question-submit">
             
           </section>
+        <?php } else { ?>
+          <p>Please login or create an account to ask and see all questions made to this pet!</p>
+
         <?php } ?>
       </section>
 
       <section id="proposals">
         <h2>Adoption Proposals</h2>
+        <?php if(isAdopted($pet['idPet'])) {?>
+          <p> This pet is already adopted! </p>
+        <?php } else {?>
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
             <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="45" height="45" alt="">
             <p><?= htmlentities($prop['username']) ?></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-              <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+              <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
                 <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
               </form>
             <?php } ?>
@@ -77,7 +85,7 @@
               <input type="submit" value="Propose to adopt this pet!">
             </form>
           </section>
-        <?php } } ?>
+        <?php } } } ?>
       </section>
     </div>  
 </div>
