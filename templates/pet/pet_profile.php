@@ -55,6 +55,9 @@
           <section id="question-submit">
             
           </section>
+        <?php } else { ?>
+          <p>Please login or create an account to ask and see all questions made to this pet!</p>
+
         <?php } ?>
       </section>
 
