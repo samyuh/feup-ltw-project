@@ -27,9 +27,9 @@
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/add_pet.js" defer> </script>
     <script src="../../scripts/set_favorite.js" defer> </script>
-    <script src="../../scripts/add_question.js" defer> </script>
+    <script src="../../scripts/pet_question.js" defer> </script>
     <script src="../../scripts/notifications.js" defer> </script>
-    <script src="../../scripts/dog_information.js" defer> </script>
+    <script src="../../scripts/pet_photos.js" defer> </script>
   </head>
   <body>
     <header>
@@ -82,21 +82,3 @@
         </div> 
       </div>
     </header>
-      <?php if (isLogged()) { ?>
-      <div id="my-modal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Pending Adoption Proposals</h3>
-            <?php $notifications = getUserNotifications($_SESSION['user']['idUser']); ?>
-            <?php foreach($notifications as $not) { ?>
-              <article>
-                <img src="../images/user/user-<?=$not['idUser']?>.jpg" width="20" height="20" alt="User">
-                <span><?= htmlentities($not['username'])  ?> wants to adopt </span>
-                <img src="../images/pet-profile/pet-<?=$not['idPet']?>/profile.jpg" width="20" height="20" alt="Pet">
-                <span><?= htmlentities($not['petName']) ?>!</span>
-                <a href="pet_profile.php?idPet=<?=$not['idPet']?>"> Go to the pet page! </a>
-              <article>
-            <?php } ?> 
-          </div>
-        </div>
-        <?php } ?> 

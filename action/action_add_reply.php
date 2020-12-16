@@ -5,7 +5,9 @@
 
   /* Database Managers Files */
   include_once('../database/users.php');   
-  include_once('../database/adopt_pet.php');
+  include_once('../database/pets.php');  
+  include_once('../database/pets_adoption.php');  
+  include_once('../database/pets_profile.php');  
 
   /* Verifications and set variables */
   if(!isLogged()) {
