@@ -19,15 +19,17 @@
     <link href="../../css/pages/add_pet.css" rel="stylesheet">
     <link href="../../css/pages/error404.css" rel="stylesheet">
     <link href="../../css/pages/profile.css" rel="stylesheet">
+    <link href="../../css/pages/modal.css" rel="stylesheet">
     <link href="../../css/containers.css" rel="stylesheet">
     <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/layout.css" rel="stylesheet">
-    
     <script src="../../scripts/search.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/add_pet.js" defer> </script>
     <script src="../../scripts/set_favorite.js" defer> </script>
-    <script src="../../scripts/add_question.js" defer> </script>
+    <script src="../../scripts/pet_question.js" defer> </script>
+    <script src="../../scripts/notifications.js" defer> </script>
+    <script src="../../scripts/pet_photos.js" defer> </script>
   </head>
   <body>
     <header>
@@ -66,7 +68,7 @@
               </div>
               <div id="dropdown">
                 <div id="notifications">
-                <a title="See My Notifications" href="">Notifications</a>
+                  <a id="notifications-button">Notifications</a>
                 </div>
                 <div id="update">
                   <a title="Update My Information" href="update.php">Update Profile</a>

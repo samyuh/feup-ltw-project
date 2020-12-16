@@ -3,10 +3,11 @@
   include_once('../includes/session.php');
   include_once('../includes/database.php');
 
-  /* Database Managers Files */
+  /* Database Managers Files */  
   include_once('../database/users.php');  
-  include_once('../database/pets.php');    
-  include_once('../database/adopt_pet.php');
+  include_once('../database/pets.php');  
+  include_once('../database/pets_adoption.php');  
+  include_once('../database/pets_profile.php');  
 
   /* Verifications and set variables */
   if(!isLogged()) {
@@ -17,7 +18,8 @@
     header('Location: ../error404.php');
   }
   
-  addPetPhoto($_GET['idPet']);
+  $idUser = $_SESSION['user']['idUser'];
+  addPetPhoto($idUser, $_GET['idPet']);
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

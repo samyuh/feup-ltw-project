@@ -4,7 +4,9 @@
   include_once('../includes/database.php');
 
   /* Database Managers Files */
-  include_once('../database/pets.php');
+  include_once('../database/pets.php');  
+  include_once('../database/pets_adoption.php');  
+  include_once('../database/pets_profile.php');  
 
   /* Verifications and set variables */
   $nameSearch = isset($_POST["nameSearch"]) ? $_POST["nameSearch"] : '';
