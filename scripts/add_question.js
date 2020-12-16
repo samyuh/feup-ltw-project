@@ -54,6 +54,10 @@ function addReply(idQuestion) {
 }
 
 function displayQuestions(data) {
+    let idPet = questionForm.querySelector('input[name="idPet"]').value
+    let idUser = questionForm.querySelector('input[name="idUser"]').value
+    let owner = questionForm.querySelector('input[name="owner"]').value
+
     let section = document.createElement('section')
     section.setAttribute('id',data.idQuestion)
 
@@ -84,10 +88,13 @@ function displayQuestions(data) {
         section.appendChild(question)
         section.appendChild(spanAuthor)
         section.appendChild(spanDate)
-        section.appendChild(reply)
-        
-        reply.appendChild(input)
-        reply.appendChild(submit)
+
+        // If user is the owner, he can reply to answers
+        if(owner == idUser) {
+            section.appendChild(reply)
+            reply.appendChild(input)
+            reply.appendChild(submit)
+        }
     }
     else {
         let spanAnswer = document.createElement('p')
