@@ -47,7 +47,7 @@
   padding: 2em;
 }
 
-#pets #proposals .unique-proposal{
+#pet #proposals .unique-proposal{
   display: grid;
   grid-template-columns: 50px auto 200px ;
 }
@@ -66,14 +66,14 @@
   }
 }
 /*style */
-#pets #proposals h2,
+#pet #proposals h2,
 #owner #favorite-pets h2,
 #owner #adoption-pets h2,
 #owner #adopted h2{
   padding-bottom: 20px;
 }
 
-#pets #proposals .unique-proposal img,
+#pet #proposals .unique-proposal img,
 #owner #favorite-pets .unique-favorite-pet img,
 #owner #adoption-pets .unique-adoption-pet img,
 #owner #adopted .unique-adopted img{
@@ -81,8 +81,8 @@
   align-self: center;
 }
 
-#pets #proposals .unique-proposal p,
-#pets #proposals .unique-proposal form,
+#pet #proposals .unique-proposal p,
+#pet #proposals .unique-proposal form,
 #owner #favorite-pets .unique-favorite-pet p,
 #owner #adoption-pets .unique-adoption-pet p,
 #owner #adopted .unique-adopted p{
