@@ -269,4 +269,20 @@
         $originalFileName = "../images/pet-profile/pet-$idPet/profile.jpg";
         move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
     }
+
+    function deleteQuestion($idUser, $idQuestion) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT * FROM User, UserFoundPet, PetQuestion WHERE 
+                                                                            PetQuestion.idQuestion = ? 
+                                                                            and PetQuestion.idPet = UserFoundPet.idPet
+                                                                            and User.idUser = UserFoundPet.idUser');
+        $stmt->execute(array($idQuestion));
+        $question = $stmt->fetch();
+
+        if((!empty($question)) && ($question['idUser'] == $idUser)) {
+            $stmt = $db->prepare('DELETE FROM PetQuestion WHERE idQuestion = ?');
+            $stmt->execute(array($idQuestion));
+        }
+    }
 ?>

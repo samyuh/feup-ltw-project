@@ -43,7 +43,7 @@ function addQuestion(event) {
 
 function addReply(idQuestion) {
     let form = document.getElementById('reply-' + idQuestion)
-    let question = form.querySelector('input[name="idReply"]').value
+    let question = form.querySelector('input[name="reply-text"]').value
 
     let request = new XMLHttpRequest();
     request.open('post', 'action/action_add_reply.php?',true)
@@ -53,8 +53,16 @@ function addReply(idQuestion) {
     refreshProfile()
 }
 
+function deleteQuestion(idQuestion) {
+    let request = new XMLHttpRequest();
+    request.open('post', 'action/action_delete_question.php?',true)
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    request.send(encodeForAjax({'idQuestion': idQuestion}))
+
+    refreshProfile()
+}
+
 function displayQuestions(data) {
-    let idPet = questionForm.querySelector('input[name="idPet"]').value
     let idUser = questionForm.querySelector('input[name="idUser"]').value
     let owner = questionForm.querySelector('input[name="owner"]').value
 
@@ -73,14 +81,22 @@ function displayQuestions(data) {
     let reply = document.createElement('form')
     reply.setAttribute('id','reply-' + data.idQuestion)
 
+    let deleteReply = document.createElement('form')
+
+    let deleteButton = document.createElement('button')
+    deleteButton.setAttribute('name', 'delete-button')
+    deleteButton.innerHTML = "Delete"
+    deleteButton.addEventListener('click', function() { deleteQuestion(data.idQuestion) })
+    deleteButton.addEventListener('click', prevent)
+
     if(data.answer == null) {
         let input = document.createElement('input')
         input.setAttribute('type','text')
         input.setAttribute('placeholder','answer to this question')
-        input.setAttribute('name','idReply')
+        input.setAttribute('name','reply-text')
 
         let submit = document.createElement('button')
-        submit.setAttribute('name','submitButton')
+        submit.setAttribute('name','submit-button')
         submit.innerHTML = "Reply"
         submit.addEventListener('click', function(){addReply(data.idQuestion)})
         submit.addEventListener('click', prevent)
@@ -94,6 +110,8 @@ function displayQuestions(data) {
             section.appendChild(reply)
             reply.appendChild(input)
             reply.appendChild(submit)
+            section.appendChild(deleteReply)
+            deleteReply.appendChild(deleteButton)
         }
     }
     else {
@@ -109,11 +127,15 @@ function displayQuestions(data) {
         section.appendChild(question)
         section.appendChild(spanAuthor)
         section.appendChild(spanDate)
-        section.appendChild(reply)
 
         section.appendChild(spanAnswer)
         section.appendChild(spanAuthorAnswer)
         section.appendChild(spanDateAnswer)
+
+        if(owner == idUser) {
+            section.appendChild(deleteReply)
+            deleteReply.appendChild(deleteButton)
+        }
     }
 
     return section
