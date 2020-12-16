@@ -2,7 +2,7 @@
   session_start();
 
   function generate_random_token() {
-      //openssl_random_pseudo_bytes(32)
+    //openssl_random_pseudo_bytes(32)
     return bin2hex(random_bytes(32));
   }
 

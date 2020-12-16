@@ -8,14 +8,22 @@
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
   include_once('../database/pets_profile.php');  
-  
+
   /* Verifications and set variables */
   if(!isLogged()) {
     header('Location: ../error404.php');
   }
+
+  /*
+  if ($_SESSION['csrf'] != $_GET['token']) {
+    header('Location: ../error404.php');
+  }
+  */
+
+  $idUser = $_SESSION['user']['idUser'];
+  $idQuestion = $_POST['idQuestion'];
   
-  $user = $_SESSION['user'];
-  updateFavoriteList($user, $_POST['idPet']);
-  
+  deleteQuestion($idUser, $idQuestion);
+
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

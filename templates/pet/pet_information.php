@@ -4,7 +4,7 @@
           <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet Profile Picture">
           <section id="name_and_edit">
             <h1><a href="pet_profile.php?idPet=<?=$pet['idPet']?>"><?= htmlentities($pet['petName']) ?></a></h1>
-            <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) {?>
+            <?php if (isLogged() && canUpdate($_SESSION['user']['idUser'], $pet['idPet'])) {?>
               <form action="pet_update.php?idPet=<?=$pet['idPet'] ?>" method="post">
                 <button type="submit"><i class="fa fa-pencil"></i></button>
               </form>
@@ -50,7 +50,7 @@
 
       <section id="posts">
         <h2>Posts</h2>
-          <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
+          <?php if (isLogged() && canUpdate($_SESSION['user']['idUser'], $pet['idPet'])) { ?>
             <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
               <input type="text" name="post">
               <input type="submit" value="Post">
