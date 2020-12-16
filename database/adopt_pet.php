@@ -132,7 +132,9 @@
         if(empty($petsID)) {
             $stmt = $db->prepare('INSERT INTO UserAdoptedPet VALUES (?, ?)');
             $stmt->execute(array($idUser, $idPet));
-            print('add');
+            
+            $delstmt = $db->prepare('DELETE FROM AdoptionProposal WHERE idPet = ?');
+            $delstmt->execute(array($idPet));
         }
         else {
             
