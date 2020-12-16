@@ -47,6 +47,18 @@
   padding: 2em;
 }
 
+#pets #proposals .unique-proposal{
+  display: grid;
+  grid-template-columns: 50px auto 200px ;
+}
+
+#owner #favorite-pets .unique-favorite-pet,
+#owner #adoption-pets .unique-adoption-pet,
+#owner #adopted .unique-adopted{
+  display: grid;
+  grid-template-columns: 55px auto;
+}
+
 @media screen and (max-width: 1200px){
   #profile-grid {
     display: flex;
@@ -54,7 +66,29 @@
   }
 }
 /*style */
+#pets #proposals h2,
+#owner #favorite-pets h2,
+#owner #adoption-pets h2,
+#owner #adopted h2{
+  padding-bottom: 20px;
+}
 
+#pets #proposals .unique-proposal img,
+#owner #favorite-pets .unique-favorite-pet img,
+#owner #adoption-pets .unique-adoption-pet img,
+#owner #adopted .unique-adopted img{
+  border-radius: 50%;
+  align-self: center;
+}
+
+#pets #proposals .unique-proposal p,
+#pets #proposals .unique-proposal form,
+#owner #favorite-pets .unique-favorite-pet p,
+#owner #adoption-pets .unique-adoption-pet p,
+#owner #adopted .unique-adopted p{
+  align-self: center;
+  font-weight: 500;
+}
 
 /* -------------  Common Between Profile Types ------------- */
 .profile-header .profile-image img{
@@ -99,31 +133,16 @@
   justify-content: center;
 }
 
-
-#proposals .unique-proposal {
-  display: grid;
-  grid-template-columns: 50px auto 200px ;
-  
-}
-
-#proposals h2, #question h2{
-  padding-bottom: 20px;
-}
-
-.unique-proposal img{
-  border-radius: 50%;
-  align-self: center;
-}
-
-.unique-proposal p,
-.unique-proposal form{
-  align-self: center;
-}
-
 #proposals #adoption-proposal {
   padding-top: 1em;
   display: flex;
   justify-content: center;
+}
+
+#question .question-form {
+  padding-top: 1em;  
+  display: flex;
+  flex-direction: column;
 }
 
 #question {
@@ -140,13 +159,20 @@
   font-size: 11px;
 }
 
-#question .question-form {
-  padding-top: 1em;  
-  display: flex;
-  flex-direction: column;
+#question h2{
+  padding-bottom: 20px;
 }
 
 #pet #profile-grid #question input[type=submit]{
   margin-top: 1em;
   margin-left: auto;
 }
+
+
+
+
+
+
+
+
+

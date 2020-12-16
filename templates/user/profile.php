@@ -18,22 +18,28 @@
     <section id="favorite-pets">
       <h2>Favorite Pets</h2>
       <?php foreach($userPets as $fav) { ?>
-        <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
-        <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+        <article class="unique-favorite-pet">
+          <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="45" height="45" alt="Pet Images">
+          <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+      </article>
       <?php } ?>
     </section>
     <section id="adoption-pets">
       <h2>Pets for Adoption</h2>
       <?php foreach($toAdoptPets as $fav) { ?>
-        <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
-        <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+        <article class="unique-adoption-pet">
+          <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="45" height="45" alt="Pet Images">
+          <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+        </article>
       <?php } ?>
     </section>
     <section id="adopted">
       <h2>Adopted Pets!</h2>
       <?php foreach($adoptPets as $fav) { ?>
-        <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="20" height="20" alt="Pet Images">
-        <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+        <article class="unique-adopted">
+          <img src="../images/pet-profile/pet-<?=$fav['idPet']?>/profile.jpg" width="45" height="45" alt="Pet Images">
+          <p><a href="pet_profile.php?idPet=<?=$fav['idPet']?>"><?= htmlentities($fav['petName']) ?></a></p>
+        </article>
       <?php } ?>
     </section>
   </div>
