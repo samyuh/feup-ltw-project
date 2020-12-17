@@ -58,14 +58,14 @@
           </aside>
           <?php if($_SESSION['user']['age'] == "male") { ?>
             <section class="options">
-              <label>Male <input class="hide" type="radio" name="genderSearch" value="male" checked="checked"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
-              <label>Female <input class="hide" type="radio" name="genderSearch" value="female"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+              <label>Male <input class="hide" type="radio" name="gender" value="male" checked="checked"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+              <label>Female <input class="hide" type="radio" name="gender" value="female"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
             </section>
           <?php } else { ?>
             <section class="options">
             Insert Gender:
-            <label>Male <input class="hide" type="radio" name="genderSearch" value="male""><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
-            <label>Female <input class="hide" type="radio" name="genderSearch" value="female" checked="checked"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+            <label>Male <input class="hide" type="radio" name="gender" value="male"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+            <label>Female <input class="hide" type="radio" name="gender" value="female" checked="checked"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
             </section>
           <?php } ?>
           <aside id="update-age">
@@ -75,7 +75,7 @@
 
           <aside id="update-location">
           </aside>
-          <input type="text" name="location" placeholder="Location" value="<?= htmlentities($_SESSION['user']['location']) ?>">
+          <input type="text" name="location" placeholder="location" value="<?= htmlentities($_SESSION['user']['location']) ?>">
           
           <aside id="update-actual-password-information-error">
           </aside>

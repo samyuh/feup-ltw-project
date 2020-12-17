@@ -38,6 +38,6 @@
     }
   }
   else {
-    header('Location: ../register.php');
+    header('Location: ../update.php');
   }
 ?>
