@@ -12,10 +12,11 @@ header{
 }
 
 /* ---------- BODY LAYOUT ---------- */
-body.dark-theme {
+body {
   --background-body: #FFFAE2;
   --footer-color: white;
   --footer-background: black;
+  --text-color: black;
   /* Containers */
   --container-principal: rgba(255,255,255,0.6);
   --container-primary-shadow: rgba(0, 0, 0, .3);
@@ -69,7 +70,7 @@ body.dark-theme {
   --animation-color-2: rgb(19, 77, 165);
 }
 
-body {
+body.dark-theme {
     --background-body: #1b262c; /* background body*/
     --footer-color: white; /* footer text color */
     --footer-background: #1b262c; /* footer background */
