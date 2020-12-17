@@ -1,5 +1,22 @@
 <div id="update-page">
   <article class="update-form">
+        <h2>Update Photo</h2>
+        <form id="update-photo-form" class="change-information" action="../../action/action_update_profile_photo.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+
+          <aside id="update-image">
+          </aside>
+          <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
+          <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Image Preview" />
+          
+          <aside id="update-actual-password-information-error">
+          </aside>
+          <input type="password" name="password" placeholder="Password">
+
+          <button id="update-photo-button" type="submit" value="Update Password">Update Information</button>
+        </form>
+  </article>
+
+  <article class="update-form">
         <h2>Update Username</h2> 
         <form id="update-username-form" class="change-username" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
           <aside id="update-new-username-error">
@@ -51,15 +68,9 @@
           Age <input type="range" name="age" id="registerAge" value="<?= htmlentities($_SESSION['user']['age']) ?>" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
           <output><?= htmlentities($_SESSION['user']['age']) ?></output>
 
-
           <aside id="update-location">
           </aside>
           <input type="text" name="location" placeholder="Location" value="<?= htmlentities($_SESSION['user']['location']) ?>">
-
-          <aside id="update-image">
-          </aside>
-          <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
-          <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Image Preview" />
           
           <aside id="update-actual-password-information-error">
           </aside>

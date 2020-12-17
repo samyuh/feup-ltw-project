@@ -134,6 +134,19 @@
         else return FALSE;
       }
 
+      function updateUserProfilePhoto($user, $password) {
+        $db = Database::instance()->db();
+
+        if (checkUserPassword($user['username'], $password) !== false) {
+            $idUser = $user['idUser'];
+            $originalFileName = "../images/user/user-$idUser.jpg";
+            move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+
+            return TRUE;
+        }
+        else return FALSE;
+      }
+
       function updatePassword($user, $new_password, $password) {
         $db = Database::instance()->db();
 
