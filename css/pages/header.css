@@ -36,13 +36,17 @@ header #right-side{
   margin-right: 5em;
 }
 
-header #search-bar, 
-header #right-side #settings{
+header #search-bar,
+#sign-up,
+#signed-in{
   margin-right: 3em;
 }
 
-header #right-side #settings{
-  padding-top: 1em;
+header #right-side, #settings{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 header #search-bar {
@@ -177,7 +181,7 @@ body > header #sign-up a:first-child {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(174, 220, 247);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -189,19 +193,22 @@ body > header #sign-up a:first-child {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(233, 211, 151);
   -webkit-transition: .4s;
-  content: "\f058";
   color: black;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #233849;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px  #233849;
+}
+
+input:checked +.slider:before{
+  background-color: rgb(209, 209, 209);
 }
 
 input:checked + .slider:before {
