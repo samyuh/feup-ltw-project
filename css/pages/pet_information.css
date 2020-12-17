@@ -64,7 +64,7 @@
 }
 
 #pet-information #posts #uniquepost section{
-  border: #cccccc 1px solid;
+  border: var(--container-border) 1px solid;
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 15px;
@@ -86,7 +86,7 @@
 #pet-information #pet-detailed-information p{
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  border-bottom: #000000 1px solid;
+  border-bottom: var(--text-bottom-color) 1px solid;
 }
 
 

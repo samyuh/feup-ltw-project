@@ -81,7 +81,7 @@ body.dark-theme {
     --container-principal: #162447; /* Container Colors */
     --container-primary-shadow: rgba(0, 0, 0, .3); /* Shadow */
     --container-secondary-shadow: rgba(0, 0, 0, .2); /* Shadow */
-    --container-border: black; /* Border */
+    --container-border: #3282b8; /* Border */
     /* Search */
     --search-background-color: #bbe1fa; /* */
     /* Notifications */
