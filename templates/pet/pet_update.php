@@ -27,9 +27,9 @@
                 <h1>Delete Pet Album Photo</h1>
                 <?php foreach($photos as $photo) {?>
                     <section id="buttons-photos">
-                        <form action="../../action/action_delete_pet_photo.php?idPhoto=<?=$photo['idPhoto']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                            <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Pet Image" width="30" height="30">
-                            <input class="column" type="submit" value="Delete Photo">
+                        <form class="delete-pet-photo-album" action="../../action/action_delete_pet_photo.php?idPhoto=<?=$photo['idPhoto']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                            <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Pet Image" width="100" height="100">
+                            <input type="submit" value="Delete Photo">
                         </form>
                     </section>            
                     <?php } ?>
@@ -55,7 +55,7 @@
                 <div class="update-post">
                     <form action="../../action/action_pet_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
                         <label>Update Post <input type="text" name="post" value="<?= htmlentities($post['post']) ?>"></label>
-                        <input class="column" type="submit" value="Update Post">
+                        <input type="submit" value="Update Post">
                     </form> 
                     <form action="../../action/action_pet_delete_post.php?id=<?=$post['id']?>" method="post">
                         <button type="submit"> Delete Post</button>

@@ -7,7 +7,7 @@
 
     /* style */
     height: 40em;
-    width: 18em;
+    width: 30em;
     text-align: center;
     align-self: flex-start;
 }
@@ -15,7 +15,6 @@
 #update-page {    
     justify-content: center;
     align-items: center;
-    column-gap: 2em;
 }
 
 #update-page button {
@@ -29,7 +28,7 @@
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 1040px) {
     .update-form {
         height: auto;
     } 
@@ -52,6 +51,17 @@
 .update-back-profile-button {
     text-align: center;
     padding: 1em;
+}
+
+.delete-pet-photo-album{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    align-items: center;
+}
+
+.delete-pet-photo-album input[type="submit"]{
+    height: 3em;
 }
 
 
