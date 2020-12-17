@@ -211,6 +211,26 @@
   margin-top: 0.5em;
 }
 
+#pet .button-dev {
+  display: flex;
+}
+
+#pet .reply-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#pet .reply-button-submit {
+    margin-left: 1em;
+}
+
+#pet .delete-button {
+    padding-left: 1em;
+    padding-top: .8em;
+}
+
 
 
 
