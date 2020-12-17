@@ -38,12 +38,7 @@ function validateAddPet(event) {
     if(!petNameError && !colorError && !bioError && !fileError){
         form.submit()
     } 
-    
-
-    
 }
-
-
 
 function clearAddPetHTML(){
     document.getElementById('addPet-petName-error').innerHTML = ''

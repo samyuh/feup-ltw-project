@@ -1,3 +1,4 @@
+'use strict'
 
 var slideIndex = 1;
 if(document.getElementsByClassName("pet-album").length){

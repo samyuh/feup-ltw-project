@@ -1,5 +1,7 @@
+'use strict'
+
 // Select the button
-const btnDark = document.getElementById("dark-mode-toggle");
+let btnDark = document.getElementById("dark-mode-toggle")
 
 // Listen for a click on the button 
 btnDark.addEventListener("click", function() {
