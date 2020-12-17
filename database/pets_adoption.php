@@ -28,15 +28,12 @@
         }
     }
 
-    function updateAdoptionProposal($user, $idPet) {
+    function addProposal($idUser, $idPet) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
-        $stmt->execute(array($user['idUser'], $idPet));
-        $petsID = $stmt->fetchAll();
-        if(empty($petsID)) {
+        if(!isProposed($idUser, $idPet)) {
             $stmt = $db->prepare('INSERT INTO AdoptionProposal VALUES (?, ?)');
-            $stmt->execute(array($user['idUser'], $idPet));
+            $stmt->execute(array($idUser, $idPet));
         }
     }
     
