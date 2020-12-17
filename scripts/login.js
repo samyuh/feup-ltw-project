@@ -12,7 +12,6 @@ function validateLogin(event) {
     let username = form.querySelector('input[name="username"]').value
     let password = form.querySelector('input[name="password"]').value
 
-
     let errorUsername = false
     let errorPassword = false
 
