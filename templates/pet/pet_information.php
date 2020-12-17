@@ -38,7 +38,7 @@
           <h2>Photos</h2>
           <div class="slideshow-container">
             <?php foreach($photos as $photo) {?>
-              <div class="MyPhotos">
+              <div class="pet-album">
                 <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying pet image" width="400" height="400">
               </div>
             <?php } ?>
@@ -67,33 +67,5 @@
       </section>
     </section>
 </div>
-
-<!-- clean up -->
-<script>
-  var slideIndex = 1;
-  if(document.getElementsByClassName("MyPhotos").length){
-
-    showSlides(slideIndex);
-  }
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("MyPhotos");
-
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slides[slideIndex-1].style.display = "block"; 
-  }
-</script>
 
     

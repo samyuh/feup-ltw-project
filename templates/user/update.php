@@ -39,18 +39,22 @@
 
           <aside id="update-gender">
           </aside>
-          Male <input type="radio" name="gender" value="male">
-          Female <input type="radio" name="gender" value="female">
-
+          <?php if($_SESSION['user']['age'] == "male") { ?>
+            Male <input type="radio" name="gender" value="male" checked="checked">
+            Female <input type="radio" name="gender" value="female">
+          <?php } else { ?>
+            Male <input type="radio" name="gender" value="male">
+            Female <input type="radio" name="gender" value="female"checked="checked" >
+          <?php } ?>
           <aside id="update-age">
           </aside>
-          Age <input type="range" name="age" id="registerAge" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
-          <output>20</output>
+          Age <input type="range" name="age" id="registerAge" value="<?= htmlentities($_SESSION['user']['age']) ?>" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
+          <output><?= htmlentities($_SESSION['user']['age']) ?></output>
 
 
           <aside id="update-location">
           </aside>
-          <input type="text" name="location" placeholder="Location">
+          <input type="text" name="location" placeholder="Location" value="<?= htmlentities($_SESSION['user']['location']) ?>">
 
           <aside id="update-image">
           </aside>
@@ -74,15 +78,3 @@
         </form>
     </article>
 </div>
-
-<!--- Clean this -->
-<script>
-  var loadFile = function(event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function() {
-      URL.revokeObjectURL(output.src) // free memory
-    }
-  };
-</script>
-<!--- Clean this -->

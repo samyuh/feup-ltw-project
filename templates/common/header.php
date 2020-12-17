@@ -24,6 +24,7 @@
     <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/layout.css" rel="stylesheet">
     <script src="../../scripts/search.js" defer> </script>
+    <script src="../../scripts/dark_theme.js" defer> </script>
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/add_pet.js" defer> </script>
     <script src="../../scripts/set_favorite.js" defer> </script>
@@ -31,7 +32,12 @@
     <script src="../../scripts/notifications.js" defer> </script>
     <script src="../../scripts/pet_photos.js" defer> </script>
   </head>
-  <body>
+
+  <?php if($_SESSION['theme'] == 'dark') { ?>
+    <body class="dark-theme">
+  <?php } else { ?>
+    <body>
+  <?php } ?>
     <header>
       <div id="name-slogan">
         <h1><a title="Visit Pet Shelter" href="index.php">Pet Shelter</a></h1>
@@ -55,6 +61,7 @@
       </div>
       
       <div id="right-side">
+        <button id="dark-mode-toggle">Toggle Dark-Mode</button>
         <div id="settings">
           <?php if (!isLogged()) { ?>
             <div id="sign-up">
@@ -82,3 +89,4 @@
         </div> 
       </div>
     </header>
+

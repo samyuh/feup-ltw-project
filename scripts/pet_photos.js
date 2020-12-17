@@ -1,6 +1,6 @@
 
 var slideIndex = 1;
-if(document.getElementsByClassName("MyPhotos").length){
+if(document.getElementsByClassName("pet-album").length){
     showSlides(slideIndex);
 }
 function plusSlides(n) {
@@ -14,7 +14,7 @@ function currentSlide(n) {
 function showSlides(n) {
     
     var i;
-    var slides = document.getElementsByClassName("MyPhotos");
+    var slides = document.getElementsByClassName("pet-album");
 
     if (n > slides.length) {slideIndex = 1}    
     if (n < 1) {slideIndex = slides.length}

@@ -106,7 +106,7 @@
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: var(--photo-next-prev);
     font-weight: bold;
     font-size: 18px;
     user-select: none;
