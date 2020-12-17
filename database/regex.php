@@ -27,11 +27,11 @@
     }
 
     function validSpecie($element) {
-        return preg_match ("/^dog|cat$/", $element);
+        return preg_match ("/^(dog|cat)$/", $element);
     }
 
     function validSize($element) {
-        return preg_match ("/^small|medium|large$/", $element);
+        return preg_match ("/^(small|medium|large)$/", $element);
     }
 
     function validColor($element) {
