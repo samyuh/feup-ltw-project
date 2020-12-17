@@ -61,6 +61,7 @@
       </div>
       
       <div id="right-side">
+        <button id="dark-mode-toggle">Toggle Dark-Mode</button>
         <div id="settings">
           <?php if (!isLogged()) { ?>
             <div id="sign-up">
@@ -88,6 +89,4 @@
         </div> 
       </div>
     </header>
-
-    <button class="teste">Toggle Dark-Mode</button>
 
