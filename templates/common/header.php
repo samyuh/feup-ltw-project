@@ -88,7 +88,11 @@
             </div>
           <?php } ?> 
           <label class="dark-mode-switch">
-            <input type="checkbox" id="dark-mode-toggle">
+            <?php if($_SESSION['theme'] == 'dark') { ?>
+              <input type="checkbox" id="dark-mode-toggle" checked="checked">
+            <?php } else { ?>
+              <input type="checkbox" id="dark-mode-toggle">
+            <?php } ?>
             <span class="slider round"></span>
           </label>
         </div> 
