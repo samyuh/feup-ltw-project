@@ -27,7 +27,7 @@
   $color =  $_POST['ncolor'];
   $bio = $_POST['nspecie'];
 
-  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validColor($color) && validText($bio)) {
+  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validText($color) && validText($bio)) {
     addPet($user, $_POST['npetName'], $_POST['nspecie'], $_POST['ngender'], $_POST['nsize'], $_POST['ncolor'], $_POST['bio']);
     
     header('Location: ../index.php');

@@ -17,6 +17,7 @@ body {
   --footer-color: white;
   --footer-background: black;
   --text-color: black;
+  --text-bottom-color: black;
   /* Containers */
   --container-principal: rgba(255,255,255,0.6);
   --container-primary-shadow: rgba(0, 0, 0, .3);
@@ -75,6 +76,7 @@ body.dark-theme {
     --footer-color: white; /* footer text color */
     --footer-background: #1b262c; /* footer background */
     --text-color: #3282b8;
+    --text-bottom-color: #3282b8;
     /* Containers */
     --container-principal: #162447; /* Container Colors */
     --container-primary-shadow: rgba(0, 0, 0, .3); /* Shadow */
