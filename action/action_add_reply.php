@@ -19,7 +19,7 @@
   $idQuestion = $_POST['idQuestion'];
   $question = $_POST['question'];
 
-  if(validText($question)) {
+  if(validNumber($idQuestion) && validText($question)) {
     addAnswer($user, $idQuestion, $question);
   }
 ?>

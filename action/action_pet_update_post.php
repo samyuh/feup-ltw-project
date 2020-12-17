@@ -23,7 +23,7 @@
   $idPost = $_GET['id'];
   $info = $_POST['post'];
 
-  if(validText($info)) {
+  if(validNumber($idPost) && validText($info)) {
     updatePost($idUser, $idPost, $info);
   }
 

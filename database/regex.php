@@ -10,7 +10,7 @@
         return preg_match ("/^(fe)?male$/", $element);
     }
 
-    function validAge($element) {
+    function validNumber($element) {
         return preg_match ("/^\d+$/", $element);
     }
 

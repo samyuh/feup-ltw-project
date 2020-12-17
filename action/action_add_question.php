@@ -23,7 +23,7 @@
   $author = $_SESSION['user']['username'];
   $question = $_POST['question'];
   
-  if(validText($question)) {
+  if(validNumber($idPet) && validText($question)) {
     addQuestion($idPet, $author, $question);
   }
 

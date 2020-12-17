@@ -25,7 +25,7 @@
   $new_location = $_POST['location'];   
   $password = $_POST['password'];
 
-  if(validGender($new_gender) && validAge($new_age) && validText($new_location) && validPassword($password)) {
+  if(validGender($new_gender) && validNumber($new_age) && validText($new_location) && validPassword($password)) {
     if(updateUserInfo($user, $new_gender, $new_age, $new_location, $password)) {
       $_SESSION['user']['gender'] = $new_gender; 
       $_SESSION['user']['age'] = $new_age; 

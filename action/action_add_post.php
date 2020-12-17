@@ -19,10 +19,12 @@
     header('Location: ../error404.php');
   }
   
+  $user = $_SESSION['user'];
   $post = $_POST['post'];
+  $idPet = $_GET['idPet'];
   
-  if(validText($post)) {
-    addPost($_SESSION['user'], $_GET['idPet'], $post);
+  if(validText($post) && validNumber($idPet)) {
+    addPost($user, $idPet, $post);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

@@ -3,7 +3,8 @@
   include_once('../includes/session.php');
   include_once('../includes/database.php');
 
-  /* Database Managers Files */  
+  /* Database Managers Files */ 
+  include_once('../database/regex.php'); 
   include_once('../database/users.php');  
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
@@ -19,7 +20,14 @@
   }
   
   $idUser = $_SESSION['user']['idUser'];
-  addPetPhoto($idUser, $_GET['idPet']);
+  $idPet = $_GET['idPet'];
 
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  if(validNumber($idPet)) {
+    addPetPhoto($idUser, $idPet);
+    
+    header('Location: ../index.php');
+  }
+  else {
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
 ?>

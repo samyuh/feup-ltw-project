@@ -17,7 +17,7 @@
   $location = $_POST['location'];
   $password = $_POST['password'];
 
-  if(validUsername($username) && validGender($gender) && validAge($age) && validText($location) && validPassword($password)) {
+  if(validUsername($username) && validGender($gender) && validNumber($age) && validText($location) && validPassword($password)) {
     if(insertUser($username, $gender, $age, $location, $password)) {
       header('Location: ../login.php');
     }

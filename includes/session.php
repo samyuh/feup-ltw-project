@@ -1,5 +1,7 @@
 <?php
+  session_set_cookie_params(60*60*24, '/');
   session_start();
+  //session_regenerate_id(true);
 
   function generate_random_token() {
     //openssl_random_pseudo_bytes(32)
