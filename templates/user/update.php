@@ -63,9 +63,8 @@
             </section>
           <?php } else { ?>
             <section class="options">
-            Insert Gender:
-            <label>Male <input class="hide" type="radio" name="gender" value="male"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
-            <label>Female <input class="hide" type="radio" name="gender" value="female" checked="checked"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+              <label>Male <input class="hide" type="radio" name="gender" value="male"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+              <label>Female <input class="hide" type="radio" name="gender" value="female" checked="checked"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
             </section>
           <?php } ?>
           <aside id="update-age">

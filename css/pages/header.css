@@ -68,7 +68,7 @@ header #search-bar {
   border: none;
   padding: 0.3em;
   color: var(--search-background-icon);
-  background-color: var(--search-background-color);
+  background-color: transparent;
 }
 
 #search-bar .mobile-search-bar button{
@@ -148,10 +148,13 @@ body > header #sign-up a:first-child {
     background-color: transparent;
     border: none;
     color: var(--icon-mobile);
+    padding-top: .5em;
+    margin-top: .5em;
   }
   .mobile-header button:hover,
   #search-bar .mobile-search-bar button:hover{
     border: none;
+    background-color: transparent;
   }
   header #search-bar {
     margin-left: 1em;
