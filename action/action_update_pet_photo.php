@@ -22,11 +22,7 @@
   $idUser = $_SESSION['user']['idUser'];
   $idPet = $_GET['idPet'];
   
-  if(updatePetPhoto($idUser, $idPet)) {
+  updatePetPhoto($idUser, $idPet);
 
-    header('Location: ../index.php');
-  } else {
-
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
-  }
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

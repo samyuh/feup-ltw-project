@@ -25,9 +25,7 @@
   if(validNumber($idPet)) {
     addPetPhoto($idUser, $idPet);
     
-    header('Location: ../index.php');
   }
-  else {
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
-  }
+  
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

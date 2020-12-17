@@ -165,9 +165,10 @@
         $db = Database::instance()->db();
 
         if (checkUserPassword($user['username'], $password) !== false) {
-            $stmt = $db->prepare('DELETE FROM User WHERE username = ?');
-            $stmt->execute(array($user['username']));
+            $stmt = $db->prepare('DELETE FROM User WHERE idUser = ?');
+            $stmt->execute(array($user['idUser']));
 
+            
             return TRUE;
         }
         else return FALSE;
