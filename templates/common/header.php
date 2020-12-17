@@ -63,7 +63,10 @@
       </div>
       
       <div id="right-side">
-        <button id="dark-mode-toggle">Toggle Dark-Mode</button>
+        <label class="dark-mode-switch">
+          <input type="checkbox" id="dark-mode-toggle">
+          <span class="slider round"></span>
+        </label>
         <div id="settings">
           <?php if (!isLogged()) { ?>
             <div id="sign-up">
