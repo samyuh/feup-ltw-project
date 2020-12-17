@@ -3,6 +3,8 @@
 if(document.getElementById('update-username-form') && document.getElementById('update-password-form')) {
     document.getElementById('update-username-button').addEventListener("click",validateUpdateUsername)
     document.getElementById('update-password-button').addEventListener("click",validateUpdatePassword)
+    document.getElementById('update-information-button').addEventListener("click",validateUpdateInformation)
+    document.getElementById('delete-profile-button').addEventListener("click",validateDeleteProfile)
 }
 
 //This function validates the username, if it doesnt work a message is raised
@@ -32,26 +34,6 @@ function validateUpdateUsername(e){
     } 
 }
 
-function updateError(id,message){
-    let section = document.getElementById(id)
-
-    let p0 = document.createElement('p')
-    p0.innerText = message
-
-    section.appendChild(p0)
-
-    return true
-}
-
-
-function clearUpdateHTML(){
-    document.getElementById('update-new-username-error').innerHTML = ''
-    document.getElementById('update-actual-password-error').innerHTML = ''
-    document.getElementById('update-new-password-error').innerHTML = ''
-    document.getElementById('update-confirm-password-error').innerHTML = ''
-    document.getElementById('update-current-password-error').innerHTML = ''
-}
-
 //This function validates the username, if it doesnt work a message is raised
 function validateUpdatePassword(e){
     e.preventDefault()
@@ -79,4 +61,79 @@ function validateUpdatePassword(e){
     }if(!newPassError && !confPassError && !passError){
         form.submit()
     } 
+}
+
+function validateUpdateInformation(e){
+    e.preventDefault()
+    let form = document.getElementById("update-information-form")
+
+    let location = form.querySelector('input[name="location"]').value
+    let password = form.querySelector('input[name="password"]').value
+    let path = form.querySelector('input[name="image"]').value
+    let file = path.replace(/^.*\\/, "");
+    //regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
+    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
+    let regexText = RegExp(/^[a-zA-Z0-9\s]+$/)
+
+    clearUpdateHTML()
+
+    let locationError = false
+    let passwordError = false
+    let fileError = false
+
+    if(!regexText.test(location)){
+        locationError = updateError("update-location","Invalid location. Must not contain special characters.")
+    }if(!regexPassword.test(password)){
+        passwordError = updateError("update-actual-password-information-error","Invalid password. Must contain at least a letter and a number.")
+    }if(!isFileImage(file)){
+        fileError = updateError("update-image","Invalid file. Must be an image.")
+    }if(!locationError && !passwordError && !fileError){
+        form.submit()
+    } 
+}
+
+function validateDeleteProfile(e){
+    e.preventDefault()
+    let form = document.getElementById("delete-profile-form")
+
+    let password = form.querySelector('input[name="password"]').value
+
+    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
+
+    clearUpdateHTML()
+
+    let passwordError = false
+    
+    if(!regexPassword.test(password)){
+        passwordError = updateError("update-delete-password-error","Invalid password. Must contain at least a letter and a number.")
+    }if(!passwordError){
+        form.submit()
+    } 
+}
+
+
+
+
+function updateError(id,message){
+    let section = document.getElementById(id)
+
+    let p0 = document.createElement('p')
+    p0.innerText = message
+
+    section.appendChild(p0)
+
+    return true
+}
+
+
+function clearUpdateHTML(){
+    document.getElementById('update-new-username-error').innerHTML = ''
+    document.getElementById('update-actual-password-error').innerHTML = ''
+    document.getElementById('update-new-password-error').innerHTML = ''
+    document.getElementById('update-confirm-password-error').innerHTML = ''
+    document.getElementById('update-current-password-error').innerHTML = ''
+    document.getElementById('update-location').innerHTML = ''
+    document.getElementById('update-actual-password-information-error').innerHTML = ''
+    document.getElementById('update-image').innerHTML = ''
+    document.getElementById('update-delete-password-error').innerHTML = ''
 }

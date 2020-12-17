@@ -23,9 +23,10 @@
     <link href="../../css/containers.css" rel="stylesheet">
     <link href="../../css/components.css" rel="stylesheet">
     <link href="../../css/layout.css" rel="stylesheet">
+    <script src="../../scripts/image_preview.js" defer> </script>
     <script src="../../scripts/search.js" defer> </script>
-    <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/add_pet.js" defer> </script>
+    <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/set_favorite.js" defer> </script>
     <script src="../../scripts/pet_question.js" defer> </script>
     <script src="../../scripts/notifications.js" defer> </script>

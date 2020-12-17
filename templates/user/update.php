@@ -72,6 +72,9 @@
     <article class="update-form">
         <h2>Delete Profile</h2>
         <form id="delete-profile-form" class="delete-profile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
+          
+          <aside id="update-delete-password-error">
+          </aside>
           <input type="password" name="password" placeholder="Actual Password">
 
           <button id="delete-profile-button" type="submit" value="Update Password">Delete Profile Permanently</button>
