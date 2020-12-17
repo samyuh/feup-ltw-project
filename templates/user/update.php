@@ -8,7 +8,7 @@
           <input type="file" name="image" accept="image/*" onchange="loadFile(event)">>
           <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Image Preview" />
           
-          <aside id="update-actual-password-information-error">
+          <aside id="update-actual-password-image-error">
           </aside>
           <input type="password" name="password" placeholder="Password">
 

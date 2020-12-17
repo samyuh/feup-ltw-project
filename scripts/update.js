@@ -1,10 +1,34 @@
 'use strict'
 
 if(document.getElementById('update-username-form') && document.getElementById('update-password-form')) {
+    document.getElementById('update-photo-button').addEventListener("click",validateUpdatePhoto)
     document.getElementById('update-username-button').addEventListener("click",validateUpdateUsername)
     document.getElementById('update-password-button').addEventListener("click",validateUpdatePassword)
     document.getElementById('update-information-button').addEventListener("click",validateUpdateInformation)
     document.getElementById('delete-profile-button').addEventListener("click",validateDeleteProfile)
+}
+
+//This function validates the username, if it doesnt work a message is raised
+function validateUpdatePhoto(e){
+    e.preventDefault()
+    let form = document.getElementById("update-photo-form")
+
+    let path = form.querySelector('input[name="image"]').value
+    let file = path.replace(/^.*\\/, "");
+    let password = form.querySelector('input[name="password"]').value
+
+    clearUpdateHTML()
+
+    let fileError = false
+    let passwordError = false
+
+    if(!regexPassword(password)) {
+        passwordError = updateError('update-actual-password-image-error',"Invalid password. Must contain at least a letter and a number.")
+    }if(!isFileImage(file)){
+        fileError = updateError("update-image","Invalid file. Must be an image.")
+    }if(!fileError && !passwordError){
+        form.submit()
+    }
 }
 
 //This function validates the username, if it doesnt work a message is raised
@@ -63,22 +87,18 @@ function validateUpdateInformation(e){
 
     let location = form.querySelector('input[name="location"]').value
     let password = form.querySelector('input[name="password"]').value
-    let path = form.querySelector('input[name="image"]').value
-    let file = path.replace(/^.*\\/, "");
 
     clearUpdateHTML()
 
     let locationError = false
     let passwordError = false
-    let fileError = false
+
 
     if(!regexText(location)){
         locationError = updateError("update-location","Invalid location. Must not contain special characters.")
     }if(!regexPassword(password)){
         passwordError = updateError("update-actual-password-information-error","Invalid password. Must contain at least a letter and a number.")
-    }if(!isFileImage(file)){
-        fileError = updateError("update-image","Invalid file. Must be an image.")
-    }if(!locationError && !passwordError && !fileError){
+    }if(!locationError && !passwordError){
         form.submit()
     } 
 }
@@ -116,6 +136,7 @@ function updateError(id,message){
 
 
 function clearUpdateHTML(){
+    document.getElementById('update-actual-password-image-error').innerHTML = ''
     document.getElementById('update-new-username-error').innerHTML = ''
     document.getElementById('update-actual-password-error').innerHTML = ''
     document.getElementById('update-new-password-error').innerHTML = ''
@@ -124,5 +145,5 @@ function clearUpdateHTML(){
     document.getElementById('update-location').innerHTML = ''
     document.getElementById('update-actual-password-information-error').innerHTML = ''
     document.getElementById('update-image').innerHTML = ''
-    document.getElementById('update-delete-password-error').innerHTML = ''
+    document.getElementById('update-delete-password-error').innerHTML = ''    
 }
