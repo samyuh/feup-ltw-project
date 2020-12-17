@@ -51,6 +51,7 @@
             <input type="hidden" id="idPet-question" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
             <input type="hidden" id="idUser-question" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
             <input type="hidden" id="owner-question" name="owner" value="<?= htmlentities($owner['idUser']) ?>">
+            <input type="hidden" id="owner-adopted-question" name="owner-adopted" value="<?= htmlentities($owerAdopted['idUser']) ?>">
             <input id="question-form-button" type="submit" value="Ask">
           </form>
           

@@ -65,7 +65,8 @@ function deleteQuestion(idQuestion) {
 function displayQuestions(data) {
     let idUser = questionForm.querySelector('input[name="idUser"]').value
     let owner = questionForm.querySelector('input[name="owner"]').value
-
+    let ownerAdopted = questionForm.querySelector('input[name="owner-adopted"]').value
+    
     let section = document.createElement('section')
     section.setAttribute('id',data.idQuestion)
 
@@ -98,7 +99,7 @@ function displayQuestions(data) {
         let submit = document.createElement('button')
         submit.setAttribute('name','submit-button')
         submit.innerHTML = "Reply"
-        submit.addEventListener('click', function(){addReply(data.idQuestion)})
+        submit.addEventListener('click', function(){ addReply(data.idQuestion) })
         submit.addEventListener('click', prevent)
 
         section.appendChild(question)
@@ -106,7 +107,7 @@ function displayQuestions(data) {
         section.appendChild(spanDate)
 
         // If user is the owner, he can reply to answers
-        if(owner == idUser) {
+        if((owner == idUser) || (ownerAdopted == idUser)) {
             section.appendChild(reply)
             reply.appendChild(input)
             reply.appendChild(submit)
@@ -132,7 +133,7 @@ function displayQuestions(data) {
         section.appendChild(spanAuthorAnswer)
         section.appendChild(spanDateAnswer)
 
-        if(owner == idUser) {
+        if((owner == idUser) || (ownerAdopted == idUser)) {
             section.appendChild(deleteReply)
             deleteReply.appendChild(deleteButton)
         }

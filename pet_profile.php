@@ -16,6 +16,7 @@
   }
 
   $owner = getPetOwner($_GET['idPet']);
+  $owerAdopted = getAdoptedOwner($pet['idPet']);
   $adopted = getPetAdopted($_GET['idPet']);
   $questions = getQuestions($_GET['idPet']);
   $posts = getPosts($_GET['idPet']);
