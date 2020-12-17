@@ -23,7 +23,7 @@
   $petId = $_GET['idPet'];
 
   if(validNumber($idUser) && validNumber($petId)) {
-    updateAdoptList($idUser, $petId);
+    adopt($idUser, $petId);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
