@@ -76,6 +76,9 @@
               <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
                 <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
               </form>
+              <form action="../../action/action_remove_proposal.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                <button type="submit"><i class="fa fa-ban"></i> Reject Proposal</button>
+              </form>
             <?php } ?>
           </article>
         <?php } ?>
