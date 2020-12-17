@@ -37,13 +37,24 @@
 
         <article class="update-form">
         <h1>Update Pet Info</h1>  
-            <form class="update-pet-info" action="../../action/action_update_pet.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
-                
+            <form class="update-pet-info" action="../../action/action_update_pet.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">      
                 <label>Update Name <input type="text" name="npetName" value="<?= htmlentities($pet['petName']) ?>"></label>
-                <label>Update Description <input type="text" name="bio" value="<?= htmlentities($pet['bio']) ?>"></label>
-                <label>Update Specie <input type="text" name="nspecie" value="<?= htmlentities($pet['specie']) ?>"></label>
-                <label>Update Gender <input type="text" name="ngender" value="<?= htmlentities($pet['gender']) ?>"></label>
-                <label>Update Size <input type="text" name="nsize" value="<?= htmlentities($pet['size']) ?>"></label>
+                <section class="options">
+                    Update Species:
+                    <label>Dog <input class="hide" type="radio" name="speciesSearch" value="dog"><i class="fa fa-fw fa-paw"></i>&nbsp;</label>
+                    <label>Cat <input class="hide" type="radio" name="speciesSearch" value="cat"><i class="fa fa-fw fa-paw"></i>&nbsp;</label>
+                </section>
+                <section class="options">
+                    Update Gender:
+                    <label>Male <input class="hide" type="radio" name="genderSearch" value="male"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+                    <label>Female <input class="hide" type="radio" name="genderSearch" value="female"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+                </section>
+                <section class="options">
+                    Update Size:
+                    <label>Small <input class="hide" type="radio" name="sizeSearch" value="small"><i class="fa fa-fw fa-check-circle"></i>&nbsp;</label>
+                    <label>Medium <input class="hide" type="radio" name="sizeSearch" value="medium"><i class="fa fa-fw fa-check-circle"></i>&nbsp;</label>
+                    <label>Large <input class="hide" type="radio" name="sizeSearch" value="large"><i class="fa fa-fw fa-check-circle"></i>&nbsp;</label>
+                </section>
                 <label>Update color <input type="text" name="ncolor" value="<?= htmlentities($pet['color']) ?>"></label>
                 <input type="submit" value="Update">
             </form>
