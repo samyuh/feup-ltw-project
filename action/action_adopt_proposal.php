@@ -19,11 +19,11 @@
     header('Location: ../error404.php');
   }
   
-  $user = $_SESSION['user'];
+  $idUser = $_SESSION['user']['idUser'];
   $petId = $_GET['idPet'];
   
   if(validNumber($petId)) {
-    updateAdoptionProposal($user, $petId);
+    addProposal($idUser, $petId);
   }
   
   header('Location: ' . $_SERVER['HTTP_REFERER']);
