@@ -66,7 +66,7 @@ function displayQuestions(data) {
     let idUser = questionForm.querySelector('input[name="idUser"]').value
     let owner = questionForm.querySelector('input[name="owner"]').value
     let ownerAdopted = questionForm.querySelector('input[name="owner-adopted"]').value
-    
+
     let section = document.createElement('section')
     section.setAttribute('id',data.idQuestion)
 
@@ -79,10 +79,15 @@ function displayQuestions(data) {
     let spanDate = document.createElement('span')
     spanDate.innerText = " on " + data.dateQuestion
 
+    let sectionForm = document.createElement('div')
+    sectionForm.setAttribute('class', 'button-dev')
+
     let reply = document.createElement('form')
+    reply.setAttribute('class', 'reply-button')
     reply.setAttribute('id','reply-' + data.idQuestion)
 
     let deleteReply = document.createElement('form')
+    deleteReply.setAttribute('class', 'delete-button')
 
     let deleteButton = document.createElement('button')
     deleteButton.setAttribute('name', 'delete-button')
@@ -98,6 +103,7 @@ function displayQuestions(data) {
 
         let submit = document.createElement('button')
         submit.setAttribute('name','submit-button')
+        submit.setAttribute('class', 'reply-button-submit')
         submit.innerHTML = "Reply"
         submit.addEventListener('click', function(){ addReply(data.idQuestion) })
         submit.addEventListener('click', prevent)
@@ -108,10 +114,11 @@ function displayQuestions(data) {
 
         // If user is the owner, he can reply to answers
         if((owner == idUser) || (ownerAdopted == idUser)) {
-            section.appendChild(reply)
+            section.appendChild(sectionForm)
+            sectionForm.appendChild(reply)
             reply.appendChild(input)
             reply.appendChild(submit)
-            section.appendChild(deleteReply)
+            sectionForm.appendChild(deleteReply)
             deleteReply.appendChild(deleteButton)
         }
     }
@@ -134,7 +141,8 @@ function displayQuestions(data) {
         section.appendChild(spanDateAnswer)
 
         if((owner == idUser) || (ownerAdopted == idUser)) {
-            section.appendChild(deleteReply)
+            section.appendChild(sectionForm)
+            sectionForm.appendChild(deleteReply)
             deleteReply.appendChild(deleteButton)
         }
     }
