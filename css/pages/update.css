@@ -75,6 +75,7 @@ button.button-edit-post{
     flex-direction: row;
     gap: 5em;
     align-items: center;
+    padding: .5em;
 }
 
 .delete-pet-photo-album input[type="submit"]{

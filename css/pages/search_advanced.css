@@ -1,38 +1,31 @@
 /* ---------- ADVANCED SEARCH LAYOUT ---------- */
 
 #search-pet-profile {
-    padding-top: 2em;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-  }
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
   
-  #search-pet-profile .profile .info{
-    display: grid;
-    grid-template-columns: 50% 50%;
-  }
-  
-  @media screen and (max-width: 1700px){
-    #search-pet-profile {
-      grid-template-columns: 50% 50%;
-    }
-  }
-  
-  @media screen and (max-width: 1200px){
-    #search-pet-profile {
-      grid-template-columns: 100%;
-    }
-  }
+#search-pet-profile .profile .info{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+  /* style */
 
-/* style */
+.profile .image{
+  padding-top: 4.5em;
+}
 
 #advanced-search-page {
-    align-items: center;
+  margin-top: 2em;
+  align-items: center;
 }
 
 #advanced-search {
-    border: none;
-    text-align: center;
-    width: 40em;
+  border: none;
+  text-align: center;
+  width: 40em;
 }
 
 #advanced-search h2 {
@@ -51,11 +44,12 @@
 #search-pet-profile .profile {
     display: flex;
     flex-direction: row;
-    min-width: 10em;
+    width: 30em;
 }
 
 #search-pet-profile .profile img {
     border-radius: 20%;
+    box-shadow:	0 0.125rem 0.5rem var(--container-primary-shadow), 0 0.0625rem 0.125rem var(--container-secondary-shadow);
 }
 
 #search-pet-profile .profile .info{
@@ -70,4 +64,22 @@
     #search-pet-profile .profile .info{
         display: none;
     }
+    .profile .image{
+      padding-top: 0;
+    }
   }
+@media screen and (max-width: 1700px){
+  #search-pet-profile {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  #search-pet-profile {
+    grid-template-columns: 100%;
+  }
+  #search-pet-profile .profile {
+    width: auto;
+    height: auto;
+  }
+}

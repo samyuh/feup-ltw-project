@@ -6,7 +6,7 @@ let place = document.getElementById('search-pet-profile')
 // Remove after including javascript in the correct place
 if(document.getElementById('name-search') != undefined) {
     refresh()
-    window.setInterval(refresh, 250)
+    //window.setInterval(refresh, 250)
     document.getElementById('name-search').addEventListener('change',sendMessage)
 }
 
@@ -99,15 +99,11 @@ function showArticle(data) {
     let p5 = document.createElement('p')
     p5.innerHTML = "Color: " + color
 
-    let p6 = document.createElement('p')
-    p6.innerHTML = "Localization:"
-
     info.appendChild(p1)
     info.appendChild(p2)
     info.appendChild(p3)
     info.appendChild(p4)
     info.appendChild(p5)
-    info.appendChild(p6)
 
     section.appendChild(image)
     section.appendChild(info)

@@ -87,6 +87,7 @@
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   border-bottom: var(--text-bottom-color) 1px solid;
+  padding: .5em;
 }
 
 

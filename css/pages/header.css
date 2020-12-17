@@ -67,7 +67,7 @@ header #search-bar {
 #search-bar button[type="submit"]{
   border: none;
   padding: 0.3em;
-  color: var(--search-background-icon);
+  color: var(--header-border);
   background-color: transparent;
 }
 
