@@ -7,17 +7,17 @@ PRAGMA foreign_keys = off;
 
 DROP TABLE IF EXISTS User;
 CREATE TABLE User (
-  idUser        INTEGER                            PRIMARY KEY,
-  username      VARCHAR(255)                       NOT NULL,
-  gender        VARCHAR(255)                        NOT NULL,
-  age           VARCHAR(255)                        NOT NULL,
+  idUser        INTEGER      PRIMARY KEY,
+  username      VARCHAR(255) NOT NULL,
+  gender        VARCHAR(255) NOT NULL,
+  age           VARCHAR(255) NOT NULL,
   location      VARCHAR(255) NOT NULL,
-  password      VARCHAR(255)                       NOT NULL
+  password      VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS Pet;
 CREATE TABLE Pet (
-    idPet       INTEGER                            PRIMARY KEY,
+    idPet       INTEGER      PRIMARY KEY,
     petName     VARCHAR(255),
     specie      VARCHAR(255),
     gender      VARCHAR(255),
@@ -29,7 +29,7 @@ CREATE TABLE Pet (
 DROP TABLE IF EXISTS PetQuestion;
 CREATE TABLE PetQuestion (
   idQuestion               INTEGER                 PRIMARY KEY,
-  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE CASCADE,
   dateQuestion VARCHAR(255),
   authorQuestion VARCHAR(255),
   question VARCHAR(255),
@@ -41,41 +41,41 @@ CREATE TABLE PetQuestion (
 DROP TABLE IF EXISTS PetPhoto;
 CREATE TABLE PetPhoto (
   idPhoto                  INTEGER                 PRIMARY KEY,
-  idPet                    INTEGER                 REFERENCES Pet(idPet)
+  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS AdoptionProposal;
 CREATE TABLE AdoptionProposal (
-  idUser                   INTEGER                 REFERENCES User(idUser),
-  idPet                    INTEGER                 REFERENCES Pet(idPet),
-  PRIMARY KEY(idUser,idPet)
+  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE CASCADE,
+  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE CASCADE,
+  PRIMARY KEY(idUser, idPet)
 );
 
 DROP TABLE IF EXISTS UserAdoptedPet;
 CREATE TABLE UserAdoptedPet (
-  idUser                   INTEGER                 REFERENCES User(idUser),
-  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL,
+  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE CASCADE,
   PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS UserFoundPet;
 CREATE TABLE UserFoundPet (
-  idUser                   INTEGER                 REFERENCES User(idUser),
-  idPet                    INTEGER                 REFERENCES Pet(idPet),
+  idUser                   INTEGER                 REFERENCES User(idUser) ON DELETE SET NULL,
+  idPet                    INTEGER                 REFERENCES Pet(idPet) ON DELETE CASCADE,
   PRIMARY KEY(idUser,idPet)
 );
 
 DROP TABLE IF EXISTS FavoritePet;
 CREATE TABLE FavoritePet (
-    idUser         INTEGER                         REFERENCES User(idUser),
-    idPet          INTEGER                         REFERENCES Pet(idPet),
+    idUser         INTEGER                         REFERENCES User(idUser) ON DELETE CASCADE,
+    idPet          INTEGER                         REFERENCES Pet(idPet) ON DELETE CASCADE,
     PRIMARY KEY(idUser, idPet)
 );
 
 DROP TABLE IF EXISTS PostsPet;
 CREATE TABLE PostsPet (
-    id         INTEGER                  PRIMARY KEY,
-    idPet      INTEGER              REFERENCES Pet(idPet),
+    id         INTEGER              PRIMARY KEY,
+    idPet      INTEGER              REFERENCES Pet(idPet) ON DELETE CASCADE,
     author     VARCHAR(255),
     datePost   VARCHAR(255),
     post       VARCHAR(255)

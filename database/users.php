@@ -165,8 +165,36 @@
         $db = Database::instance()->db();
 
         if (checkUserPassword($user['username'], $password) !== false) {
-            $stmt = $db->prepare('DELETE FROM User WHERE username = ?');
-            $stmt->execute(array($user['username']));
+            /* Query to delete pets that dont are adopted nor have a owner*/
+
+            $delPets = $db->prepare('DELETE FROM Pet
+                                     WHERE Pet.idPet in (
+                                         SELECT tempPetId FROM 
+                                            (   
+                                                SELECT Pet.idPet as tempPetId
+                                                FROM Pet, User, UserFoundPet
+                                                WHERE User.idUser = ? 
+                                                and User.idUser = UserFoundPet.idUser 
+                                                and Pet.idPet = UserFoundPet.idPet
+                                            )
+                                         WHERE tempPetId not in 
+                                            (   SELECT tempPetId FROM
+                                                    (
+                                                    SELECT Pet.idPet as tempPetId
+                                                    FROM Pet, User, UserFoundPet
+                                                    WHERE User.idUser = ? 
+                                                    and User.idUser = UserFoundPet.idUser 
+                                                    and Pet.idPet = UserFoundPet.idPet
+                                                    ),
+                                                userAdoptedPet WHERE
+                                                UserAdoptedPet.idPet = tempPetId
+                                            )
+                                     )');
+
+            $delPets->execute(array($user['idUser'], $user['idUser']));
+
+            $stmt = $db->prepare('DELETE FROM User WHERE idUser = ?');
+            $stmt->execute(array($user['idUser']));
 
             return TRUE;
         }

@@ -37,11 +37,14 @@
         if(empty($petsID)) {
             $stmt = $db->prepare('INSERT INTO AdoptionProposal VALUES (?, ?)');
             $stmt->execute(array($user['idUser'], $idPet));
-            print('add');
         }
-        else {
-            
-        }
+    }
+    
+    function removeProposal($idUser, $idPet) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('DELETE FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
+        $stmt->execute(array($idUser, $idPet));
     }
 
     /* 
@@ -71,9 +74,6 @@
             
             $delstmt = $db->prepare('DELETE FROM AdoptionProposal WHERE idPet = ?');
             $delstmt->execute(array($idPet));
-        }
-        else {
-            
         }
     }
 ?>
