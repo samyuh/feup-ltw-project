@@ -111,12 +111,6 @@
   text-align: left;
 }
 
-#information-profile {
-  border-bottom: solid;
-  padding-bottom: 5px;
-  border-width: 1px;
-}
-
 #information-profile p{
   border-bottom: var(--text-bottom-color) 1px solid;
   margin-top:0.5em;
