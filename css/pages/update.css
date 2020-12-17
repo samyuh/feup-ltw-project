@@ -31,8 +31,16 @@
 }
 
 /* --- User only CSS --- */
+#update-page .update-form h2{
+    padding-bottom: 1em;
+}
+
 #update-page #delete-profile {
     padding-bottom: 1em;
+}
+
+#update-page .options{
+    padding: 1em;
 }
 
 /* --- Pet only CSS --- */
