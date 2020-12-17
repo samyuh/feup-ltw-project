@@ -76,7 +76,9 @@ body, html{
 #register .container-forms{
     height: auto;
 }
-
+.container-forms .options{
+    padding: 1em;
+}
 .submit {
     padding-top: 1em;
 }
