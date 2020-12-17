@@ -11,6 +11,7 @@
     <link href="../../css/pages/footer.css" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../scripts/regex.js" defer> </script>
     <script src="../../scripts/register.js" defer> </script>
     <script src="../../scripts/login.js" defer> </script>
   </head>
