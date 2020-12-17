@@ -36,8 +36,10 @@
           <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : htmlentities($owner['username']) ?></a></p>
             <?php if(!empty($adopted)) { ?>
                 <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= htmlentities($adopted['username']) ?></a></p>
-            <?php } else { ?>
-                <p>Not adopted yet!</p>
+            <?php } else if(isAdopted($pet['idPet'])) {?>
+                <p>Adopted by: Deleted Account</p>
+            <?php } else {?>
+                <p>This pet is not adopted!</p>
             <?php } ?>
       </section>
 
