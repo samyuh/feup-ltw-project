@@ -46,9 +46,9 @@
         <?php if (isLogged()) { ?>
           <form id='question-form' action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="text" name="question">
-            <input type="hidden" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
-            <input type="hidden" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
-            <input type="hidden" name="owner" value="<?= htmlentities($owner['idUser']) ?>">
+            <input type="hidden" id="idPet-question" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
+            <input type="hidden" id="idUser-question" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
+            <input type="hidden" id="owner-question" name="owner" value="<?= htmlentities($owner['idUser']) ?>">
             <input id="question-form-button" type="submit" value="Ask">
           </form>
           
