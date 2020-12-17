@@ -121,6 +121,7 @@
   border-bottom: var(--text-bottom-color) 1px solid;
   margin-top:0.5em;
   margin-bottom: 0.5em;
+  padding: .5em;
 }
 
 #information-profile-header{
