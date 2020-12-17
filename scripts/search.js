@@ -16,7 +16,7 @@ function refresh() {
     request.open('post', 'api/get_data.php', true)
     request.addEventListener('load', sendMessage)
     request.send()
-  }
+  } 
 
 // Send message
 function sendMessage(event) {

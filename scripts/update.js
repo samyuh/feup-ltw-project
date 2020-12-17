@@ -15,18 +15,15 @@ function validateUpdateUsername(e){
     let username = form.querySelector('input[name="new_username"]').value
     let password = form.querySelector('input[name="password"]').value
 
-    let regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
-    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
-
     clearUpdateHTML()
 
     let usernameError = false
     let passwordError = false
 
-    if(!regex.test(username)) {
+    if(!regexUsername(username)) {
         usernameError = updateError('update-new-username-error',"Invalid username. Use letters and numbers only.")
     }
-    if(!regexPassword.test(password)) {
+    if(!regexPassword(password)) {
         passwordError = updateError('update-actual-password-error',"Invalid password. Must contain at least a letter and a number.")
     }
     if(!usernameError && !passwordError){
@@ -43,20 +40,17 @@ function validateUpdatePassword(e){
     let confirm_password = form.querySelector('input[name="confirm_password"]').value
     let password = form.querySelector('input[name="password"]').value
 
-    //regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
-    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
-
     clearUpdateHTML()
 
     let newPassError = false
     let confPassError = false
     let passError = false
 
-    if(!regexPassword.test(new_password)){
+    if(!regexPassword(new_password)){
         newPassError = updateError("update-new-password-error","Invalid new password. Must contain at least a letter and a number.")
-    }if(!regexPassword.test(confirm_password)){
+    }if(!regexPassword(confirm_password)){
         confPassError = updateError("update-confirm-password-error","Invalid password confirmation. Must contain at least a letter and a number.")
-    }if(!regexPassword.test(password)){
+    }if(!regexPassword(password)){
         passError = updateError("update-current-password-error","Invalid password. Must contain at least a letter and a number.")
     }if(!newPassError && !confPassError && !passError){
         form.submit()
@@ -71,9 +65,6 @@ function validateUpdateInformation(e){
     let password = form.querySelector('input[name="password"]').value
     let path = form.querySelector('input[name="image"]').value
     let file = path.replace(/^.*\\/, "");
-    //regex = RegExp(/^[a-zA-Z0-9]+$/);  // All letters and numbers without blanck space
-    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
-    let regexText = RegExp(/^[a-zA-Z0-9\s]+$/)
 
     clearUpdateHTML()
 
@@ -81,9 +72,9 @@ function validateUpdateInformation(e){
     let passwordError = false
     let fileError = false
 
-    if(!regexText.test(location)){
+    if(!regexText(location)){
         locationError = updateError("update-location","Invalid location. Must not contain special characters.")
-    }if(!regexPassword.test(password)){
+    }if(!regexPassword(password)){
         passwordError = updateError("update-actual-password-information-error","Invalid password. Must contain at least a letter and a number.")
     }if(!isFileImage(file)){
         fileError = updateError("update-image","Invalid file. Must be an image.")
@@ -98,13 +89,11 @@ function validateDeleteProfile(e){
 
     let password = form.querySelector('input[name="password"]').value
 
-    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
-
     clearUpdateHTML()
 
     let passwordError = false
-    
-    if(!regexPassword.test(password)){
+
+    if(!regexPassword(password)){
         passwordError = updateError("update-delete-password-error","Invalid password. Must contain at least a letter and a number.")
     }if(!passwordError){
         form.submit()

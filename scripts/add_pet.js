@@ -16,8 +16,6 @@ function validateAddPet(event) {
     let path = form.querySelector('input[name="image"]').value
     let file = path.replace(/^.*\\/, "");
 
-    let regexText = RegExp(/^[a-zA-Z0-9\s]+$/)
-
     clearAddPetHTML()
 
     let petNameError = false
@@ -25,13 +23,13 @@ function validateAddPet(event) {
     let colorError = false
     let fileError = false
 
-    if(!regexText.test(petName)) {
+    if(!regexText(petName)) {
         petNameError = updateError('addPet-petName-error',"Invalid pet name. Please don't use special characters")
     }
-    if(!regexText.test(bio)) {
+    if(!regexText(bio)) {
         bioError = updateError('addPet-bio-error',"Invalid pet bio. Please don't use special characters.")
     }
-    if(!regexText.test(color)) {
+    if(!regexText(color)) {
         colorError = updateError('addPet-color-error',"Invalid pet color. Please don't use special characters.")
     }
     if(!isFileImage(file)){
@@ -45,10 +43,6 @@ function validateAddPet(event) {
     
 }
 
-function isFileImage(file) {
-    let f = file && file.split('.')[1]
-    return (f === 'jpeg')  || (f ==='jpg')  || (f === 'png') 
-}
 
 
 function clearAddPetHTML(){
