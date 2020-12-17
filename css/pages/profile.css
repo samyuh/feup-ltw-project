@@ -66,8 +66,21 @@
 }
 
 #pet #proposals .unique-proposal{
-  display: grid;
-  grid-template-columns: 50px auto 200px ;
+  display: flex;
+  border-bottom: var(--text-bottom-color) 1px solid;
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  padding: .5em;
+}
+
+#pet #proposals .unique-proposal #button-posts{
+  margin-left: auto;
+  display: flex;
+  gap: .5em;
+}
+
+#pet #proposals .unique-proposal img{
+  padding: 1em;
 }
 
 #owner #favorite-pets .unique-favorite-pet,

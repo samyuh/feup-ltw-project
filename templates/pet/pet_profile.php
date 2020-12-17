@@ -70,15 +70,17 @@
         <?php } else {?>
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
-            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="45" height="45" alt="">
+            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="70" height="70" alt="">
             <p><?= htmlentities($prop['username']) ?></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-              <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
-              </form>
-              <form action="../../action/action_remove_proposal.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                <button type="submit"><i class="fa fa-ban"></i> Reject Proposal</button>
-              </form>
+              <section id="button-posts">
+                <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                  <button type="submit"><i class="fa fa-check"></i></button>
+                </form>
+                <form action="../../action/action_remove_proposal.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                  <button type="submit"><i class="fa fa-ban"></i></button>
+                </form>
+              </section>
             <?php } ?>
           </article>
         <?php } ?>
