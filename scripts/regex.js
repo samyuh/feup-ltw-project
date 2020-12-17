@@ -13,6 +13,7 @@ function regexPassword(string){
     return RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/).test(string)
 }
 
+// This function forces a file to be an image
 function isFileImage(file) {
     let f = file && file.split('.')[1]
     return (f === 'jpeg')  || (f ==='jpg')  || (f === 'png') 
