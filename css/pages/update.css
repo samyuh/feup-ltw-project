@@ -44,34 +44,25 @@
 }
 
 /* --- Pet only CSS --- */
-#update-page .update-post {
+
+
+.inputs-post-update{
     display: flex;
-    flex-direction: column;
 }
 
 .edit-post{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
 }
 
 button.button-edit-post{
-   margin-left: auto;
-   margin-left: 11em;
-}
-
-.inputs-post-update{
-    display: flex;
+    margin-left: 11em;
 }
 
 .delete-post{
     margin-left: auto;
     padding-top: .8em;
-}
-
-#update-page .update-post input[type=submit] {
-    width: 50%;
 }
 
 .update-back-profile-button {

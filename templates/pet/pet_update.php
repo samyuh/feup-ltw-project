@@ -84,17 +84,15 @@
         <article class="update-form">
             <h1>Update Pet Posts</h1>
             <?php foreach($posts as $post) {?>
-                <div class="update-post">
-                    <section class="inputs-post-update">
-                        <form class="edit-post" action="../../action/action_pet_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                            <input type="text" name="post" value="<?= htmlentities($post['post']) ?>">
-                            <button class="button-edit-post" type="submit"><i class="fa fa-pencil"></i></button>
-                        </form> 
-                        <form class="delete-post" action="../../action/action_pet_delete_post.php?id=<?=$post['id']?>" method="post">
-                            <button type="submit"><i class="fa fa-ban"></i></button>
-                        </form>
-                    </section>
-                </div>            
+                <section class="inputs-post-update">
+                    <form class="edit-post" action="../../action/action_pet_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                        <input type="text" name="post" value="<?= htmlentities($post['post']) ?>">
+                        <button class="button-edit-post" type="submit"><i class="fa fa-pencil"></i></button>
+                    </form> 
+                    <form class="delete-post" action="../../action/action_pet_delete_post.php?id=<?=$post['id']?>" method="post">
+                        <button type="submit"><i class="fa fa-ban"></i></button>
+                    </form>
+                </section>      
                 <?php } ?>
         </article>
 </section>
