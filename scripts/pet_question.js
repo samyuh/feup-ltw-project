@@ -141,11 +141,6 @@ function displayQuestions(data) {
     return section
 }
 
-function showReplies(data,section){
-    event.preventDefault()
-}
-
-
 function prevent(event){
     event.preventDefault()
 }
