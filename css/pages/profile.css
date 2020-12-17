@@ -15,6 +15,18 @@
   column-width: 10em;
 }
 
+#profile-grid-pet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 25em auto auto;
+  grid-gap: 2em;
+}
+
+#pet #information-profile{
+  grid-row: 1;
+}
+
 #owner #profile-grid #favorite-pets {
   text-align: left;
   grid-column: 1;
@@ -22,8 +34,7 @@
   padding: 2em;
 }
 
-#owner #adoption-pets, 
-#pet #posts{
+#owner #adoption-pets{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;
@@ -31,17 +42,24 @@
   padding: 2em;
 }
 
-#pet #proposals{
+#pet #posts{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;
+  grid-row-end: 2;
+  padding: 2em;
+}
+
+#pet #proposals{
+  text-align: left;
+  grid-column: 1;
+  grid-row-start: 2;
   padding: 2em;
 }
 
 #pet #question, 
 #owner #adopted{
   text-align: left;
-  grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
   padding: 2em;
@@ -60,7 +78,8 @@
 }
 
 @media screen and (max-width: 1200px){
-  #profile-grid {
+  #profile-grid,
+  #profile-grid-pet {
     display: flex;
     flex-direction: column;
   }

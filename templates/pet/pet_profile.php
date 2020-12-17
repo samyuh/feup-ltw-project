@@ -18,7 +18,7 @@
     </section>
   </div>
 
-  <div id="profile-grid">
+  <div id="profile-grid-pet">
       <section id="information-profile">
         <section id="information-profile-header">
           <h2>Information</h2>
