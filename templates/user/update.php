@@ -57,11 +57,16 @@
           <aside id="update-gender">
           </aside>
           <?php if($_SESSION['user']['age'] == "male") { ?>
-            Male <input type="radio" name="gender" value="male" checked="checked">
-            Female <input type="radio" name="gender" value="female">
+            <section class="options">
+              <label>Male <input class="hide" type="radio" name="genderSearch" value="male" checked="checked"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+              <label>Female <input class="hide" type="radio" name="genderSearch" value="female"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+            </section>
           <?php } else { ?>
-            Male <input type="radio" name="gender" value="male">
-            Female <input type="radio" name="gender" value="female"checked="checked" >
+            <section class="options">
+            Insert Gender:
+            <label>Male <input class="hide" type="radio" name="genderSearch" value="male""><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+            <label>Female <input class="hide" type="radio" name="genderSearch" value="female" checked="checked"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+            </section>
           <?php } ?>
           <aside id="update-age">
           </aside>
