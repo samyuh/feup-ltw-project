@@ -32,6 +32,7 @@
     <script src="../../scripts/pet_question.js" defer> </script>
     <script src="../../scripts/notifications.js" defer> </script>
     <script src="../../scripts/pet_photos.js" defer> </script>
+    <script src="../../scripts/dark_theme.js" defer> </script>
   </head>
 
   <?php if($_SESSION['theme'] == 'dark') { ?>
