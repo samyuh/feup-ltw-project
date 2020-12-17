@@ -9,6 +9,7 @@
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- -->
     
     <link href="../../css/pages/update.css" rel="stylesheet">
     <link href="../../css/pages/header.css" rel="stylesheet">
