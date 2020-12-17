@@ -1,6 +1,24 @@
 <?php
-    /* 
-    * Pet Adoption Proposal 
+    /*
+    * Check if user has updated permissions
+    */
+    function canAcceptAdopt($idUser, $idPet) {
+        $db = Database::instance()->db();
+        
+        $owner = $db->prepare('SELECT * FROM UserFoundPet WHERE idUser = ? and idPet = ?');
+        $owner->execute(array($idUser, $idPet));
+        $isOwner = $owner->fetchAll();
+        
+        if(empty($isOwner)) {
+            return FALSE;
+        } 
+        else {
+            return TRUE;
+        }
+    }
+
+    /*
+    *   Getter functions
     */
     function getAdoptionProposalList($idPet) {
         $db = Database::instance()->db();
@@ -13,6 +31,20 @@
 
     }
 
+    function getPetAdopted($idPet) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserAdoptedPet WHERE UserAdoptedPet.idPet = ? and User.idUser = UserAdoptedPet.idUser');
+        
+        $stmt->execute(array($idPet));
+        $petsID = $stmt->fetch();
+
+        return $petsID;
+    }  
+
+    /* 
+    * Pet Adoption Proposal 
+    */
     function isProposed($idUser, $idPet) {
         $db = Database::instance()->db();
         
@@ -28,52 +60,36 @@
         }
     }
 
-    function updateAdoptionProposal($user, $idPet) {
+    function addProposal($idUser, $idPet) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('SELECT * FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
-        $stmt->execute(array($user['idUser'], $idPet));
-        $petsID = $stmt->fetchAll();
-        if(empty($petsID)) {
+        if(!isProposed($idUser, $idPet)) {
             $stmt = $db->prepare('INSERT INTO AdoptionProposal VALUES (?, ?)');
-            $stmt->execute(array($user['idUser'], $idPet));
+            $stmt->execute(array($idUser, $idPet));
         }
-    }
-    
-    function removeProposal($idUser, $idPet) {
-        $db = Database::instance()->db();
-
-        $stmt = $db->prepare('DELETE FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
-        $stmt->execute(array($idUser, $idPet));
     }
 
     /* 
-    * Adopted Pet
+    * Adopted/Reject Pet
     */
-    function getPetAdopted($idPet) {
+    function adopt($idUser, $idPet) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('SELECT * FROM User, UserAdoptedPet WHERE UserAdoptedPet.idPet = ? and User.idUser = UserAdoptedPet.idUser');
-        
-        $stmt->execute(array($idPet));
-        $petsID = $stmt->fetch();
-
-        return $petsID;
-    }  
-
-    function updateAdoptList($idUser, $idPet) {
-        $db = Database::instance()->db();
-        
-        $stmt = $db->prepare('SELECT * FROM UserAdoptedPet WHERE idUser = ? and idPet = ?');
-        
-        $stmt->execute(array($idUser, $idPet));
-        $petsID = $stmt->fetchAll();
-        if(empty($petsID)) {
+        if(isProposed($idUser, $idPet) && canAcceptAdopt($_SESSION['user']['idUser'], $idPet)) {
             $stmt = $db->prepare('INSERT INTO UserAdoptedPet VALUES (?, ?)');
             $stmt->execute(array($idUser, $idPet));
             
             $delstmt = $db->prepare('DELETE FROM AdoptionProposal WHERE idPet = ?');
             $delstmt->execute(array($idPet));
+        }
+    }
+
+    function removeProposal($idUser, $idPet) {
+        $db = Database::instance()->db();
+
+        if(isProposed($idUser, $idPet) && canAcceptAdopt($_SESSION['user']['idUser'], $idPet)) {
+            $stmt = $db->prepare('DELETE FROM AdoptionProposal WHERE idUser = ? and idPet = ?'); 
+            $stmt->execute(array($idUser, $idPet));
         }
     }
 ?>
