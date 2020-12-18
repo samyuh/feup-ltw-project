@@ -6,7 +6,7 @@
 
     <div class="container-forms">
       <article class="register-forms">
-        <form id="register-form" action="../../action/action_register.php" method="post" enctype="multipart/form-data">
+        <form id="register-form" action="./action/action_register.php" method="post" enctype="multipart/form-data">
 
         <aside id="register-username-error"></aside>
         <input type="text" name="username" placeholder="Username">

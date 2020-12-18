@@ -1,7 +1,7 @@
 <div id="pet">
   <div class="profile-header">
     <section class="profile-image">
-      <img src="../images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet profile pic">
+      <img src="./images/pet-profile/pet-<?=$pet['idPet']?>/profile.jpg" width="200" height="200" alt="Pet profile pic">
     </section>
     
     <section class="profile-text">
@@ -10,7 +10,7 @@
         $star = isFavorited($_SESSION['user'], $pet['idPet']) ? "fa fa-star-o" : "fa fa-star";  
       ?>
         <section id="favorite">
-          <form id="favorite-form" action="../../action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
+          <form id="favorite-form" action="./action/action_favorite.php?idPet=<?=$pet['idPet']?>" method="post">
             <button id="favorite-form-button" title="Favorite Pet" type="submit" class="<?=$star?>" value="<?=$pet['idPet']?>"></button>
           </form>
         </section>
@@ -46,7 +46,7 @@
       <section id="question">
         <h2>Ask a Question</h2>
         <?php if (isLogged()) { ?>
-          <form id='question-form' action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+          <form id='question-form' action="./action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="text" name="question">
             <input type="hidden" id="idPet-question" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
             <input type="hidden" id="idUser-question" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
@@ -71,14 +71,14 @@
         <?php } else {?>
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
-            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="70" height="70" alt="">
+            <img src="./images/user/user-<?=$prop['idUser']?>.jpg" width="70" height="70" alt="">
             <p><a href="profile.php?user=<?=$prop['username']?>"><?= htmlentities($prop['username']) ?></a></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
               <section id="button-posts">
-                <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                <form action="./action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
                   <button type="submit"><i class="fa fa-check"></i></button>
                 </form>
-                <form action="../../action/action_remove_proposal.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                <form action="./action/action_remove_proposal.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
                   <button type="submit"><i class="fa fa-ban"></i></button>
                 </form>
               </section>
@@ -89,7 +89,7 @@
         if (isLogged()) {
           if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>
           <section id="adoption-proposal">
-            <form action="../../action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+            <form action="./action/action_adopt_proposal.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
               <input type="submit" value="Propose to adopt this pet!">
             </form>
           </section>

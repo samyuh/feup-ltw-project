@@ -7,15 +7,15 @@
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="../../css/layout.css" rel="stylesheet">
-    <link href="../../css/containers.css" rel="stylesheet">
-    <link href="../../css/components.css" rel="stylesheet">
-    <link href="../../css/pages/login_register.css" rel="stylesheet">
-    <link href="../../css/pages/footer.css" rel="stylesheet">
-    <script src="../../scripts/image_preview.js" defer> </script>
-    <script src="../../scripts/regex.js" defer> </script>
-    <script src="../../scripts/register.js" defer> </script>
-    <script src="../../scripts/login.js" defer> </script>
+    <link href="./css/layout.css" rel="stylesheet">
+    <link href="./css/containers.css" rel="stylesheet">
+    <link href="./css/components.css" rel="stylesheet">
+    <link href="./css/pages/login_register.css" rel="stylesheet">
+    <link href="./css/pages/footer.css" rel="stylesheet">
+    <script src="./scripts/image_preview.js" defer> </script>
+    <script src="./scripts/regex.js" defer> </script>
+    <script src="./scripts/register.js" defer> </script>
+    <script src="./scripts/login.js" defer> </script>
   </head>
   <body>
     <header>

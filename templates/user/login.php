@@ -6,7 +6,7 @@
 
   <div class="container-forms">
     <article class="login-forms">
-      <form id="login-form" action="../../action/action_login.php" method="post">
+      <form id="login-form" action="./action/action_login.php" method="post">
         <aside id="login-username-error"></aside>
         <input type="text" name="username" placeholder="Username">
  

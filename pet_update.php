@@ -11,7 +11,7 @@
   
   /* Verifications and set variables */
   if(!isLogged()) {
-    header('Location: ../error404.php');
+    header('Location: ./error404.php');
   }
 
   $pet = getPet($_GET['idPet']);

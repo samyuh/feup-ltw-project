@@ -12,7 +12,7 @@
   /* Verifications and set variables */
   $user = getUser($_GET['user']);
   if(empty($user)) {
-    header('Location: ../error404.php');
+    header('Location: ./error404.php');
   }
 
   $userPets = getFavoritePets($user);

@@ -12,7 +12,7 @@
   /* Verifications and set variables */
   $pet = getPet($_GET['idPet']);
   if(empty($pet)) {
-    header('Location: ../error404.php');
+    header('Location: ./error404.php');
   }
 
   $owner = getPetOwner($_GET['idPet']);
