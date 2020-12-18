@@ -72,7 +72,7 @@
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
             <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="70" height="70" alt="">
-            <p><?= htmlentities($prop['username']) ?></p>
+            <p><a href="profile.php?user=<?=$prop['username']?>"><?= htmlentities($prop['username']) ?></a></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
               <section id="button-posts">
                 <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
