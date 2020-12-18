@@ -39,6 +39,6 @@
     }
 
     function validText($element) {
-        return preg_match ("/^(\w|\s|,|!|\?|')+$/", $element);
+        return preg_match ("/^(\w|\s|,|!|\?|'|\(|\)|\.)+$/", $element);
     }
 ?>
