@@ -70,12 +70,14 @@ function validateUpdatePassword(e){
     let confPassError = false
     let passError = false
 
-    if(!regexPassword(new_password)){
-        newPassError = updateError("update-new-password-error","Invalid new password. Must contain at least a letter and a number.")
+    if(new_password != confirm_password){
+        newPassError = updateError("update-new-password-error","Must contain eight characters, at least one letter, one number and one special character.")
+    }else if(!regexPassword(new_password)){
+        newPassError = updateError("update-new-password-error","Must contain eight characters, at least one letter, one number and one special character.")
     }if(!regexPassword(confirm_password)){
-        confPassError = updateError("update-confirm-password-error","Invalid password confirmation. Must contain at least a letter and a number.")
+        confPassError = updateError("update-confirm-password-error","Must contain eight characters, at least one letter, one number and one special character.")
     }if(!regexPassword(password)){
-        passError = updateError("update-current-password-error","Invalid password. Must contain at least a letter and a number.")
+        passError = updateError("update-current-password-error","Must contain eight characters, at least one letter, one number and one special character.")
     }if(!newPassError && !confPassError && !passError){
         form.submit()
     } 
