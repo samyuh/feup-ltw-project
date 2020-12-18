@@ -21,7 +21,7 @@ function validateLogin(event) {
         errorUsername = loginError('login-username-error',"Invalid username. Use letters and numbers only.")
     }
     if(!regexPassword(password)) {
-        errorPassword = loginError('login-password-error',"Invalid password. Must contain at least a letter and a number.")
+        errorPassword = loginError('login-password-error',"Invalid password. Must contain at least a letter, a number and a special character")
     }
     if(!errorUsername && !errorPassword){
         form.submit()

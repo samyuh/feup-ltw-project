@@ -24,10 +24,7 @@ function validateFavorite(event) {
     request.open("post", "action/action_favorite.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(encodeForAjax({'idPet': id}))
-    
-    
 }
-
 
 function changeFavorite(current){
     let button = document.getElementById('favorite-form-button')
@@ -38,7 +35,6 @@ function changeFavorite(current){
     else{
         button.setAttribute('class','fa fa-star')
     }
-
 }
 
 
