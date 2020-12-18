@@ -88,7 +88,7 @@ function showArticle(data) {
     p1.innerHTML = "Name: " + name
 
     let p2 = document.createElement('p')
-    p2.innerHTML = "Race: " + species
+    p2.innerHTML = "Species: " + species
 
     let p3 = document.createElement('p')
     p3.innerHTML = "Gender: " + gender

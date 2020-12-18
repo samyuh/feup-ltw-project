@@ -16,6 +16,7 @@
           <img class="profile-image" src="./images/pet-profile/pet-<?= htmlentities($article['idPet']) ?>/profile.jpg" width="300" height="300" alt="Pet Profile Picture">
           <aside class="profile-overlay">
             <p>Species: <?= htmlentities($article['specie']) ?></p>
+            <p>Gender: <?= htmlentities($article['gender']) ?></p>
             <p>Size: <?= htmlentities($article['size']) ?></p>
             <p>Color:  <?= htmlentities($article['color']) ?></p>
           </aside>
