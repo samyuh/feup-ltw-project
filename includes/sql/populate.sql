@@ -1,6 +1,6 @@
-INSERT INTO User(idUser, username, gender, age, location, password) VALUES(1, 'zini', 'f', '10', 'porto', '$2y$12$KRXOWfuFrwukHslr1Mp/4.m4tYxRQc6nDpSdrUDz.j.BuYDV/YNp6'); --queen1
-INSERT INTO User(idUser, username, gender, age, location, password) VALUES(2, 'progengi', 'm', '10', 'porto', '$2y$12$XKnC6gQiuuu8t.BybIx2QuyOY.MagaAa0sT.DGqbbtmM4yUrHxfq6'); --hello1
-INSERT INTO User(idUser, username, gender, age, location, password) VALUES(3, 'Samuh', 'm', '10', 'porto', '$2y$12$zxktWBarMsZiPPbtIHFPYusc7pmFPiJCduCZDFNj4bfmnlXmlDzG2'); --gambit1
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(1, 'zini', 'f', '10', 'porto', '$2y$12$R8zbHvaEDxeMc1v4IQD7POJWPW5W/BOb.soTebPAA2Z77ShlieSCK'); --ltwpet60!
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(2, 'progengi', 'm', '10', 'porto', '$2y$12$R8zbHvaEDxeMc1v4IQD7POJWPW5W/BOb.soTebPAA2Z77ShlieSCK'); --ltwpet60!
+INSERT INTO User(idUser, username, gender, age, location, password) VALUES(3, 'Samuh', 'm', '10', 'porto', '$2y$12$R8zbHvaEDxeMc1v4IQD7POJWPW5W/BOb.soTebPAA2Z77ShlieSCK'); --ltwpet60!
 
 INSERT INTO Pet VALUES(1,'Carlitos','dog','male','medium','brown', 'BIO');
 INSERT INTO Pet VALUES(2,'Puskas','dog','male','small','yellow', 'BIO');
