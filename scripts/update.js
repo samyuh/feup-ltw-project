@@ -23,7 +23,7 @@ function validateUpdatePhoto(e){
     let passwordError = false
 
     if(!regexPassword(password)) {
-        passwordError = updateError('update-actual-password-image-error',"Invalid password. Must contain at least a letter and a number.")
+        passwordError = updateError('update-actual-password-image-error',"Invalid password. Must contain at least a letter, a number and a special character")
     }if(!isFileImage(file)){
         fileError = updateError("update-image","Invalid file. Must be an image.")
     }if(!fileError && !passwordError){
@@ -48,7 +48,7 @@ function validateUpdateUsername(e){
         usernameError = updateError('update-new-username-error',"Invalid username. Use letters and numbers only.")
     }
     if(!regexPassword(password)) {
-        passwordError = updateError('update-actual-password-error',"Invalid password. Must contain at least a letter and a number.")
+        passwordError = updateError('update-actual-password-error',"Invalid password. Must contain at least a letter, a number and a special character")
     }
     if(!usernameError && !passwordError){
         form.submit()
@@ -71,7 +71,7 @@ function validateUpdatePassword(e){
     let passError = false
 
     if(new_password != confirm_password){
-        newPassError = updateError("update-new-password-error","Must contain eight characters, at least one letter, one number and one special character.")
+        newPassError = updateError("update-new-password-error","Passwords must match")
     }else if(!regexPassword(new_password)){
         newPassError = updateError("update-new-password-error","Must contain eight characters, at least one letter, one number and one special character.")
     }if(!regexPassword(confirm_password)){
@@ -95,11 +95,10 @@ function validateUpdateInformation(e){
     let locationError = false
     let passwordError = false
 
-
-    if(!regexText(location)){
+    if(!regexText(location)) {
         locationError = updateError("update-location","Invalid location. Must not contain special characters.")
     }if(!regexPassword(password)){
-        passwordError = updateError("update-actual-password-information-error","Invalid password. Must contain at least a letter and a number.")
+        passwordError = updateError("update-actual-password-information-error","Invalid password. Must contain at least a letter, a number and a special character")
     }if(!locationError && !passwordError){
         form.submit()
     } 
@@ -116,14 +115,11 @@ function validateDeleteProfile(e){
     let passwordError = false
 
     if(!regexPassword(password)){
-        passwordError = updateError("update-delete-password-error","Invalid password. Must contain at least a letter and a number.")
+        passwordError = updateError("update-delete-password-error","Invalid password. Must contain at least a letter, a number and a special character")
     }if(!passwordError){
         form.submit()
     } 
 }
-
-
-
 
 function updateError(id,message){
     let section = document.getElementById(id)

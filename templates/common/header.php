@@ -31,6 +31,7 @@
     <script src="../../scripts/update.js" defer> </script>
     <script src="../../scripts/set_favorite.js" defer> </script>
     <script src="../../scripts/pet_question.js" defer> </script>
+    <script src="../../scripts/add_post.js" defer> </script>
     <script src="../../scripts/notifications.js" defer> </script>
     <script src="../../scripts/pet_photos.js" defer> </script>
     <script src="../../scripts/dark_theme.js" defer> </script>

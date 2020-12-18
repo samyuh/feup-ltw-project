@@ -30,7 +30,7 @@ function validateRegistration(event) {
         errorLocation = registerError('register-location-error',"Invalid location. Use letters, numbers and blank space only.")
     }
     if(!regexPassword(password)) {
-        errorPassword = registerError('register-password-error',"Invalid password. Must contain at least a letter and a number.")
+        errorPassword = registerError('register-password-error',"Invalid password. Must contain at least a letter, a number and a special character")
     }
     if(!isFileImage(file)){
         errorImage = registerError('register-image-error',"Invalid file. Must be an image.")
@@ -38,8 +38,6 @@ function validateRegistration(event) {
     if(!errorUsername && !errorLocation && !errorPassword && !errorImage){
         form.submit()
     } 
-
-    
 }
 
 function isFileImage(file) {
@@ -57,7 +55,6 @@ function registerError(id,message){
 
     return true
 }
-
 
 
 function clearRegisterHTML(){

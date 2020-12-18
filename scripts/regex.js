@@ -2,11 +2,7 @@
 
 // This functions forces a text field to have no special characters
 function regexText(string){
-    return RegExp(/^\w+$/).test(string)
-}
-
-function regexSpecialText(string){
-    return RegExp(/^(\w|\s|,|!|\?|')+$/).test(string)
+    return RegExp(/^(\w|\s|,|!|\?|'|\(|\)|\.)+$/).test(string)
 }
 
 // This functions forces the username to not have black spaces
