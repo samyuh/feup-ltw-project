@@ -11,30 +11,30 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- -->
     
-    <link href="../../css/pages/update.css" rel="stylesheet">
-    <link href="../../css/pages/header.css" rel="stylesheet">
-    <link href="../../css/pages/footer.css" rel="stylesheet">
-    <link href="../../css/pages/pet_information.css" rel="stylesheet">
-    <link href="../../css/pages/homepage.css" rel="stylesheet">
-    <link href="../../css/pages/search_advanced.css" rel="stylesheet">
-    <link href="../../css/pages/add_pet.css" rel="stylesheet">
-    <link href="../../css/pages/error404.css" rel="stylesheet">
-    <link href="../../css/pages/profile.css" rel="stylesheet">
-    <link href="../../css/pages/modal.css" rel="stylesheet">
-    <link href="../../css/containers.css" rel="stylesheet">
-    <link href="../../css/components.css" rel="stylesheet">
-    <link href="../../css/layout.css" rel="stylesheet">
-    <script src="../../scripts/image_preview.js" defer> </script>
-    <script src="../../scripts/regex.js" defer> </script>
-    <script src="../../scripts/search.js" defer> </script>
-    <script src="../../scripts/add_pet.js" defer> </script>
-    <script src="../../scripts/update.js" defer> </script>
-    <script src="../../scripts/set_favorite.js" defer> </script>
-    <script src="../../scripts/pet_question.js" defer> </script>
-    <script src="../../scripts/add_post.js" defer> </script>
-    <script src="../../scripts/notifications.js" defer> </script>
-    <script src="../../scripts/pet_photos.js" defer> </script>
-    <script src="../../scripts/dark_theme.js" defer> </script>
+    <link href="./css/pages/update.css" rel="stylesheet">
+    <link href="./css/pages/header.css" rel="stylesheet">
+    <link href="./css/pages/footer.css" rel="stylesheet">
+    <link href="./css/pages/pet_information.css" rel="stylesheet">
+    <link href="./css/pages/homepage.css" rel="stylesheet">
+    <link href="./css/pages/search_advanced.css" rel="stylesheet">
+    <link href="./css/pages/add_pet.css" rel="stylesheet">
+    <link href="./css/pages/error404.css" rel="stylesheet">
+    <link href="./css/pages/profile.css" rel="stylesheet">
+    <link href="./css/pages/modal.css" rel="stylesheet">
+    <link href="./css/containers.css" rel="stylesheet">
+    <link href="./css/components.css" rel="stylesheet">
+    <link href="./css/layout.css" rel="stylesheet">
+    <script src="./scripts/image_preview.js" defer> </script>
+    <script src="./scripts/regex.js" defer> </script>
+    <script src="./scripts/search.js" defer> </script>
+    <script src="./scripts/add_pet.js" defer> </script>
+    <script src="./scripts/update.js" defer> </script>
+    <script src="./scripts/set_favorite.js" defer> </script>
+    <script src="./scripts/pet_question.js" defer> </script>
+    <script src="./scripts/add_post.js" defer> </script>
+    <script src="./scripts/notifications.js" defer> </script>
+    <script src="./scripts/pet_photos.js" defer> </script>
+    <script src="./scripts/dark_theme.js" defer> </script>
   </head>
 
   <?php if($_SESSION['theme'] == 'dark') { ?>
