@@ -18,7 +18,7 @@
     </section>
   </div>
 
-  <div id="profile-grid">
+  <div id="profile-grid-pet">
       <section id="information-profile">
         <section id="information-profile-header">
           <h2>Information</h2>
@@ -36,8 +36,10 @@
           <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : htmlentities($owner['username']) ?></a></p>
             <?php if(!empty($adopted)) { ?>
                 <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= htmlentities($adopted['username']) ?></a></p>
-            <?php } else { ?>
-                <p>Not adopted yet!</p>
+            <?php } else if(isAdopted($pet['idPet'])) {?>
+                <p>Adopted by: Deleted Account</p>
+            <?php } else {?>
+                <p>This pet is not adopted!</p>
             <?php } ?>
       </section>
 
@@ -46,9 +48,10 @@
         <?php if (isLogged()) { ?>
           <form id='question-form' action="../../action/action_add_question.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
             <input type="text" name="question">
-            <input type="hidden" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
-            <input type="hidden" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
-            <input type="hidden" name="owner" value="<?= htmlentities($owner['idUser']) ?>">
+            <input type="hidden" id="idPet-question" name="idPet" value="<?= htmlentities($pet['idPet']) ?>">
+            <input type="hidden" id="idUser-question" name="idUser" value="<?= htmlentities($_SESSION['user']['idUser']) ?>">
+            <input type="hidden" id="owner-question" name="owner" value="<?= htmlentities($owner['idUser']) ?>">
+            <input type="hidden" id="owner-adopted-question" name="owner-adopted" value="<?= htmlentities($owerAdopted['idUser']) ?>">
             <input id="question-form-button" type="submit" value="Ask">
           </form>
           
@@ -68,14 +71,20 @@
         <?php } else {?>
         <?php foreach($proposals as $prop) {?>
           <article class="unique-proposal">
-            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="20" height="20" alt="">
+            <img src="../images/user/user-<?=$prop['idUser']?>.jpg" width="70" height="70" alt="">
             <p><?= htmlentities($prop['username']) ?></p>
             <?php if (isLogged() && isOwner($_SESSION['user'], $pet['idPet'])) { ?>
-              <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                <button type="submit"><i class="fa fa-check"></i> Accept Proposal</button>
-              </form>
+              <section id="button-posts">
+                <form action="../../action/action_adopt.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                  <button type="submit"><i class="fa fa-check"></i></button>
+                </form>
+                <form action="../../action/action_remove_proposal.php?idPet=<?=$pet['idPet']?>&idUser=<?=$prop['idUser']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                  <button type="submit"><i class="fa fa-ban"></i></button>
+                </form>
+              </section>
+            <?php } ?>
           </article>
-        <?php } } ?>
+        <?php } ?>
         <?php  
         if (isLogged()) {
           if(!isAdopted($pet['idPet']) && !isOwner($_SESSION['user'], $pet['idPet']) && !isProposed($_SESSION['user']['idUser'], $pet['idPet'])) {?>

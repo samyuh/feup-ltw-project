@@ -5,10 +5,10 @@
   
   /* Database Managers Files */
   include_once('../database/regex.php');
-  include_once('../database/users.php');
+  include_once('../database/users.php');   
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
-  include_once('../database/pets_profile.php');        
+  include_once('../database/pets_profile.php');  
 
   /* Verifications and set variables */
   if(!isLogged()) {
@@ -19,12 +19,11 @@
     header('Location: ../error404.php');
   }
   
-  $user = $_SESSION['user'];
-  $post = $_POST['post'];
-  $idPet = $_GET['idPet'];
-  
-  if(validText($post) && validNumber($idPet)) {
-    addPost($user, $idPet, $post);
+  $idUser = $_GET['idUser'];
+  $petId = $_GET['idPet'];
+
+  if(validNumber($idUser) && validNumber($petId)) {
+    removeProposal($idUser, $petId);
   }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

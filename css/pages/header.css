@@ -1,7 +1,7 @@
 header {
-  background-image: linear-gradient(to bottom right,hsl(72, 11%, 45%), hsl(72, 11%, 35%));
+  background-image: linear-gradient(to bottom right,var(--background-gradient-first), var(--background-gradient-second));
   padding: 1em;
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+  box-shadow:	0 0.125rem 0.5rem var(--container-primary-shadow), 0 0.0625rem 0.125rem var(--container-secondary-shadow);
 }
 
 header h1, h2{
@@ -20,7 +20,7 @@ header h2{
 
 header #name-slogan{
   padding-right: 1em;
-  border-right: 1px solid white;
+  border-right: 1px solid var(--header-border);
 }
 
 .mobile-header button{
@@ -36,13 +36,17 @@ header #right-side{
   margin-right: 5em;
 }
 
-header #search-bar, 
-header #right-side #settings{
+header #search-bar,
+#sign-up,
+#signed-in{
   margin-right: 3em;
 }
 
-header #right-side #settings{
-  padding-top: 1em;
+header #right-side, #settings{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 header #search-bar {
@@ -54,16 +58,17 @@ header #search-bar {
   font-size: small;
 }
 
-#search-bar input[type="text"]{
+#search-bar input[type="text"] {
   width: 20em;
   padding: 0.2em;
+  background-color: var(--search-background-color);
 }
 
 #search-bar button[type="submit"]{
-  background-color: white;
   border: none;
   padding: 0.3em;
-  color: black;
+  color: var(--header-border);
+  background-color: transparent;
 }
 
 #search-bar .mobile-search-bar button{
@@ -78,14 +83,14 @@ header #signed-in{
 header #dropdown{
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: var(--dropdown-color);
   min-width: 10em;
-  box-shadow: 0px 1em 2em 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1em 2em 0px var(--container-secondary-shadow);
   z-index: 1;
 }
 
 header #dropdown a {
-  color: black;
+  color: var(--dropdown-href-a);
   padding: 1em 0.5em;
   text-decoration: none;
   display: block;
@@ -93,7 +98,7 @@ header #dropdown a {
 }
 
 header #dropdown a:hover {
-  background-color: #f1f1f1;
+  background-color: var(--dropdown-hover);
 }
 
 header #signed-in:hover #dropdown{
@@ -101,7 +106,7 @@ header #signed-in:hover #dropdown{
 }
 
 body > header #sign-up a:first-child {
-  border-right: 1px solid white;
+  border-right: 1px solid var(--header-border);
 }
 
 body > header #sign-up a {
@@ -142,11 +147,14 @@ body > header #sign-up a:first-child {
     display: block;
     background-color: transparent;
     border: none;
-    color: white;
+    color: var(--icon-mobile);
+    padding-top: .5em;
+    margin-top: .5em;
   }
   .mobile-header button:hover,
   #search-bar .mobile-search-bar button:hover{
     border: none;
+    background-color: transparent;
   }
   header #search-bar {
     margin-left: 1em;
@@ -154,4 +162,69 @@ body > header #sign-up a:first-child {
   header #name-slogan{
     border-right: none;
   }
+}
+
+.dark-mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.dark-mode-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(174, 220, 247);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(233, 211, 151);
+  -webkit-transition: .4s;
+  color: black;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #233849;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px  #233849;
+}
+
+input:checked +.slider:before{
+  background-color: rgb(209, 209, 209);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

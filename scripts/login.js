@@ -12,18 +12,15 @@ function validateLogin(event) {
     let username = form.querySelector('input[name="username"]').value
     let password = form.querySelector('input[name="password"]').value
 
-    let regex = RegExp(/^[a-zA-Z0-9]+$/)
-    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
-
     let errorUsername = false
     let errorPassword = false
 
     clearHTML()
 
-    if(!regex.test(username)) {
+    if(!regexUsername(username)) {
         errorUsername = loginError('login-username-error',"Invalid username. Use letters and numbers only.")
     }
-    if(!regexPassword.test(password)) {
+    if(!regexPassword(password)) {
         errorPassword = loginError('login-password-error',"Invalid password. Must contain at least a letter and a number.")
     }
     if(!errorUsername && !errorPassword){

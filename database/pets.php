@@ -38,6 +38,17 @@
         return $petsID;
     }
 
+    function getAdoptedOwner($idPet) {
+        $db = Database::instance()->db();
+        
+        $stmt = $db->prepare('SELECT * FROM User, UserAdoptedPet WHERE UserAdoptedPet.idPet = ? and User.idUser = UserAdoptedPet.idUser');
+        
+        $stmt->execute(array($idPet));
+        $id = $stmt->fetch();
+
+        return $id;
+    }
+
     /* 
     * See if a pet is already adopted 
     */

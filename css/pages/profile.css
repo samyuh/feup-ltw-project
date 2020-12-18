@@ -7,12 +7,26 @@
 }
 
 #profile-grid {
-  width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
   grid-gap: 2em;
   column-width: 10em;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+#profile-grid-pet {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 25em auto auto;
+  grid-gap: 2em;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+#pet #information-profile{
+  grid-row: 1;
 }
 
 #owner #profile-grid #favorite-pets {
@@ -22,9 +36,7 @@
   padding: 2em;
 }
 
-#owner #adoption-pets, 
-#pet #posts, 
-#pet #proposals{
+#owner #adoption-pets{
   text-align: left;
   grid-column: 2;
   grid-row-start: 1;
@@ -32,23 +44,87 @@
   padding: 2em;
 }
 
+#pet #posts{
+  text-align: left;
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding: 2em;
+}
+
+#pet #proposals{
+  text-align: left;
+  grid-column: 1;
+  grid-row-start: 2;
+  padding: 2em;
+}
+
 #pet #question, 
 #owner #adopted{
   text-align: left;
-  grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
   padding: 2em;
 }
 
+#pet #proposals .unique-proposal{
+  display: flex;
+  border-bottom: var(--text-bottom-color) 1px solid;
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  padding: .5em;
+}
+
+#pet #proposals .unique-proposal #button-posts{
+  margin-left: auto;
+  display: flex;
+  gap: .5em;
+}
+
+#pet #proposals .unique-proposal img{
+  padding: 1em;
+}
+
+#owner #favorite-pets .unique-favorite-pet,
+#owner #adoption-pets .unique-adoption-pet,
+#owner #adopted .unique-adopted{
+  display: grid;
+  grid-template-columns: 55px auto;
+}
+
 @media screen and (max-width: 1200px){
-  #profile-grid {
+  #profile-grid,
+  #profile-grid-pet {
     display: flex;
     flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 }
 /*style */
+#pet #proposals h2,
+#owner #favorite-pets h2,
+#owner #adoption-pets h2,
+#owner #adopted h2{
+  padding-bottom: 20px;
+}
 
+#pet #proposals .unique-proposal img,
+#owner #favorite-pets .unique-favorite-pet img,
+#owner #adoption-pets .unique-adoption-pet img,
+#owner #adopted .unique-adopted img{
+  border-radius: 50%;
+  align-self: center;
+}
+
+#pet #proposals .unique-proposal p,
+#pet #proposals .unique-proposal form,
+#owner #favorite-pets .unique-favorite-pet p,
+#owner #adoption-pets .unique-adoption-pet p,
+#owner #adopted .unique-adopted p{
+  align-self: center;
+  font-weight: 500;
+}
 
 /* -------------  Common Between Profile Types ------------- */
 .profile-header .profile-image img{
@@ -60,7 +136,7 @@
 }
 
 .profile-header .profile-image{
-  padding-top: 6em;
+  padding-top: 2em;
 }
 
 .profile-header .profile-text{
@@ -71,14 +147,14 @@
   text-align: left;
 }
 
-#information-profile {
-  border-bottom: solid;
-  padding-bottom: 5px;
-  border-width: 1px;
+#information-profile p{
+  border-bottom: var(--text-bottom-color) 1px solid;
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  padding: .5em;
 }
 
-#information-profile-header, 
-#proposals .unique-proposal {
+#information-profile-header{
   display: flex;
   align-items: center;
   justify-content: left;
@@ -100,18 +176,65 @@
   justify-content: center;
 }
 
-#question {
-  display: flex;
-  flex-direction: column;
-}
-
 #question .question-form {
   padding-top: 1em;  
   display: flex;
   flex-direction: column;
 }
 
+#question {
+  display: flex;
+  flex-direction: column;
+}
+
+#question p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#question span{
+  font-size: 11px;
+}
+
+#question h2{
+  padding-bottom: 20px;
+}
+
 #pet #profile-grid #question input[type=submit]{
   margin-top: 1em;
   margin-left: auto;
 }
+
+
+#pet #profile-grid #question #question-submit section form button{
+  width: 100px;
+  margin-top: 0.5em;
+}
+
+#pet .button-dev {
+  display: flex;
+}
+
+#pet .reply-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#pet .reply-button-submit {
+    margin-left: 1em;
+}
+
+#pet .delete-button {
+    padding-left: 1em;
+    padding-top: .8em;
+}
+
+
+
+
+
+
+
+

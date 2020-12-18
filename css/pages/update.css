@@ -6,47 +6,84 @@
     flex-direction: column;
 
     /* style */
-    height: 40em;
+    min-height: 40em;
     width: 30em;
     text-align: center;
+    align-self: flex-start;
 }
 
 #update-page {    
+    justify-content: center;
     align-items: center;
-    column-gap: 2em;
-}
-
-#update-page button {
-    margin-top: auto;
 }
 
 @media screen and (max-width: 1600px) {
-    .update-form {
-        height: auto;
-    } 
 
     #update-page {
         flex-direction: column;
     }
 }
 
+@media screen and (max-width: 1040px) {
+    .update-form {
+        height: auto;
+    } 
+}
+
 /* --- User only CSS --- */
+#update-page .update-form h2{
+    padding-bottom: 1em;
+}
+
 #update-page #delete-profile {
     padding-bottom: 1em;
 }
 
+#update-page .options{
+    padding: 1em;
+}
+
 /* --- Pet only CSS --- */
-#update-page .update-post {
+
+
+.inputs-post-update{
     display: flex;
 }
 
-#update-page .update-post input[type=submit] {
-    width: 50%;
+.edit-post{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+button.button-edit-post{
+    margin-left: 11em;
+}
+
+.delete-post{
+    margin-left: auto;
+    padding-top: .8em;
 }
 
 .update-back-profile-button {
     text-align: center;
     padding: 1em;
+}
+
+.delete-pet-photo-album{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    align-items: center;
+    padding: .5em;
+}
+
+.delete-pet-photo-album input[type="submit"]{
+    height: 3em;
+}
+
+.update-pet-info .options{
+    padding: 0.5em;
 }
 
 

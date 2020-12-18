@@ -4,6 +4,7 @@
   include_once('../includes/database.php');
   
   /* Database Managers Files */
+  include_once('../database/regex.php');
   include_once('../database/users.php'); 
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
@@ -23,7 +24,9 @@
   $idUser = $_SESSION['user']['idUser'];
   $idQuestion = $_POST['idQuestion'];
   
-  deleteQuestion($idUser, $idQuestion);
+  if(validNumber($idQuestion)) {
+    deleteQuestion($idUser, $idQuestion);
+  }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

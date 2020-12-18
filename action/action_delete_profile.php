@@ -4,6 +4,7 @@
   include_once('../includes/database.php');
   
   /* Database Managers Files */
+  include_once('../database/regex.php');
   include_once('../database/users.php');
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
@@ -21,7 +22,7 @@
   $user = $_SESSION['user'];
   $password = $_POST['password'];
 
-  if(deleteUser($user, $password)) {
+  if(deleteUser($user, $password) && validPassword($password)) {
     $_SESSION = array();
     session_destroy();
 

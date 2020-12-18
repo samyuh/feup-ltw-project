@@ -21,18 +21,20 @@
   
   $user = $_SESSION['user'];
   $new_password = $_POST['new_password'];
+  $confirm_password = $_POST['confirm_password'];
+  $password = $_POST['password'];
   
-  if(validPassword($password)) {
-    if(updatePassword($user, $new_password, $_POST['password'])) {
-      $options = ['cost' => 12];
-      $hashed_password = password_hash($new_password, PASSWORD_DEFAULT, $options);
+  if((validPassword($new_password) && validPassword($confirm_password))) {
+      if(updatePassword($user, $new_password, $password) && ($new_password == $confirm_password)) {
+        $options = ['cost' => 12];
+        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT, $options);
 
-      $_SESSION['user']['password'] = $hashed_password; 
+        $_SESSION['user']['password'] = $hashed_password; 
 
-      header('Location: ../index.php');
-    }
-    else {
-      header('Location: ../update.php');
-    }
+        header('Location: ../index.php');
+      }
+      else {
+        header('Location: ../update.php');
+      }
   }
 ?>

@@ -26,9 +26,6 @@
 
 /* style */
 
-#homepage {
-    padding-bottom: 20em;
-}
 
 #homepage-intro {
     padding-bottom: 2em;   
@@ -40,7 +37,7 @@
     font-size: 2.5em;
     margin-bottom: 0.5em;
     font-family: 'Lobster', cursive;
-    color: hsl(72, 23%, 22%)
+    color: var(--intro-color);
 }
 
 #homepage-intro h2 {
@@ -52,13 +49,9 @@
    padding-top: 1em;
 }
 
-#homepage-profile {
-    position: relative;
-    text-align: center;
-}
-
-#homepage-profile p {
-    text-align: center;
+#homepage-profile .homepage-profile-pet {
+    place-items: center;
+    display: grid;
 }
 
 #homepage-profile .pet-name{
@@ -77,11 +70,11 @@
 
 .card .profile-overlay {
   transition: .5s ease-out;
-  background-color: black;
+  background-color: var(--profile-overlay-background);
   border-radius: 20%;  
   opacity: 0;  
 
-  color: white;
+  color: var(--profile-overlay-text);
   font-size: 20px;
 
   position: absolute;
@@ -103,7 +96,7 @@
   width: 300px;
   height: 300px;
   border-radius: 20%;  
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+  box-shadow:	0 0.125rem 0.5rem var(--container-primary-shadow), 0 0.0625rem 0.125rem var(--container-secondary-shadow);
 }
 
 .card:hover .profile-overlay {

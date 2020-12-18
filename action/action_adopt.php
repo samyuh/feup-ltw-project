@@ -4,6 +4,7 @@
   include_once('../includes/database.php');
   
   /* Database Managers Files */
+  include_once('../database/regex.php');
   include_once('../database/users.php');   
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
@@ -21,7 +22,9 @@
   $idUser = $_GET['idUser'];
   $petId = $_GET['idPet'];
 
-  updateAdoptList($idUser, $petId);
+  if(validNumber($idUser) && validNumber($petId)) {
+    adopt($idUser, $petId);
+  }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

@@ -11,9 +11,11 @@
         <aside id="register-username-error"></aside>
         <input type="text" name="username" placeholder="Username">
 
-        Male <input type="radio"  name="gender" value="male" checked="checked">
-        Female <input type="radio"  name="gender" value="female">
-
+        <section class="options">
+          <label>Male <input class="hide" type="radio" name="gender" value="male"><i class="fa fa-fw fa-mars"></i>&nbsp;</label>
+          <label>Female <input class="hide" type="radio" name="gender" value="female"><i class="fa fa-fw fa-venus"></i>&nbsp;</label>
+        </section>
+        
         Age <input type="range" name="age" id="register-age" value="20" min="0" max="99" oninput="this.nextElementSibling.value = this.value">
         <output>20</output>
   
@@ -31,15 +33,3 @@
       </article>
     </div>
   </div>
-
-<!--- Clean this -->
-<script>
-var loadFile = function(event) {
-  var output = document.getElementById('output');
-  output.src = URL.createObjectURL(event.target.files[0]);
-  output.onload = function() {
-    URL.revokeObjectURL(output.src) 
-  }
-};
-</script>
-<!--- Clean this -->

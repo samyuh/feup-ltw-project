@@ -36,7 +36,7 @@
     display: inline-block;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid var(--container-border);
 }
 
 #add-pet #add-pet-container .inputsNewPet input[type=submit]{

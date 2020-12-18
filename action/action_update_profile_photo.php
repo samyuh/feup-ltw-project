@@ -8,8 +8,8 @@
   include_once('../database/users.php');
   include_once('../database/pets.php');  
   include_once('../database/pets_adoption.php');  
-  include_once('../database/pets_profile.php');        
-
+  include_once('../database/pets_profile.php');    
+  
   /* Verifications and set variables */
   if(!isLogged()) {
     header('Location: ../error404.php');
@@ -19,13 +19,19 @@
     header('Location: ../error404.php');
   }
   
-  $user = $_SESSION['user'];
-  $post = $_POST['post'];
-  $idPet = $_GET['idPet'];
-  
-  if(validText($post) && validNumber($idPet)) {
-    addPost($user, $idPet, $post);
-  }
+  $user = $_SESSION['user']; 
+  $password = $_POST['password'];
 
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  if(validPassword($password)) {
+    if(updateUserProfilePhoto($user, $password)) { 
+
+      header('Location: ../index.php');
+    }
+    else {
+      header('Location: ../update.php');
+    }
+  }
+  else {
+    header('Location: ../register.php');
+  }
 ?>

@@ -72,17 +72,21 @@ Users looking for a pet should be able to:
 #### Extra Features
 
 - [x] A slideshow with all pet photos on pet page
-- [x] Users that adopt a pet can still post photos of that animal after the adoption and edit their information
+- [x] Users that adopt a pet can add post photos of that animal after the adoption, edit their information and answer questions
 - [x] A notification menu where users can see if their pet had an adoption proposal
 - [x] Users can list all of their favorite pets, pets to adoption and adopted pets on their profile
+- [x] Edit profile photo
+- [ ] Delete profile
+- [x] Toggle between dark and light theme
 
 
 #### Security Features
 
 - [x] Hashed passwords (with SALT)
 - [x] Session CSRF Tokens
-- [x] XSS attacks prevented (using htmlentities)
+- [x] XSS attacks prevented and attacks mitigated with session_set_cookie_params
 - [x] Regex to filter user input
+- [x] Session fixation prevented (24 hours)
 
 
 

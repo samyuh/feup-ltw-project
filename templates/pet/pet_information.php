@@ -20,9 +20,11 @@
           <p>Color: <?= htmlentities($pet['color']) ?></p>
           <p>Found by:<a href="profile.php?user=<?=$owner['username']?>"><?=empty($owner['username']) ? 'Deleted User' : htmlentities($owner['username'])?></a></p>
           <?php if(!empty($adopted)) { ?>
-              <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?=  htmlentities($adopted['username']) ?></a></p>
-          <?php } else { ?>
-              <p>Not adopted yet!</p>
+              <p>Adopted by:<a href="profile.php?user=<?=$adopted['username']?>"><?= htmlentities($adopted['username']) ?></a></p>
+          <?php } else if(isAdopted($pet['idPet'])) {?>
+              <p>Adopted by: Deleted Account</p>
+          <?php } else {?>
+              <p>This pet is not adopted!</p>
           <?php } ?>
       </section>
     </aside>
@@ -38,12 +40,14 @@
           <h2>Photos</h2>
           <div class="slideshow-container">
             <?php foreach($photos as $photo) {?>
-              <div class="MyPhotos">
+              <div class="pet-album">
                 <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Failed displaying pet image" width="400" height="400">
               </div>
             <?php } ?>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <?php if(!empty($photos)) { ?>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <?php } ?>
           </div>
         </section>
       </section>
@@ -58,40 +62,14 @@
           <?php } ?>
           <section id="uniquepost">
           <?php foreach($posts as $post) {?>
-              <p><?= htmlentities($post['post']) ?></p>
-              <span>By <?= htmlentities($post['author']) ?></span><span> on <?= htmlentities($post['datePost']) ?></span>
+              <section>
+                <p><?= htmlentities($post['post']) ?></p>
+                <span>By <?= htmlentities($post['author']) ?></span><span> on <?= htmlentities($post['datePost']) ?></span>
+              </section>
           <?php } ?>
           </section>
       </section>
     </section>
 </div>
-
-<!-- clean up -->
-<script>
-  var slideIndex = 1;
-  if(document.getElementsByClassName("MyPhotos").length){
-
-    showSlides(slideIndex);
-  }
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("MyPhotos");
-
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slides[slideIndex-1].style.display = "block"; 
-  }
-</script>
 
     

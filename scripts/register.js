@@ -13,12 +13,6 @@ function validateRegistration(event) {
     let username = form.querySelector('input[name="username"]').value
     let location = form.querySelector('input[name="location"]').value
     let password = form.querySelector('input[name="password"]').value
-
-    let regex = RegExp(/^[a-zA-Z0-9]+$/)  // All letters and numbers without blanck space
-    let regexGender = RegExp(/^(fe)?male$/)
-    let regexAge = RegExp(/^\d+$/)
-    let regexLocation = RegExp(/^[a-zA-Z0-9""]+$/)
-    let regexPassword = RegExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
     let path = form.querySelector('input[name="image"]').value
     var file = path.replace(/^.*\\/, "")
 
@@ -29,15 +23,13 @@ function validateRegistration(event) {
 
     clearRegisterHTML()
 
-
-
-    if(!regex.test(username)) {
+    if(!regexUsername(username)) {
         errorUsername = registerError('register-username-error',"Invalid username. Use letters and numbers only.")
     }
-    if(!regexLocation.test(location)) {
+    if(!regexText(location)) {
         errorLocation = registerError('register-location-error',"Invalid location. Use letters, numbers and blank space only.")
     }
-    if(!regexPassword.test(password)) {
+    if(!regexPassword(password)) {
         errorPassword = registerError('register-password-error',"Invalid password. Must contain at least a letter and a number.")
     }
     if(!isFileImage(file)){

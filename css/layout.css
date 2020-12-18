@@ -1,5 +1,5 @@
 /* ---------- HTML LAYOUT ---------- */
-html{
+html {
   height: 100%;
   width: 100%;
 }
@@ -13,13 +13,137 @@ header{
 
 /* ---------- BODY LAYOUT ---------- */
 body {
+  --background-body: #FFFAE2;
+  --footer-color: white;
+  --footer-background: black;
+  --text-color: black;
+  --text-bottom-color: black;
+  /* Containers */
+  --container-principal: rgba(255,255,255,0.6);
+  --container-primary-shadow: rgba(0, 0, 0, .3);
+  --container-secondary-shadow: rgba(0, 0, 0, .2);
+  --container-border: #cccccc;
+  /* Search */
+  --search-background-color: hsl(50, 100%, 93%);
+  /* Notifications */
+  --notifications-background-color: rgb(0,0,0);
+  --notifications-content-background: #fefefe; 
+  --notifications-border: #888;
+  --notifications-close: #aaa;
+  --notifications-close-focus: black;
+  --notifications-fading: rgba(0,0,0,0.5);
+  /* Pet Profile */
+  --photo-next-prev: white;
+  /* Homepage */
+  --intro-color: hsl(72, 23%, 22%);
+  --profile-overlay-background: black;
+  --profile-overlay-text: white;
+  /* Header */
+  --background-gradient-first: hsl(72, 11%, 45%);
+  --background-gradient-second: hsl(72, 11%, 35%);
+  --header-border: white;
+  --search-bar-background: white;
+  --search-bar-background-icon: black;
+  --icon-mobile: white;
+  --dropdown-color: #f9f9f9;
+  --dropdown-href-a: black;
+  --dropdown-hover: #f1f1f1;
+  /* Components */
+  --male-icon-selected: blue;
+  --female-icon-selected: fuchsia;
+  --genderless-icon: #008080;
+  --paw-selected:#008080;
+
+  --button-hover: #004646;
+  --found-pet-background: #008080;
+  --found-pet-text: white;
+  --found-pet-hover: #004646;
+
+  --favorite: orange;
+
+  --icon-background-white: white;
+  --icon-color: black;
+
+  /* Common */
+  --href-common: black;
+  --href-header-footer: white;
+
+  --animation-color-1: rgb(230, 103, 124);
+  --animation-color-2: rgb(19, 77, 165);
+}
+
+body.dark-theme {
+    --background-body: #232931; /* background body*/
+    --footer-color: white; /* footer text color */
+    --footer-background: #1b262c; /* footer background */
+    --text-color:  #eeeeee;
+    --text-bottom-color: #4ecca3;
+    /* Containers */
+    --container-principal: #393e46; /* Container Colors */
+    --container-primary-shadow: rgba(0, 0, 0, .3); /* Shadow */
+    --container-secondary-shadow: rgba(0, 0, 0, .2); /* Shadow */
+    --container-border: #4ecca3; /* Border */
+    /* Search */
+    --search-background-color: #eeeeee; /* */
+    /* Notifications */
+    --notifications-background-color: rgb(0,0,0); /* */
+    --notifications-content-background: #232931; /* */
+    --notifications-border: #232931; /* */
+    --notifications-close: #aaa; /* */
+    --notifications-close-focus: black; /* */
+    --notifications-fading: rgba(0,0,0,0.5);
+    /* Pet Profile */
+    --photo-next-prev: #bbe1fa; /* */
+    /* Homepage */
+    --intro-color:#4ecca3; /* Logo color */
+    --profile-overlay-background: black; /* */
+    --profile-overlay-text: #eeeeee; /* */
+    /* Header */
+    --background-gradient-first: #232931; /* */
+    --background-gradient-second: #393e46; /* */
+    --header-border: #eeeeee; /* */
+    --href-header-footer:#eeeeee; /* */
+    --search-bar-background: red; /* */
+    --search-bar-background-icon: black; /* */
+    --icon-mobile:#eeeeee; /* */
+    --dropdown-href-a: rgb(255, 255, 255); /* */
+    --dropdown-color: #3d454d; /* */
+    --dropdown-hover: #1b262c; /* */
+
+    /* Components */
+    --male-icon-selected: blue; /* */
+    --female-icon-selected: fuchsia; /* */
+    --genderless-icon: #4ecca3; /* */
+    --paw-selected:#4ecca3; /* */
+  
+    --button-hover: red; /* */
+    --found-pet-background:#4ecca3 ; /* ALL button color */
+    --found-pet-hover: #123044; /* After hover color */
+    --found-pet-text: #ffffff; /* All button color text */
+  
+    --favorite: orange; /* favorite button */
+    --icon-background-white: white; /* */
+    --icon-color: #4ecca3; /* */
+  
+    /* Common */
+    --href-common:  #ffffff; /* */
+  
+    --animation-color-1: rgb(230, 103, 124); /* */
+    --animation-color-2: rgb(19, 77, 165); /* */
+}
+
+body {
   margin: 0 auto;
   display: flex;
   flex-direction: column; 
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #FFFAE2;
+  color: var(--text-color);
+  background: var(--background-body);
+  /*background-image: linear-gradient(to bottom right,pink, black);*/
   min-height: 100%;
 }
+
+
 
 /* ---------- PAGES LAYOUT ----------  */
 
@@ -34,9 +158,8 @@ body {
 #pet-information,
 #update-page {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  height: 100%;
-  width: 100%;
   flex: 1;
 }
 

@@ -29,7 +29,7 @@
   $color =  $_POST['ncolor'];
   
   
-  if(validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validText($color) && validText($bio)) {
+  if(validNumber($idPet) && validName($petName) && validSpecie($specie) && validGender($gender) && validSize($size) && validText($color) && validText($bio)) {
     updatePet($idUser, $idPet, $petName, $bio, $specie, $gender, $size, $color);
   }
 

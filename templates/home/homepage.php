@@ -11,7 +11,7 @@
   
   <div id="homepage-profile">
     <?php foreach($articles as $article) {?>
-      <article>
+      <article class="homepage-profile-pet">
         <section class="card">
           <img class="profile-image" src="./images/pet-profile/pet-<?= htmlentities($article['idPet']) ?>/profile.jpg" width="300" height="300" alt="Pet Profile Picture">
           <aside class="profile-overlay">
