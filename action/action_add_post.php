@@ -21,7 +21,7 @@
   
   $user = $_SESSION['user'];
   $post = $_POST['post'];
-  $idPet = $_GET['idPet'];
+  $idPet = $_POST['idPet'];
   
   if(validText($post) && validNumber($idPet)) {
     addPost($user, $idPet, $post);

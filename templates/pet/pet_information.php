@@ -55,18 +55,13 @@
       <section id="posts">
         <h2>Posts</h2>
           <?php if (isLogged() && canUpdate($_SESSION['user']['idUser'], $pet['idPet'])) { ?>
-            <form class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
-              <input type="text" name="post">
-              <input type="submit" value="Post">
+            <form id="posts-form" class="postsform" action="../../action/action_add_post.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post">
+              <input type="text" name="post" placeholder="Add a post">
+              <input type="hidden" name="idPet" value="<?=$pet['idPet']?>">
+              <input type="submit" id="posts-button" value="Post">
             </form>
           <?php } ?>
           <section id="uniquepost">
-          <?php foreach($posts as $post) {?>
-              <section>
-                <p><?= htmlentities($post['post']) ?></p>
-                <span>By <?= htmlentities($post['author']) ?></span><span> on <?= htmlentities($post['datePost']) ?></span>
-              </section>
-          <?php } ?>
           </section>
       </section>
     </section>
