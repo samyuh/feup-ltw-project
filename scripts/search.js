@@ -59,7 +59,6 @@ function encodeForAjax(data) {
 
 
 function showArticle(data) {
-
     let id = data.idPet
     let name = data.petName
     let gender = data.gender    
@@ -70,8 +69,13 @@ function showArticle(data) {
     let section = document.createElement('section')
     section.setAttribute('class','profile')
 
+    let a = document.createElement('a')
+    a.setAttribute('href', "pet_profile.php?idPet=" + id)
+
     let image = document.createElement('div')
     image.setAttribute('class','image')
+
+    a.appendChild(image)
 
     let img = document.createElement('img')
     img.setAttribute('src',"images/pet-profile/pet-" + id + "/profile.jpg")
@@ -105,12 +109,8 @@ function showArticle(data) {
     info.appendChild(p4)
     info.appendChild(p5)
 
-    section.appendChild(image)
+    section.appendChild(a)
     section.appendChild(info)
-
-    section.onclick = function(){
-      location.href = "/pet_profile.php?idPet=" + id
-    }
 
     return section
   }
