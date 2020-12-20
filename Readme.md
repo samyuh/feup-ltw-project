@@ -30,9 +30,20 @@ Samuh / ltwpet60! (User)
 ---
 ### Libraries
 
-- <link href="https://fonts.gstatic.com" rel="preconnect">
-- <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+#### Google Fonts
+```html
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+```
+
+Used in the name of the website in the header and in the welcome message in the homepage of the website. 
+
+#### "Font Awesome" Icons
+```html
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+```
+
+Library used to implement icons in the website (for example, the star icon that is used in the pet profile to add the pet to our favorite pets list).
 
 ---
 ### Mockups
