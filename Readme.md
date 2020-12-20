@@ -13,8 +13,9 @@ This project was done by:
 ## Index
 1. [Credentials](#credentials)
 1. [Mockups](#Mockups)
-3. [Code Practices](#Code-Practices)
-4. [Features](#Features)
+1. [UML](#UML)
+1. [Code Practices](#Code-Practices)
+1. [Features](#Features)
     4.1 [Required Features](#Required-Features)
     4.2 [Extra Features](#Extra-Features)
     4.3 [Security Features](#Security-Features)
@@ -59,6 +60,11 @@ Library used to implement icons in the website (for example, the star icon that 
 |Login | Register |
 | --- | --- |
 | ![Login](./docs/mockups/login.png) | ![Register](./docs/mockups/Register.png) |
+
+---
+### UML
+
+![Login](./docs/uml.png)
 
 ---
 ### Code practices
