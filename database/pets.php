@@ -89,18 +89,6 @@
     /* 
     * Pet Search
     */
-    function getPetsByName($name) {
-        $db = Database::instance()->db();
-
-        $name2 = "%$name%";
-        $stmt = $db->prepare('SELECT * FROM Pet WHERE
-                              petName LIKE :petN');
-        $stmt->bindParam(':petN', $name2, PDO::PARAM_STR);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-    }
-
     function getPetsByAll($name,$specie,$gender,$size,$color){
         $db = Database::instance()->db();
 
@@ -109,21 +97,25 @@
         $gender2 = "%$gender%";
         $size2 = "%$size%";
         $color2 = "%$color%";
+
         $stmt = $db->prepare('SELECT * FROM Pet WHERE
-                              petName LIKE :petN
-                              AND specie LIKE :specie
-                              AND gender LIKE :gender
-                              AND size LIKE :size
-                              AND color LIKE :color');
-        $stmt->bindParam(':petN', $name2, PDO::PARAM_STR);
-        $stmt->bindParam(':specie', $specie2, PDO::PARAM_STR);
-        $stmt->bindParam(':gender', $gender2, PDO::PARAM_STR);
-        $stmt->bindParam(':size', $size2, PDO::PARAM_STR);
-        $stmt->bindParam(':color', $color2, PDO::PARAM_STR);
+                                petName LIKE ?
+                                AND specie LIKE ?
+                                AND gender LIKE ?
+                                AND size LIKE ?
+                                AND color LIKE ?');
+
+        if($gender == "female" || $gender == "male") {
+            $stmt->execute(array($name2, $specie2, $gender, $size2, $color2));
+        } 
+        else {
+            $stmt->execute(array($name2, $specie2, $gender2, $size2, $color2));
+        }
+
         $stmt->execute();
 
         return $stmt->fetchAll();
-    }  
+    }
 
     /* 
     * User Pet Lists 
