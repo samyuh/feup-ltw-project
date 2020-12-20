@@ -8,7 +8,7 @@
 
   /* Verifications and set variables */
   if(isLogged()) {
-    header('Location: ../error404.php');
+    header('Location: ./error404.php');
   }
 
   /* HTML Code */

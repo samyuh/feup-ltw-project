@@ -11,30 +11,30 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- -->
     
-    <link href="../../css/pages/update.css" rel="stylesheet">
-    <link href="../../css/pages/header.css" rel="stylesheet">
-    <link href="../../css/pages/footer.css" rel="stylesheet">
-    <link href="../../css/pages/pet_information.css" rel="stylesheet">
-    <link href="../../css/pages/homepage.css" rel="stylesheet">
-    <link href="../../css/pages/search_advanced.css" rel="stylesheet">
-    <link href="../../css/pages/add_pet.css" rel="stylesheet">
-    <link href="../../css/pages/error404.css" rel="stylesheet">
-    <link href="../../css/pages/profile.css" rel="stylesheet">
-    <link href="../../css/pages/modal.css" rel="stylesheet">
-    <link href="../../css/containers.css" rel="stylesheet">
-    <link href="../../css/components.css" rel="stylesheet">
-    <link href="../../css/layout.css" rel="stylesheet">
-    <script src="../../scripts/image_preview.js" defer> </script>
-    <script src="../../scripts/regex.js" defer> </script>
-    <script src="../../scripts/search.js" defer> </script>
-    <script src="../../scripts/add_pet.js" defer> </script>
-    <script src="../../scripts/update.js" defer> </script>
-    <script src="../../scripts/set_favorite.js" defer> </script>
-    <script src="../../scripts/pet_question.js" defer> </script>
-    <script src="../../scripts/add_post.js" defer> </script>
-    <script src="../../scripts/notifications.js" defer> </script>
-    <script src="../../scripts/pet_photos.js" defer> </script>
-    <script src="../../scripts/dark_theme.js" defer> </script>
+    <link href="./css/pages/update.css" rel="stylesheet">
+    <link href="./css/pages/header.css" rel="stylesheet">
+    <link href="./css/pages/footer.css" rel="stylesheet">
+    <link href="./css/pages/pet_information.css" rel="stylesheet">
+    <link href="./css/pages/homepage.css" rel="stylesheet">
+    <link href="./css/pages/search_advanced.css" rel="stylesheet">
+    <link href="./css/pages/add_pet.css" rel="stylesheet">
+    <link href="./css/pages/error404.css" rel="stylesheet">
+    <link href="./css/pages/profile.css" rel="stylesheet">
+    <link href="./css/pages/modal.css" rel="stylesheet">
+    <link href="./css/containers.css" rel="stylesheet">
+    <link href="./css/components.css" rel="stylesheet">
+    <link href="./css/layout.css" rel="stylesheet">
+    <script src="./scripts/image_preview.js" defer> </script>
+    <script src="./scripts/regex.js" defer> </script>
+    <script src="./scripts/search.js" defer> </script>
+    <script src="./scripts/add_pet.js" defer> </script>
+    <script src="./scripts/update.js" defer> </script>
+    <script src="./scripts/set_favorite.js" defer> </script>
+    <script src="./scripts/pet_question.js" defer> </script>
+    <script src="./scripts/add_post.js" defer> </script>
+    <script src="./scripts/notifications.js" defer> </script>
+    <script src="./scripts/pet_photos.js" defer> </script>
+    <script src="./scripts/dark_theme.js" defer> </script>
   </head>
 
   <?php if($_SESSION['theme'] == 'dark') { ?>
@@ -56,10 +56,10 @@
           <button title="Search" type="submit"><i class="fa fa-search"></i></button>
         </form>
         <div id="advanced-search-bar" title="Advanced Search" >
-            <a class="btn btn-default btn-sm" href="../../search.php">
+            <a class="btn btn-default btn-sm" href="./search.php">
               <i class="fa fa-search"></i> Advanced Search</a>
         </div>
-        <form class="mobile-search-bar" action="../../search.php">
+        <form class="mobile-search-bar" action="./search.php">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
@@ -68,23 +68,23 @@
         <div id="settings">
           <?php if (!isLogged()) { ?>
             <div id="sign-up">
-              <a title="Create an Account" href="../../register.php">Register</a>
-              <a title="Login" href="../../login.php">Login</a>
+              <a title="Create an Account" href="./register.php">Register</a>
+              <a title="Login" href="./login.php">Login</a>
             </div>
           <?php } else { ?>
             <div id="signed-in">
               <div id="profile">
-                <a title="Visit Your Profile" href="profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
+                <a title="Visit Your Profile" href="./profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
               </div>
               <div id="dropdown">
                 <div id="notifications">
                   <a id="notifications-button">Notifications</a>
                 </div>
                 <div id="update">
-                  <a title="Update My Information" href="update.php">Update Profile</a>
+                  <a title="Update My Information" href="./update.php">Update Profile</a>
                 </div>
                 <div id="logout">
-                  <a title="Logout from My Account" href="../../action/action_logout.php">Logout</a>
+                  <a title="Logout from My Account" href="./action/action_logout.php">Logout</a>
                 </div>
               </div>
             </div>

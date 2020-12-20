@@ -6,7 +6,7 @@
 
   <div class="container-forms">
     <article class="login-forms">
-      <form id="login-form" action="../../action/action_login.php" method="post">
+      <form id="login-form" action="./action/action_login.php" method="post">
         <aside id="login-username-error"></aside>
         <input type="text" name="username" placeholder="Username">
  
@@ -16,7 +16,7 @@
         <button id="login-button" type="submit" value="Log In">Log In</button>
       </form>
 
-      <form action="../../register.php" method="post">
+      <form action="./register.php" method="post">
           <input type="submit" value="Create New Account">
       </form>
     </article>

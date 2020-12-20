@@ -4,22 +4,48 @@
 Create a website where users can list rescue pets for adoption and/or offer them a forever home.
 
 This project was done by:
-- *Diogo Samuel Gonçalves Fernandes*
-- *Hugo Miguel Monteiro Guimarães*
-- *Beatriz Mendes*
-- *Inês Quarteu*
+- *Diogo Samuel Gonçalves Fernandes*, up201806250
+- *Hugo Miguel Monteiro Guimarães*, up201806490
+- *Beatriz Mendes*, up201806551
+- *Inês Quarteu*, up201806279
 
 ---
 ## Index
+1. [Credentials](#credentials)
 1. [Mockups](#Mockups)
-2. [UML](#UML)
-3. [Code Practices](#Code-Practices)
-4. [Features](#Features)
+1. [UML](#UML)
+1. [Code Practices](#Code-Practices)
+1. [Features](#Features)
     4.1 [Required Features](#Required-Features)
     4.2 [Extra Features](#Extra-Features)
     4.3 [Security Features](#Security-Features)
----
 
+---
+### Credentials (username/password (role))
+
+zini / ltwpet60! (User)
+progengi / ltwpet60! (User)
+Samuh / ltwpet60! (User)
+
+---
+### Libraries
+
+#### Google Fonts
+```html
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+```
+
+Used in the name of the website in the header and in the welcome message in the homepage of the website. 
+
+#### "Font Awesome" Icons
+```html
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+```
+
+Library used to implement icons in the website (for example, the star icon that is used in the pet profile to add the pet to our favorite pets list).
+
+---
 ### Mockups
 
 | Home Page | Profile |
@@ -38,7 +64,7 @@ This project was done by:
 ---
 ### UML
 
-![UML](./docs/uml/UML.png)
+![Login](./docs/uml.png)
 
 ---
 ### Code practices
@@ -49,6 +75,7 @@ This project was done by:
 
 ---
 ### Features
+
 
 #### Required Features
 All users should be able to:
@@ -76,20 +103,31 @@ Users looking for a pet should be able to:
 - [x] A notification menu where users can see if their pet had an adoption proposal
 - [x] Users can list all of their favorite pets, pets to adoption and adopted pets on their profile
 - [x] Edit profile photo
-- [ ] Delete profile
+- [x] Delete profile
 - [x] Toggle between dark and light theme
 
 
 #### Security Features
 
-- [x] Hashed passwords (with SALT)
+- [x] Hashed passwords (with SALT from password hash)
 - [x] Session CSRF Tokens
-- [x] XSS attacks prevented and attacks mitigated with session_set_cookie_params
+- [x] XSS attacks prevented
 - [x] Regex to filter user input
 - [x] Session fixation prevented (24 hours)
+- [x] SQL using prepare/execute
+- [x] Data Validation: regex / php / javascript
 
 
-
+### Technologies
+- [x] Separated logic/database/presentation
+- [x] Semantic HTML tags
+- [x] Responsive CSS
+- [x] Javascript
+- [x] Ajax
+     
+### Usability:
+- [x] Error messages
+- [x] Dark mode
 
 
 

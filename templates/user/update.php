@@ -1,7 +1,7 @@
 <div id="update-page">
   <article class="update-form">
         <h2>Update Photo</h2>
-        <form id="update-photo-form" class="change-information" action="../../action/action_update_profile_photo.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+        <form id="update-photo-form" class="change-information" action="./action/action_update_profile_photo.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
 
           <aside id="update-image">
           </aside>
@@ -18,7 +18,7 @@
 
   <article class="update-form">
         <h2>Update Username</h2> 
-        <form id="update-username-form" class="change-username" action="../../action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
+        <form id="update-username-form" class="change-username" action="./action/action_update_username.php?token=<?=$_SESSION['csrf']?>" method="post">
           <aside id="update-new-username-error">
           </aside>
           <input type="text" name="new_username" placeholder="New Username">
@@ -33,7 +33,7 @@
 
     <article class="update-form">
         <h2>Update Password</h2>
-        <form id="update-password-form" class="change-password" action="../../action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
+        <form id="update-password-form" class="change-password" action="./action/action_update_password.php?token=<?=$_SESSION['csrf']?>" method="post">
         
           <aside id="update-new-password-error">
           </aside>
@@ -52,7 +52,7 @@
 
     <article class="update-form">
         <h2>Update Information</h2>
-        <form id="update-information-form" class="change-information" action="../../action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+        <form id="update-information-form" class="change-information" action="./action/action_update_information.php?token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
 
           <aside id="update-gender">
           </aside>
@@ -86,7 +86,7 @@
 
     <article class="update-form">
         <h2>Delete Profile</h2>
-        <form id="delete-profile-form" class="delete-profile" action="../../action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
+        <form id="delete-profile-form" class="delete-profile" action="./action/action_delete_profile.php?token=<?=$_SESSION['csrf']?>" method="post">
           
           <aside id="update-delete-password-error">
           </aside>

@@ -7,7 +7,7 @@
 <section id="update-page">
         <article class="update-form">
         <h1>Update Pet Profile Photo</h1>   
-            <form class="update-pet-info" action="../../action/action_update_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
+            <form class="update-pet-info" action="./action/action_update_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">    
                 <input type="file" name="image" accept="image/*" onchange="loadFile2(event)">>
                     <img id="output2" src="#" style="max-height:15em; max-width:15em;" alt="Submit Photo"/>
                 <input type="submit" value="Update">
@@ -16,7 +16,7 @@
 
         <article class="update-form">
             <h1>Insert Pet Album Photo</h1>
-            <form action="../../action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
+            <form action="./action/action_add_pet_photo.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">
                 <input type="file" name="image-album" accept="image/*" onchange="loadFile(event)">>
                     <img id="output" src="#" style="max-height:15em; max-width:15em;" alt="Submit Photo"/>
                 <input type="submit" value="Update">
@@ -25,7 +25,7 @@
 
         <article class="update-form">
         <h1>Update Pet Info</h1>  
-            <form class="update-pet-info" action="../../action/action_update_pet.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">      
+            <form class="update-pet-info" action="./action/action_update_pet.php?idPet=<?=$pet['idPet']?>&token=<?=$_SESSION['csrf']?>" method="post" enctype="multipart/form-data">      
                 <label>Update Name <input type="text" name="npetName" value="<?= htmlentities($pet['petName']) ?>"></label>
                 <label>Update Description <input type="text" name="bio" value="<?= htmlentities($pet['bio']) ?>"></label>
                 <section class="options">
@@ -73,8 +73,8 @@
                 <h1>Delete Pet Album Photo</h1>
                 <?php foreach($photos as $photo) {?>
                     <section id="buttons-photos">
-                        <form class="delete-pet-photo-album" action="../../action/action_delete_pet_photo.php?idPhoto=<?=$photo['idPhoto']?>&token=<?=$_SESSION['csrf']?>" method="post">
-                            <img src="../../images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Pet Image" width="100" height="100">
+                        <form class="delete-pet-photo-album" action="./action/action_delete_pet_photo.php?idPhoto=<?=$photo['idPhoto']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                            <img src="./images/pet-profile/pet-<?=$pet['idPet']?>/photo-<?=$photo['idPhoto']?>.jpg" alt="Pet Image" width="100" height="100">
                             <input type="submit" value="Delete Photo">
                         </form>
                     </section>            
@@ -85,11 +85,11 @@
             <h1>Update Pet Posts</h1>
             <?php foreach($posts as $post) {?>
                 <section class="inputs-post-update">
-                    <form class="edit-post" action="../../action/action_pet_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
+                    <form class="edit-post" action="./action/action_pet_update_post.php?id=<?=$post['id']?>&token=<?=$_SESSION['csrf']?>" method="post">
                         <input type="text" name="post" value="<?= htmlentities($post['post']) ?>">
                         <button class="button-edit-post" type="submit"><i class="fa fa-pencil"></i></button>
                     </form> 
-                    <form class="delete-post" action="../../action/action_pet_delete_post.php?id=<?=$post['id']?>" method="post">
+                    <form class="delete-post" action="./action/action_pet_delete_post.php?id=<?=$post['id']?>" method="post">
                         <button type="submit"><i class="fa fa-ban"></i></button>
                     </form>
                 </section>      
