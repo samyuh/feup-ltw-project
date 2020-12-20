@@ -4,6 +4,8 @@
   padding-top: 2em;
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  width: 100%;
+  margin-left: 12em;
 }
   
 #search-pet-profile .profile .info{
