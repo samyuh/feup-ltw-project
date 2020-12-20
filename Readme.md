@@ -4,13 +4,14 @@
 Create a website where users can list rescue pets for adoption and/or offer them a forever home.
 
 This project was done by:
-- *Diogo Samuel Gonçalves Fernandes*
-- *Hugo Miguel Monteiro Guimarães*
-- *Beatriz Mendes*
-- *Inês Quarteu*
+- *Diogo Samuel Gonçalves Fernandes*, up201806250
+- *Hugo Miguel Monteiro Guimarães*, up201806490
+- *Beatriz Mendes*, up201806551
+- *Inês Quarteu*, up201806279
 
 ---
 ## Index
+1. [Credentials](#credentials)
 1. [Mockups](#Mockups)
 2. [UML](#UML)
 3. [Code Practices](#Code-Practices)
@@ -18,8 +19,22 @@ This project was done by:
     4.1 [Required Features](#Required-Features)
     4.2 [Extra Features](#Extra-Features)
     4.3 [Security Features](#Security-Features)
----
 
+---
+### Credentials (username/password (role))
+
+zini / ltwpet60! (User)
+progengi / ltwpet60! (User)
+Samuh / ltwpet60! (User)
+
+---
+### Libraries
+
+- <link href="https://fonts.gstatic.com" rel="preconnect">
+- <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+---
 ### Mockups
 
 | Home Page | Profile |
@@ -50,6 +65,7 @@ This project was done by:
 ---
 ### Features
 
+
 #### Required Features
 All users should be able to:
 - [x] Register a new account.
@@ -76,20 +92,31 @@ Users looking for a pet should be able to:
 - [x] A notification menu where users can see if their pet had an adoption proposal
 - [x] Users can list all of their favorite pets, pets to adoption and adopted pets on their profile
 - [x] Edit profile photo
-- [ ] Delete profile
+- [x] Delete profile
 - [x] Toggle between dark and light theme
 
 
 #### Security Features
 
-- [x] Hashed passwords (with SALT)
+- [x] Hashed passwords (with SALT from password hash)
 - [x] Session CSRF Tokens
-- [x] XSS attacks prevented and attacks mitigated with session_set_cookie_params
+- [x] XSS attacks prevented
 - [x] Regex to filter user input
 - [x] Session fixation prevented (24 hours)
+- [x] SQL using prepare/execute
+- [x] Data Validation: regex / php / javascript
 
 
-
+### Technologies
+- [x] Separated logic/database/presentation
+- [x] Semantic HTML tags
+- [x] Responsive CSS
+- [x] Javascript
+- [x] Ajax
+     
+### Usability:
+- [x] Error messages
+- [x] Dark mode
 
 
 

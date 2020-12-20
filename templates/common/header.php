@@ -56,10 +56,10 @@
           <button title="Search" type="submit"><i class="fa fa-search"></i></button>
         </form>
         <div id="advanced-search-bar" title="Advanced Search" >
-            <a class="btn btn-default btn-sm" href="../../search.php">
+            <a class="btn btn-default btn-sm" href="./search.php">
               <i class="fa fa-search"></i> Advanced Search</a>
         </div>
-        <form class="mobile-search-bar" action="../../search.php">
+        <form class="mobile-search-bar" action="./search.php">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
@@ -68,23 +68,23 @@
         <div id="settings">
           <?php if (!isLogged()) { ?>
             <div id="sign-up">
-              <a title="Create an Account" href="../../register.php">Register</a>
-              <a title="Login" href="../../login.php">Login</a>
+              <a title="Create an Account" href="./register.php">Register</a>
+              <a title="Login" href="./login.php">Login</a>
             </div>
           <?php } else { ?>
             <div id="signed-in">
               <div id="profile">
-                <a title="Visit Your Profile" href="profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
+                <a title="Visit Your Profile" href="./profile.php?user=<?= htmlentities($_SESSION['user']['username']) ?>"><?= htmlentities($_SESSION['user']['username']) ?></a>
               </div>
               <div id="dropdown">
                 <div id="notifications">
                   <a id="notifications-button">Notifications</a>
                 </div>
                 <div id="update">
-                  <a title="Update My Information" href="update.php">Update Profile</a>
+                  <a title="Update My Information" href="./update.php">Update Profile</a>
                 </div>
                 <div id="logout">
-                  <a title="Logout from My Account" href="../../action/action_logout.php">Logout</a>
+                  <a title="Logout from My Account" href="./action/action_logout.php">Logout</a>
                 </div>
               </div>
             </div>

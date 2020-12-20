@@ -16,7 +16,7 @@
         <button id="login-button" type="submit" value="Log In">Log In</button>
       </form>
 
-      <form action="../../register.php" method="post">
+      <form action="./register.php" method="post">
           <input type="submit" value="Create New Account">
       </form>
     </article>
