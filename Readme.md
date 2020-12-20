@@ -16,16 +16,13 @@ This project was done by:
 1. [UML](#UML)
 1. [Code Practices](#Code-Practices)
 1. [Features](#Features)
-    4.1 [Required Features](#Required-Features)
-    4.2 [Extra Features](#Extra-Features)
-    4.3 [Security Features](#Security-Features)
 
 ---
 ### Credentials (username/password (role))
 
-zini / ltwpet60! (User)
-progengi / ltwpet60! (User)
-Samuh / ltwpet60! (User)
+- zini / ltwpet60! (User)
+- progengi / ltwpet60! (User)
+- Samuh / ltwpet60! (User)
 
 ---
 ### Libraries
