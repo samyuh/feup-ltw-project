@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 33% 33% 33%;
   width: 100%;
-  margin-left: 12em;
+  margin-left: 9em;
 }
   
 #search-pet-profile .profile .info{
@@ -63,13 +63,12 @@
 /* -------------- RESPONSIVE ADVANCED SEARCH -------------- */
 
 @media screen and (max-width: 650px){
-    #search-pet-profile .profile .info{
-        display: none;
-    }
-    .profile .image{
-      padding-top: 0;
+  #search-pet-profile {
+    align-items: center;
+    margin-left: 0;
     }
   }
+
 @media screen and (max-width: 1700px){
   #search-pet-profile {
     grid-template-columns: 50% 50%;
@@ -81,7 +80,7 @@
     grid-template-columns: 100%;
   }
   #search-pet-profile .profile {
-    width: auto;
+    max-width: 30em;
     height: auto;
   }
 }
