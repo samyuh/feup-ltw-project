@@ -18,10 +18,9 @@
     function getPet($id) {
         $db = Database::instance()->db();
         
-        $stmt = $db->prepare('SELECT * FROM Pet WHERE idPet = :id');
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        
-        $stmt->execute();
+        $stmt = $db->prepare('SELECT * FROM Pet WHERE idPet = ?');
+        $stmt->execute(array($id));
+
         $user = $stmt->fetch();
 
         return $user;
@@ -89,6 +88,17 @@
     /* 
     * Pet Search
     */
+    function getPetsByName($name) {
+        $db = Database::instance()->db();
+
+        $name2 = "%$name%";
+        $stmt = $db->prepare('SELECT * FROM Pet WHERE
+                              petName LIKE ?');
+        $stmt->execute(array($name2));
+
+        return $stmt->fetchAll();
+    }
+
     function getPetsByAll($name,$specie,$gender,$size,$color){
         $db = Database::instance()->db();
 
